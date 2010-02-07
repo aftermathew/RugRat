@@ -352,6 +352,11 @@
         <size>18</size>
       </controlProperties>
     </control>
+    <control controlID="206" controlTypeID="com.balsamiq.mockups::Label" x="135" y="429" w="-1" h="-1" measuredW="132" measuredH="24" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%28*%29%20Expecting%20Update</text>
+      </controlProperties>
+    </control>
     <control controlID="16" controlTypeID="com.balsamiq.mockups::Arrow" x="334" y="202" w="1082" h="245" measuredW="150" measuredH="100" zOrder="1" locked="false" isInGroup="-1">
       <controlProperties>
         <direction>top</direction>
@@ -386,7 +391,7 @@
     </control>
     <control controlID="119" controlTypeID="com.balsamiq.mockups::iPhoneMenu" x="132" y="189" w="196" h="-1" measuredW="215" measuredH="126" zOrder="7" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>_%20Eating%2C%20%3E%0A_%20Sleeping%2C%20%3E%0A_%20Pooping%2C%20%3E%0A_%20Vitals%2C%20%3E</text>
+        <text>_%20Eating%2C%20%3E%0A_%20Sleeping%2C%20%28*%29%20%3E%0A_%20Pooping%2C%20%3E%0A_%20Vitals%2C%20%28*%29%20%3E</text>
       </controlProperties>
     </control>
     <control controlID="89" controlTypeID="com.balsamiq.mockups::Arrow" x="336" y="230" w="814" h="214" measuredW="150" measuredH="100" zOrder="2" locked="false" isInGroup="-1">
