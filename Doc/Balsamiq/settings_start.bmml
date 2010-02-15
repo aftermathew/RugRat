@@ -1,4 +1,4 @@
-<mockup version="1.0" skin="sketch" measuredW="1685" measuredH="833" mockupW="1530" mockupH="727">
+<mockup version="1.0" skin="sketch" measuredW="1685" measuredH="833" mockupW="1530" mockupH="745">
   <controls>
     <control controlID="0" controlTypeID="com.balsamiq.mockups::iPhone" x="145" y="96" w="365" h="727" measuredW="282" measuredH="510" zOrder="0" locked="false" isInGroup="-1">
       <controlProperties>
@@ -11,7 +11,7 @@
         <color>13158600</color>
       </controlProperties>
     </control>
-    <control controlID="2" controlTypeID="com.balsamiq.mockups::ButtonBar" x="176" y="655" w="-1" h="-1" measuredW="303" measuredH="29" zOrder="2" locked="false" isInGroup="-1">
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::ButtonBar" x="176" y="655" w="-1" h="-1" measuredW="302" measuredH="27" zOrder="2" locked="false" isInGroup="-1">
       <controlProperties>
         <text>%20Log%2C%20Q%26A%2C%20Videos%2C%20Calendar%2C%20More</text>
         <selectedIndex>4</selectedIndex>
@@ -19,36 +19,36 @@
       </controlProperties>
     </control>
     <control controlID="3" controlTypeID="com.balsamiq.mockups::Canvas" x="180" y="255" w="290" h="36" measuredW="100" measuredH="70" zOrder="3" locked="false" isInGroup="-1"/>
-    <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="295" y="261" w="-1" h="-1" measuredW="56" measuredH="24" zOrder="4" locked="false" isInGroup="-1">
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="295" y="261" w="-1" h="-1" measuredW="55" measuredH="23" zOrder="4" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Settings</text>
       </controlProperties>
     </control>
-    <control controlID="9" controlTypeID="com.balsamiq.mockups::Button" x="183" y="257" w="-1" h="-1" measuredW="65" measuredH="28" zOrder="5" locked="false" isInGroup="-1">
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::Button" x="183" y="257" w="-1" h="-1" measuredW="66" measuredH="28" zOrder="5" locked="false" isInGroup="-1">
       <controlProperties>
         <text>More...</text>
       </controlProperties>
     </control>
-    <control controlID="11" controlTypeID="com.balsamiq.mockups::MultilineButton" x="185" y="304" w="281" h="69" measuredW="117" measuredH="58" zOrder="6" locked="false" isInGroup="-1">
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::MultilineButton" x="185" y="304" w="281" h="69" measuredW="118" measuredH="58" zOrder="6" locked="false" isInGroup="-1">
       <controlProperties>
         <text>My%20Account</text>
       </controlProperties>
     </control>
-    <control controlID="12" controlTypeID="com.balsamiq.mockups::MultilineButton" x="183" y="388" w="286" h="69" measuredW="72" measuredH="58" zOrder="7" locked="false" isInGroup="-1">
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::MultilineButton" x="183" y="388" w="286" h="69" measuredW="70" measuredH="58" zOrder="7" locked="false" isInGroup="-1">
       <controlProperties>
         <text>David</text>
         <backgroundAlpha>0.25</backgroundAlpha>
         <color>65535</color>
       </controlProperties>
     </control>
-    <control controlID="13" controlTypeID="com.balsamiq.mockups::MultilineButton" x="183" y="476" w="286" h="69" measuredW="76" measuredH="58" zOrder="8" locked="false" isInGroup="-1">
+    <control controlID="13" controlTypeID="com.balsamiq.mockups::MultilineButton" x="183" y="476" w="286" h="69" measuredW="73" measuredH="58" zOrder="8" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Susan</text>
         <backgroundAlpha>0.25</backgroundAlpha>
         <color>16740303</color>
       </controlProperties>
     </control>
-    <control controlID="14" controlTypeID="com.balsamiq.mockups::MultilineButton" x="183" y="564" w="281" h="69" measuredW="107" measuredH="58" zOrder="9" locked="false" isInGroup="-1">
+    <control controlID="14" controlTypeID="com.balsamiq.mockups::MultilineButton" x="183" y="564" w="281" h="69" measuredW="108" measuredH="58" zOrder="9" locked="false" isInGroup="-1">
       <controlProperties>
         <text>New%20Baby%21</text>
         <color>16777062</color>
@@ -318,6 +318,12 @@
           </controlProperties>
         </control>
       </groupChildrenDescriptors>
+    </control>
+    <control controlID="187" controlTypeID="com.balsamiq.mockups::Paragraph" x="523" y="78" w="662" h="87" measuredW="200" measuredH="140" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Here%20in%20the%20Settings%20section%20the%20user%20can%20change%20their%20credentials%2C%20can%20add%20a%20child%2C%20or%20edit%20the%20child%20start%20data.%20%20Most%20of%20this%20information%20will%20be%20requested%20on%20initial%20start%2C%20and%20will%20not%20need%20to%20be%20changed%20again%20-%20nevertheless%2C%20the%20option%20is%20provided.</text>
+        <size>16</size>
+      </controlProperties>
     </control>
   </controls>
 </mockup>
