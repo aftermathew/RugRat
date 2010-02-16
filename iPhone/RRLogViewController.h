@@ -1,5 +1,5 @@
 //
-//  MLogViewController.h
+//  RRLogViewController.h
 //  RugRat
 //
 //  Created by Demi Raven on 11/8/09.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface MLogViewController : UIViewController {
+@interface RRLogViewController : UIViewController {
 
 }
 

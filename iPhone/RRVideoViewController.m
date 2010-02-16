@@ -1,14 +1,14 @@
 //
-//  MVideoViewController.m
+//  RRVideoViewController.m
 //  RugRat
 //
 //  Created by Demi Raven on 11/8/09.
 //  Copyright 2009 __MyCompanyName__. All rights reserved.
 //
 
-#import "MVideoViewController.h"
+#import "RRVideoViewController.h"
 
-@implementation MVideoViewController
+@implementation RRVideoViewController
 @synthesize logText;
 @synthesize movieUrl;
 

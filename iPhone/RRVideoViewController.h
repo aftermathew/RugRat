@@ -1,5 +1,5 @@
 //
-//  MVideoViewController.h
+//  RRVideoViewController.h
 //  RugRat
 //
 //  Created by Demi Raven on 11/8/09.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MediaPlayer/MediaPlayer.h>
 
-@interface MVideoViewController : UIViewController <UITextFieldDelegate> {
+@interface RRVideoViewController : UIViewController <UITextFieldDelegate> {
   UITextView * logText;
   MPMoviePlayerController *m_moviePlayer;
   NSURL *movieUrl;

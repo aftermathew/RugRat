@@ -1,16 +1,16 @@
 //
-//  MQuestionAnswerViewController.m
+//  RRQuestionAnswerViewController.m
 //  RugRat
 //
 //  Created by Demi Raven on 11/8/09.
 //  Copyright 2009 __MyCompanyName__. All rights reserved.
 //
 
-#import "MQuestionAnswerViewController.h"
+#import "RRQuestionAnswerViewController.h"
 #import "Topic.h"
 #include <sqlite3.h>
 
-@implementation MQuestionAnswerViewController
+@implementation RRQuestionAnswerViewController
 @synthesize topics;
 /*
 - (id)initWithStyle:(UITableViewStyle)style {

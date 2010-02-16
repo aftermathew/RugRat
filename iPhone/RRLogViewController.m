@@ -1,15 +1,15 @@
 //
-//  MLogViewController.m
+//  RRLogViewController.m
 //  RugRat
 //
 //  Created by Demi Raven on 11/8/09.
 //  Copyright 2009 __MyCompanyName__. All rights reserved.
 //
 
-#import "MLogViewController.h"
+#import "RRLogViewController.h"
 
 
-@implementation MLogViewController
+@implementation RRLogViewController
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.

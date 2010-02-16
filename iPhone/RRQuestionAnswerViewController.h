@@ -1,5 +1,5 @@
 //
-//  MQuestionAnswerViewController.h
+//  RRQuestionAnswerViewController.h
 //  RugRat
 //
 //  Created by Demi Raven on 11/8/09.
@@ -11,7 +11,7 @@
 
 @class Topic;
 
-@interface MQuestionAnswerViewController : UITableViewController <UITableViewDelegate> {
+@interface RRQuestionAnswerViewController : UITableViewController <UITableViewDelegate> {
   sqlite3 * db;
   sqlite3_stmt * statement;
   int dbrc; //database return code

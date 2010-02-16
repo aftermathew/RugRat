@@ -7,7 +7,7 @@
 //
 
 #import "RugRatAppDelegate.h"
-#import "MVideoViewController.h"
+#import "RRVideoViewController.h"
 
 @implementation RugRatAppDelegate
 
@@ -29,12 +29,12 @@
   NSEnumerator *enumerator = [viewControllers objectEnumerator];
   id aView;
   while (aView = [enumerator nextObject]) {
-    if([aView isMemberOfClass:[MVideoViewController class]]){
-      MVideoViewController *vidController = (MVideoViewController*)aView;
+    if([aView isMemberOfClass:[RRVideoViewController class]]){
+      RRVideoViewController *vidController = (RRVideoViewController*)aView;
       if([[[vidController tabBarItem] title] compare:@"Online Video"] == NSOrderedSame)
-        [vidController setMovieUrl:[MVideoViewController onlineMovie]];
+        [vidController setMovieUrl:[RRVideoViewController onlineMovie]];
       else
-        [vidController setMovieUrl:[MVideoViewController localMovie]];
+        [vidController setMovieUrl:[RRVideoViewController localMovie]];
     }
   }
   
