@@ -9,6 +9,8 @@
 #import "RugRatAppDelegate.h"
 #import "RRVideoViewController.h"
 
+static NSString *const lastTabUserDefaultString = @"LastTab";
+
 @implementation RugRatAppDelegate
 
 @synthesize window;
@@ -41,17 +43,16 @@
   
   //setup the application preferences and user defaults
   userDefaults = [NSUserDefaults standardUserDefaults];
-  if([userDefaults objectForKey:@"LastTab"]){
-    NSInteger tabNum = [userDefaults integerForKey:@"LastTab"];
+  if([userDefaults objectForKey:lastTabUserDefaultString]){
+    NSInteger tabNum = [userDefaults integerForKey:lastTabUserDefaultString];
     tabBarController.selectedIndex = tabNum;
     [self.tabBarController.selectedViewController viewDidAppear:YES];
   }
   
 }
 
-
 - (void)dealloc {
-  self.tabBarController = nil;
+  [tabBarController release];
   [window release];
   [super dealloc];
 }
@@ -59,7 +60,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
   // save user data to NSDefaults
   NSLog(@"We are terminating");
-  [userDefaults setInteger:[tabBarController selectedIndex] forKey:@"LastTab"];
+  [userDefaults setInteger:[tabBarController selectedIndex] forKey:lastTabUserDefaultString];
 }
 
 @end
