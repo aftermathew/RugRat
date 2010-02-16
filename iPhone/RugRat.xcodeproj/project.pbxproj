@@ -1,0 +1,363 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		A0E1C1BB112A23D1008E5A2D /* RugRatAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E1C1BA112A23D1008E5A2D /* RugRatAppDelegate.m */; };
+		AF2A9A7D10BB895700B1D39E /* PopupAndProgressController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2A9A7B10BB895700B1D39E /* PopupAndProgressController.m */; };
+		AF2A9A7E10BB895700B1D39E /* PopupAndProgressController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2A9A7C10BB895700B1D39E /* PopupAndProgressController.xib */; };
+		AF82B05A10C391860072433D /* GraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF82B05910C391860072433D /* GraphView.m */; };
+		AF82B06D10C392F60072433D /* GraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF82B06B10C392F60072433D /* GraphViewController.m */; };
+		AF82B06E10C392F60072433D /* GraphViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF82B06C10C392F60072433D /* GraphViewController.xib */; };
+		B796155B10A7B7440067B141 /* MLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B796155910A7B7440067B141 /* MLogViewController.m */; };
+		B796155C10A7B7440067B141 /* MLogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B796155A10A7B7440067B141 /* MLogViewController.xib */; };
+		B796156310A7B86D0067B141 /* MQuestionAnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B796156110A7B86D0067B141 /* MQuestionAnswerViewController.m */; };
+		B796156410A7B86D0067B141 /* MQuestionAnswerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B796156210A7B86D0067B141 /* MQuestionAnswerViewController.xib */; };
+		B796157810A7B8E20067B141 /* MVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B796157610A7B8E20067B141 /* MVideoViewController.m */; };
+		B796157910A7B8E20067B141 /* MVideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B796157710A7B8E20067B141 /* MVideoViewController.xib */; };
+		B79615AB10A7C5600067B141 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B79615AA10A7C5600067B141 /* MediaPlayer.framework */; };
+		B796164810A8C2DD0067B141 /* YouTubeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B796164610A8C2DD0067B141 /* YouTubeViewController.m */; };
+		B796164910A8C2DD0067B141 /* YouTubeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B796164710A8C2DD0067B141 /* YouTubeViewController.xib */; };
+		B79CB31510B0C34A00DEC76B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B79CB31410B0C34A00DEC76B /* libsqlite3.dylib */; };
+		B79CB31910B0CCE200DEC76B /* questions.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = B79CB31810B0CCE200DEC76B /* questions.sqlite */; };
+		B7CC344110BB9F01006C8D9C /* MQuestionAnswerNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7CC344010BB9F01006C8D9C /* MQuestionAnswerNavController.m */; };
+		B7D7D43B10B3B4E8004F9D29 /* Topic.m in Sources */ = {isa = PBXBuildFile; fileRef = B7D7D43A10B3B4E8004F9D29 /* Topic.m */; };
+		B7D7D44110B3B5B2004F9D29 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = B7D7D44010B3B5B2004F9D29 /* Question.m */; };
+		B7DA424D10A907F7009F936E /* cavity_flow_movie.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B7DA424C10A907F7009F936E /* cavity_flow_movie.mp4 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D6058910D05DD3D006BFB54 /* RugRat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RugRat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* RugRat_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RugRat_Prefix.pch; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* RugRat-Info.plisRugRat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "RugRat-Info.plisRugRat"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		A0E1C1B9112A23D1008E5A2D /* RugRatAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RugRatAppDelegate.h; sourceTree = "<group>"; };
+		A0E1C1BA112A23D1008E5A2D /* RugRatAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RugRatAppDelegate.m; sourceTree = "<group>"; };
+		AF2A9A7A10BB895700B1D39E /* PopupAndProgressController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupAndProgressController.h; sourceTree = "<group>"; };
+		AF2A9A7B10BB895700B1D39E /* PopupAndProgressController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupAndProgressController.m; sourceTree = "<group>"; };
+		AF2A9A7C10BB895700B1D39E /* PopupAndProgressController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupAndProgressController.xib; sourceTree = "<group>"; };
+		AF82B05810C391860072433D /* GraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphView.h; sourceTree = "<group>"; };
+		AF82B05910C391860072433D /* GraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphView.m; sourceTree = "<group>"; };
+		AF82B06A10C392F60072433D /* GraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphViewController.h; sourceTree = "<group>"; };
+		AF82B06B10C392F60072433D /* GraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphViewController.m; sourceTree = "<group>"; };
+		AF82B06C10C392F60072433D /* GraphViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GraphViewController.xib; sourceTree = "<group>"; };
+		B796155810A7B7440067B141 /* MLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLogViewController.h; sourceTree = "<group>"; };
+		B796155910A7B7440067B141 /* MLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLogViewController.m; sourceTree = "<group>"; };
+		B796155A10A7B7440067B141 /* MLogViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MLogViewController.xib; sourceTree = "<group>"; };
+		B796156010A7B86D0067B141 /* MQuestionAnswerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQuestionAnswerViewController.h; sourceTree = "<group>"; };
+		B796156110A7B86D0067B141 /* MQuestionAnswerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQuestionAnswerViewController.m; sourceTree = "<group>"; };
+		B796156210A7B86D0067B141 /* MQuestionAnswerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MQuestionAnswerViewController.xib; sourceTree = "<group>"; };
+		B796157510A7B8E20067B141 /* MVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVideoViewController.h; sourceTree = "<group>"; };
+		B796157610A7B8E20067B141 /* MVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVideoViewController.m; sourceTree = "<group>"; };
+		B796157710A7B8E20067B141 /* MVideoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MVideoViewController.xib; sourceTree = "<group>"; };
+		B79615AA10A7C5600067B141 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		B796164510A8C2DD0067B141 /* YouTubeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouTubeViewController.h; sourceTree = "<group>"; };
+		B796164610A8C2DD0067B141 /* YouTubeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YouTubeViewController.m; sourceTree = "<group>"; };
+		B796164710A8C2DD0067B141 /* YouTubeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YouTubeViewController.xib; sourceTree = "<group>"; };
+		B79CB31410B0C34A00DEC76B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = /usr/lib/libsqlite3.dylib; sourceTree = "<absolute>"; };
+		B79CB31810B0CCE200DEC76B /* questions.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = questions.sqlite; path = Resources/questions.sqlite; sourceTree = "<group>"; };
+		B7CC343F10BB9F01006C8D9C /* MQuestionAnswerNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQuestionAnswerNavController.h; sourceTree = "<group>"; };
+		B7CC344010BB9F01006C8D9C /* MQuestionAnswerNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQuestionAnswerNavController.m; sourceTree = "<group>"; };
+		B7D7D43910B3B4E8004F9D29 /* Topic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Topic.h; sourceTree = "<group>"; };
+		B7D7D43A10B3B4E8004F9D29 /* Topic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Topic.m; sourceTree = "<group>"; };
+		B7D7D43F10B3B5B2004F9D29 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
+		B7D7D44010B3B5B2004F9D29 /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
+		B7DA424C10A907F7009F936E /* cavity_flow_movie.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = cavity_flow_movie.mp4; path = Resources/cavity_flow_movie.mp4; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
+				B79615AB10A7C5600067B141 /* MediaPlayer.framework in Frameworks */,
+				B79CB31510B0C34A00DEC76B /* libsqlite3.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* RugRat.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				A00A029D112A22FC000F68CC /* Delegates */,
+				B796155710A7B6D60067B141 /* Controllers */,
+				B796155610A7B6C40067B141 /* Views */,
+				B796155410A7B6B80067B141 /* Models */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+				B79615AA10A7C5600067B141 /* MediaPlayer.framework */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* RugRat_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				B79CB31810B0CCE200DEC76B /* questions.sqlite */,
+				B7DA424C10A907F7009F936E /* cavity_flow_movie.mp4 */,
+				8D1107310486CEB800E47090 /* RugRat-Info.plisRugRat */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
+				B79CB31410B0C34A00DEC76B /* libsqlite3.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A00A029D112A22FC000F68CC /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				A0E1C1B9112A23D1008E5A2D /* RugRatAppDelegate.h */,
+				A0E1C1BA112A23D1008E5A2D /* RugRatAppDelegate.m */,
+			);
+			name = Delegates;
+			sourceTree = "<group>";
+		};
+		B796155410A7B6B80067B141 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B7D7D43910B3B4E8004F9D29 /* Topic.h */,
+				B7D7D43A10B3B4E8004F9D29 /* Topic.m */,
+				B7D7D43F10B3B5B2004F9D29 /* Question.h */,
+				B7D7D44010B3B5B2004F9D29 /* Question.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		B796155610A7B6C40067B141 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AF82B06C10C392F60072433D /* GraphViewController.xib */,
+				AF82B05810C391860072433D /* GraphView.h */,
+				AF82B05910C391860072433D /* GraphView.m */,
+				B796157710A7B8E20067B141 /* MVideoViewController.xib */,
+				B796156210A7B86D0067B141 /* MQuestionAnswerViewController.xib */,
+				B796155A10A7B7440067B141 /* MLogViewController.xib */,
+				AF2A9A7C10BB895700B1D39E /* PopupAndProgressController.xib */,
+				B796164710A8C2DD0067B141 /* YouTubeViewController.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		B796155710A7B6D60067B141 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B7CC343F10BB9F01006C8D9C /* MQuestionAnswerNavController.h */,
+				B7CC344010BB9F01006C8D9C /* MQuestionAnswerNavController.m */,
+				B796155810A7B7440067B141 /* MLogViewController.h */,
+				B796155910A7B7440067B141 /* MLogViewController.m */,
+				B796156010A7B86D0067B141 /* MQuestionAnswerViewController.h */,
+				B796156110A7B86D0067B141 /* MQuestionAnswerViewController.m */,
+				B796157510A7B8E20067B141 /* MVideoViewController.h */,
+				B796157610A7B8E20067B141 /* MVideoViewController.m */,
+				AF2A9A7A10BB895700B1D39E /* PopupAndProgressController.h */,
+				AF2A9A7B10BB895700B1D39E /* PopupAndProgressController.m */,
+				B796164510A8C2DD0067B141 /* YouTubeViewController.h */,
+				B796164610A8C2DD0067B141 /* YouTubeViewController.m */,
+				AF82B06A10C392F60072433D /* GraphViewController.h */,
+				AF82B06B10C392F60072433D /* GraphViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* RugRat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "RugRat" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RugRat;
+			productName = RugRat;
+			productReference = 1D6058910D05DD3D006BFB54 /* RugRat.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "RugRat" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* RugRat */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
+				B796155C10A7B7440067B141 /* MLogViewController.xib in Resources */,
+				B796156410A7B86D0067B141 /* MQuestionAnswerViewController.xib in Resources */,
+				B796157910A7B8E20067B141 /* MVideoViewController.xib in Resources */,
+				B796164910A8C2DD0067B141 /* YouTubeViewController.xib in Resources */,
+				B7DA424D10A907F7009F936E /* cavity_flow_movie.mp4 in Resources */,
+				B79CB31910B0CCE200DEC76B /* questions.sqlite in Resources */,
+				AF2A9A7E10BB895700B1D39E /* PopupAndProgressController.xib in Resources */,
+				AF82B06E10C392F60072433D /* GraphViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				B796155B10A7B7440067B141 /* MLogViewController.m in Sources */,
+				B796156310A7B86D0067B141 /* MQuestionAnswerViewController.m in Sources */,
+				B796157810A7B8E20067B141 /* MVideoViewController.m in Sources */,
+				B796164810A8C2DD0067B141 /* YouTubeViewController.m in Sources */,
+				B7D7D43B10B3B4E8004F9D29 /* Topic.m in Sources */,
+				B7D7D44110B3B5B2004F9D29 /* Question.m in Sources */,
+				AF2A9A7D10BB895700B1D39E /* PopupAndProgressController.m in Sources */,
+				B7CC344110BB9F01006C8D9C /* MQuestionAnswerNavController.m in Sources */,
+				AF82B05A10C391860072433D /* GraphView.m in Sources */,
+				AF82B06D10C392F60072433D /* GraphViewController.m in Sources */,
+				A0E1C1BB112A23D1008E5A2D /* RugRatAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = RugRat_Prefix.pch;
+				INFOPLIST_FILE = "RugRat-Info.plisRugRat";
+				PRODUCT_NAME = RugRat;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = RugRat_Prefix.pch;
+				INFOPLIST_FILE = "RugRat-Info.plisRugRat";
+				PRODUCT_NAME = RugRat;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos3.1;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos3.1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "RugRat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "RugRat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
