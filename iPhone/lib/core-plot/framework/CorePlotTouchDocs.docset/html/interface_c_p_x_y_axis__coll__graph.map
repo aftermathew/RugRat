@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$interface_c_p_axis.html" title="An abstract axis class." alt="" coords="153,288,220,317"/>
+<area shape="rect" id="node4" href="$class_c_p_layer.html" title="Base class for all Core Animation layers in Core Plot." alt="" coords="133,192,211,221"/>
+<area shape="rect" id="node6" href="doxygen-cocoa-touch-tags.xml$http://developer.apple.com/iphone/library/documentation/GraphicsImaging/Reference/CALayer_class/Introduction/Introduction.html" title="CALayer" alt="" coords="5,85,83,115"/>
+<area shape="rect" id="node8" href="doxygen-cocoa-touch-tags.xml$http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html" title="NSObject" alt="" coords="168,5,253,35"/>
+<area shape="rect" id="node12" href="$interface_c_p_constrained_position.html" title="Implements a spring and strut positioning algorithm for one dimension." alt="" coords="192,139,365,168"/>
+<area shape="rect" id="node10" href="$protocol_c_p_responder-p.html" title="\&lt;CPResponder\&gt;" alt="" coords="107,85,240,115"/>
+</map>

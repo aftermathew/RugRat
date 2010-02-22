@@ -12,12 +12,13 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		A03E36601131F28400315DB2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A03E365F1131F28400315DB2 /* QuartzCore.framework */; };
+		A03E36701131FD8300315DB2 /* GraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A03E366F1131FD8300315DB2 /* GraphViewController.m */; };
+		A03E36721131FEBB00315DB2 /* GraphViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A03E36711131FEBB00315DB2 /* GraphViewController.xib */; };
+		A03E37441132156E00315DB2 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A03E372F1132143300315DB2 /* libCorePlot-CocoaTouch.a */; };
 		A0E1C1BB112A23D1008E5A2D /* RugRatAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E1C1BA112A23D1008E5A2D /* RugRatAppDelegate.m */; };
 		AF2A9A7D10BB895700B1D39E /* PopupAndProgressController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2A9A7B10BB895700B1D39E /* PopupAndProgressController.m */; };
 		AF2A9A7E10BB895700B1D39E /* PopupAndProgressController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2A9A7C10BB895700B1D39E /* PopupAndProgressController.xib */; };
-		AF82B05A10C391860072433D /* GraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF82B05910C391860072433D /* GraphView.m */; };
-		AF82B06D10C392F60072433D /* GraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF82B06B10C392F60072433D /* GraphViewController.m */; };
-		AF82B06E10C392F60072433D /* GraphViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF82B06C10C392F60072433D /* GraphViewController.xib */; };
 		B796155B10A7B7440067B141 /* RRLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B796155910A7B7440067B141 /* RRLogViewController.m */; };
 		B796155C10A7B7440067B141 /* RRLogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B796155A10A7B7440067B141 /* RRLogViewController.xib */; };
 		B796156310A7B86D0067B141 /* RRQuestionAnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B796156110A7B86D0067B141 /* RRQuestionAnswerViewController.m */; };
@@ -35,6 +36,23 @@
 		B7DA424D10A907F7009F936E /* cavity_flow_movie.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B7DA424C10A907F7009F936E /* cavity_flow_movie.mp4 */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		A03E372E1132143300315DB2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A03E364E1131EEF500315DB2 /* CorePlot-CocoaTouch.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BC9B83470FB8A0A40035D8DA /* libCorePlot-CocoaTouch.a */;
+			remoteInfo = "CorePlot-CocoaTouch";
+		};
+		A03E37391132150900315DB2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A03E364E1131EEF500315DB2 /* CorePlot-CocoaTouch.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BC9B83460FB8A0A40035D8DA /* CorePlot-CocoaTouch */;
+			remoteInfo = "CorePlot-CocoaTouch";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* RugRat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RugRat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,16 +62,16 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* RugRat_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RugRat_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* RugRat-Info.plisRugRat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "RugRat-Info.plisRugRat"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		A03E364E1131EEF500315DB2 /* CorePlot-CocoaTouch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CorePlot-CocoaTouch.xcodeproj"; path = "lib/core-plot/framework/CorePlot-CocoaTouch.xcodeproj"; sourceTree = "<group>"; };
+		A03E365F1131F28400315DB2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A03E366E1131FD8200315DB2 /* GraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphViewController.h; sourceTree = "<group>"; };
+		A03E366F1131FD8300315DB2 /* GraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphViewController.m; sourceTree = "<group>"; };
+		A03E36711131FEBB00315DB2 /* GraphViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GraphViewController.xib; sourceTree = "<group>"; };
 		A0E1C1B9112A23D1008E5A2D /* RugRatAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RugRatAppDelegate.h; sourceTree = "<group>"; };
 		A0E1C1BA112A23D1008E5A2D /* RugRatAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RugRatAppDelegate.m; sourceTree = "<group>"; };
 		AF2A9A7A10BB895700B1D39E /* PopupAndProgressController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupAndProgressController.h; sourceTree = "<group>"; };
 		AF2A9A7B10BB895700B1D39E /* PopupAndProgressController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupAndProgressController.m; sourceTree = "<group>"; };
 		AF2A9A7C10BB895700B1D39E /* PopupAndProgressController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupAndProgressController.xib; sourceTree = "<group>"; };
-		AF82B05810C391860072433D /* GraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphView.h; sourceTree = "<group>"; };
-		AF82B05910C391860072433D /* GraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphView.m; sourceTree = "<group>"; };
-		AF82B06A10C392F60072433D /* GraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphViewController.h; sourceTree = "<group>"; };
-		AF82B06B10C392F60072433D /* GraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphViewController.m; sourceTree = "<group>"; };
-		AF82B06C10C392F60072433D /* GraphViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GraphViewController.xib; sourceTree = "<group>"; };
 		B796155810A7B7440067B141 /* RRLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRLogViewController.h; sourceTree = "<group>"; };
 		B796155910A7B7440067B141 /* RRLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRLogViewController.m; sourceTree = "<group>"; };
 		B796155A10A7B7440067B141 /* RRLogViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RRLogViewController.xib; sourceTree = "<group>"; };
@@ -83,11 +101,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A03E37441132156E00315DB2 /* libCorePlot-CocoaTouch.a in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
 				B79615AB10A7C5600067B141 /* MediaPlayer.framework in Frameworks */,
 				B79CB31510B0C34A00DEC76B /* libsqlite3.dylib in Frameworks */,
+				A03E36601131F28400315DB2 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +125,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				A03E364E1131EEF500315DB2 /* CorePlot-CocoaTouch.xcodeproj */,
 				B796155410A7B6B80067B141 /* Models */,
 				B796155610A7B6C40067B141 /* Views */,
 				B796155710A7B6D60067B141 /* Controllers */,
@@ -144,6 +165,7 @@
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 				B79CB31410B0C34A00DEC76B /* libsqlite3.dylib */,
+				A03E365F1131F28400315DB2 /* QuartzCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -155,6 +177,14 @@
 				A0E1C1BA112A23D1008E5A2D /* RugRatAppDelegate.m */,
 			);
 			name = Delegates;
+			sourceTree = "<group>";
+		};
+		A03E372A1132143300315DB2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A03E372F1132143300315DB2 /* libCorePlot-CocoaTouch.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		B796155410A7B6B80067B141 /* Models */ = {
@@ -171,9 +201,7 @@
 		B796155610A7B6C40067B141 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AF82B06C10C392F60072433D /* GraphViewController.xib */,
-				AF82B05810C391860072433D /* GraphView.h */,
-				AF82B05910C391860072433D /* GraphView.m */,
+				A03E36711131FEBB00315DB2 /* GraphViewController.xib */,
 				B796157710A7B8E20067B141 /* RRVideoViewController.xib */,
 				B796156210A7B86D0067B141 /* RRQuestionAnswerViewController.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
@@ -199,8 +227,8 @@
 				AF2A9A7B10BB895700B1D39E /* PopupAndProgressController.m */,
 				B796164510A8C2DD0067B141 /* YouTubeViewController.h */,
 				B796164610A8C2DD0067B141 /* YouTubeViewController.m */,
-				AF82B06A10C392F60072433D /* GraphViewController.h */,
-				AF82B06B10C392F60072433D /* GraphViewController.m */,
+				A03E366E1131FD8200315DB2 /* GraphViewController.h */,
+				A03E366F1131FD8300315DB2 /* GraphViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -219,6 +247,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				A03E373A1132150900315DB2 /* PBXTargetDependency */,
 			);
 			name = RugRat;
 			productName = RugRat;
@@ -235,12 +264,28 @@
 			hasScannedForEncodings = 1;
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A03E372A1132143300315DB2 /* Products */;
+					ProjectRef = A03E364E1131EEF500315DB2 /* CorePlot-CocoaTouch.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* RugRat */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		A03E372F1132143300315DB2 /* libCorePlot-CocoaTouch.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libCorePlot-CocoaTouch.a";
+			remoteRef = A03E372E1132143300315DB2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1D60588D0D05DD3D006BFB54 /* Resources */ = {
@@ -255,7 +300,7 @@
 				B7DA424D10A907F7009F936E /* cavity_flow_movie.mp4 in Resources */,
 				B79CB31910B0CCE200DEC76B /* questions.sqlite in Resources */,
 				AF2A9A7E10BB895700B1D39E /* PopupAndProgressController.xib in Resources */,
-				AF82B06E10C392F60072433D /* GraphViewController.xib in Resources */,
+				A03E36721131FEBB00315DB2 /* GraphViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,13 +320,20 @@
 				B7D7D44110B3B5B2004F9D29 /* Question.m in Sources */,
 				AF2A9A7D10BB895700B1D39E /* PopupAndProgressController.m in Sources */,
 				B7CC344110BB9F01006C8D9C /* RRQuestionAnswerNavController.m in Sources */,
-				AF82B05A10C391860072433D /* GraphView.m in Sources */,
-				AF82B06D10C392F60072433D /* GraphViewController.m in Sources */,
 				A0E1C1BB112A23D1008E5A2D /* RugRatAppDelegate.m in Sources */,
+				A03E36701131FD8300315DB2 /* GraphViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A03E373A1132150900315DB2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "CorePlot-CocoaTouch";
+			targetProxy = A03E37391132150900315DB2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
@@ -318,6 +370,8 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "./lib/core-plot/framework/**";
+				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
 				SDKROOT = iphoneos3.1;
 			};
@@ -331,6 +385,8 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "./lib/core-plot/framework/**";
+				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
 				SDKROOT = iphoneos3.1;
 			};

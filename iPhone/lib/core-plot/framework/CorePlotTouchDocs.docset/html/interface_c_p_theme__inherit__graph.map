@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node5" href="$interface_c_p_x_y_theme.html" title="Creates a CPXYGraph instance formatted with padding of 60 on each side and X and..." alt="" coords="320,160,424,189"/>
+<area shape="rect" id="node2" href="doxygen-cocoa-touch-tags.xml$http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html" title="NSObject" alt="" coords="329,5,415,35"/>
+<area shape="rect" id="node7" href="$interface_c_p_dark_gradient_theme.html" title="Creates a CPXYGraph instance formatted with dark gray gradient backgrounds and light..." alt="" coords="5,237,181,267"/>
+<area shape="rect" id="node9" href="$interface_c_p_plain_black_theme.html" title="Creates a CPXYGraph instance formatted with black backgrounds and white lines." alt="" coords="205,237,360,267"/>
+<area shape="rect" id="node11" href="$interface_c_p_plain_white_theme.html" title="Creates a CPXYGraph instance formatted with white backgrounds and black lines." alt="" coords="384,237,541,267"/>
+<area shape="rect" id="node13" href="$interface_c_p_stocks_theme.html" title="Creates a CPXYGraph instance formatted with a gradient background and white lines..." alt="" coords="565,237,699,267"/>
+</map>

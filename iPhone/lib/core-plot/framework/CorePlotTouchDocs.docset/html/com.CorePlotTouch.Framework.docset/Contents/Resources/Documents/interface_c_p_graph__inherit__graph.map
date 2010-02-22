@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node13" href="$interface_c_p_x_y_graph.html" title="A graph using a cartesian (X&#45;Y) plot space." alt="" coords="64,392,160,421"/>
+<area shape="rect" id="node2" href="$interface_c_p_bordered_layer.html" title="A layer with rounded corners." alt="" coords="41,237,183,267"/>
+<area shape="rect" id="node4" href="$class_c_p_layer.html" title="Base class for all Core Animation layers in Core Plot." alt="" coords="73,160,151,189"/>
+<area shape="rect" id="node6" href="doxygen-cocoa-touch-tags.xml$http://developer.apple.com/iphone/library/documentation/GraphicsImaging/Reference/CALayer_class/Introduction/Introduction.html" title="CALayer" alt="" coords="9,83,87,112"/>
+<area shape="rect" id="node8" href="doxygen-cocoa-touch-tags.xml$http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html" title="NSObject" alt="" coords="5,5,91,35"/>
+<area shape="rect" id="node10" href="$protocol_c_p_responder-p.html" title="\&lt;CPResponder\&gt;" alt="" coords="111,83,244,112"/>
+<area shape="rect" id="node15" href="$interface_c_p_derived_x_y_graph.html" title="An empty XY graph class used for testing themes." alt="" coords="37,469,187,499"/>
+</map>

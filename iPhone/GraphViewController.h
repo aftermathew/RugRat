@@ -2,15 +2,16 @@
 //  GraphViewController.h
 //  RugRat
 //
-//  Created by Mathew Chasan on 11/29/09.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
+//  Created by Mathew Chasan on 2/21/10.
+//  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+#import "CorePlot-CocoaTouch.h"
 
-
-@interface GraphViewController : UIViewController {
-
+@interface GraphViewController : UIViewController <CPPlotDataSource>
+{
+  CPXYGraph *graph;
 }
 
 @end

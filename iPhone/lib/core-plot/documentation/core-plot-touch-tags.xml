@@ -1,0 +1,4798 @@
+<?xml version='1.0' encoding='ISO-8859-1' standalone='yes' ?>
+<tagfile>
+  <compound kind="page">
+    <name>main</name>
+    <title>Core Plot</title>
+    <filename>main</filename>
+    <docanchor file="main">testing</docanchor>
+    <docanchor file="main">intro</docanchor>
+    <docanchor file="main">contribute</docanchor>
+    <docanchor file="main">coding</docanchor>
+    <docanchor file="main">documentation</docanchor>
+    <docanchor file="main">start</docanchor>
+  </compound>
+  <compound kind="file">
+    <name>CPAxis.h</name>
+    <path>/Users/aftermathew/git/RugRat/iPhone/core-plot/framework/Source/</path>
+    <filename>_c_p_axis_8h</filename>
+    <includes id="_c_p_definitions_8h" name="CPDefinitions.h" local="yes" imported="yes">CPDefinitions.h</includes>
+    <class kind="protocol">CPAxisDelegate-p</class>
+    <class kind="class">CPAxis</class>
+    <class kind="class">CPAxis(AbstractMethods)</class>
+    <member kind="typedef">
+      <type>enum _CPAxisLabelingPolicy</type>
+      <name>CPAxisLabelingPolicy</name>
+      <anchorfile>_c_p_axis_8h.html</anchorfile>
+      <anchor>a2ccb55ff7d95973fe05b92be9729845b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <name>_CPAxisLabelingPolicy</name>
+      <anchorfile>_c_p_axis_8h.html</anchorfile>
+      <anchor>af2da7f60381b6a8cf90b44893a2b2147</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPAxisLabelingPolicyNone</name>
+      <anchorfile>_c_p_axis_8h.html</anchorfile>
+      <anchor>af2da7f60381b6a8cf90b44893a2b2147ae1dc1418f0f26b5f6030cbadd39aa800</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPAxisLabelingPolicyLocationsProvided</name>
+      <anchorfile>_c_p_axis_8h.html</anchorfile>
+      <anchor>af2da7f60381b6a8cf90b44893a2b2147aff74dce75c726d1f36894de1b615b5a7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPAxisLabelingPolicyFixedInterval</name>
+      <anchorfile>_c_p_axis_8h.html</anchorfile>
+      <anchor>af2da7f60381b6a8cf90b44893a2b2147a4fc267f900f2d138380fb39e3a90b561</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPAxisLabelingPolicyAutomatic</name>
+      <anchorfile>_c_p_axis_8h.html</anchorfile>
+      <anchor>af2da7f60381b6a8cf90b44893a2b2147acbc32c089dd301aabf8752aab1ed8289</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPAxisLabelingPolicyLogarithmic</name>
+      <anchorfile>_c_p_axis_8h.html</anchorfile>
+      <anchor>af2da7f60381b6a8cf90b44893a2b2147ad6708ebd08b5f522e7d2b288fdd40373</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>CPBarPlot.h</name>
+    <path>/Users/aftermathew/git/RugRat/iPhone/core-plot/framework/Source/</path>
+    <filename>_c_p_bar_plot_8h</filename>
+    <includes id="_c_p_definitions_8h" name="CPDefinitions.h" local="yes" imported="yes">CPDefinitions.h</includes>
+    <class kind="protocol">CPBarPlotDataSource-p</class>
+    <class kind="class">CPBarPlot</class>
+    <member kind="typedef">
+      <type>enum _CPBarPlotField</type>
+      <name>CPBarPlotField</name>
+      <anchorfile>_c_p_bar_plot_8h.html</anchorfile>
+      <anchor>a4d7e2fb3382df98868aa34114cbb8a69</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <name>_CPBarPlotField</name>
+      <anchorfile>_c_p_bar_plot_8h.html</anchorfile>
+      <anchor>a0f0cbd9bcc8b7696088c55adc80cece7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPBarPlotFieldBarLocation</name>
+      <anchorfile>_c_p_bar_plot_8h.html</anchorfile>
+      <anchor>a0f0cbd9bcc8b7696088c55adc80cece7a20c24308d93d2ba92b343817f07ff5a6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPBarPlotFieldBarLength</name>
+      <anchorfile>_c_p_bar_plot_8h.html</anchorfile>
+      <anchor>a0f0cbd9bcc8b7696088c55adc80cece7a2b5d046bc9927eb92701650a31e4f09a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>NSString *const</type>
+      <name>CPBarPlotBindingBarLocations</name>
+      <anchorfile>_c_p_bar_plot_8h.html</anchorfile>
+      <anchor>aa668a2213a7875a05a1e83191636d709</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>NSString *const</type>
+      <name>CPBarPlotBindingBarLengths</name>
+      <anchorfile>_c_p_bar_plot_8h.html</anchorfile>
+      <anchor>ac609285fae24f0202a94abf013d35b7e</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>CPDefinitions.h</name>
+    <path>/Users/aftermathew/git/RugRat/iPhone/core-plot/framework/Source/</path>
+    <filename>_c_p_definitions_8h</filename>
+    <class kind="struct">_CPRGBAColor</class>
+    <class kind="struct">_CPConstraints</class>
+    <member kind="typedef">
+      <type>enum _CPNumericType</type>
+      <name>CPNumericType</name>
+      <anchorfile>_c_p_definitions_8h.html</anchorfile>
+      <anchor>acd06764998b89e11508d1096b11efa7a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>enum _CPErrorBarType</type>
+      <name>CPErrorBarType</name>
+      <anchorfile>_c_p_definitions_8h.html</anchorfile>
+      <anchor>a5e34a69f80c7858f83381a7236d8a113</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>enum _CPScaleType</type>
+      <name>CPScaleType</name>
+      <anchorfile>_c_p_definitions_8h.html</anchorfile>
+      <anchor>a4d37dc951c06bea8e7d32ce63986ab58</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>enum _CPCoordinate</type>
+      <name>CPCoordinate</name>
+      <anchorfile>_c_p_definitions_8h.html</anchorfile>
+      <anchor>af5622437e5d4c00cce803754eb974446</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>struct _CPRGBAColor</type>
+      <name>CPRGBAColor</name>
+      <anchorfile>_c_p_definitions_8h.html</anchorfile>
+      <anchor>a76c2823cdb87417f664934dd3715ff8a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>enum _CPSign</type>
+      <name>CPSign</name>
+      <anchorfile>_c_p_definitions_8h.html</anchorfile>
+      <anchor>aee207dddb1b7f2cf6e5c432e2f1620b6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>enum _CPConstraint</type>
+      <name>CPConstraint</name>
+      <anchorfile>_c_p_definitions_8h.html</anchorfile>
+      <anchor>a1fd13c7bf8a44726bfba899396e38c01</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>struct _CPConstraints</type>
+      <name>CPConstraints</name>
+      <anchorfile>_c_p_definitions_8h.html</anchorfile>
+      <anchor>abb5c5c19d20df9becf4bbdcb1e1ac8e0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <name>_CPNumericType</name>
+      <anchorfile>_c_p_definitions_8h.html</anchorfile>
+      <anchor>a364cb7909df08d2bcee46286c5fb7c42</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPNumericTypeInteger</name>
+      <anchorfile>_c_p_definitions_8h.html</anchorfile>
+      <anchor>a364cb7909df08d2bcee46286c5fb7c42ab33928bb160daf482308ce13b89bd798</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPNumericTypeFloat</name>
+      <anchorfile>_c_p_definitions_8h.html</anchorfile>
+      <anchor>a364cb7909df08d2bcee46286c5fb7c42a2c45fec0a90914bdeac199e31ca4faea</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPNumericTypeDouble</name>
+      <anchorfile>_c_p_definitions_8h.html</anchorfile>
+      <anchor>a364cb7909df08d2bcee46286c5fb7c42a813f78391fd97dc1dade49c88ad8bccd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <name>_CPErrorBarType</name>
+      <anchorfile>_c_p_definitions_8h.html</anchorfile>
+      <anchor>ada8b1f0c456c8af59c1dbf0b8d4820f4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPErrorBarTypeCustom</name>
+      <anchorfile>_c_p_definitions_8h.html</anchorfile>
+      <anchor>ada8b1f0c456c8af59c1dbf0b8d4820f4afbec5f9d6c1f1125d3a919f35c26da5f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPErrorBarTypeConstantRatio</name>
+      <anchorfile>_c_p_definitions_8h.html</anchorfile>
+      <anchor>ada8b1f0c456c8af59c1dbf0b8d4820f4a1673af4a8f7ade2fa0e452e971466ad5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPErrorBarTypeConstantValue</name>
+      <anchorfile>_c_p_definitions_8h.html</anchorfile>
+      <anchor>ada8b1f0c456c8af59c1dbf0b8d4820f4a5cc7598627bf0c2ad0d15eca37b783dd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <name>_CPScaleType</name>
+      <anchorfile>_c_p_definitions_8h.html</anchorfile>
+      <anchor>aa43c58dc21567b4a15227a40b4684f3e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPScaleTypeLinear</name>
+      <anchorfile>_c_p_definitions_8h.html</anchorfile>
+      <anchor>aa43c58dc21567b4a15227a40b4684f3ea2e3ab24dda11d77cceabd5479a3e1c16</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPScaleTypeLogN</name>
+      <anchorfile>_c_p_definitions_8h.html</anchorfile>
+      <anchor>aa43c58dc21567b4a15227a40b4684f3ead31a27686d0967c2b145343010151780</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPScaleTypeLog10</name>
+      <anchorfile>_c_p_definitions_8h.html</anchorfile>
+      <anchor>aa43c58dc21567b4a15227a40b4684f3ea35ae8e31bfad953b0fdb61bcc085a1c8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPScaleTypeAngular</name>
+      <anchorfile>_c_p_definitions_8h.html</anchorfile>
+      <anchor>aa43c58dc21567b4a15227a40b4684f3ea39cdb95b185f68052b8c722b45e81e62</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPScaleTypeDateTime</name>
+      <anchorfile>_c_p_definitions_8h.html</anchorfile>
+      <anchor>aa43c58dc21567b4a15227a40b4684f3eab0a07a647a38b7cf829b16101a05331f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPScaleTypeCategory</name>
+      <anchorfile>_c_p_definitions_8h.html</anchorfile>
+      <anchor>aa43c58dc21567b4a15227a40b4684f3ead50a13b19e615850fc7236c4cbf9e22e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <name>_CPCoordinate</name>
+      <anchorfile>_c_p_definitions_8h.html</anchorfile>
+      <anchor>a4b31e26b827d05c03a920a47a406e8c1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPCoordinateX</name>
+      <anchorfile>_c_p_definitions_8h.html</anchorfile>
+      <anchor>a4b31e26b827d05c03a920a47a406e8c1afb29f17a7a829e2b816cdc5a41b816dd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPCoordinateY</name>
+      <anchorfile>_c_p_definitions_8h.html</anchorfile>
+      <anchor>a4b31e26b827d05c03a920a47a406e8c1a3eb8fa3b11670985ce29fed251e6011c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPCoordinateZ</name>
+      <anchorfile>_c_p_definitions_8h.html</anchorfile>
+      <anchor>a4b31e26b827d05c03a920a47a406e8c1afda4e29f7992c9a58cd4772d1283a236</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <name>_CPSign</name>
+      <anchorfile>_c_p_definitions_8h.html</anchorfile>
+      <anchor>ab948e4dca55418cc1a05f1afa94348c3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPSignNone</name>
+      <anchorfile>_c_p_definitions_8h.html</anchorfile>
+      <anchor>ab948e4dca55418cc1a05f1afa94348c3a405eb122bb6b454e878a2ab8f877e81f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPSignPositive</name>
+      <anchorfile>_c_p_definitions_8h.html</anchorfile>
+      <anchor>ab948e4dca55418cc1a05f1afa94348c3aeaec92697fd3a969cef0c37cb147bcc9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPSignNegative</name>
+      <anchorfile>_c_p_definitions_8h.html</anchorfile>
+      <anchor>ab948e4dca55418cc1a05f1afa94348c3a36df4e8f24942f9355a12e96daa216e3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <name>_CPConstraint</name>
+      <anchorfile>_c_p_definitions_8h.html</anchorfile>
+      <anchor>a3adf3cb70b2d1b2d3aaa2bc8950192b2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPConstraintNone</name>
+      <anchorfile>_c_p_definitions_8h.html</anchorfile>
+      <anchor>a3adf3cb70b2d1b2d3aaa2bc8950192b2ad9a4ab31bced5b33a542ebf0b7648eb0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPConstraintFixed</name>
+      <anchorfile>_c_p_definitions_8h.html</anchorfile>
+      <anchor>a3adf3cb70b2d1b2d3aaa2bc8950192b2ac6cbc8d1a2057fd967ad88843f2872b2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const CGFloat</type>
+      <name>CPDefaultZPositionAxis</name>
+      <anchorfile>_c_p_definitions_8h.html</anchorfile>
+      <anchor>af85641b2f60faa531b5221e5c88ccdcb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const CGFloat</type>
+      <name>CPDefaultZPositionAxisSet</name>
+      <anchorfile>_c_p_definitions_8h.html</anchorfile>
+      <anchor>a2d8dc002a88e722c965c24491a051b69</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const CGFloat</type>
+      <name>CPDefaultZPositionGraph</name>
+      <anchorfile>_c_p_definitions_8h.html</anchorfile>
+      <anchor>a9c2ce48d3b455f4f1b187f443b4050c8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const CGFloat</type>
+      <name>CPDefaultZPositionPlot</name>
+      <anchorfile>_c_p_definitions_8h.html</anchorfile>
+      <anchor>a81fa8992de1680077cd802a40602750e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const CGFloat</type>
+      <name>CPDefaultZPositionPlotArea</name>
+      <anchorfile>_c_p_definitions_8h.html</anchorfile>
+      <anchor>a16512d26e71ea5f1a45ee1eaad017d0a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const CGFloat</type>
+      <name>CPDefaultZPositionPlotGroup</name>
+      <anchorfile>_c_p_definitions_8h.html</anchorfile>
+      <anchor>a6052f2d13b14f4adc33a6eb172caf2ce</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const CGFloat</type>
+      <name>CPDefaultZPositionPlotSpace</name>
+      <anchorfile>_c_p_definitions_8h.html</anchorfile>
+      <anchor>ac26f07c81a212a72478cd66e19efc234</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>CPExceptions.h</name>
+    <path>/Users/aftermathew/git/RugRat/iPhone/core-plot/framework/Source/</path>
+    <filename>_c_p_exceptions_8h</filename>
+    <member kind="variable">
+      <type>NSString *const</type>
+      <name>CPException</name>
+      <anchorfile>_c_p_exceptions_8h.html</anchorfile>
+      <anchor>a564606949cfda0cf165f53c91242c0c6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>NSString *const</type>
+      <name>CPDataException</name>
+      <anchorfile>_c_p_exceptions_8h.html</anchorfile>
+      <anchor>af961cb7660f395faf77c6c29eb87db17</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>CPGradient.h</name>
+    <path>/Users/aftermathew/git/RugRat/iPhone/core-plot/framework/Source/</path>
+    <filename>_c_p_gradient_8h</filename>
+    <includes id="_c_p_definitions_8h" name="CPDefinitions.h" local="yes" imported="yes">CPDefinitions.h</includes>
+    <class kind="struct">_CPGradientElement</class>
+    <class kind="class">CPGradient</class>
+    <member kind="typedef">
+      <type>struct _CPGradientElement</type>
+      <name>CPGradientElement</name>
+      <anchorfile>_c_p_gradient_8h.html</anchorfile>
+      <anchor>af07bb60a0c354fc3e562de16c5c17ed7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>enum _CPBlendingMode</type>
+      <name>CPGradientBlendingMode</name>
+      <anchorfile>_c_p_gradient_8h.html</anchorfile>
+      <anchor>ad2e7dab9f32b9c0a90889a78fdf70fae</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>enum _CPGradientType</type>
+      <name>CPGradientType</name>
+      <anchorfile>_c_p_gradient_8h.html</anchorfile>
+      <anchor>a5fd8901f245cf5cbe089b9fc99ebe7ad</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <name>_CPBlendingMode</name>
+      <anchorfile>_c_p_gradient_8h.html</anchorfile>
+      <anchor>a711b284f4e5e210501afc210b9220d00</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPLinearBlendingMode</name>
+      <anchorfile>_c_p_gradient_8h.html</anchorfile>
+      <anchor>a711b284f4e5e210501afc210b9220d00af1c38c149110afad19178ff7dc0b42f5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPChromaticBlendingMode</name>
+      <anchorfile>_c_p_gradient_8h.html</anchorfile>
+      <anchor>a711b284f4e5e210501afc210b9220d00ab2a5c3bd42d3501c515a15a3123979d5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPInverseChromaticBlendingMode</name>
+      <anchorfile>_c_p_gradient_8h.html</anchorfile>
+      <anchor>a711b284f4e5e210501afc210b9220d00a311af7276f5271b613f505da9518ecfb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <name>_CPGradientType</name>
+      <anchorfile>_c_p_gradient_8h.html</anchorfile>
+      <anchor>a6d011520721a6035e98e89e1dbab93c9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPGradientTypeAxial</name>
+      <anchorfile>_c_p_gradient_8h.html</anchorfile>
+      <anchor>a6d011520721a6035e98e89e1dbab93c9aec130d87c7f31065a0a8a6db6105960d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPGradientTypeRadial</name>
+      <anchorfile>_c_p_gradient_8h.html</anchorfile>
+      <anchor>a6d011520721a6035e98e89e1dbab93c9a008950fc618ed033cde36e362baf7b58</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>CPPathExtensions.h</name>
+    <path>/Users/aftermathew/git/RugRat/iPhone/core-plot/framework/Source/</path>
+    <filename>_c_p_path_extensions_8h</filename>
+    <member kind="function">
+      <type>CGPathRef</type>
+      <name>CreateRoundedRectPath</name>
+      <anchorfile>_c_p_path_extensions_8h.html</anchorfile>
+      <anchor>ad7c2b85f72968e82d61a25876fc7e9e0</anchor>
+      <arglist>(CGRect rect, CGFloat cornerRadius)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>AddRoundedRectPath</name>
+      <anchorfile>_c_p_path_extensions_8h.html</anchorfile>
+      <anchor>a2ac9a4c4f33c339882f822e536e37401</anchor>
+      <arglist>(CGContextRef context, CGRect rect, CGFloat cornerRadius)</arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>CPPieChart.h</name>
+    <path>/Users/aftermathew/git/RugRat/iPhone/core-plot/framework/Source/</path>
+    <filename>_c_p_pie_chart_8h</filename>
+    <includes id="_c_p_definitions_8h" name="CPDefinitions.h" local="yes" imported="yes">CPDefinitions.h</includes>
+    <class kind="protocol">CPPieChartDataSource-p</class>
+    <class kind="class">CPPieChart</class>
+    <member kind="typedef">
+      <type>enum _CPPieChartField</type>
+      <name>CPPieChartField</name>
+      <anchorfile>_c_p_pie_chart_8h.html</anchorfile>
+      <anchor>a00880a847680d989d0dfffa94dd584f5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>enum _CPPieDirection</type>
+      <name>CPPieDirection</name>
+      <anchorfile>_c_p_pie_chart_8h.html</anchorfile>
+      <anchor>ad8aff098475214dc0d30a6c4c5201239</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <name>_CPPieChartField</name>
+      <anchorfile>_c_p_pie_chart_8h.html</anchorfile>
+      <anchor>a5a54245423ecb13758bfdd2edc995aaa</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPPieChartFieldSliceWidth</name>
+      <anchorfile>_c_p_pie_chart_8h.html</anchorfile>
+      <anchor>a5a54245423ecb13758bfdd2edc995aaaae1c7166b4fb396c6a88245c353d2a7da</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <name>_CPPieDirection</name>
+      <anchorfile>_c_p_pie_chart_8h.html</anchorfile>
+      <anchor>a229ddd920c21c93e844768e8d1dd034a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPPieDirectionClockwise</name>
+      <anchorfile>_c_p_pie_chart_8h.html</anchorfile>
+      <anchor>a229ddd920c21c93e844768e8d1dd034aa4db35293390f92931bde39b7dc160707</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPPieDirectionCounterClockwise</name>
+      <anchorfile>_c_p_pie_chart_8h.html</anchorfile>
+      <anchor>a229ddd920c21c93e844768e8d1dd034aa347b9ed3f3dff6f707f55b5a46e0cdf3</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>CPPlotSymbol.h</name>
+    <path>/Users/aftermathew/git/RugRat/iPhone/core-plot/framework/Source/</path>
+    <filename>_c_p_plot_symbol_8h</filename>
+    <class kind="class">CPPlotSymbol</class>
+    <member kind="typedef">
+      <type>enum _CPPlotSymbolType</type>
+      <name>CPPlotSymbolType</name>
+      <anchorfile>_c_p_plot_symbol_8h.html</anchorfile>
+      <anchor>a435ffa8a47a53be13f8773963f762fc9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <name>_CPPlotSymbolType</name>
+      <anchorfile>_c_p_plot_symbol_8h.html</anchorfile>
+      <anchor>adb0c66c47e1473d667c25ebfc3954b4f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPPlotSymbolTypeNone</name>
+      <anchorfile>_c_p_plot_symbol_8h.html</anchorfile>
+      <anchor>adb0c66c47e1473d667c25ebfc3954b4fae38aea2160311aa04f5539f4785f831d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPPlotSymbolTypeRectangle</name>
+      <anchorfile>_c_p_plot_symbol_8h.html</anchorfile>
+      <anchor>adb0c66c47e1473d667c25ebfc3954b4fa32a425e5cebad056148794599720af09</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPPlotSymbolTypeEllipse</name>
+      <anchorfile>_c_p_plot_symbol_8h.html</anchorfile>
+      <anchor>adb0c66c47e1473d667c25ebfc3954b4fa89e1fc3ad5bf175f5b42bdf7823192fd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPPlotSymbolTypeDiamond</name>
+      <anchorfile>_c_p_plot_symbol_8h.html</anchorfile>
+      <anchor>adb0c66c47e1473d667c25ebfc3954b4fa3eadc1052b27d1ebe1cb832257b4a6f4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPPlotSymbolTypeTriangle</name>
+      <anchorfile>_c_p_plot_symbol_8h.html</anchorfile>
+      <anchor>adb0c66c47e1473d667c25ebfc3954b4fa32319271bed4eae8f7e36a39261f08ff</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPPlotSymbolTypeStar</name>
+      <anchorfile>_c_p_plot_symbol_8h.html</anchorfile>
+      <anchor>adb0c66c47e1473d667c25ebfc3954b4facc30b7963e4df639db1b21c63631cb48</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPPlotSymbolTypePentagon</name>
+      <anchorfile>_c_p_plot_symbol_8h.html</anchorfile>
+      <anchor>adb0c66c47e1473d667c25ebfc3954b4fa2537cc078639a6c80ac3d406758a8dac</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPPlotSymbolTypeHexagon</name>
+      <anchorfile>_c_p_plot_symbol_8h.html</anchorfile>
+      <anchor>adb0c66c47e1473d667c25ebfc3954b4fad309ed3b42b60bedbbd1ce61fdc648c6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPPlotSymbolTypeCross</name>
+      <anchorfile>_c_p_plot_symbol_8h.html</anchorfile>
+      <anchor>adb0c66c47e1473d667c25ebfc3954b4fa3ef1d7837dbeaa73c3d35ee75115769a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPPlotSymbolTypePlus</name>
+      <anchorfile>_c_p_plot_symbol_8h.html</anchorfile>
+      <anchor>adb0c66c47e1473d667c25ebfc3954b4fae63f0b93549b64932dac5765c5a20982</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPPlotSymbolTypeDash</name>
+      <anchorfile>_c_p_plot_symbol_8h.html</anchorfile>
+      <anchor>adb0c66c47e1473d667c25ebfc3954b4fae982013b604d4f98f7649b569dad251c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPPlotSymbolTypeSnow</name>
+      <anchorfile>_c_p_plot_symbol_8h.html</anchorfile>
+      <anchor>adb0c66c47e1473d667c25ebfc3954b4fa7392ea1f7b56e0ceb5e164ea2b0dcbbc</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPPlotSymbolTypeCustom</name>
+      <anchorfile>_c_p_plot_symbol_8h.html</anchorfile>
+      <anchor>adb0c66c47e1473d667c25ebfc3954b4fa5da7863b45fd07a1287ef81c1bb22991</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>CPScatterPlot.h</name>
+    <path>/Users/aftermathew/git/RugRat/iPhone/core-plot/framework/Source/</path>
+    <filename>_c_p_scatter_plot_8h</filename>
+    <includes id="_c_p_definitions_8h" name="CPDefinitions.h" local="yes" imported="yes">CPDefinitions.h</includes>
+    <class kind="protocol">CPScatterPlotDataSource-p</class>
+    <class kind="class">CPScatterPlot</class>
+    <member kind="typedef">
+      <type>enum _CPScatterPlotField</type>
+      <name>CPScatterPlotField</name>
+      <anchorfile>_c_p_scatter_plot_8h.html</anchorfile>
+      <anchor>ad8b619f6d51dcf4fa2c30a95be2766da</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <name>_CPScatterPlotField</name>
+      <anchorfile>_c_p_scatter_plot_8h.html</anchorfile>
+      <anchor>a69abe3e4b752c27652da7b09c7b3b570</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPScatterPlotFieldX</name>
+      <anchorfile>_c_p_scatter_plot_8h.html</anchorfile>
+      <anchor>a69abe3e4b752c27652da7b09c7b3b570a9d6455f1e57cdee7523303bc680cebca</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPScatterPlotFieldY</name>
+      <anchorfile>_c_p_scatter_plot_8h.html</anchorfile>
+      <anchor>a69abe3e4b752c27652da7b09c7b3b570a977ca79f1ea2b66ad089b1e250dbd116</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>NSString *const</type>
+      <name>CPScatterPlotBindingXValues</name>
+      <anchorfile>_c_p_scatter_plot_8h.html</anchorfile>
+      <anchor>a90af0401bfa3a82d2a7539b27c340237</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>NSString *const</type>
+      <name>CPScatterPlotBindingYValues</name>
+      <anchorfile>_c_p_scatter_plot_8h.html</anchorfile>
+      <anchor>a13d2e50f8df4045b0e62940aa46a24a1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>NSString *const</type>
+      <name>CPScatterPlotBindingPlotSymbols</name>
+      <anchorfile>_c_p_scatter_plot_8h.html</anchorfile>
+      <anchor>a395144db6b3859d6fe8229030ea9cdef</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>CPTextLayer.h</name>
+    <path>/Users/aftermathew/git/RugRat/iPhone/core-plot/framework/Source/</path>
+    <filename>_c_p_text_layer_8h</filename>
+    <class kind="class">CPTextLayer</class>
+    <member kind="variable">
+      <type>const CGFloat</type>
+      <name>kCPTextLayerMarginWidth</name>
+      <anchorfile>_c_p_text_layer_8h.html</anchorfile>
+      <anchor>af7d9313b031fef1746f8fbae4c2809bc</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>CPTheme.h</name>
+    <path>/Users/aftermathew/git/RugRat/iPhone/core-plot/framework/Source/</path>
+    <filename>_c_p_theme_8h</filename>
+    <class kind="class">CPTheme</class>
+    <member kind="variable">
+      <type>NSString *const</type>
+      <name>kCPDarkGradientTheme</name>
+      <anchorfile>_c_p_theme_8h.html</anchorfile>
+      <anchor>ad067487351198ec91772aecd826561fe</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>NSString *const</type>
+      <name>kCPPlainWhiteTheme</name>
+      <anchorfile>_c_p_theme_8h.html</anchorfile>
+      <anchor>a763ff213ed2bf66244c28fd03b83c486</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>NSString *const</type>
+      <name>kCPPlainBlackTheme</name>
+      <anchorfile>_c_p_theme_8h.html</anchorfile>
+      <anchor>a691944cd284864bd61805c127ae04c2c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>NSString *const</type>
+      <name>kCPStocksTheme</name>
+      <anchorfile>_c_p_theme_8h.html</anchorfile>
+      <anchor>a58dc934f9c54c48d4ef901a67f158553</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>CPTimeFormatter.h</name>
+    <path>/Users/aftermathew/git/RugRat/iPhone/core-plot/framework/Source/</path>
+    <filename>_c_p_time_formatter_8h</filename>
+    <class kind="class">CPTimeFormatter</class>
+  </compound>
+  <compound kind="file">
+    <name>CPTradingRangePlot.h</name>
+    <path>/Users/aftermathew/git/RugRat/iPhone/core-plot/framework/Source/</path>
+    <filename>_c_p_trading_range_plot_8h</filename>
+    <includes id="_c_p_definitions_8h" name="CPDefinitions.h" local="yes" imported="yes">CPDefinitions.h</includes>
+    <class kind="class">CPTradingRangePlot</class>
+    <member kind="typedef">
+      <type>enum _CPTradingRangePlotStyle</type>
+      <name>CPTradingRangePlotStyle</name>
+      <anchorfile>_c_p_trading_range_plot_8h.html</anchorfile>
+      <anchor>af9bec7100ffbd143bb047eeef365d599</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>enum _CPTradingRangePlotField</type>
+      <name>CPTradingRangePlotField</name>
+      <anchorfile>_c_p_trading_range_plot_8h.html</anchorfile>
+      <anchor>a794c44c14b07769600f9e201df465cd8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <name>_CPTradingRangePlotStyle</name>
+      <anchorfile>_c_p_trading_range_plot_8h.html</anchorfile>
+      <anchor>a07ee6591bd2aace26043b8849829de15</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPTradingRangePlotStyleOHLC</name>
+      <anchorfile>_c_p_trading_range_plot_8h.html</anchorfile>
+      <anchor>a07ee6591bd2aace26043b8849829de15a586744f5b624c5e58b4be75ed0bf28a7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPTradingRangePlotStyleCandleStick</name>
+      <anchorfile>_c_p_trading_range_plot_8h.html</anchorfile>
+      <anchor>a07ee6591bd2aace26043b8849829de15a0f10ed8b3b8083af6328cf8992d6a768</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <name>_CPTradingRangePlotField</name>
+      <anchorfile>_c_p_trading_range_plot_8h.html</anchorfile>
+      <anchor>aaeaa314760612ed394b0277a26fe3b3b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPTradingRangePlotFieldX</name>
+      <anchorfile>_c_p_trading_range_plot_8h.html</anchorfile>
+      <anchor>aaeaa314760612ed394b0277a26fe3b3ba7ce7201bdbd1be291878ac5ae47c08b3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPTradingRangePlotFieldOpen</name>
+      <anchorfile>_c_p_trading_range_plot_8h.html</anchorfile>
+      <anchor>aaeaa314760612ed394b0277a26fe3b3ba3736b641425275c09a54d3463325c675</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPTradingRangePlotFieldHigh</name>
+      <anchorfile>_c_p_trading_range_plot_8h.html</anchorfile>
+      <anchor>aaeaa314760612ed394b0277a26fe3b3ba7090da43921839a6f10babae65c01c55</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPTradingRangePlotFieldLow</name>
+      <anchorfile>_c_p_trading_range_plot_8h.html</anchorfile>
+      <anchor>aaeaa314760612ed394b0277a26fe3b3ba234e767823dc694bfc081f67a440e812</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CPTradingRangePlotFieldClose</name>
+      <anchorfile>_c_p_trading_range_plot_8h.html</anchorfile>
+      <anchor>aaeaa314760612ed394b0277a26fe3b3bad4bd561097d79f3b89ae651c1119d22a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>NSString *const</type>
+      <name>CPTradingRangePlotBindingXValues</name>
+      <anchorfile>_c_p_trading_range_plot_8h.html</anchorfile>
+      <anchor>aba2d87518f3d43ee4c17e27d6056ceb8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>NSString *const</type>
+      <name>CPTradingRangePlotBindingOpenValues</name>
+      <anchorfile>_c_p_trading_range_plot_8h.html</anchorfile>
+      <anchor>a62ab3c8eeb78a5b338bbc804fd18272a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>NSString *const</type>
+      <name>CPTradingRangePlotBindingHighValues</name>
+      <anchorfile>_c_p_trading_range_plot_8h.html</anchorfile>
+      <anchor>aba268c37cb8e3b7d87fd618dcd840590</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>NSString *const</type>
+      <name>CPTradingRangePlotBindingLowValues</name>
+      <anchorfile>_c_p_trading_range_plot_8h.html</anchorfile>
+      <anchor>a2590f860ce0b54d1a6791c79493768eb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>NSString *const</type>
+      <name>CPTradingRangePlotBindingCloseValues</name>
+      <anchorfile>_c_p_trading_range_plot_8h.html</anchorfile>
+      <anchor>a4854012d8e65934e79b7ca91d758de9e</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>CPUtilities.h</name>
+    <path>/Users/aftermathew/git/RugRat/iPhone/core-plot/framework/Source/</path>
+    <filename>_c_p_utilities_8h</filename>
+    <includes id="_c_p_definitions_8h" name="CPDefinitions.h" local="yes" imported="yes">CPDefinitions.h</includes>
+    <member kind="function">
+      <type>NSRange</type>
+      <name>CPExpandedRange</name>
+      <anchorfile>_c_p_utilities_8h.html</anchorfile>
+      <anchor>aa2dc5892d914a00a59fc8d113faeba8a</anchor>
+      <arglist>(NSRange range, NSInteger expandBy)</arglist>
+    </member>
+    <member kind="function">
+      <type>CPCoordinate</type>
+      <name>CPOrthogonalCoordinate</name>
+      <anchorfile>_c_p_utilities_8h.html</anchorfile>
+      <anchor>a763d61db99ec5977a1a72105098a6879</anchor>
+      <arglist>(CPCoordinate coord)</arglist>
+    </member>
+    <member kind="function">
+      <type>CPRGBAColor</type>
+      <name>CPRGBAColorFromCGColor</name>
+      <anchorfile>_c_p_utilities_8h.html</anchorfile>
+      <anchor>a29ddd8ef2b4a128570d98e6b2aee00ba</anchor>
+      <arglist>(CGColorRef color)</arglist>
+    </member>
+    <member kind="function">
+      <type>NSInteger</type>
+      <name>CPDecimalIntegerValue</name>
+      <anchorfile>_c_p_utilities_8h.html</anchorfile>
+      <anchor>a9e54a95c5a427eadefb3c3fb84a06544</anchor>
+      <arglist>(NSDecimal decimalNumber)</arglist>
+    </member>
+    <member kind="function">
+      <type>float</type>
+      <name>CPDecimalFloatValue</name>
+      <anchorfile>_c_p_utilities_8h.html</anchorfile>
+      <anchor>a8de54c3f4f19a47d422f535f0db01c8a</anchor>
+      <arglist>(NSDecimal decimalNumber)</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>CPDecimalDoubleValue</name>
+      <anchorfile>_c_p_utilities_8h.html</anchorfile>
+      <anchor>a0494aa3ddcefd448ca64ddff1a37e13c</anchor>
+      <arglist>(NSDecimal decimalNumber)</arglist>
+    </member>
+    <member kind="function">
+      <type>NSDecimal</type>
+      <name>CPDecimalFromInteger</name>
+      <anchorfile>_c_p_utilities_8h.html</anchorfile>
+      <anchor>af177280bc4d669e79a10a9e0260c91ff</anchor>
+      <arglist>(NSInteger i)</arglist>
+    </member>
+    <member kind="function">
+      <type>NSDecimal</type>
+      <name>CPDecimalFromUnsignedInteger</name>
+      <anchorfile>_c_p_utilities_8h.html</anchorfile>
+      <anchor>a038342dfd4b1baa1be8fbe6b44a8079c</anchor>
+      <arglist>(NSUInteger i)</arglist>
+    </member>
+    <member kind="function">
+      <type>NSDecimal</type>
+      <name>CPDecimalFromFloat</name>
+      <anchorfile>_c_p_utilities_8h.html</anchorfile>
+      <anchor>a0650d8e9072268e876cf746bbbdb4a77</anchor>
+      <arglist>(float f)</arglist>
+    </member>
+    <member kind="function">
+      <type>NSDecimal</type>
+      <name>CPDecimalFromDouble</name>
+      <anchorfile>_c_p_utilities_8h.html</anchorfile>
+      <anchor>ac0f1f22a4b41cfb8c86541417a6ee0f1</anchor>
+      <arglist>(double d)</arglist>
+    </member>
+    <member kind="function">
+      <type>NSDecimal</type>
+      <name>CPDecimalAdd</name>
+      <anchorfile>_c_p_utilities_8h.html</anchorfile>
+      <anchor>a657d8c1acbac2a36e772516c8c12e3b9</anchor>
+      <arglist>(NSDecimal leftOperand, NSDecimal rightOperand)</arglist>
+    </member>
+    <member kind="function">
+      <type>NSDecimal</type>
+      <name>CPDecimalSubtract</name>
+      <anchorfile>_c_p_utilities_8h.html</anchorfile>
+      <anchor>a9036327f7068476e3447935511ca2bec</anchor>
+      <arglist>(NSDecimal leftOperand, NSDecimal rightOperand)</arglist>
+    </member>
+    <member kind="function">
+      <type>NSDecimal</type>
+      <name>CPDecimalMultiply</name>
+      <anchorfile>_c_p_utilities_8h.html</anchorfile>
+      <anchor>a0f876cfc7b4cbcce66a2290390f19cef</anchor>
+      <arglist>(NSDecimal leftOperand, NSDecimal rightOperand)</arglist>
+    </member>
+    <member kind="function">
+      <type>NSDecimal</type>
+      <name>CPDecimalDivide</name>
+      <anchorfile>_c_p_utilities_8h.html</anchorfile>
+      <anchor>a4e8f89afdde047da63107cfa4459a706</anchor>
+      <arglist>(NSDecimal numerator, NSDecimal denominator)</arglist>
+    </member>
+    <member kind="function">
+      <type>BOOL</type>
+      <name>CPDecimalGreaterThan</name>
+      <anchorfile>_c_p_utilities_8h.html</anchorfile>
+      <anchor>afa4b7dbb68a80d2e511fa4533ff17b9f</anchor>
+      <arglist>(NSDecimal leftOperand, NSDecimal rightOperand)</arglist>
+    </member>
+    <member kind="function">
+      <type>BOOL</type>
+      <name>CPDecimalGreaterThanOrEqualTo</name>
+      <anchorfile>_c_p_utilities_8h.html</anchorfile>
+      <anchor>acf0100213a4eae28d924e9bb83cd8af7</anchor>
+      <arglist>(NSDecimal leftOperand, NSDecimal rightOperand)</arglist>
+    </member>
+    <member kind="function">
+      <type>BOOL</type>
+      <name>CPDecimalLessThan</name>
+      <anchorfile>_c_p_utilities_8h.html</anchorfile>
+      <anchor>a3a0908a74d833de3d40c0a32711cb468</anchor>
+      <arglist>(NSDecimal leftOperand, NSDecimal rightOperand)</arglist>
+    </member>
+    <member kind="function">
+      <type>BOOL</type>
+      <name>CPDecimalLessThanOrEqualTo</name>
+      <anchorfile>_c_p_utilities_8h.html</anchorfile>
+      <anchor>add8a67eb8a3d65ebc8627e30089ff014</anchor>
+      <arglist>(NSDecimal leftOperand, NSDecimal rightOperand)</arglist>
+    </member>
+    <member kind="function">
+      <type>BOOL</type>
+      <name>CPDecimalEquals</name>
+      <anchorfile>_c_p_utilities_8h.html</anchorfile>
+      <anchor>a9e0bfc9b152e99014629c374d88dbc50</anchor>
+      <arglist>(NSDecimal leftOperand, NSDecimal rightOperand)</arglist>
+    </member>
+    <member kind="function">
+      <type>NSDecimal</type>
+      <name>CPDecimalFromString</name>
+      <anchorfile>_c_p_utilities_8h.html</anchorfile>
+      <anchor>a920aa18d14ef4f3eacd5eea4ea5f8ecd</anchor>
+      <arglist>(NSString *stringRepresentation)</arglist>
+    </member>
+    <member kind="function">
+      <type>CGPoint</type>
+      <name>CPAlignPointToUserSpace</name>
+      <anchorfile>_c_p_utilities_8h.html</anchorfile>
+      <anchor>a689afb7cbbece18572ebd64fd9221222</anchor>
+      <arglist>(CGContextRef context, CGPoint p)</arglist>
+    </member>
+    <member kind="function">
+      <type>CGSize</type>
+      <name>CPAlignSizeToUserSpace</name>
+      <anchorfile>_c_p_utilities_8h.html</anchorfile>
+      <anchor>ae47daf0285e7bf53a2116798e7461578</anchor>
+      <arglist>(CGContextRef context, CGSize s)</arglist>
+    </member>
+    <member kind="function">
+      <type>CGRect</type>
+      <name>CPAlignRectToUserSpace</name>
+      <anchorfile>_c_p_utilities_8h.html</anchorfile>
+      <anchor>a9a2ffad442e1e8c9cbbc83a0bc8f003d</anchor>
+      <arglist>(CGContextRef context, CGRect r)</arglist>
+    </member>
+    <member kind="function">
+      <type>NSString *</type>
+      <name>CPStringFromPoint</name>
+      <anchorfile>_c_p_utilities_8h.html</anchorfile>
+      <anchor>ac1177f923fbd3849092d0aa2a82a50c3</anchor>
+      <arglist>(CGPoint p)</arglist>
+    </member>
+    <member kind="function">
+      <type>NSString *</type>
+      <name>CPStringFromSize</name>
+      <anchorfile>_c_p_utilities_8h.html</anchorfile>
+      <anchor>ad23fd3f5de242e7bb265d25817fd5375</anchor>
+      <arglist>(CGSize s)</arglist>
+    </member>
+    <member kind="function">
+      <type>NSString *</type>
+      <name>CPStringFromRect</name>
+      <anchorfile>_c_p_utilities_8h.html</anchorfile>
+      <anchor>a793305e82393b80e1e23d5e3d6e1d629</anchor>
+      <arglist>(CGRect r)</arglist>
+    </member>
+  </compound>
+  <compound kind="group">
+    <name>CPAnimationTransition</name>
+    <title>CPAnimationTransition</title>
+    <filename>group___c_p_animation_transition.html</filename>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>performTransition</name>
+      <anchorfile>group___c_p_animation_transition.html</anchorfile>
+      <anchor>ga5f9c6c3b0cfcc8b4fbab952745357983</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="property">
+      <type>id&lt; NSObject, NSCopying &gt;</type>
+      <name>identifier</name>
+      <anchorfile>group___c_p_animation_transition.html</anchorfile>
+      <anchor>ga216d3a67b1b94da8a7aa110336b7da98</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>NSTimeInterval</type>
+      <name>duration</name>
+      <anchorfile>group___c_p_animation_transition.html</anchorfile>
+      <anchor>ga303acfff579dc46df108ba0baab8d7de</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>BOOL</type>
+      <name>reversible</name>
+      <anchorfile>group___c_p_animation_transition.html</anchorfile>
+      <anchor>ga194935c1264724810b8c8d668ab4350d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPAnimation *</type>
+      <name>animation</name>
+      <anchorfile>group___c_p_animation_transition.html</anchorfile>
+      <anchor>ga9f409dc7676e938535e995cbca3365fe</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPAnimationKeyFrame *</type>
+      <name>startKeyFrame</name>
+      <anchorfile>group___c_p_animation_transition.html</anchorfile>
+      <anchor>gafae427757760dc07456f485f9e1bf8e2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPAnimationKeyFrame *</type>
+      <name>endKeyFrame</name>
+      <anchorfile>group___c_p_animation_transition.html</anchorfile>
+      <anchor>gaa26eb3c31175d8a08339e6adf2fae67a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPAnimationTransition *</type>
+      <name>continuingTransition</name>
+      <anchorfile>group___c_p_animation_transition.html</anchorfile>
+      <anchor>ga75ef11a8a80fff5e8f901b64293ea836</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="group">
+    <name>CPAxis</name>
+    <title>CPAxis</title>
+    <filename>group___c_p_axis.html</filename>
+    <member kind="function" virtualness="virtual">
+      <type>id</type>
+      <name>initWithDateFormatter:</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>gadee1b3a1964ef7dc538b50640f9325dc</anchor>
+      <arglist>(NSDateFormatter *aDateFormatter)</arglist>
+    </member>
+    <member kind="property">
+      <type>CPPlotSpace *</type>
+      <name>plotSpace</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga3479bb85ce5dd9dd14a550b1a5e45e62</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>NSDateFormatter *</type>
+      <name>dateFormatter</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga2cca90a1140eb8dfafe17a231c846782</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>NSDate *</type>
+      <name>referenceDate</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga10237db9644bb6aac333da2d5a26c311</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPLineStyle *</type>
+      <name>axisLineStyle</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>gadb1f459c42db6c33fafa86db7b3eeae3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPCoordinate</type>
+      <name>coordinate</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga37aaf3d643133ac0d201e3a0b7d48b94</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>NSDecimal</type>
+      <name>labelingOrigin</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>gaacf85195bd235b52edf63b90486a6eb4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPSign</type>
+      <name>tickDirection</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga7ff6729c53df22119df0c06a820a6d67</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPAxisTitle *</type>
+      <name>axisTitle</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga324190cc908e00d4211ba86d9e545259</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>NSString *</type>
+      <name>title</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga4263aae1903c247503dc17544ed44c73</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>NSSet *</type>
+      <name>axisLabels</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>gaf9b4a31e2ddee58c41d440f8e1c486fb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>BOOL</type>
+      <name>needsRelabel</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga103bd1b3d7a93a89337b35f9a999fec5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>NSArray *</type>
+      <name>labelExclusionRanges</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga25a079acb44f5c7cd9eae011dbade36d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>id&lt; CPAxisDelegate &gt;</type>
+      <name>delegate</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga0f94f765c7ad7d579ebcab2b34e5e130</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>setNeedsRelabel</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>gabc49b5a8fd4315759c1ca88466984b67</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>relabel</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga67d3dd150673a5ec74df9825ffe6059f</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="property">
+      <type>NSDecimal</type>
+      <name>majorIntervalLength</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga329a5ac8eb964e0ec0f42cb716ab8984</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPLineStyle *</type>
+      <name>majorTickLineStyle</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga6ce85fb2c6748fcb3384e132ae588ff0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CGFloat</type>
+      <name>majorTickLength</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga287eb0186b06a442f01cc5daf3820b9e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>NSSet *</type>
+      <name>majorTickLocations</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga29eacafe99b52c28eaa14c8b058b8507</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>NSUInteger</type>
+      <name>preferredNumberOfMajorTicks</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>gaf0894f4e4787773906ac03315a89a0dd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>NSUInteger</type>
+      <name>minorTicksPerInterval</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga45ffa33e1690e98f4a68f293c0439b2b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPLineStyle *</type>
+      <name>minorTickLineStyle</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga077ee00cd739c4701d79ccfb65fce635</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CGFloat</type>
+      <name>minorTickLength</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>gaa3d8ecb116dcafb318434588a4229d3d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>NSSet *</type>
+      <name>minorTickLocations</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga987ae87b667a2b9070a6c6f44339fa6d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPLineStyle *</type>
+      <name>majorGridLineStyle</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>gaed801b3a65dbbab65fb53a6d562063ce</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPLineStyle *</type>
+      <name>minorGridLineStyle</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>gae250a02aa814655e463f294fd031bae9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>NSSet *</type>
+      <name>filteredMajorTickLocations:</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga8c9be394e858b42f9e8b3d5c68dd06e5</anchor>
+      <arglist>(NSSet *allLocations)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>NSSet *</type>
+      <name>filteredMinorTickLocations:</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga24b9058c9d90bd9b66f8a9da68ae862a</anchor>
+      <arglist>(NSSet *allLocations)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>CGPoint</type>
+      <name>viewPointForCoordinateDecimalNumber:</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga6593cd47fc89d17d72fc5d39f9b8ca3d</anchor>
+      <arglist>(NSDecimal coordinateDecimalNumber)</arglist>
+    </member>
+  </compound>
+  <compound kind="group">
+    <name>CPColor</name>
+    <title>CPColor</title>
+    <filename>group___c_p_color.html</filename>
+    <member kind="property">
+      <type>CGColorRef</type>
+      <name>cgColor</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>gacd93644732d693b7e079d27c1ec35a45</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPColor *</type>
+      <name>clearColor</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>gab13ffd6c589c4437eba53b9a4ab1d1fa</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPColor *</type>
+      <name>whiteColor</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>ga7a14e77aa347a029b24a88c4adbef4b4</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPColor *</type>
+      <name>lightGrayColor</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>ga6f511b3ebf674e4448626d292ae68f8d</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPColor *</type>
+      <name>grayColor</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>gaf4dbfe524dc1822dd6c3b47fa8bc9501</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPColor *</type>
+      <name>darkGrayColor</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>gab6c4c0631140c73a020415e2fcb79802</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPColor *</type>
+      <name>blackColor</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>ga8f4043aa8c7d4dc71fb7c623a43ad4f4</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPColor *</type>
+      <name>redColor</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>ga1a777392f160c11a535e0d6d8b53a76b</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPColor *</type>
+      <name>greenColor</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>ga1276d1de2169325f444df7e9ce031e0d</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPColor *</type>
+      <name>blueColor</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>gae44808e9fe281dca2dced0f917627d5d</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPColor *</type>
+      <name>cyanColor</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>ga0c5b3c9c1533a337253072289eb9190b</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPColor *</type>
+      <name>yellowColor</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>gac2cf71ec9c190eb1cd95cd490ad956f9</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPColor *</type>
+      <name>magentaColor</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>ga013e032dc6007faa0d9842a7b9fd72c6</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPColor *</type>
+      <name>orangeColor</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>ga85645b765816e81bbfb8acfa6ffb442d</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPColor *</type>
+      <name>purpleColor</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>gade782bfe617903d3deb35bd578efd430</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPColor *</type>
+      <name>brownColor</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>ga3c8a775b172e07a35a930c138cfda2d0</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPColor *</type>
+      <name>colorWithCGColor:</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>ga6c5056347160e50d4f8d3eeca5a734a9</anchor>
+      <arglist>(CGColorRef newCGColor)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPColor *</type>
+      <name>colorWithComponentRed:green:blue:alpha:</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>ga7b831a73407f35b3d205c480b0e1d4c5</anchor>
+      <arglist>(CGFloat red,[green] CGFloat green,[blue] CGFloat blue,[alpha] CGFloat alpha)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPColor *</type>
+      <name>colorWithGenericGray:</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>gab939b29b34d49909cfc66cd4d3199b5d</anchor>
+      <arglist>(CGFloat gray)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>id</type>
+      <name>initWithCGColor:</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>ga85f30849febc25299ccd79c74b00dbad</anchor>
+      <arglist>(CGColorRef cgColor)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>id</type>
+      <name>initWithComponentRed:green:blue:alpha:</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>gadb879deb57ae3ff0aeef488edf3b80bd</anchor>
+      <arglist>(CGFloat red,[green] CGFloat green,[blue] CGFloat blue,[alpha] CGFloat alpha)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>CPColor *</type>
+      <name>colorWithAlphaComponent:</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>gabff5a8baebdf82e14cbcc53a82899e62</anchor>
+      <arglist>(CGFloat alpha)</arglist>
+    </member>
+  </compound>
+  <compound kind="group">
+    <name>CPDarkGradientTheme</name>
+    <title>CPDarkGradientTheme</title>
+    <filename>group___c_p_dark_gradient_theme.html</filename>
+  </compound>
+  <compound kind="group">
+    <name>CPFill</name>
+    <title>CPFill</title>
+    <filename>group___c_p_fill.html</filename>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPFill *</type>
+      <name>fillWithColor:</name>
+      <anchorfile>group___c_p_fill.html</anchorfile>
+      <anchor>gafeac2f567715e8a9e7a8bedd1adc9c5f</anchor>
+      <arglist>(CPColor *aColor)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPFill *</type>
+      <name>fillWithGradient:</name>
+      <anchorfile>group___c_p_fill.html</anchorfile>
+      <anchor>ga506b043d1e3cc748cfee8ce5ccc92eed</anchor>
+      <arglist>(CPGradient *aGradient)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPFill *</type>
+      <name>fillWithImage:</name>
+      <anchorfile>group___c_p_fill.html</anchorfile>
+      <anchor>ga53de73d1b15daf0071148fd32212f4d7</anchor>
+      <arglist>(CPImage *anImage)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>id</type>
+      <name>initWithColor:</name>
+      <anchorfile>group___c_p_fill.html</anchorfile>
+      <anchor>ga21597e7e78f544756e3d933f6c2ea0c5</anchor>
+      <arglist>(CPColor *aColor)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>id</type>
+      <name>initWithGradient:</name>
+      <anchorfile>group___c_p_fill.html</anchorfile>
+      <anchor>gae87dbc46ed9883e3bdb8e4a829dffd12</anchor>
+      <arglist>(CPGradient *aGradient)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>id</type>
+      <name>initWithImage:</name>
+      <anchorfile>group___c_p_fill.html</anchorfile>
+      <anchor>gad03cca85f886ad0a4e5dcdc1b84f815a</anchor>
+      <arglist>(CPImage *anImage)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>fillRect:inContext:</name>
+      <anchorfile>group___c_p_fill.html</anchorfile>
+      <anchor>ga9d22cd40651d57d813fd74177c2c4adc</anchor>
+      <arglist>(CGRect theRect,[inContext] CGContextRef theContext)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>fillPathInContext:</name>
+      <anchorfile>group___c_p_fill.html</anchorfile>
+      <anchor>ga762d7e21920469575b65413d6808a82c</anchor>
+      <arglist>(CGContextRef theContext)</arglist>
+    </member>
+  </compound>
+  <compound kind="group">
+    <name>CPGraph</name>
+    <title>CPGraph</title>
+    <filename>group___c_p_graph.html</filename>
+    <member kind="function" virtualness="virtual">
+      <type>CPPlotSpace *</type>
+      <name>newPlotSpace</name>
+      <anchorfile>group___c_p_graph.html</anchorfile>
+      <anchor>gad5aeaa629e71bd2d915c036326497f0a</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>CPAxisSet *</type>
+      <name>newAxisSet</name>
+      <anchorfile>group___c_p_graph.html</anchorfile>
+      <anchor>ga009a51b612e879aa7de0eebc1aeb2390</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="property">
+      <type>CPAxisSet *</type>
+      <name>axisSet</name>
+      <anchorfile>group___c_p_graph.html</anchorfile>
+      <anchor>ga760e55e94a0596b3e76776faf6b3a206</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPPlotArea *</type>
+      <name>plotArea</name>
+      <anchorfile>group___c_p_graph.html</anchorfile>
+      <anchor>ga10047e5e3ff3e7df97fece516b847d53</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPPlotSpace *</type>
+      <name>defaultPlotSpace</name>
+      <anchorfile>group___c_p_graph.html</anchorfile>
+      <anchor>gac90bbeb6f02bb752803b8b48dac59800</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>reloadData</name>
+      <anchorfile>group___c_p_graph.html</anchorfile>
+      <anchor>gaef7396a731fb0c874d1ecb1d1a6d6829</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>NSArray *</type>
+      <name>allPlots</name>
+      <anchorfile>group___c_p_graph.html</anchorfile>
+      <anchor>ga868504e2b298082e41da7e28912582fe</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>CPPlot *</type>
+      <name>plotAtIndex:</name>
+      <anchorfile>group___c_p_graph.html</anchorfile>
+      <anchor>ga6032187f48f998e3481af892aa10a0cb</anchor>
+      <arglist>(NSUInteger index)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>CPPlot *</type>
+      <name>plotWithIdentifier:</name>
+      <anchorfile>group___c_p_graph.html</anchorfile>
+      <anchor>gafef1f6ae91673d6586ad3f3f52eea024</anchor>
+      <arglist>(id&lt; NSCopying &gt; identifier)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>addPlot:</name>
+      <anchorfile>group___c_p_graph.html</anchorfile>
+      <anchor>gac07fe4ca33652019522536f07ece4f73</anchor>
+      <arglist>(CPPlot *plot)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>addPlot:toPlotSpace:</name>
+      <anchorfile>group___c_p_graph.html</anchorfile>
+      <anchor>ga30aef844f1ec485b42caf78ce551078c</anchor>
+      <arglist>(CPPlot *plot,[toPlotSpace] CPPlotSpace *space)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>removePlot:</name>
+      <anchorfile>group___c_p_graph.html</anchorfile>
+      <anchor>ga9e17f1745d9693f6ab506f7a02769b70</anchor>
+      <arglist>(CPPlot *plot)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>insertPlot:atIndex:</name>
+      <anchorfile>group___c_p_graph.html</anchorfile>
+      <anchor>ga181c527b8589694c69a115f056979083</anchor>
+      <arglist>(CPPlot *plot,[atIndex] NSUInteger index)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>insertPlot:atIndex:intoPlotSpace:</name>
+      <anchorfile>group___c_p_graph.html</anchorfile>
+      <anchor>ga0e00b4ae6342da6de0eec132fa855f0c</anchor>
+      <arglist>(CPPlot *plot,[atIndex] NSUInteger index,[intoPlotSpace] CPPlotSpace *space)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>NSArray *</type>
+      <name>allPlotSpaces</name>
+      <anchorfile>group___c_p_graph.html</anchorfile>
+      <anchor>ga1de1195d4aa2021e8d90c175c0107667</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>CPPlotSpace *</type>
+      <name>plotSpaceAtIndex:</name>
+      <anchorfile>group___c_p_graph.html</anchorfile>
+      <anchor>ga37edffcc1a3dd210cbe1051326bf887b</anchor>
+      <arglist>(NSUInteger index)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>CPPlotSpace *</type>
+      <name>plotSpaceWithIdentifier:</name>
+      <anchorfile>group___c_p_graph.html</anchorfile>
+      <anchor>ga23d2a0c85b5407120819d1ab8270bf17</anchor>
+      <arglist>(id&lt; NSCopying &gt; identifier)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>addPlotSpace:</name>
+      <anchorfile>group___c_p_graph.html</anchorfile>
+      <anchor>ga746ceeb542fd98bb34c7d08e90803506</anchor>
+      <arglist>(CPPlotSpace *space)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>removePlotSpace:</name>
+      <anchorfile>group___c_p_graph.html</anchorfile>
+      <anchor>gaa0f19fec90ee22aa5c3a1f50361b8811</anchor>
+      <arglist>(CPPlotSpace *plotSpace)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>applyTheme:</name>
+      <anchorfile>group___c_p_graph.html</anchorfile>
+      <anchor>gabb01698dfab2705e3107abd852b96773</anchor>
+      <arglist>(CPTheme *theme)</arglist>
+    </member>
+  </compound>
+  <compound kind="group">
+    <name>CPLayer</name>
+    <title>CPLayer</title>
+    <filename>group___c_p_layer.html</filename>
+    <member kind="property">
+      <type>__weak CPGraph *</type>
+      <name>graph</name>
+      <anchorfile>group___c_p_layer.html</anchorfile>
+      <anchor>gac238f4c67fd116af5b831e3fbc406404</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CGFloat</type>
+      <name>paddingLeft</name>
+      <anchorfile>group___c_p_layer.html</anchorfile>
+      <anchor>gad0fd0e023ee4f9b64ecfbd369820ec1c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CGFloat</type>
+      <name>paddingTop</name>
+      <anchorfile>group___c_p_layer.html</anchorfile>
+      <anchor>gabde3adfc0ca84bbc138f1214f94cf9c3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CGFloat</type>
+      <name>paddingRight</name>
+      <anchorfile>group___c_p_layer.html</anchorfile>
+      <anchor>ga4a89230854cf58adca1fdb71292027d6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CGFloat</type>
+      <name>paddingBottom</name>
+      <anchorfile>group___c_p_layer.html</anchorfile>
+      <anchor>ga8b212a178e641e2cbd1824b4d31605f9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CGPathRef</type>
+      <name>maskingPath</name>
+      <anchorfile>group___c_p_layer.html</anchorfile>
+      <anchor>gac14276fee59574f07a7b24c9bf2dad80</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CGPathRef</type>
+      <name>sublayerMaskingPath</name>
+      <anchorfile>group___c_p_layer.html</anchorfile>
+      <anchor>ga479b978da77780f81cadecd8355f20d0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>applySublayerMaskToContext:forSublayer:withOffset:</name>
+      <anchorfile>group___c_p_layer.html</anchorfile>
+      <anchor>gaf89526361a9e80c0ba21b31f80922507</anchor>
+      <arglist>(CGContextRef context,[forSublayer] CPLayer *sublayer,[withOffset] CGPoint offset)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>applyMaskToContext:</name>
+      <anchorfile>group___c_p_layer.html</anchorfile>
+      <anchor>gacc3cffe1242a6147161bc3120747b8ad</anchor>
+      <arglist>(CGContextRef context)</arglist>
+    </member>
+    <member kind="property">
+      <type>id&lt; CPLayoutManager &gt;</type>
+      <name>layoutManager</name>
+      <anchorfile>group___c_p_layer.html</anchorfile>
+      <anchor>gaa39195c52b4883f547802f5a9cd20dc8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CGFloat</type>
+      <name>defaultZPosition</name>
+      <anchorfile>group___c_p_layer.html</anchorfile>
+      <anchor>ga512071c472f620c9e65889149bf84412</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>id</type>
+      <name>initWithFrame:</name>
+      <anchorfile>group___c_p_layer.html</anchorfile>
+      <anchor>ga55e20db52d41e3bc276e3ff4f0e07e5d</anchor>
+      <arglist>(CGRect newFrame)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>renderAsVectorInContext:</name>
+      <anchorfile>group___c_p_layer.html</anchorfile>
+      <anchor>gac3b8b3138c38dcf4d38e1e9e07173ebf</anchor>
+      <arglist>(CGContextRef context)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>recursivelyRenderInContext:</name>
+      <anchorfile>group___c_p_layer.html</anchorfile>
+      <anchor>ga9cee7d548fdd8e632c419652da848e91</anchor>
+      <arglist>(CGContextRef context)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>NSData *</type>
+      <name>dataForPDFRepresentationOfLayer</name>
+      <anchorfile>group___c_p_layer.html</anchorfile>
+      <anchor>gaf1d7b9cee5b364818d5c9b46330326ee</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>void</type>
+      <name>exposeBinding:</name>
+      <anchorfile>group___c_p_layer.html</anchorfile>
+      <anchor>gae82f936da82db56ca14049ebfe0784d2</anchor>
+      <arglist>(NSString *binding)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>bind:toObject:withKeyPath:options:</name>
+      <anchorfile>group___c_p_layer.html</anchorfile>
+      <anchor>ga770e201499bc0fc6dd9e0d439de2f20a</anchor>
+      <arglist>(NSString *binding,[toObject] id observable,[withKeyPath] NSString *keyPath,[options] NSDictionary *options)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>unbind:</name>
+      <anchorfile>group___c_p_layer.html</anchorfile>
+      <anchor>gaca668533f2ae54c71052f8d99e521e38</anchor>
+      <arglist>(NSString *binding)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>Class</type>
+      <name>valueClassForBinding:</name>
+      <anchorfile>group___c_p_layer.html</anchorfile>
+      <anchor>gad7936c12cd52d044e08d8ad926a2e550</anchor>
+      <arglist>(NSString *binding)</arglist>
+    </member>
+  </compound>
+  <compound kind="group">
+    <name>CPPlotSpace</name>
+    <title>CPPlotSpace</title>
+    <filename>group___c_p_plot_space.html</filename>
+    <member kind="property">
+      <type>id&lt; NSCopying, NSObject &gt;</type>
+      <name>identifier</name>
+      <anchorfile>group___c_p_plot_space.html</anchorfile>
+      <anchor>gadb6d007abe6007d4e445aee96cdf902b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>BOOL</type>
+      <name>allowsUserInteraction</name>
+      <anchorfile>group___c_p_plot_space.html</anchorfile>
+      <anchor>gae32e4531fb226765bf675fe51ce37966</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>__weak CPGraph *</type>
+      <name>graph</name>
+      <anchorfile>group___c_p_plot_space.html</anchorfile>
+      <anchor>ga3822268628684e473df11ad24a9105d6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>__weak id&lt; CPPlotSpaceDelegate &gt;</type>
+      <name>delegate</name>
+      <anchorfile>group___c_p_plot_space.html</anchorfile>
+      <anchor>ga6a6f1982a78ae64f3fb7fd422e66baf5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>CGPoint</type>
+      <name>plotAreaViewPointForPlotPoint:</name>
+      <anchorfile>group___c_p_plot_space.html</anchorfile>
+      <anchor>ga575ff0b8c1e5a7515c6c3fe5e0cb2d0f</anchor>
+      <arglist>(NSDecimal *plotPoint)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>CGPoint</type>
+      <name>plotAreaViewPointForDoublePrecisionPlotPoint:</name>
+      <anchorfile>group___c_p_plot_space.html</anchorfile>
+      <anchor>ga8804db244e4744896791adaec07235b8</anchor>
+      <arglist>(double *plotPoint)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>plotPoint:forPlotAreaViewPoint:</name>
+      <anchorfile>group___c_p_plot_space.html</anchorfile>
+      <anchor>ga5a9b3207ba376b00faede97da368ccf4</anchor>
+      <arglist>(NSDecimal *plotPoint,[forPlotAreaViewPoint] CGPoint point)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>doublePrecisionPlotPoint:forPlotAreaViewPoint:</name>
+      <anchorfile>group___c_p_plot_space.html</anchorfile>
+      <anchor>ga04149fc9eed8f5fc0dcdb10a9a670190</anchor>
+      <arglist>(double *plotPoint,[forPlotAreaViewPoint] CGPoint point)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>CPPlotRange *</type>
+      <name>plotRangeForCoordinate:</name>
+      <anchorfile>group___c_p_plot_space.html</anchorfile>
+      <anchor>gae7701723aeb0f0fa7a657b8cbe2aa57e</anchor>
+      <arglist>(CPCoordinate coordinate)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>scaleToFitPlots:</name>
+      <anchorfile>group___c_p_plot_space.html</anchorfile>
+      <anchor>gaefd10f294c945688a21ac71ea9da7c9a</anchor>
+      <arglist>(NSArray *plots)</arglist>
+    </member>
+  </compound>
+  <compound kind="group">
+    <name>CPTheme</name>
+    <title>CPTheme</title>
+    <filename>group___c_p_theme.html</filename>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>NSArray *</type>
+      <name>themeClasses</name>
+      <anchorfile>group___c_p_theme.html</anchorfile>
+      <anchor>gafa48fa228c7e3907717ebcffa3dbf6a4</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPTheme *</type>
+      <name>themeNamed:</name>
+      <anchorfile>group___c_p_theme.html</anchorfile>
+      <anchor>ga93d05370f089c761d1e23e9b7ed1ef58</anchor>
+      <arglist>(NSString *theme)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>void</type>
+      <name>addTheme:</name>
+      <anchorfile>group___c_p_theme.html</anchorfile>
+      <anchor>ga4ccbfb450bcbcb9e761526749991fb20</anchor>
+      <arglist>(CPTheme *newTheme)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>NSString *</type>
+      <name>defaultName</name>
+      <anchorfile>group___c_p_theme.html</anchorfile>
+      <anchor>gacd4c7d4ed06226789a0d68eca293f25a</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>id</type>
+      <name>newGraph</name>
+      <anchorfile>group___c_p_theme.html</anchorfile>
+      <anchor>ga61f1ce138751ffd0ff961c39f5a97088</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>applyThemeToGraph:</name>
+      <anchorfile>group___c_p_theme.html</anchorfile>
+      <anchor>gab78ff69e9c69bb4a9bf2781333ab84c4</anchor>
+      <arglist>(CPGraph *graph)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>applyThemeToBackground:</name>
+      <anchorfile>group___c_p_theme.html</anchorfile>
+      <anchor>ga7d73a0eea9cce37744427f79a8b837a0</anchor>
+      <arglist>(CPGraph *graph)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>applyThemeToPlotArea:</name>
+      <anchorfile>group___c_p_theme.html</anchorfile>
+      <anchor>ga5235a30674f2924a2b0eda941f1aa0c7</anchor>
+      <arglist>(CPPlotArea *plotArea)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>applyThemeToAxisSet:</name>
+      <anchorfile>group___c_p_theme.html</anchorfile>
+      <anchor>ga05d9b083c7f22038bfbb2c9c5879a13f</anchor>
+      <arglist>(CPAxisSet *axisSet)</arglist>
+    </member>
+    <member kind="property">
+      <type>NSString *</type>
+      <name>name</name>
+      <anchorfile>group___c_p_theme.html</anchorfile>
+      <anchor>ga459850b2206f2539a9a14f0fbb14ce8b</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>_CPConstraints</name>
+    <filename>struct___c_p_constraints.html</filename>
+    <member kind="variable">
+      <type>CPConstraint</type>
+      <name>lower</name>
+      <anchorfile>struct___c_p_constraints.html</anchorfile>
+      <anchor>a4105b439348ef876d05a8d5c5754b13e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>CPConstraint</type>
+      <name>upper</name>
+      <anchorfile>struct___c_p_constraints.html</anchorfile>
+      <anchor>a1ba8df718afb8049bf0a379d1c6da4b9</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>_CPFillColor</name>
+    <filename>interface___c_p_fill_color.html</filename>
+    <base>CPFill</base>
+    <member kind="function" virtualness="virtual">
+      <type>id</type>
+      <name>initWithColor:</name>
+      <anchorfile>interface___c_p_fill_color.html</anchorfile>
+      <anchor>a228d6df8810879ec4a33a5ad31be49a6</anchor>
+      <arglist>(CPColor *aCcolor)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>fillRect:inContext:</name>
+      <anchorfile>interface___c_p_fill_color.html</anchorfile>
+      <anchor>a005a04e8904d7ea0a2dea12e00c989f6</anchor>
+      <arglist>(CGRect theRect,[inContext] CGContextRef theContext)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>fillPathInContext:</name>
+      <anchorfile>interface___c_p_fill_color.html</anchorfile>
+      <anchor>ae1130aeb73568ae1fc0ff0fe5eed2621</anchor>
+      <arglist>(CGContextRef theContext)</arglist>
+    </member>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>_CPFillGradient</name>
+    <filename>interface___c_p_fill_gradient.html</filename>
+    <base>CPFill</base>
+    <member kind="function" virtualness="virtual">
+      <type>id</type>
+      <name>initWithGradient:</name>
+      <anchorfile>interface___c_p_fill_gradient.html</anchorfile>
+      <anchor>a9670e445ddfc90c50c7ef0e9fbded0d6</anchor>
+      <arglist>(CPGradient *aGradient)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>fillRect:inContext:</name>
+      <anchorfile>interface___c_p_fill_gradient.html</anchorfile>
+      <anchor>a3616b1f43536944ad5260b723ee5da6b</anchor>
+      <arglist>(CGRect theRect,[inContext] CGContextRef theContext)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>fillPathInContext:</name>
+      <anchorfile>interface___c_p_fill_gradient.html</anchorfile>
+      <anchor>a6125b1b9c5d467f9f8587af98756e65b</anchor>
+      <arglist>(CGContextRef theContext)</arglist>
+    </member>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>_CPFillImage</name>
+    <filename>interface___c_p_fill_image.html</filename>
+    <base>CPFill</base>
+    <member kind="function" virtualness="virtual">
+      <type>id</type>
+      <name>initWithImage:</name>
+      <anchorfile>interface___c_p_fill_image.html</anchorfile>
+      <anchor>ac6aeb5721632444053cf6422758f6679</anchor>
+      <arglist>(CPImage *anImage)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>fillRect:inContext:</name>
+      <anchorfile>interface___c_p_fill_image.html</anchorfile>
+      <anchor>aefc23508870c2f6eda201e6bf4d6a60e</anchor>
+      <arglist>(CGRect theRect,[inContext] CGContextRef theContext)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>fillPathInContext:</name>
+      <anchorfile>interface___c_p_fill_image.html</anchorfile>
+      <anchor>a1425b0991113f176d8877b7d1b8a4483</anchor>
+      <arglist>(CGContextRef theContext)</arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>_CPGradientElement</name>
+    <filename>struct___c_p_gradient_element.html</filename>
+    <member kind="variable">
+      <type>CPRGBAColor</type>
+      <name>color</name>
+      <anchorfile>struct___c_p_gradient_element.html</anchorfile>
+      <anchor>a0b9795bb7ec895fddc6a3f4affbdcb1e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>CGFloat</type>
+      <name>position</name>
+      <anchorfile>struct___c_p_gradient_element.html</anchorfile>
+      <anchor>a50bcfe0967a29678ffa5793a8f8feead</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>struct _CPGradientElement *</type>
+      <name>nextElement</name>
+      <anchorfile>struct___c_p_gradient_element.html</anchorfile>
+      <anchor>a6d75f95a984b938ed040697a57f13ca6</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>_CPRGBAColor</name>
+    <filename>struct___c_p_r_g_b_a_color.html</filename>
+    <member kind="variable">
+      <type>CGFloat</type>
+      <name>red</name>
+      <anchorfile>struct___c_p_r_g_b_a_color.html</anchorfile>
+      <anchor>a2772340ea36c3c5620b54fa66ef33d65</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>CGFloat</type>
+      <name>green</name>
+      <anchorfile>struct___c_p_r_g_b_a_color.html</anchorfile>
+      <anchor>af9e45cee6ef7b00c808ced6720a1dd38</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>CGFloat</type>
+      <name>blue</name>
+      <anchorfile>struct___c_p_r_g_b_a_color.html</anchorfile>
+      <anchor>a370c5c41b4f65489b5dce21d91d97038</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>CGFloat</type>
+      <name>alpha</name>
+      <anchorfile>struct___c_p_r_g_b_a_color.html</anchorfile>
+      <anchor>a3cece2718915c870decdcaabc34253f6</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPAnimation</name>
+    <filename>interface_c_p_animation.html</filename>
+    <base>NSObject</base>
+    <member kind="function" virtualness="virtual">
+      <type>id</type>
+      <name>initWithGraph:</name>
+      <anchorfile>interface_c_p_animation.html</anchorfile>
+      <anchor>ac68006bcfc8236c667515633e09bfdae</anchor>
+      <arglist>(CPGraph *graph)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>addAnimationKeyFrame:</name>
+      <anchorfile>interface_c_p_animation.html</anchorfile>
+      <anchor>ace091f118412777b03b5907287e1ac08</anchor>
+      <arglist>(CPAnimationKeyFrame *newKeyFrame)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>CPAnimationKeyFrame *</type>
+      <name>animationKeyFrameWithIdentifier:</name>
+      <anchorfile>interface_c_p_animation.html</anchorfile>
+      <anchor>ab423a7674245f9080ce75047c72f7651</anchor>
+      <arglist>(id&lt; NSCopying &gt; identifier)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>addAnimationTransition:fromKeyFrame:toKeyFrame:</name>
+      <anchorfile>interface_c_p_animation.html</anchorfile>
+      <anchor>a14bc7e038d3aa5be96b6df2f2627f238</anchor>
+      <arglist>(CPAnimationTransition *newTransition,[fromKeyFrame] CPAnimationKeyFrame *startFrame,[toKeyFrame] CPAnimationKeyFrame *endFrame)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>CPAnimationTransition *</type>
+      <name>animationTransitionWithIdentifier:</name>
+      <anchorfile>interface_c_p_animation.html</anchorfile>
+      <anchor>ae1ecf9d6d0a2a1279652e12cf2d83ff2</anchor>
+      <arglist>(id&lt; NSCopying &gt; identifier)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>animationTransitionDidFinish:</name>
+      <anchorfile>interface_c_p_animation.html</anchorfile>
+      <anchor>a3d49c37e77efd843eb5f70f87703e05d</anchor>
+      <arglist>(CPAnimationTransition *transition)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>performTransition:</name>
+      <anchorfile>interface_c_p_animation.html</anchorfile>
+      <anchor>a4e64c2357e3434db01fe007d464b9a44</anchor>
+      <arglist>(CPAnimationTransition *transition)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>performTransitionToKeyFrame:</name>
+      <anchorfile>interface_c_p_animation.html</anchorfile>
+      <anchor>a12739d352cce40f562a53ca9b820040f</anchor>
+      <arglist>(CPAnimationKeyFrame *keyFrame)</arglist>
+    </member>
+    <member kind="property">
+      <type>CPGraph *</type>
+      <name>graph</name>
+      <anchorfile>interface_c_p_animation.html</anchorfile>
+      <anchor>a8a7bb08ccc97eff688e29d311b7bb6da</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>NSSet *</type>
+      <name>animationKeyFrames</name>
+      <anchorfile>interface_c_p_animation.html</anchorfile>
+      <anchor>a3ba0f7dff662a87502d0adff067a5329</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>NSSet *</type>
+      <name>animationTransitions</name>
+      <anchorfile>interface_c_p_animation.html</anchorfile>
+      <anchor>aa6aa2da9f412cf06ac94b6156a0a3610</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPAnimationKeyFrame *</type>
+      <name>currentKeyFrame</name>
+      <anchorfile>interface_c_p_animation.html</anchorfile>
+      <anchor>afb09de97a9d134e4abf7dbd5bac1b689</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPAnimationKeyFrame</name>
+    <filename>interface_c_p_animation_key_frame.html</filename>
+    <base>NSObject</base>
+    <member kind="function" virtualness="virtual">
+      <type>id</type>
+      <name>initAsInitialFrame:</name>
+      <anchorfile>interface_c_p_animation_key_frame.html</anchorfile>
+      <anchor>a9b041b477ffbe361c567f867fb7a3e9d</anchor>
+      <arglist>(BOOL isFirst)</arglist>
+    </member>
+    <member kind="property">
+      <type>id&lt; NSObject, NSCopying &gt;</type>
+      <name>identifier</name>
+      <anchorfile>interface_c_p_animation_key_frame.html</anchorfile>
+      <anchor>a874d5c50abc9a9861715a88d1685bf19</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>BOOL</type>
+      <name>isInitialFrame</name>
+      <anchorfile>interface_c_p_animation_key_frame.html</anchorfile>
+      <anchor>a66a89dc07bd1d0a8d6a1a7d6dc86c5c2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>NSTimeInterval</type>
+      <name>duration</name>
+      <anchorfile>interface_c_p_animation_key_frame.html</anchorfile>
+      <anchor>aaa2bfe8b8a25fe81f0bff675a5c8207a</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPAnimationTransition</name>
+    <filename>interface_c_p_animation_transition.html</filename>
+    <base>NSObject</base>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>performTransition</name>
+      <anchorfile>group___c_p_animation_transition.html</anchorfile>
+      <anchor>ga5f9c6c3b0cfcc8b4fbab952745357983</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="property">
+      <type>id&lt; NSObject, NSCopying &gt;</type>
+      <name>identifier</name>
+      <anchorfile>group___c_p_animation_transition.html</anchorfile>
+      <anchor>ga216d3a67b1b94da8a7aa110336b7da98</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>NSTimeInterval</type>
+      <name>duration</name>
+      <anchorfile>group___c_p_animation_transition.html</anchorfile>
+      <anchor>ga303acfff579dc46df108ba0baab8d7de</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>BOOL</type>
+      <name>reversible</name>
+      <anchorfile>group___c_p_animation_transition.html</anchorfile>
+      <anchor>ga194935c1264724810b8c8d668ab4350d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPAnimation *</type>
+      <name>animation</name>
+      <anchorfile>group___c_p_animation_transition.html</anchorfile>
+      <anchor>ga9f409dc7676e938535e995cbca3365fe</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPAnimationKeyFrame *</type>
+      <name>startKeyFrame</name>
+      <anchorfile>group___c_p_animation_transition.html</anchorfile>
+      <anchor>gafae427757760dc07456f485f9e1bf8e2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPAnimationKeyFrame *</type>
+      <name>endKeyFrame</name>
+      <anchorfile>group___c_p_animation_transition.html</anchorfile>
+      <anchor>gaa26eb3c31175d8a08339e6adf2fae67a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPAnimationTransition *</type>
+      <name>continuingTransition</name>
+      <anchorfile>group___c_p_animation_transition.html</anchorfile>
+      <anchor>ga75ef11a8a80fff5e8f901b64293ea836</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPAxis</name>
+    <filename>interface_c_p_axis.html</filename>
+    <base>CPLayer</base>
+    <member kind="function" virtualness="virtual">
+      <type>NSSet *</type>
+      <name>filteredMajorTickLocations:</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga8c9be394e858b42f9e8b3d5c68dd06e5</anchor>
+      <arglist>(NSSet *allLocations)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>NSSet *</type>
+      <name>filteredMinorTickLocations:</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga24b9058c9d90bd9b66f8a9da68ae862a</anchor>
+      <arglist>(NSSet *allLocations)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>CGPoint</type>
+      <name>viewPointForCoordinateDecimalNumber:</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga6593cd47fc89d17d72fc5d39f9b8ca3d</anchor>
+      <arglist>(NSDecimal coordinateDecimalNumber)</arglist>
+    </member>
+    <member kind="property">
+      <type>CPPlotSpace *</type>
+      <name>plotSpace</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga3479bb85ce5dd9dd14a550b1a5e45e62</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPLineStyle *</type>
+      <name>axisLineStyle</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>gadb1f459c42db6c33fafa86db7b3eeae3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPCoordinate</type>
+      <name>coordinate</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga37aaf3d643133ac0d201e3a0b7d48b94</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>NSDecimal</type>
+      <name>labelingOrigin</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>gaacf85195bd235b52edf63b90486a6eb4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPSign</type>
+      <name>tickDirection</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga7ff6729c53df22119df0c06a820a6d67</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPTextStyle *</type>
+      <name>titleTextStyle</name>
+      <anchorfile>interface_c_p_axis.html</anchorfile>
+      <anchor>a887fb306bd07288a82d15f6ef46e7d6a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPAxisTitle *</type>
+      <name>axisTitle</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga324190cc908e00d4211ba86d9e545259</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CGFloat</type>
+      <name>titleOffset</name>
+      <anchorfile>interface_c_p_axis.html</anchorfile>
+      <anchor>a254c9a8386dcd48a00f3cfbcdca01859</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>NSString *</type>
+      <name>title</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga4263aae1903c247503dc17544ed44c73</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>NSDecimal</type>
+      <name>titleLocation</name>
+      <anchorfile>interface_c_p_axis.html</anchorfile>
+      <anchor>a7595ab4ca80060342dd12110f087198f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>NSDecimal</type>
+      <name>majorIntervalLength</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga329a5ac8eb964e0ec0f42cb716ab8984</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CGFloat</type>
+      <name>majorTickLength</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga287eb0186b06a442f01cc5daf3820b9e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPLineStyle *</type>
+      <name>majorTickLineStyle</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga6ce85fb2c6748fcb3384e132ae588ff0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>NSSet *</type>
+      <name>majorTickLocations</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga29eacafe99b52c28eaa14c8b058b8507</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>NSUInteger</type>
+      <name>preferredNumberOfMajorTicks</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>gaf0894f4e4787773906ac03315a89a0dd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>NSUInteger</type>
+      <name>minorTicksPerInterval</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga45ffa33e1690e98f4a68f293c0439b2b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CGFloat</type>
+      <name>minorTickLength</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>gaa3d8ecb116dcafb318434588a4229d3d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPLineStyle *</type>
+      <name>minorTickLineStyle</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga077ee00cd739c4701d79ccfb65fce635</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>NSSet *</type>
+      <name>minorTickLocations</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga987ae87b667a2b9070a6c6f44339fa6d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPLineStyle *</type>
+      <name>majorGridLineStyle</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>gaed801b3a65dbbab65fb53a6d562063ce</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPLineStyle *</type>
+      <name>minorGridLineStyle</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>gae250a02aa814655e463f294fd031bae9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPAxisLabelingPolicy</type>
+      <name>labelingPolicy</name>
+      <anchorfile>interface_c_p_axis.html</anchorfile>
+      <anchor>a1113aabe0210216a43bcbf1e79f11850</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CGFloat</type>
+      <name>labelOffset</name>
+      <anchorfile>interface_c_p_axis.html</anchorfile>
+      <anchor>aaed5fb18bd297e3b8ac691fed68a39b1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CGFloat</type>
+      <name>labelRotation</name>
+      <anchorfile>interface_c_p_axis.html</anchorfile>
+      <anchor>a0ec11886f907dc7e6cf3834c4b2af0a7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPTextStyle *</type>
+      <name>labelTextStyle</name>
+      <anchorfile>interface_c_p_axis.html</anchorfile>
+      <anchor>a2f659954dedec58cedb1ffb8f3882442</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>NSNumberFormatter *</type>
+      <name>labelFormatter</name>
+      <anchorfile>interface_c_p_axis.html</anchorfile>
+      <anchor>af8c0f88efa737dbc632be38e9d4c21ba</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>NSSet *</type>
+      <name>axisLabels</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>gaf9b4a31e2ddee58c41d440f8e1c486fb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>BOOL</type>
+      <name>needsRelabel</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga103bd1b3d7a93a89337b35f9a999fec5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>NSArray *</type>
+      <name>labelExclusionRanges</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga25a079acb44f5c7cd9eae011dbade36d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>id&lt; CPAxisDelegate &gt;</type>
+      <name>delegate</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga0f94f765c7ad7d579ebcab2b34e5e130</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>relabel</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga67d3dd150673a5ec74df9825ffe6059f</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>setNeedsRelabel</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>gabc49b5a8fd4315759c1ca88466984b67</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="protocol" objc="yes">
+    <name>CPAxisDelegate-p</name>
+    <filename>protocol_c_p_axis_delegate-p.html</filename>
+    <member kind="function" virtualness="virtual">
+      <type>BOOL</type>
+      <name>axisShouldRelabel:</name>
+      <anchorfile>protocol_c_p_axis_delegate-p.html</anchorfile>
+      <anchor>ad99cf63a40b80ae9d609374156112f7c</anchor>
+      <arglist>(CPAxis *axis)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>axisDidRelabel:</name>
+      <anchorfile>protocol_c_p_axis_delegate-p.html</anchorfile>
+      <anchor>a2a81cc2e5f1abf08fc86b18e3ab1885a</anchor>
+      <arglist>(CPAxis *axis)</arglist>
+    </member>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPAxisLabel</name>
+    <filename>interface_c_p_axis_label.html</filename>
+    <base>NSObject</base>
+    <member kind="function" virtualness="virtual">
+      <type>id</type>
+      <name>initWithText:textStyle:</name>
+      <anchorfile>interface_c_p_axis_label.html</anchorfile>
+      <anchor>abaf8334c0fbda26013124fe40f3461c6</anchor>
+      <arglist>(NSString *newText,[textStyle] CPTextStyle *style)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>id</type>
+      <name>initWithContentLayer:</name>
+      <anchorfile>interface_c_p_axis_label.html</anchorfile>
+      <anchor>a74573ad1e2ad8022da78e68a116e8329</anchor>
+      <arglist>(CPLayer *layer)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>positionRelativeToViewPoint:forCoordinate:inDirection:</name>
+      <anchorfile>interface_c_p_axis_label.html</anchorfile>
+      <anchor>ab40b66973993792178ae4a3a4c0b4816</anchor>
+      <arglist>(CGPoint point,[forCoordinate] CPCoordinate coordinate,[inDirection] CPSign direction)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>positionBetweenViewPoint:andViewPoint:forCoordinate:inDirection:</name>
+      <anchorfile>interface_c_p_axis_label.html</anchorfile>
+      <anchor>a42b8e0e88d08fe842cf9e6fe20f456b0</anchor>
+      <arglist>(CGPoint firstPoint,[andViewPoint] CGPoint secondPoint,[forCoordinate] CPCoordinate coordinate,[inDirection] CPSign direction)</arglist>
+    </member>
+    <member kind="property">
+      <type>CPLayer *</type>
+      <name>contentLayer</name>
+      <anchorfile>interface_c_p_axis_label.html</anchorfile>
+      <anchor>a4c49768a7411796927caeb2823b90308</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CGFloat</type>
+      <name>offset</name>
+      <anchorfile>interface_c_p_axis_label.html</anchorfile>
+      <anchor>a473f641ab8e80e614331338f49316428</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CGFloat</type>
+      <name>rotation</name>
+      <anchorfile>interface_c_p_axis_label.html</anchorfile>
+      <anchor>ad3b7e544ee5e45cb9b0a2865baae8a7e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>NSDecimal</type>
+      <name>tickLocation</name>
+      <anchorfile>interface_c_p_axis_label.html</anchorfile>
+      <anchor>aeb91807c2b42a1ac134e500047c77d0d</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPAxisSet</name>
+    <filename>interface_c_p_axis_set.html</filename>
+    <base>CPLayer</base>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>relabelAxes</name>
+      <anchorfile>interface_c_p_axis_set.html</anchorfile>
+      <anchor>a06e17f650b6a99d5d23ac2f96d961840</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="property">
+      <type>NSArray *</type>
+      <name>axes</name>
+      <anchorfile>interface_c_p_axis_set.html</anchorfile>
+      <anchor>af0a033d9439dce6729d11f19eb4ce71d</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPAxisTitle</name>
+    <filename>interface_c_p_axis_title.html</filename>
+    <base>CPAxisLabel</base>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPBarPlot</name>
+    <filename>interface_c_p_bar_plot.html</filename>
+    <base>CPPlot</base>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPBarPlot *</type>
+      <name>tubularBarPlotWithColor:horizontalBars:</name>
+      <anchorfile>interface_c_p_bar_plot.html</anchorfile>
+      <anchor>a0885f457a1e386ed605a827913437793</anchor>
+      <arglist>(CPColor *color,[horizontalBars] BOOL horizontal)</arglist>
+    </member>
+    <member kind="property">
+      <type>CGFloat</type>
+      <name>barWidth</name>
+      <anchorfile>interface_c_p_bar_plot.html</anchorfile>
+      <anchor>a00864b1281f8866f035a8ce386d6e7c5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CGFloat</type>
+      <name>barOffset</name>
+      <anchorfile>interface_c_p_bar_plot.html</anchorfile>
+      <anchor>a9695e477460dd00debcb6102522d8f10</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CGFloat</type>
+      <name>cornerRadius</name>
+      <anchorfile>interface_c_p_bar_plot.html</anchorfile>
+      <anchor>ace61951b3a0818d2e97d78690154dce7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPLineStyle *</type>
+      <name>lineStyle</name>
+      <anchorfile>interface_c_p_bar_plot.html</anchorfile>
+      <anchor>ae1be6bddf85277f783e460ec2c017685</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPFill *</type>
+      <name>fill</name>
+      <anchorfile>interface_c_p_bar_plot.html</anchorfile>
+      <anchor>aade81fc5f3f71833ae4421a7addf788d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>BOOL</type>
+      <name>barsAreHorizontal</name>
+      <anchorfile>interface_c_p_bar_plot.html</anchorfile>
+      <anchor>a6259cd23c5c8b63ea31e6d3d2a53adce</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>NSDecimal</type>
+      <name>baseValue</name>
+      <anchorfile>interface_c_p_bar_plot.html</anchorfile>
+      <anchor>a855deb4f4784eb4e90727cf14c9e58d6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPPlotRange *</type>
+      <name>plotRange</name>
+      <anchorfile>interface_c_p_bar_plot.html</anchorfile>
+      <anchor>a3195195265585a467e3a2c129839f02e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CGFloat</type>
+      <name>barLabelOffset</name>
+      <anchorfile>interface_c_p_bar_plot.html</anchorfile>
+      <anchor>a367a6fb61f2e7ce5ea403d55545c728b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPTextStyle *</type>
+      <name>barLabelTextStyle</name>
+      <anchorfile>interface_c_p_bar_plot.html</anchorfile>
+      <anchor>a9c9a005a4872dafc821cae8df07cc005</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="protocol" objc="yes">
+    <name>CPBarPlotDataSource-p</name>
+    <filename>protocol_c_p_bar_plot_data_source-p.html</filename>
+    <base>CPPlotDataSource-p</base>
+    <member kind="function" virtualness="virtual">
+      <type>CPFill *</type>
+      <name>barFillForBarPlot:recordIndex:</name>
+      <anchorfile>protocol_c_p_bar_plot_data_source-p.html</anchorfile>
+      <anchor>a24f93ede31fe1296ad0ffa27bc757a89</anchor>
+      <arglist>(CPBarPlot *barPlot,[recordIndex] NSUInteger index)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>CPTextLayer *</type>
+      <name>barLabelForBarPlot:recordIndex:</name>
+      <anchorfile>protocol_c_p_bar_plot_data_source-p.html</anchorfile>
+      <anchor>a1007f7e8f1337887940ba6080df929f0</anchor>
+      <arglist>(CPBarPlot *barPlot,[recordIndex] NSUInteger index)</arglist>
+    </member>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPBorderedLayer</name>
+    <filename>interface_c_p_bordered_layer.html</filename>
+    <base>CPLayer</base>
+    <member kind="property">
+      <type>CPLineStyle *</type>
+      <name>borderLineStyle</name>
+      <anchorfile>interface_c_p_bordered_layer.html</anchorfile>
+      <anchor>ab2e5164d1cfe228683949cfd881c311e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CGFloat</type>
+      <name>cornerRadius</name>
+      <anchorfile>interface_c_p_bordered_layer.html</anchorfile>
+      <anchor>abab9423c2f900036073ad7212f06ef1e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPFill *</type>
+      <name>fill</name>
+      <anchorfile>interface_c_p_bordered_layer.html</anchorfile>
+      <anchor>a614b010adc0728a6cc1e3bfe0acd0541</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>BOOL</type>
+      <name>masksToBorder</name>
+      <anchorfile>interface_c_p_bordered_layer.html</anchorfile>
+      <anchor>af295ae98c32da45494216949a020b332</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPColor</name>
+    <filename>class_c_p_color.html</filename>
+    <base>NSObject</base>
+    <member kind="function" virtualness="virtual">
+      <type>id</type>
+      <name>initWithCGColor:</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>ga85f30849febc25299ccd79c74b00dbad</anchor>
+      <arglist>(CGColorRef cgColor)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>id</type>
+      <name>initWithComponentRed:green:blue:alpha:</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>gadb879deb57ae3ff0aeef488edf3b80bd</anchor>
+      <arglist>(CGFloat red,[green] CGFloat green,[blue] CGFloat blue,[alpha] CGFloat alpha)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>CPColor *</type>
+      <name>colorWithAlphaComponent:</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>gabff5a8baebdf82e14cbcc53a82899e62</anchor>
+      <arglist>(CGFloat alpha)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPColor *</type>
+      <name>clearColor</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>gab13ffd6c589c4437eba53b9a4ab1d1fa</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPColor *</type>
+      <name>whiteColor</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>ga7a14e77aa347a029b24a88c4adbef4b4</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPColor *</type>
+      <name>lightGrayColor</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>ga6f511b3ebf674e4448626d292ae68f8d</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPColor *</type>
+      <name>grayColor</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>gaf4dbfe524dc1822dd6c3b47fa8bc9501</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPColor *</type>
+      <name>darkGrayColor</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>gab6c4c0631140c73a020415e2fcb79802</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPColor *</type>
+      <name>blackColor</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>ga8f4043aa8c7d4dc71fb7c623a43ad4f4</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPColor *</type>
+      <name>redColor</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>ga1a777392f160c11a535e0d6d8b53a76b</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPColor *</type>
+      <name>greenColor</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>ga1276d1de2169325f444df7e9ce031e0d</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPColor *</type>
+      <name>blueColor</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>gae44808e9fe281dca2dced0f917627d5d</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPColor *</type>
+      <name>cyanColor</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>ga0c5b3c9c1533a337253072289eb9190b</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPColor *</type>
+      <name>yellowColor</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>gac2cf71ec9c190eb1cd95cd490ad956f9</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPColor *</type>
+      <name>magentaColor</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>ga013e032dc6007faa0d9842a7b9fd72c6</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPColor *</type>
+      <name>orangeColor</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>ga85645b765816e81bbfb8acfa6ffb442d</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPColor *</type>
+      <name>purpleColor</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>gade782bfe617903d3deb35bd578efd430</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPColor *</type>
+      <name>brownColor</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>ga3c8a775b172e07a35a930c138cfda2d0</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPColor *</type>
+      <name>colorWithCGColor:</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>ga6c5056347160e50d4f8d3eeca5a734a9</anchor>
+      <arglist>(CGColorRef newCGColor)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPColor *</type>
+      <name>colorWithComponentRed:green:blue:alpha:</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>ga7b831a73407f35b3d205c480b0e1d4c5</anchor>
+      <arglist>(CGFloat red,[green] CGFloat green,[blue] CGFloat blue,[alpha] CGFloat alpha)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPColor *</type>
+      <name>colorWithGenericGray:</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>gab939b29b34d49909cfc66cd4d3199b5d</anchor>
+      <arglist>(CGFloat gray)</arglist>
+    </member>
+    <member kind="property">
+      <type>CGColorRef</type>
+      <name>cgColor</name>
+      <anchorfile>group___c_p_color.html</anchorfile>
+      <anchor>gacd93644732d693b7e079d27c1ec35a45</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>UIColor *</type>
+      <name>uiColor</name>
+      <anchorfile>class_c_p_color.html</anchorfile>
+      <anchor>a4029692f85b0d692d9df984d80796d93</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPColorSpace</name>
+    <filename>interface_c_p_color_space.html</filename>
+    <base>NSObject</base>
+    <member kind="function" virtualness="virtual">
+      <type>id</type>
+      <name>initWithCGColorSpace:</name>
+      <anchorfile>interface_c_p_color_space.html</anchorfile>
+      <anchor>aadcca3c13c878d28432549e698729eb2</anchor>
+      <arglist>(CGColorSpaceRef colorSpace)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPColorSpace *</type>
+      <name>genericRGBSpace</name>
+      <anchorfile>interface_c_p_color_space.html</anchorfile>
+      <anchor>a59128769be7a370e23e538c5d9bcd210</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="property">
+      <type>CGColorSpaceRef</type>
+      <name>cgColorSpace</name>
+      <anchorfile>interface_c_p_color_space.html</anchorfile>
+      <anchor>aa64c8d48724904b18b54e3ca12c21a79</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPConstrainedPosition</name>
+    <filename>interface_c_p_constrained_position.html</filename>
+    <base>NSObject</base>
+    <member kind="function" virtualness="virtual">
+      <type>id</type>
+      <name>initWithPosition:lowerBound:upperBound:</name>
+      <anchorfile>interface_c_p_constrained_position.html</anchorfile>
+      <anchor>ac933f394e7a021c10b17e3e8449a87e6</anchor>
+      <arglist>(CGFloat newPosition,[lowerBound] CGFloat newLowerBound,[upperBound] CGFloat newUpperBound)</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>CGFloat</type>
+      <name>lowerRatio</name>
+      <anchorfile>interface_c_p_constrained_position.html</anchorfile>
+      <anchor>a9bd27ee6ab46143edef47d0afacbc577</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CGFloat</type>
+      <name>position</name>
+      <anchorfile>interface_c_p_constrained_position.html</anchorfile>
+      <anchor>a275ce0f614ab504b0e382d75da00d90d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CGFloat</type>
+      <name>lowerBound</name>
+      <anchorfile>interface_c_p_constrained_position.html</anchorfile>
+      <anchor>a85e7e86761a47f7a0bf4c3d2827a365d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CGFloat</type>
+      <name>upperBound</name>
+      <anchorfile>interface_c_p_constrained_position.html</anchorfile>
+      <anchor>a38a4de596fe96f9e18a6d2bff0931458</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPConstraints</type>
+      <name>constraints</name>
+      <anchorfile>interface_c_p_constrained_position.html</anchorfile>
+      <anchor>aa83cad83f906c193342d4ea9bb175608</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPDarkGradientTheme</name>
+    <filename>interface_c_p_dark_gradient_theme.html</filename>
+    <base>CPXYTheme</base>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPDerivedXYGraph</name>
+    <filename>interface_c_p_derived_x_y_graph.html</filename>
+    <base>CPXYGraph</base>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPFill</name>
+    <filename>interface_c_p_fill.html</filename>
+    <base>NSObject</base>
+    <member kind="function" virtualness="virtual">
+      <type>id</type>
+      <name>initWithColor:</name>
+      <anchorfile>group___c_p_fill.html</anchorfile>
+      <anchor>ga21597e7e78f544756e3d933f6c2ea0c5</anchor>
+      <arglist>(CPColor *aColor)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>id</type>
+      <name>initWithGradient:</name>
+      <anchorfile>group___c_p_fill.html</anchorfile>
+      <anchor>gae87dbc46ed9883e3bdb8e4a829dffd12</anchor>
+      <arglist>(CPGradient *aGradient)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>id</type>
+      <name>initWithImage:</name>
+      <anchorfile>group___c_p_fill.html</anchorfile>
+      <anchor>gad03cca85f886ad0a4e5dcdc1b84f815a</anchor>
+      <arglist>(CPImage *anImage)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>fillRect:inContext:</name>
+      <anchorfile>group___c_p_fill.html</anchorfile>
+      <anchor>ga9d22cd40651d57d813fd74177c2c4adc</anchor>
+      <arglist>(CGRect theRect,[inContext] CGContextRef theContext)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>fillPathInContext:</name>
+      <anchorfile>group___c_p_fill.html</anchorfile>
+      <anchor>ga762d7e21920469575b65413d6808a82c</anchor>
+      <arglist>(CGContextRef theContext)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPFill *</type>
+      <name>fillWithColor:</name>
+      <anchorfile>group___c_p_fill.html</anchorfile>
+      <anchor>gafeac2f567715e8a9e7a8bedd1adc9c5f</anchor>
+      <arglist>(CPColor *aColor)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPFill *</type>
+      <name>fillWithGradient:</name>
+      <anchorfile>group___c_p_fill.html</anchorfile>
+      <anchor>ga506b043d1e3cc748cfee8ce5ccc92eed</anchor>
+      <arglist>(CPGradient *aGradient)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPFill *</type>
+      <name>fillWithImage:</name>
+      <anchorfile>group___c_p_fill.html</anchorfile>
+      <anchor>ga53de73d1b15daf0071148fd32212f4d7</anchor>
+      <arglist>(CPImage *anImage)</arglist>
+    </member>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPGradient</name>
+    <filename>interface_c_p_gradient.html</filename>
+    <base>NSObject</base>
+    <member kind="function" virtualness="virtual">
+      <type>CPGradient *</type>
+      <name>gradientWithAlphaComponent:</name>
+      <anchorfile>interface_c_p_gradient.html</anchorfile>
+      <anchor>a4243e3e34962b88ebb7b7a026c70584d</anchor>
+      <arglist>(CGFloat alpha)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>CPGradient *</type>
+      <name>gradientWithBlendingMode:</name>
+      <anchorfile>interface_c_p_gradient.html</anchorfile>
+      <anchor>a377b2f743499fdf2556562688c2c26be</anchor>
+      <arglist>(CPGradientBlendingMode mode)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>CPGradient *</type>
+      <name>addColorStop:atPosition:</name>
+      <anchorfile>interface_c_p_gradient.html</anchorfile>
+      <anchor>a8a66ece1ae2d9e8b3634677a2ab0c1ef</anchor>
+      <arglist>(CPColor *color,[atPosition] CGFloat position)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>CPGradient *</type>
+      <name>removeColorStopAtIndex:</name>
+      <anchorfile>interface_c_p_gradient.html</anchorfile>
+      <anchor>acb8518b73ef8bb1ac129982f1c870d42</anchor>
+      <arglist>(NSUInteger index)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>CPGradient *</type>
+      <name>removeColorStopAtPosition:</name>
+      <anchorfile>interface_c_p_gradient.html</anchorfile>
+      <anchor>af150300350407b82810c6a838d89b75e</anchor>
+      <arglist>(CGFloat position)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>CGColorRef</type>
+      <name>colorStopAtIndex:</name>
+      <anchorfile>interface_c_p_gradient.html</anchorfile>
+      <anchor>a4e48823b1560fb3cddead475aa5d53ba</anchor>
+      <arglist>(NSUInteger index)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>CGColorRef</type>
+      <name>colorAtPosition:</name>
+      <anchorfile>interface_c_p_gradient.html</anchorfile>
+      <anchor>a4b93a990c5aa718716ce8274f10175ae</anchor>
+      <arglist>(CGFloat position)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>drawSwatchInRect:inContext:</name>
+      <anchorfile>interface_c_p_gradient.html</anchorfile>
+      <anchor>aba51719db6ee100dabae0a0d10cee4b9</anchor>
+      <arglist>(CGRect rect,[inContext] CGContextRef context)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>fillRect:inContext:</name>
+      <anchorfile>interface_c_p_gradient.html</anchorfile>
+      <anchor>af35c1662f0e33bde9abfa2bc6ac774fb</anchor>
+      <arglist>(CGRect rect,[inContext] CGContextRef context)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>fillPathInContext:</name>
+      <anchorfile>interface_c_p_gradient.html</anchorfile>
+      <anchor>ac9cddc632678918c082f38ba318a9dad</anchor>
+      <arglist>(CGContextRef context)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPGradient *</type>
+      <name>gradientWithBeginningColor:endingColor:</name>
+      <anchorfile>interface_c_p_gradient.html</anchorfile>
+      <anchor>afa12d8114070f0632b00c199b558ba13</anchor>
+      <arglist>(CPColor *begin,[endingColor] CPColor *end)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPGradient *</type>
+      <name>gradientWithBeginningColor:endingColor:beginningPosition:endingPosition:</name>
+      <anchorfile>interface_c_p_gradient.html</anchorfile>
+      <anchor>a315fdaa4020610b6a859e5b64776c4f8</anchor>
+      <arglist>(CPColor *begin,[endingColor] CPColor *end,[beginningPosition] CGFloat beginningPosition,[endingPosition] CGFloat endingPosition)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPGradient *</type>
+      <name>aquaSelectedGradient</name>
+      <anchorfile>interface_c_p_gradient.html</anchorfile>
+      <anchor>a0960d9865a659bc6f16309e2adddac75</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPGradient *</type>
+      <name>aquaNormalGradient</name>
+      <anchorfile>interface_c_p_gradient.html</anchorfile>
+      <anchor>a179782e59c777363a790b6ea2ef99677</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPGradient *</type>
+      <name>aquaPressedGradient</name>
+      <anchorfile>interface_c_p_gradient.html</anchorfile>
+      <anchor>a80787747ca4aa0cd90ed8dcea6e7b5fe</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPGradient *</type>
+      <name>unifiedSelectedGradient</name>
+      <anchorfile>interface_c_p_gradient.html</anchorfile>
+      <anchor>a500aa81dc40c7e5ac28bb6574a7d8bb7</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPGradient *</type>
+      <name>unifiedNormalGradient</name>
+      <anchorfile>interface_c_p_gradient.html</anchorfile>
+      <anchor>a0bf33fd6ec07ae12cd03dd35d98efc64</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPGradient *</type>
+      <name>unifiedPressedGradient</name>
+      <anchorfile>interface_c_p_gradient.html</anchorfile>
+      <anchor>ab8a67cf9c7132c16d3467b34d35e2f6f</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPGradient *</type>
+      <name>unifiedDarkGradient</name>
+      <anchorfile>interface_c_p_gradient.html</anchorfile>
+      <anchor>aa5a1ce53bafe425f625199fefed1597d</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPGradient *</type>
+      <name>sourceListSelectedGradient</name>
+      <anchorfile>interface_c_p_gradient.html</anchorfile>
+      <anchor>a01ac0904e52690cba1313e66f0feb4be</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPGradient *</type>
+      <name>sourceListUnselectedGradient</name>
+      <anchorfile>interface_c_p_gradient.html</anchorfile>
+      <anchor>ad68a789456352e1b4391621cd9d30c2e</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPGradient *</type>
+      <name>rainbowGradient</name>
+      <anchorfile>interface_c_p_gradient.html</anchorfile>
+      <anchor>a188c9d39ae8cdca926ec96072938dd12</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPGradient *</type>
+      <name>hydrogenSpectrumGradient</name>
+      <anchorfile>interface_c_p_gradient.html</anchorfile>
+      <anchor>a3b0b942dbd59136b27b09cafea94bd5f</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="property">
+      <type>CPGradientBlendingMode</type>
+      <name>blendingMode</name>
+      <anchorfile>interface_c_p_gradient.html</anchorfile>
+      <anchor>a4879d05f9f9f5d7625e25ccfd262bac1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CGFloat</type>
+      <name>angle</name>
+      <anchorfile>interface_c_p_gradient.html</anchorfile>
+      <anchor>af69588181c37e8d117afa4e23c2e543e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPGradientType</type>
+      <name>gradientType</name>
+      <anchorfile>interface_c_p_gradient.html</anchorfile>
+      <anchor>a2992edcbc9165a3e52fd65f9619a0fea</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPGraph</name>
+    <filename>interface_c_p_graph.html</filename>
+    <base>CPBorderedLayer</base>
+    <member kind="function" virtualness="virtual">
+      <type>CPPlotSpace *</type>
+      <name>newPlotSpace</name>
+      <anchorfile>group___c_p_graph.html</anchorfile>
+      <anchor>gad5aeaa629e71bd2d915c036326497f0a</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>CPAxisSet *</type>
+      <name>newAxisSet</name>
+      <anchorfile>group___c_p_graph.html</anchorfile>
+      <anchor>ga009a51b612e879aa7de0eebc1aeb2390</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>reloadData</name>
+      <anchorfile>group___c_p_graph.html</anchorfile>
+      <anchor>gaef7396a731fb0c874d1ecb1d1a6d6829</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>NSArray *</type>
+      <name>allPlots</name>
+      <anchorfile>group___c_p_graph.html</anchorfile>
+      <anchor>ga868504e2b298082e41da7e28912582fe</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>CPPlot *</type>
+      <name>plotAtIndex:</name>
+      <anchorfile>group___c_p_graph.html</anchorfile>
+      <anchor>ga6032187f48f998e3481af892aa10a0cb</anchor>
+      <arglist>(NSUInteger index)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>CPPlot *</type>
+      <name>plotWithIdentifier:</name>
+      <anchorfile>group___c_p_graph.html</anchorfile>
+      <anchor>gafef1f6ae91673d6586ad3f3f52eea024</anchor>
+      <arglist>(id&lt; NSCopying &gt; identifier)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>addPlot:</name>
+      <anchorfile>group___c_p_graph.html</anchorfile>
+      <anchor>gac07fe4ca33652019522536f07ece4f73</anchor>
+      <arglist>(CPPlot *plot)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>addPlot:toPlotSpace:</name>
+      <anchorfile>group___c_p_graph.html</anchorfile>
+      <anchor>ga30aef844f1ec485b42caf78ce551078c</anchor>
+      <arglist>(CPPlot *plot,[toPlotSpace] CPPlotSpace *space)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>removePlot:</name>
+      <anchorfile>group___c_p_graph.html</anchorfile>
+      <anchor>ga9e17f1745d9693f6ab506f7a02769b70</anchor>
+      <arglist>(CPPlot *plot)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>insertPlot:atIndex:</name>
+      <anchorfile>group___c_p_graph.html</anchorfile>
+      <anchor>ga181c527b8589694c69a115f056979083</anchor>
+      <arglist>(CPPlot *plot,[atIndex] NSUInteger index)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>insertPlot:atIndex:intoPlotSpace:</name>
+      <anchorfile>group___c_p_graph.html</anchorfile>
+      <anchor>ga0e00b4ae6342da6de0eec132fa855f0c</anchor>
+      <arglist>(CPPlot *plot,[atIndex] NSUInteger index,[intoPlotSpace] CPPlotSpace *space)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>NSArray *</type>
+      <name>allPlotSpaces</name>
+      <anchorfile>group___c_p_graph.html</anchorfile>
+      <anchor>ga1de1195d4aa2021e8d90c175c0107667</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>CPPlotSpace *</type>
+      <name>plotSpaceAtIndex:</name>
+      <anchorfile>group___c_p_graph.html</anchorfile>
+      <anchor>ga37edffcc1a3dd210cbe1051326bf887b</anchor>
+      <arglist>(NSUInteger index)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>CPPlotSpace *</type>
+      <name>plotSpaceWithIdentifier:</name>
+      <anchorfile>group___c_p_graph.html</anchorfile>
+      <anchor>ga23d2a0c85b5407120819d1ab8270bf17</anchor>
+      <arglist>(id&lt; NSCopying &gt; identifier)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>addPlotSpace:</name>
+      <anchorfile>group___c_p_graph.html</anchorfile>
+      <anchor>ga746ceeb542fd98bb34c7d08e90803506</anchor>
+      <arglist>(CPPlotSpace *space)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>removePlotSpace:</name>
+      <anchorfile>group___c_p_graph.html</anchorfile>
+      <anchor>gaa0f19fec90ee22aa5c3a1f50361b8811</anchor>
+      <arglist>(CPPlotSpace *plotSpace)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>applyTheme:</name>
+      <anchorfile>group___c_p_graph.html</anchorfile>
+      <anchor>gabb01698dfab2705e3107abd852b96773</anchor>
+      <arglist>(CPTheme *theme)</arglist>
+    </member>
+    <member kind="property">
+      <type>CPAxisSet *</type>
+      <name>axisSet</name>
+      <anchorfile>group___c_p_graph.html</anchorfile>
+      <anchor>ga760e55e94a0596b3e76776faf6b3a206</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPPlotArea *</type>
+      <name>plotArea</name>
+      <anchorfile>group___c_p_graph.html</anchorfile>
+      <anchor>ga10047e5e3ff3e7df97fece516b847d53</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPPlotSpace *</type>
+      <name>defaultPlotSpace</name>
+      <anchorfile>group___c_p_graph.html</anchorfile>
+      <anchor>gac90bbeb6f02bb752803b8b48dac59800</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPImage</name>
+    <filename>interface_c_p_image.html</filename>
+    <base>NSObject</base>
+    <member kind="function" virtualness="virtual">
+      <type>id</type>
+      <name>initWithCGImage:</name>
+      <anchorfile>interface_c_p_image.html</anchorfile>
+      <anchor>a7837c2acbcfbacec5f99919ba16a7886</anchor>
+      <arglist>(CGImageRef anImage)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>id</type>
+      <name>initForPNGFile:</name>
+      <anchorfile>interface_c_p_image.html</anchorfile>
+      <anchor>ae5909baac6d2ed6a22efac43a61b45e4</anchor>
+      <arglist>(NSString *path)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>drawInRect:inContext:</name>
+      <anchorfile>interface_c_p_image.html</anchorfile>
+      <anchor>a568f629de9bf6e141c2e22c08b0594d4</anchor>
+      <arglist>(CGRect rect,[inContext] CGContextRef context)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPImage *</type>
+      <name>imageWithCGImage:</name>
+      <anchorfile>interface_c_p_image.html</anchorfile>
+      <anchor>a22c236b63f606bac0b3442cc17f070a7</anchor>
+      <arglist>(CGImageRef anImage)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPImage *</type>
+      <name>imageForPNGFile:</name>
+      <anchorfile>interface_c_p_image.html</anchorfile>
+      <anchor>a1ea57365fc33a5e7ac6cdfdd742bc355</anchor>
+      <arglist>(NSString *path)</arglist>
+    </member>
+    <member kind="property">
+      <type>CGImageRef</type>
+      <name>image</name>
+      <anchorfile>interface_c_p_image.html</anchorfile>
+      <anchor>a700bf575cf9fd316f4d4ee371d4e04da</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>BOOL</type>
+      <name>tiled</name>
+      <anchorfile>interface_c_p_image.html</anchorfile>
+      <anchor>a229080b22adf3b984b6f66ca4243cced</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPLayer</name>
+    <filename>class_c_p_layer.html</filename>
+    <base>CALayer</base>
+    <base>CPResponder-p</base>
+    <member kind="function" virtualness="virtual">
+      <type>CPNativeImage *</type>
+      <name>imageOfLayer</name>
+      <anchorfile>class_c_p_layer.html</anchorfile>
+      <anchor>aaf206234345a192a5f4c2c79c31d3275</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>id</type>
+      <name>initWithFrame:</name>
+      <anchorfile>group___c_p_layer.html</anchorfile>
+      <anchor>ga55e20db52d41e3bc276e3ff4f0e07e5d</anchor>
+      <arglist>(CGRect newFrame)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>renderAsVectorInContext:</name>
+      <anchorfile>group___c_p_layer.html</anchorfile>
+      <anchor>gac3b8b3138c38dcf4d38e1e9e07173ebf</anchor>
+      <arglist>(CGContextRef context)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>recursivelyRenderInContext:</name>
+      <anchorfile>group___c_p_layer.html</anchorfile>
+      <anchor>ga9cee7d548fdd8e632c419652da848e91</anchor>
+      <arglist>(CGContextRef context)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>NSData *</type>
+      <name>dataForPDFRepresentationOfLayer</name>
+      <anchorfile>group___c_p_layer.html</anchorfile>
+      <anchor>gaf1d7b9cee5b364818d5c9b46330326ee</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="property">
+      <type>__weak CPGraph *</type>
+      <name>graph</name>
+      <anchorfile>group___c_p_layer.html</anchorfile>
+      <anchor>gac238f4c67fd116af5b831e3fbc406404</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CGFloat</type>
+      <name>paddingLeft</name>
+      <anchorfile>group___c_p_layer.html</anchorfile>
+      <anchor>gad0fd0e023ee4f9b64ecfbd369820ec1c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CGFloat</type>
+      <name>paddingTop</name>
+      <anchorfile>group___c_p_layer.html</anchorfile>
+      <anchor>gabde3adfc0ca84bbc138f1214f94cf9c3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CGFloat</type>
+      <name>paddingRight</name>
+      <anchorfile>group___c_p_layer.html</anchorfile>
+      <anchor>ga4a89230854cf58adca1fdb71292027d6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CGFloat</type>
+      <name>paddingBottom</name>
+      <anchorfile>group___c_p_layer.html</anchorfile>
+      <anchor>ga8b212a178e641e2cbd1824b4d31605f9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CGPathRef</type>
+      <name>maskingPath</name>
+      <anchorfile>group___c_p_layer.html</anchorfile>
+      <anchor>gac14276fee59574f07a7b24c9bf2dad80</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CGPathRef</type>
+      <name>sublayerMaskingPath</name>
+      <anchorfile>group___c_p_layer.html</anchorfile>
+      <anchor>ga479b978da77780f81cadecd8355f20d0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>applySublayerMaskToContext:forSublayer:withOffset:</name>
+      <anchorfile>group___c_p_layer.html</anchorfile>
+      <anchor>gaf89526361a9e80c0ba21b31f80922507</anchor>
+      <arglist>(CGContextRef context,[forSublayer] CPLayer *sublayer,[withOffset] CGPoint offset)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>applyMaskToContext:</name>
+      <anchorfile>group___c_p_layer.html</anchorfile>
+      <anchor>gacc3cffe1242a6147161bc3120747b8ad</anchor>
+      <arglist>(CGContextRef context)</arglist>
+    </member>
+    <member kind="property">
+      <type>id&lt; CPLayoutManager &gt;</type>
+      <name>layoutManager</name>
+      <anchorfile>group___c_p_layer.html</anchorfile>
+      <anchor>gaa39195c52b4883f547802f5a9cd20dc8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CGFloat</type>
+      <name>defaultZPosition</name>
+      <anchorfile>group___c_p_layer.html</anchorfile>
+      <anchor>ga512071c472f620c9e65889149bf84412</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>bind:toObject:withKeyPath:options:</name>
+      <anchorfile>group___c_p_layer.html</anchorfile>
+      <anchor>ga770e201499bc0fc6dd9e0d439de2f20a</anchor>
+      <arglist>(NSString *binding,[toObject] id observable,[withKeyPath] NSString *keyPath,[options] NSDictionary *options)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>unbind:</name>
+      <anchorfile>group___c_p_layer.html</anchorfile>
+      <anchor>gaca668533f2ae54c71052f8d99e521e38</anchor>
+      <arglist>(NSString *binding)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>Class</type>
+      <name>valueClassForBinding:</name>
+      <anchorfile>group___c_p_layer.html</anchorfile>
+      <anchor>gad7936c12cd52d044e08d8ad926a2e550</anchor>
+      <arglist>(NSString *binding)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>void</type>
+      <name>exposeBinding:</name>
+      <anchorfile>group___c_p_layer.html</anchorfile>
+      <anchor>gae82f936da82db56ca14049ebfe0784d2</anchor>
+      <arglist>(NSString *binding)</arglist>
+    </member>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPLayerHostingView</name>
+    <filename>interface_c_p_layer_hosting_view.html</filename>
+    <base>UIView</base>
+    <member kind="property">
+      <type>CPLayer *</type>
+      <name>hostedLayer</name>
+      <anchorfile>interface_c_p_layer_hosting_view.html</anchorfile>
+      <anchor>a16d255b416192e5403b04fc610c77213</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="protocol" objc="yes">
+    <name>CPLayoutManager-p</name>
+    <filename>protocol_c_p_layout_manager-p.html</filename>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>invalidateLayoutOfLayer:</name>
+      <anchorfile>protocol_c_p_layout_manager-p.html</anchorfile>
+      <anchor>aacec7bb389212b8d3f51b6df2e6eead3</anchor>
+      <arglist>(CALayer *layer)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>layoutSublayersOfLayer:</name>
+      <anchorfile>protocol_c_p_layout_manager-p.html</anchorfile>
+      <anchor>a017af00f1b77c1281a20081bbc22cd59</anchor>
+      <arglist>(CALayer *layer)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>CGSize</type>
+      <name>preferredSizeOfLayer:</name>
+      <anchorfile>protocol_c_p_layout_manager-p.html</anchorfile>
+      <anchor>aa9fe76e00b26501528cf8471a935ce63</anchor>
+      <arglist>(CALayer *layer)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>CGSize</type>
+      <name>minimumSizeOfLayer:</name>
+      <anchorfile>protocol_c_p_layout_manager-p.html</anchorfile>
+      <anchor>abf5b9fe9cc44f137dd78e9e99af32b4e</anchor>
+      <arglist>(CALayer *layer)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>CGSize</type>
+      <name>maximumSizeOfLayer:</name>
+      <anchorfile>protocol_c_p_layout_manager-p.html</anchorfile>
+      <anchor>af2575e5cd99f9c70b52db6d461251300</anchor>
+      <arglist>(CALayer *layer)</arglist>
+    </member>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPLineStyle</name>
+    <filename>interface_c_p_line_style.html</filename>
+    <base>NSObject</base>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>setLineStyleInContext:</name>
+      <anchorfile>interface_c_p_line_style.html</anchorfile>
+      <anchor>a24afb738e4a81ea2ea2978df5d6fe878</anchor>
+      <arglist>(CGContextRef theContext)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPLineStyle *</type>
+      <name>lineStyle</name>
+      <anchorfile>interface_c_p_line_style.html</anchorfile>
+      <anchor>ac74a242f700abef8848b08a2d46e4ca1</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="property">
+      <type>CGLineCap</type>
+      <name>lineCap</name>
+      <anchorfile>interface_c_p_line_style.html</anchorfile>
+      <anchor>a16950b878a96eff0475d160e0f72db28</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CGLineJoin</type>
+      <name>lineJoin</name>
+      <anchorfile>interface_c_p_line_style.html</anchorfile>
+      <anchor>a0434eaf26b9a10ae720c636665d21412</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CGFloat</type>
+      <name>miterLimit</name>
+      <anchorfile>interface_c_p_line_style.html</anchorfile>
+      <anchor>a83492aa3dc677141a5de74d1cede2457</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CGFloat</type>
+      <name>lineWidth</name>
+      <anchorfile>interface_c_p_line_style.html</anchorfile>
+      <anchor>a1bfc833634f9edd1ce7e5851003f25bb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>NSArray *</type>
+      <name>dashPattern</name>
+      <anchorfile>interface_c_p_line_style.html</anchorfile>
+      <anchor>a179e99aba8d2227e8bdb813ed9c2b689</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CGFloat</type>
+      <name>patternPhase</name>
+      <anchorfile>interface_c_p_line_style.html</anchorfile>
+      <anchor>a3debb52f8a87a4798b7ea9d80fafc62b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPColor *</type>
+      <name>lineColor</name>
+      <anchorfile>interface_c_p_line_style.html</anchorfile>
+      <anchor>a7ab92374f031d4c703f699b4af4d14eb</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPPieChart</name>
+    <filename>interface_c_p_pie_chart.html</filename>
+    <base>CPPlot</base>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPColor *</type>
+      <name>defaultPieSliceColorForIndex:</name>
+      <anchorfile>interface_c_p_pie_chart.html</anchorfile>
+      <anchor>a46012d1586e5f0fad6dd73a0710fbbc3</anchor>
+      <arglist>(NSUInteger pieSliceIndex)</arglist>
+    </member>
+    <member kind="property">
+      <type>CGFloat</type>
+      <name>pieRadius</name>
+      <anchorfile>interface_c_p_pie_chart.html</anchorfile>
+      <anchor>a899554f9209f6af9fffcb8e0769e641b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CGFloat</type>
+      <name>sliceLabelOffset</name>
+      <anchorfile>interface_c_p_pie_chart.html</anchorfile>
+      <anchor>abc2ae9ea088829f03abd6273dd6efcf3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CGFloat</type>
+      <name>startAngle</name>
+      <anchorfile>interface_c_p_pie_chart.html</anchorfile>
+      <anchor>a8ab38c68110232c1618f0b063c8b39bd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPPieDirection</type>
+      <name>sliceDirection</name>
+      <anchorfile>interface_c_p_pie_chart.html</anchorfile>
+      <anchor>ac98013bf3e8c750a61fd759fc644f59e</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="protocol" objc="yes">
+    <name>CPPieChartDataSource-p</name>
+    <filename>protocol_c_p_pie_chart_data_source-p.html</filename>
+    <base>CPPlotDataSource-p</base>
+    <member kind="function" virtualness="virtual">
+      <type>CPFill *</type>
+      <name>sliceFillForPieChart:recordIndex:</name>
+      <anchorfile>protocol_c_p_pie_chart_data_source-p.html</anchorfile>
+      <anchor>a7b3d8325c0a662420b5f9a5e37127bc4</anchor>
+      <arglist>(CPPieChart *pieChart,[recordIndex] NSUInteger index)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>CPTextLayer *</type>
+      <name>sliceLabelForPieChart:recordIndex:</name>
+      <anchorfile>protocol_c_p_pie_chart_data_source-p.html</anchorfile>
+      <anchor>a013ccc7e5bbf86f883115e0b09ad0e4d</anchor>
+      <arglist>(CPPieChart *pieChart,[recordIndex] NSUInteger index)</arglist>
+    </member>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPPlainBlackTheme</name>
+    <filename>interface_c_p_plain_black_theme.html</filename>
+    <base>CPXYTheme</base>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPPlainWhiteTheme</name>
+    <filename>interface_c_p_plain_white_theme.html</filename>
+    <base>CPXYTheme</base>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPPlot</name>
+    <filename>interface_c_p_plot.html</filename>
+    <base>CPLayer</base>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>setDataNeedsReloading</name>
+      <anchorfile>interface_c_p_plot.html</anchorfile>
+      <anchor>ae20207cbd470c4c3f2838c027ab3c58d</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>reloadData</name>
+      <anchorfile>interface_c_p_plot.html</anchorfile>
+      <anchor>afcfc7132c7c5604a232a6b4cdfe5b082</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>NSArray *</type>
+      <name>numbersFromDataSourceForField:recordIndexRange:</name>
+      <anchorfile>interface_c_p_plot.html</anchorfile>
+      <anchor>ae59fcf01255dc9c1d766a24e38b54024</anchor>
+      <arglist>(NSUInteger fieldEnum,[recordIndexRange] NSRange indexRange)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>NSRange</type>
+      <name>recordIndexRangeForPlotRange:</name>
+      <anchorfile>interface_c_p_plot.html</anchorfile>
+      <anchor>a33b6c9beacbf50bffe2f1d43fa0569ed</anchor>
+      <arglist>(CPPlotRange *plotRange)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>NSArray *</type>
+      <name>cachedNumbersForField:</name>
+      <anchorfile>interface_c_p_plot.html</anchorfile>
+      <anchor>ac15dcd440f10f2b974e394d10b484027</anchor>
+      <arglist>(NSUInteger fieldEnum)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>cacheNumbers:forField:</name>
+      <anchorfile>interface_c_p_plot.html</anchorfile>
+      <anchor>a428643a9cc1f20e6a6449cc7751d50a0</anchor>
+      <arglist>(NSArray *numbers,[forField] NSUInteger fieldEnum)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>CPPlotRange *</type>
+      <name>plotRangeForField:</name>
+      <anchorfile>interface_c_p_plot.html</anchorfile>
+      <anchor>a5de6298e1124a9c72e52d85277f9f797</anchor>
+      <arglist>(NSUInteger fieldEnum)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>CPPlotRange *</type>
+      <name>plotRangeForCoordinate:</name>
+      <anchorfile>interface_c_p_plot.html</anchorfile>
+      <anchor>a40b0e8b0699aa593d1f25afb45f73663</anchor>
+      <arglist>(CPCoordinate coord)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>NSUInteger</type>
+      <name>numberOfFields</name>
+      <anchorfile>interface_c_p_plot.html</anchorfile>
+      <anchor>a260334bf707dd3d1d3f6e416dc6bd66e</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>NSArray *</type>
+      <name>fieldIdentifiers</name>
+      <anchorfile>interface_c_p_plot.html</anchorfile>
+      <anchor>add6d822cd2b494bbdbf12a0bb510a5ef</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>NSArray *</type>
+      <name>fieldIdentifiersForCoordinate:</name>
+      <anchorfile>interface_c_p_plot.html</anchorfile>
+      <anchor>a87883b677b2c77310ec05493a1c59d15</anchor>
+      <arglist>(CPCoordinate coord)</arglist>
+    </member>
+    <member kind="property">
+      <type>id&lt; CPPlotDataSource &gt;</type>
+      <name>dataSource</name>
+      <anchorfile>interface_c_p_plot.html</anchorfile>
+      <anchor>ab12ce398a0215ce5242c0fa665105291</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>id&lt; NSCopying, NSObject &gt;</type>
+      <name>identifier</name>
+      <anchorfile>interface_c_p_plot.html</anchorfile>
+      <anchor>a289e2ae3c24b9f74bdde1cf92e9eaf47</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPPlotSpace *</type>
+      <name>plotSpace</name>
+      <anchorfile>interface_c_p_plot.html</anchorfile>
+      <anchor>a0b75011d1c7ca4582a7d5da0355c4dfb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>BOOL</type>
+      <name>dataNeedsReloading</name>
+      <anchorfile>interface_c_p_plot.html</anchorfile>
+      <anchor>a990b5bdc90ef9c82b973db03627cd80a</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPPlotArea</name>
+    <filename>interface_c_p_plot_area.html</filename>
+    <base>CPBorderedLayer</base>
+    <member kind="property">
+      <type>CPAxisSet *</type>
+      <name>axisSet</name>
+      <anchorfile>interface_c_p_plot_area.html</anchorfile>
+      <anchor>ad737a17c51d800e0957d1ed3014975d4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPPlotGroup *</type>
+      <name>plotGroup</name>
+      <anchorfile>interface_c_p_plot_area.html</anchorfile>
+      <anchor>a30450efe4781aece5554e98b66eb41b4</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="protocol" objc="yes">
+    <name>CPPlotDataSource-p</name>
+    <filename>protocol_c_p_plot_data_source-p.html</filename>
+    <member kind="function" virtualness="virtual">
+      <type>NSUInteger</type>
+      <name>numberOfRecordsForPlot:</name>
+      <anchorfile>protocol_c_p_plot_data_source-p.html</anchorfile>
+      <anchor>a6311af19207de429e6e0ae6bcff90c7f</anchor>
+      <arglist>(CPPlot *plot)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>NSRange</type>
+      <name>recordIndexRangeForPlot:plotRange:</name>
+      <anchorfile>protocol_c_p_plot_data_source-p.html</anchorfile>
+      <anchor>a753fd6fb2d9763d2706d9355d79d8307</anchor>
+      <arglist>(CPPlot *plot,[plotRange] CPPlotRange *plotRange)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>NSArray *</type>
+      <name>numbersForPlot:field:recordIndexRange:</name>
+      <anchorfile>protocol_c_p_plot_data_source-p.html</anchorfile>
+      <anchor>af3f285c6ab136c36ce4c72e626dfd08e</anchor>
+      <arglist>(CPPlot *plot,[field] NSUInteger fieldEnum,[recordIndexRange] NSRange indexRange)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>NSNumber *</type>
+      <name>numberForPlot:field:recordIndex:</name>
+      <anchorfile>protocol_c_p_plot_data_source-p.html</anchorfile>
+      <anchor>a5c84ac1d2b66ff12345571f00048ad54</anchor>
+      <arglist>(CPPlot *plot,[field] NSUInteger fieldEnum,[recordIndex] NSUInteger index)</arglist>
+    </member>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPPlotGroup</name>
+    <filename>interface_c_p_plot_group.html</filename>
+    <base>CPLayer</base>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>addPlot:</name>
+      <anchorfile>interface_c_p_plot_group.html</anchorfile>
+      <anchor>a6995519488f8131d076e2a12de42fef6</anchor>
+      <arglist>(CPPlot *plot)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>removePlot:</name>
+      <anchorfile>interface_c_p_plot_group.html</anchorfile>
+      <anchor>a4413cd7ffbbaa2e063b89202ae7c5dc0</anchor>
+      <arglist>(CPPlot *plot)</arglist>
+    </member>
+    <member kind="property">
+      <type>id&lt; NSCopying, NSObject &gt;</type>
+      <name>identifier</name>
+      <anchorfile>interface_c_p_plot_group.html</anchorfile>
+      <anchor>afe152e0dcf41ea6b9a0f8b94a2d253b1</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPPlotRange</name>
+    <filename>interface_c_p_plot_range.html</filename>
+    <base>NSObject</base>
+    <member kind="function" virtualness="virtual">
+      <type>id</type>
+      <name>initWithLocation:length:</name>
+      <anchorfile>interface_c_p_plot_range.html</anchorfile>
+      <anchor>ab072204540c03448114b06e2b8b08372</anchor>
+      <arglist>(NSDecimal loc,[length] NSDecimal len)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>BOOL</type>
+      <name>contains:</name>
+      <anchorfile>interface_c_p_plot_range.html</anchorfile>
+      <anchor>a39d32ad4798be43bc9d43335c7b796cf</anchor>
+      <arglist>(NSDecimal number)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>unionPlotRange:</name>
+      <anchorfile>interface_c_p_plot_range.html</anchorfile>
+      <anchor>a6dbc4755ebb618fa32ea5bc690a35b69</anchor>
+      <arglist>(CPPlotRange *otherRange)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>intersectionPlotRange:</name>
+      <anchorfile>interface_c_p_plot_range.html</anchorfile>
+      <anchor>a31633bab2cf4674899dabfc0f276a729</anchor>
+      <arglist>(CPPlotRange *otherRange)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>shiftLocationToFitInRange:</name>
+      <anchorfile>interface_c_p_plot_range.html</anchorfile>
+      <anchor>abf9ccec986d84ade5502153baf9abbbc</anchor>
+      <arglist>(CPPlotRange *otherRange)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>shiftEndToFitInRange:</name>
+      <anchorfile>interface_c_p_plot_range.html</anchorfile>
+      <anchor>a3cf6eb43eddf7e023e6f9561eb3c6bc2</anchor>
+      <arglist>(CPPlotRange *otherRange)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>expandRangeByFactor:</name>
+      <anchorfile>interface_c_p_plot_range.html</anchorfile>
+      <anchor>a3dc99f0f290b817661c2210b60be1fd3</anchor>
+      <arglist>(NSDecimal factor)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>CPPlotRangeComparisonResult</type>
+      <name>compareToNumber:</name>
+      <anchorfile>interface_c_p_plot_range.html</anchorfile>
+      <anchor>a29ee6c5bf6848d3a2e3e7b355a2c221e</anchor>
+      <arglist>(NSNumber *number)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPPlotRange *</type>
+      <name>plotRangeWithLocation:length:</name>
+      <anchorfile>interface_c_p_plot_range.html</anchorfile>
+      <anchor>aa985f7306b537b30733e51a28211fab9</anchor>
+      <arglist>(NSDecimal loc,[length] NSDecimal len)</arglist>
+    </member>
+    <member kind="property">
+      <type>NSDecimal</type>
+      <name>location</name>
+      <anchorfile>interface_c_p_plot_range.html</anchorfile>
+      <anchor>ad88d74091bcd8663de9912273f9e3dc7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>NSDecimal</type>
+      <name>length</name>
+      <anchorfile>interface_c_p_plot_range.html</anchorfile>
+      <anchor>ac599e472af600468bb8ec24654983bb8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>NSDecimal</type>
+      <name>end</name>
+      <anchorfile>interface_c_p_plot_range.html</anchorfile>
+      <anchor>a5e20f7e1de2f90dc81d5e752c4eff74a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>double</type>
+      <name>doublePrecisionLocation</name>
+      <anchorfile>interface_c_p_plot_range.html</anchorfile>
+      <anchor>a4c7958b266477d45c5ec2585f7abe830</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>double</type>
+      <name>doublePrecisionLength</name>
+      <anchorfile>interface_c_p_plot_range.html</anchorfile>
+      <anchor>a525948be8232e8ff2ffd99bb2e8b7c93</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>double</type>
+      <name>doublePrecisionEnd</name>
+      <anchorfile>interface_c_p_plot_range.html</anchorfile>
+      <anchor>a99660d40257399f2a5e42b2148dc816b</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPPlotSpace</name>
+    <filename>interface_c_p_plot_space.html</filename>
+    <base>NSObject</base>
+    <base>CPResponder-p</base>
+    <member kind="function" virtualness="virtual">
+      <type>CGPoint</type>
+      <name>plotAreaViewPointForPlotPoint:</name>
+      <anchorfile>group___c_p_plot_space.html</anchorfile>
+      <anchor>ga575ff0b8c1e5a7515c6c3fe5e0cb2d0f</anchor>
+      <arglist>(NSDecimal *plotPoint)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>CGPoint</type>
+      <name>plotAreaViewPointForDoublePrecisionPlotPoint:</name>
+      <anchorfile>group___c_p_plot_space.html</anchorfile>
+      <anchor>ga8804db244e4744896791adaec07235b8</anchor>
+      <arglist>(double *plotPoint)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>plotPoint:forPlotAreaViewPoint:</name>
+      <anchorfile>group___c_p_plot_space.html</anchorfile>
+      <anchor>ga5a9b3207ba376b00faede97da368ccf4</anchor>
+      <arglist>(NSDecimal *plotPoint,[forPlotAreaViewPoint] CGPoint point)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>doublePrecisionPlotPoint:forPlotAreaViewPoint:</name>
+      <anchorfile>group___c_p_plot_space.html</anchorfile>
+      <anchor>ga04149fc9eed8f5fc0dcdb10a9a670190</anchor>
+      <arglist>(double *plotPoint,[forPlotAreaViewPoint] CGPoint point)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>CPPlotRange *</type>
+      <name>plotRangeForCoordinate:</name>
+      <anchorfile>group___c_p_plot_space.html</anchorfile>
+      <anchor>gae7701723aeb0f0fa7a657b8cbe2aa57e</anchor>
+      <arglist>(CPCoordinate coordinate)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>scaleToFitPlots:</name>
+      <anchorfile>group___c_p_plot_space.html</anchorfile>
+      <anchor>gaefd10f294c945688a21ac71ea9da7c9a</anchor>
+      <arglist>(NSArray *plots)</arglist>
+    </member>
+    <member kind="property">
+      <type>id&lt; NSCopying, NSObject &gt;</type>
+      <name>identifier</name>
+      <anchorfile>group___c_p_plot_space.html</anchorfile>
+      <anchor>gadb6d007abe6007d4e445aee96cdf902b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>BOOL</type>
+      <name>allowsUserInteraction</name>
+      <anchorfile>group___c_p_plot_space.html</anchorfile>
+      <anchor>gae32e4531fb226765bf675fe51ce37966</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>__weak CPGraph *</type>
+      <name>graph</name>
+      <anchorfile>group___c_p_plot_space.html</anchorfile>
+      <anchor>ga3822268628684e473df11ad24a9105d6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>__weak id&lt; CPPlotSpaceDelegate &gt;</type>
+      <name>delegate</name>
+      <anchorfile>group___c_p_plot_space.html</anchorfile>
+      <anchor>ga6a6f1982a78ae64f3fb7fd422e66baf5</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="protocol" objc="yes">
+    <name>CPPlotSpaceDelegate-p</name>
+    <filename>protocol_c_p_plot_space_delegate-p.html</filename>
+    <member kind="function" virtualness="virtual">
+      <type>CGPoint</type>
+      <name>plotSpace:willDisplaceBy:</name>
+      <anchorfile>protocol_c_p_plot_space_delegate-p.html</anchorfile>
+      <anchor>a27114600f3a41896cc7d9e19150e6585</anchor>
+      <arglist>(CPPlotSpace *space,[willDisplaceBy] CGPoint proposedDisplacementVector)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>CPPlotRange *</type>
+      <name>plotSpace:willChangePlotRangeTo:forCoordinate:</name>
+      <anchorfile>protocol_c_p_plot_space_delegate-p.html</anchorfile>
+      <anchor>ab0e7eaaf46729766b807b63b90a23e53</anchor>
+      <arglist>(CPPlotSpace *space,[willChangePlotRangeTo] CPPlotRange *newRange,[forCoordinate] CPCoordinate coordinate)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>plotSpace:didChangePlotRangeForCoordinate:</name>
+      <anchorfile>protocol_c_p_plot_space_delegate-p.html</anchorfile>
+      <anchor>aa04cd1e286852314721bb455b1cf8ca3</anchor>
+      <arglist>(CPPlotSpace *space,[didChangePlotRangeForCoordinate] CPCoordinate coordinate)</arglist>
+    </member>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPPlotSymbol</name>
+    <filename>interface_c_p_plot_symbol.html</filename>
+    <base>NSObject</base>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>renderInContext:atPoint:</name>
+      <anchorfile>interface_c_p_plot_symbol.html</anchorfile>
+      <anchor>a6e0211b635669352beb4a68458599387</anchor>
+      <arglist>(CGContextRef theContext,[atPoint] CGPoint center)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPPlotSymbol *</type>
+      <name>plotSymbol</name>
+      <anchorfile>interface_c_p_plot_symbol.html</anchorfile>
+      <anchor>ac4d7e3948974e543f2303e9d74021115</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPPlotSymbol *</type>
+      <name>crossPlotSymbol</name>
+      <anchorfile>interface_c_p_plot_symbol.html</anchorfile>
+      <anchor>a13d5acd4d6a8033a3eb4852f6b91e296</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPPlotSymbol *</type>
+      <name>ellipsePlotSymbol</name>
+      <anchorfile>interface_c_p_plot_symbol.html</anchorfile>
+      <anchor>a386d7f1792f0e08a636c0bbeda38d543</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPPlotSymbol *</type>
+      <name>rectanglePlotSymbol</name>
+      <anchorfile>interface_c_p_plot_symbol.html</anchorfile>
+      <anchor>a3add19a9d22dd538938538bbd25acc9c</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPPlotSymbol *</type>
+      <name>plusPlotSymbol</name>
+      <anchorfile>interface_c_p_plot_symbol.html</anchorfile>
+      <anchor>a7d0304d294df991a92fb9a6cadf84849</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPPlotSymbol *</type>
+      <name>starPlotSymbol</name>
+      <anchorfile>interface_c_p_plot_symbol.html</anchorfile>
+      <anchor>aee6e5360a0a52c81462e788e2c05022e</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPPlotSymbol *</type>
+      <name>diamondPlotSymbol</name>
+      <anchorfile>interface_c_p_plot_symbol.html</anchorfile>
+      <anchor>af7461ff9c6a260ebb2878628e7dd41b7</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPPlotSymbol *</type>
+      <name>trianglePlotSymbol</name>
+      <anchorfile>interface_c_p_plot_symbol.html</anchorfile>
+      <anchor>a88030580e874905f33f1f408a536f2cb</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPPlotSymbol *</type>
+      <name>pentagonPlotSymbol</name>
+      <anchorfile>interface_c_p_plot_symbol.html</anchorfile>
+      <anchor>ad2c88d070fbff55daccb7d8befdc4541</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPPlotSymbol *</type>
+      <name>hexagonPlotSymbol</name>
+      <anchorfile>interface_c_p_plot_symbol.html</anchorfile>
+      <anchor>a69596e14ca60eed1eb78217fdf509396</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPPlotSymbol *</type>
+      <name>dashPlotSymbol</name>
+      <anchorfile>interface_c_p_plot_symbol.html</anchorfile>
+      <anchor>a5bd97c71f30412035e0e94fc990e4bcf</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPPlotSymbol *</type>
+      <name>snowPlotSymbol</name>
+      <anchorfile>interface_c_p_plot_symbol.html</anchorfile>
+      <anchor>a94e881f530d6a57167eb6fca572ccabf</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPPlotSymbol *</type>
+      <name>customPlotSymbolWithPath:</name>
+      <anchorfile>interface_c_p_plot_symbol.html</anchorfile>
+      <anchor>a18a56de64b9f4fcc79284c107ce2d08b</anchor>
+      <arglist>(CGPathRef aPath)</arglist>
+    </member>
+    <member kind="property">
+      <type>CGSize</type>
+      <name>size</name>
+      <anchorfile>interface_c_p_plot_symbol.html</anchorfile>
+      <anchor>af8ffe5de01332c877ee16dfa8b1afb6c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPPlotSymbolType</type>
+      <name>symbolType</name>
+      <anchorfile>interface_c_p_plot_symbol.html</anchorfile>
+      <anchor>ae49621fd7adc730c5ca103b7177f7b06</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPLineStyle *</type>
+      <name>lineStyle</name>
+      <anchorfile>interface_c_p_plot_symbol.html</anchorfile>
+      <anchor>ad1b1d506f4fa3e99c43dcffb29bc71c9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPFill *</type>
+      <name>fill</name>
+      <anchorfile>interface_c_p_plot_symbol.html</anchorfile>
+      <anchor>a7ed101733d1971d6e44ca89311d795bb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CGPathRef</type>
+      <name>customSymbolPath</name>
+      <anchorfile>interface_c_p_plot_symbol.html</anchorfile>
+      <anchor>a6ec1f1ff0363f2584cccf09b62ef31d7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>BOOL</type>
+      <name>usesEvenOddClipRule</name>
+      <anchorfile>interface_c_p_plot_symbol.html</anchorfile>
+      <anchor>a494f6b081a0c0379eb5329bda13dafea</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPPolarPlotSpace</name>
+    <filename>interface_c_p_polar_plot_space.html</filename>
+    <base>CPPlotSpace</base>
+  </compound>
+  <compound kind="protocol" objc="yes">
+    <name>CPResponder-p</name>
+    <filename>protocol_c_p_responder-p.html</filename>
+    <member kind="function" virtualness="virtual">
+      <type>BOOL</type>
+      <name>pointingDeviceDownAtPoint:</name>
+      <anchorfile>protocol_c_p_responder-p.html</anchorfile>
+      <anchor>a858839e13c88766865f8707a470b6c37</anchor>
+      <arglist>(CGPoint interactionPoint)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>BOOL</type>
+      <name>pointingDeviceUpAtPoint:</name>
+      <anchorfile>protocol_c_p_responder-p.html</anchorfile>
+      <anchor>a3aa6325f452d599c82e0cf5dc0ff2ea1</anchor>
+      <arglist>(CGPoint interactionPoint)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>BOOL</type>
+      <name>pointingDeviceDraggedAtPoint:</name>
+      <anchorfile>protocol_c_p_responder-p.html</anchorfile>
+      <anchor>a54bbdc86de701dbed0ef6a33f585da84</anchor>
+      <arglist>(CGPoint interactionPoint)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>BOOL</type>
+      <name>pointingDeviceCancelled</name>
+      <anchorfile>protocol_c_p_responder-p.html</anchorfile>
+      <anchor>a736f9b8dd8830e6ffd8e671693755a9b</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPScatterPlot</name>
+    <filename>interface_c_p_scatter_plot.html</filename>
+    <base>CPPlot</base>
+    <member kind="property">
+      <type>CPLineStyle *</type>
+      <name>dataLineStyle</name>
+      <anchorfile>interface_c_p_scatter_plot.html</anchorfile>
+      <anchor>a9b4ac54926920091bce114d7ffb08272</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPPlotSymbol *</type>
+      <name>plotSymbol</name>
+      <anchorfile>interface_c_p_scatter_plot.html</anchorfile>
+      <anchor>a292ee04661eedb7c2e592162aa7c9a0e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPFill *</type>
+      <name>areaFill</name>
+      <anchorfile>interface_c_p_scatter_plot.html</anchorfile>
+      <anchor>aad901b7321e72adc87a50443dd7a88b5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>NSDecimal</type>
+      <name>areaBaseValue</name>
+      <anchorfile>interface_c_p_scatter_plot.html</anchorfile>
+      <anchor>a16e606826b009c79a3dfd4fdf4bad71e</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="protocol" objc="yes">
+    <name>CPScatterPlotDataSource-p</name>
+    <filename>protocol_c_p_scatter_plot_data_source-p.html</filename>
+    <base>CPPlotDataSource-p</base>
+    <member kind="function" virtualness="virtual">
+      <type>NSArray *</type>
+      <name>symbolsForScatterPlot:recordIndexRange:</name>
+      <anchorfile>protocol_c_p_scatter_plot_data_source-p.html</anchorfile>
+      <anchor>a6cf4ed934c6dee7c7933c114b0fe5114</anchor>
+      <arglist>(CPScatterPlot *plot,[recordIndexRange] NSRange indexRange)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>CPPlotSymbol *</type>
+      <name>symbolForScatterPlot:recordIndex:</name>
+      <anchorfile>protocol_c_p_scatter_plot_data_source-p.html</anchorfile>
+      <anchor>a7b4a7e9990d7418aff941a60030dbe89</anchor>
+      <arglist>(CPScatterPlot *plot,[recordIndex] NSUInteger index)</arglist>
+    </member>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPStocksTheme</name>
+    <filename>interface_c_p_stocks_theme.html</filename>
+    <base>CPXYTheme</base>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPTextLayer</name>
+    <filename>interface_c_p_text_layer.html</filename>
+    <base>CPLayer</base>
+    <member kind="function" virtualness="virtual">
+      <type>id</type>
+      <name>initWithText:</name>
+      <anchorfile>interface_c_p_text_layer.html</anchorfile>
+      <anchor>a252a555e03853b1fdbf16f640bf5865d</anchor>
+      <arglist>(NSString *newText)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>id</type>
+      <name>initWithText:style:</name>
+      <anchorfile>interface_c_p_text_layer.html</anchorfile>
+      <anchor>a443e50a68803197f595b7204671e7f7d</anchor>
+      <arglist>(NSString *newText,[style] CPTextStyle *newStyle)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>sizeToFit</name>
+      <anchorfile>interface_c_p_text_layer.html</anchorfile>
+      <anchor>ae62999f0dd6f21c131d9ba1a9b8c7a31</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="property">
+      <type>NSString *</type>
+      <name>text</name>
+      <anchorfile>interface_c_p_text_layer.html</anchorfile>
+      <anchor>a623a0fac3ee7e73213f544c1061cef77</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPTextStyle *</type>
+      <name>textStyle</name>
+      <anchorfile>interface_c_p_text_layer.html</anchorfile>
+      <anchor>ad6fda7942a63d483892daad9d2310318</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPTextStyle</name>
+    <filename>interface_c_p_text_style.html</filename>
+    <base>NSObject</base>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPTextStyle *</type>
+      <name>textStyle</name>
+      <anchorfile>interface_c_p_text_style.html</anchorfile>
+      <anchor>aac8af9493b8aa7f03d5c5f6802cfc716</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="property">
+      <type>NSString *</type>
+      <name>fontName</name>
+      <anchorfile>interface_c_p_text_style.html</anchorfile>
+      <anchor>ab29760210f742ba00f8b9dfbfc31cc8c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CGFloat</type>
+      <name>fontSize</name>
+      <anchorfile>interface_c_p_text_style.html</anchorfile>
+      <anchor>ad77b1089416d7f638ca3ff6ba5786efe</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPColor *</type>
+      <name>color</name>
+      <anchorfile>interface_c_p_text_style.html</anchorfile>
+      <anchor>adcb32d8c21811868555ca10caa29eed7</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPTheme</name>
+    <filename>interface_c_p_theme.html</filename>
+    <base>NSObject</base>
+    <member kind="function" virtualness="virtual">
+      <type>id</type>
+      <name>newGraph</name>
+      <anchorfile>group___c_p_theme.html</anchorfile>
+      <anchor>ga61f1ce138751ffd0ff961c39f5a97088</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>applyThemeToGraph:</name>
+      <anchorfile>group___c_p_theme.html</anchorfile>
+      <anchor>gab78ff69e9c69bb4a9bf2781333ab84c4</anchor>
+      <arglist>(CPGraph *graph)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>applyThemeToBackground:</name>
+      <anchorfile>group___c_p_theme.html</anchorfile>
+      <anchor>ga7d73a0eea9cce37744427f79a8b837a0</anchor>
+      <arglist>(CPGraph *graph)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>applyThemeToPlotArea:</name>
+      <anchorfile>group___c_p_theme.html</anchorfile>
+      <anchor>ga5235a30674f2924a2b0eda941f1aa0c7</anchor>
+      <arglist>(CPPlotArea *plotArea)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>void</type>
+      <name>applyThemeToAxisSet:</name>
+      <anchorfile>group___c_p_theme.html</anchorfile>
+      <anchor>ga05d9b083c7f22038bfbb2c9c5879a13f</anchor>
+      <arglist>(CPAxisSet *axisSet)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>NSArray *</type>
+      <name>themeClasses</name>
+      <anchorfile>group___c_p_theme.html</anchorfile>
+      <anchor>gafa48fa228c7e3907717ebcffa3dbf6a4</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>CPTheme *</type>
+      <name>themeNamed:</name>
+      <anchorfile>group___c_p_theme.html</anchorfile>
+      <anchor>ga93d05370f089c761d1e23e9b7ed1ef58</anchor>
+      <arglist>(NSString *theme)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>void</type>
+      <name>addTheme:</name>
+      <anchorfile>group___c_p_theme.html</anchorfile>
+      <anchor>ga4ccbfb450bcbcb9e761526749991fb20</anchor>
+      <arglist>(CPTheme *newTheme)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual" static="yes">
+      <type>NSString *</type>
+      <name>defaultName</name>
+      <anchorfile>group___c_p_theme.html</anchorfile>
+      <anchor>gacd4c7d4ed06226789a0d68eca293f25a</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="property">
+      <type>NSString *</type>
+      <name>name</name>
+      <anchorfile>group___c_p_theme.html</anchorfile>
+      <anchor>ga459850b2206f2539a9a14f0fbb14ce8b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>Class</type>
+      <name>graphClass</name>
+      <anchorfile>interface_c_p_theme.html</anchorfile>
+      <anchor>a2453c6cc71812554d66c7e7fdb757f9c</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPTimeFormatter</name>
+    <filename>interface_c_p_time_formatter.html</filename>
+    <base>NSNumberFormatter</base>
+    <member kind="function" virtualness="virtual">
+      <type>id</type>
+      <name>initWithDateFormatter:</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>gadee1b3a1964ef7dc538b50640f9325dc</anchor>
+      <arglist>(NSDateFormatter *aDateFormatter)</arglist>
+    </member>
+    <member kind="property">
+      <type>NSDateFormatter *</type>
+      <name>dateFormatter</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga2cca90a1140eb8dfafe17a231c846782</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>NSDate *</type>
+      <name>referenceDate</name>
+      <anchorfile>group___c_p_axis.html</anchorfile>
+      <anchor>ga10237db9644bb6aac333da2d5a26c311</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPTradingRangePlot</name>
+    <filename>interface_c_p_trading_range_plot.html</filename>
+    <base>CPPlot</base>
+    <member kind="property">
+      <type>CPLineStyle *</type>
+      <name>lineStyle</name>
+      <anchorfile>interface_c_p_trading_range_plot.html</anchorfile>
+      <anchor>ad072e95e08dd1fba551c2992877980bf</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPFill *</type>
+      <name>increaseFill</name>
+      <anchorfile>interface_c_p_trading_range_plot.html</anchorfile>
+      <anchor>a3b8fcdc6e90b933214b90871f70b82d2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPFill *</type>
+      <name>decreaseFill</name>
+      <anchorfile>interface_c_p_trading_range_plot.html</anchorfile>
+      <anchor>afc5e46e261ad7f434c5ddcd83a2d88fa</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPTradingRangePlotStyle</type>
+      <name>plotStyle</name>
+      <anchorfile>interface_c_p_trading_range_plot.html</anchorfile>
+      <anchor>a13b344785aab364d8188876cb85f5301</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CGFloat</type>
+      <name>barWidth</name>
+      <anchorfile>interface_c_p_trading_range_plot.html</anchorfile>
+      <anchor>a7b319233bcf7b038577d1381984ba358</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CGFloat</type>
+      <name>stickLength</name>
+      <anchorfile>interface_c_p_trading_range_plot.html</anchorfile>
+      <anchor>ae0cd01cf4611505ba1e3b57bd73221ed</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CGFloat</type>
+      <name>barCornerRadius</name>
+      <anchorfile>interface_c_p_trading_range_plot.html</anchorfile>
+      <anchor>ad458ab85f1b14f306172395b6ca8e3aa</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPXYAxis</name>
+    <filename>interface_c_p_x_y_axis.html</filename>
+    <base>CPAxis</base>
+    <member kind="property">
+      <type>NSDecimal</type>
+      <name>orthogonalCoordinateDecimal</name>
+      <anchorfile>interface_c_p_x_y_axis.html</anchorfile>
+      <anchor>a5359b39b5b0a73c879be4f62bbc2c2a0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPConstraints</type>
+      <name>constraints</name>
+      <anchorfile>interface_c_p_x_y_axis.html</anchorfile>
+      <anchor>a8809abf5e5fb5d04e0f436f62417f6cc</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>BOOL</type>
+      <name>positionedRelativeToPlotArea</name>
+      <anchorfile>interface_c_p_x_y_axis.html</anchorfile>
+      <anchor>a1b54251d5ad1507350f0e222a0aa5008</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPXYAxisSet</name>
+    <filename>interface_c_p_x_y_axis_set.html</filename>
+    <base>CPAxisSet</base>
+    <member kind="property">
+      <type>CPXYAxis *</type>
+      <name>xAxis</name>
+      <anchorfile>interface_c_p_x_y_axis_set.html</anchorfile>
+      <anchor>a782c5ed253728f54ecd42d73c5d0141a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPXYAxis *</type>
+      <name>yAxis</name>
+      <anchorfile>interface_c_p_x_y_axis_set.html</anchorfile>
+      <anchor>a11dc8fe4142b91c4b97e7faf42df5e8f</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPXYGraph</name>
+    <filename>interface_c_p_x_y_graph.html</filename>
+    <base>CPGraph</base>
+    <member kind="function" virtualness="virtual">
+      <type>id</type>
+      <name>initWithFrame:xScaleType:yScaleType:</name>
+      <anchorfile>interface_c_p_x_y_graph.html</anchorfile>
+      <anchor>ab9914d3ca880a59db3fb62119dc8c074</anchor>
+      <arglist>(CGRect newFrame,[xScaleType] CPScaleType newXScaleType,[yScaleType] CPScaleType newYScaleType)</arglist>
+    </member>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPXYPlotSpace</name>
+    <filename>interface_c_p_x_y_plot_space.html</filename>
+    <base>CPPlotSpace</base>
+    <member kind="property">
+      <type>CPPlotRange *</type>
+      <name>xRange</name>
+      <anchorfile>interface_c_p_x_y_plot_space.html</anchorfile>
+      <anchor>a779ff7e672ac11cf0b515641516a9a78</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPPlotRange *</type>
+      <name>yRange</name>
+      <anchorfile>interface_c_p_x_y_plot_space.html</anchorfile>
+      <anchor>a182e05ec9fe7b7c64e23f6fd97e1aec7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPScaleType</type>
+      <name>xScaleType</name>
+      <anchorfile>interface_c_p_x_y_plot_space.html</anchorfile>
+      <anchor>a5bfcd2aa2aab3868abdc529736169375</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>CPScaleType</type>
+      <name>yScaleType</name>
+      <anchorfile>interface_c_p_x_y_plot_space.html</anchorfile>
+      <anchor>a227766a81e576e99c1bf67b03d0ebe3b</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class" objc="yes">
+    <name>CPXYTheme</name>
+    <filename>interface_c_p_x_y_theme.html</filename>
+    <base>CPTheme</base>
+  </compound>
+</tagfile>

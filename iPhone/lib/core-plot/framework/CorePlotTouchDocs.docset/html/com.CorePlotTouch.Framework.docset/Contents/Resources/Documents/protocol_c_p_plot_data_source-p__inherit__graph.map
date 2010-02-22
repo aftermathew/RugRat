@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$protocol_c_p_bar_plot_data_source-p.html" title="A bar plot data source." alt="" coords="5,83,197,112"/>
+<area shape="rect" id="node5" href="$protocol_c_p_pie_chart_data_source-p.html" title="A pie chart data source." alt="" coords="221,83,424,112"/>
+<area shape="rect" id="node7" href="$protocol_c_p_scatter_plot_data_source-p.html" title="A scatter plot data source." alt="" coords="448,83,669,112"/>
+</map>

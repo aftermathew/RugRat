@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$interface_c_p_plot.html" title="An abstract plot class." alt="" coords="149,288,216,317"/>
+<area shape="rect" id="node4" href="$class_c_p_layer.html" title="Base class for all Core Animation layers in Core Plot." alt="" coords="135,192,212,221"/>
+<area shape="rect" id="node6" href="doxygen-cocoa-touch-tags.xml$http://developer.apple.com/iphone/library/documentation/GraphicsImaging/Reference/CALayer_class/Introduction/Introduction.html" title="CALayer" alt="" coords="5,85,83,115"/>
+<area shape="rect" id="node8" href="doxygen-cocoa-touch-tags.xml$http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html" title="NSObject" alt="" coords="168,5,253,35"/>
+<area shape="rect" id="node12" href="doxygen-cocoa-touch-tags.xml$http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html" title="NSString" alt="" coords="231,139,308,168"/>
+<area shape="rect" id="node10" href="$protocol_c_p_responder-p.html" title="\&lt;CPResponder\&gt;" alt="" coords="107,85,240,115"/>
+</map>
