@@ -41,14 +41,14 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = A03E364E1131EEF500315DB2 /* CorePlot-CocoaTouch.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = BC9B83470FB8A0A40035D8DA /* libCorePlot-CocoaTouch.a */;
+			remoteGlobalIDString = BC9B83470FB8A0A40035D8DA;
 			remoteInfo = "CorePlot-CocoaTouch";
 		};
 		A03E37391132150900315DB2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A03E364E1131EEF500315DB2 /* CorePlot-CocoaTouch.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = BC9B83460FB8A0A40035D8DA /* CorePlot-CocoaTouch */;
+			remoteGlobalIDString = BC9B83460FB8A0A40035D8DA;
 			remoteInfo = "CorePlot-CocoaTouch";
 		};
 /* End PBXContainerItemProxy section */

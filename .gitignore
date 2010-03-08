@@ -3,3 +3,8 @@ build
 ._*
 *.pbxuser
 *.mode1v3
+iPhone/lib/core-plot/framework/CorePlotTouchDocs.docset/*
+iPhone/lib/core-plot/documentation/*
+#*#
+*.#~
+*~
