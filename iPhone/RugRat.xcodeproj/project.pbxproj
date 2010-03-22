@@ -17,6 +17,7 @@
 		A03E36721131FEBB00315DB2 /* GraphViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A03E36711131FEBB00315DB2 /* GraphViewController.xib */; };
 		A03E37441132156E00315DB2 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A03E372F1132143300315DB2 /* libCorePlot-CocoaTouch.a */; };
 		A0E1C1BB112A23D1008E5A2D /* RugRatAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E1C1BA112A23D1008E5A2D /* RugRatAppDelegate.m */; };
+		A0E515001156FC0A004A0CCE /* rugrat_db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = A0E514FF1156FC0A004A0CCE /* rugrat_db.sqlite */; };
 		AF2A9A7D10BB895700B1D39E /* PopupAndProgressController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2A9A7B10BB895700B1D39E /* PopupAndProgressController.m */; };
 		AF2A9A7E10BB895700B1D39E /* PopupAndProgressController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2A9A7C10BB895700B1D39E /* PopupAndProgressController.xib */; };
 		B796155B10A7B7440067B141 /* RRLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B796155910A7B7440067B141 /* RRLogViewController.m */; };
@@ -69,6 +70,7 @@
 		A03E36711131FEBB00315DB2 /* GraphViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GraphViewController.xib; sourceTree = "<group>"; };
 		A0E1C1B9112A23D1008E5A2D /* RugRatAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RugRatAppDelegate.h; sourceTree = "<group>"; };
 		A0E1C1BA112A23D1008E5A2D /* RugRatAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RugRatAppDelegate.m; sourceTree = "<group>"; };
+		A0E514FF1156FC0A004A0CCE /* rugrat_db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = rugrat_db.sqlite; path = Resources/rugrat_db.sqlite; sourceTree = "<group>"; };
 		AF2A9A7A10BB895700B1D39E /* PopupAndProgressController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupAndProgressController.h; sourceTree = "<group>"; };
 		AF2A9A7B10BB895700B1D39E /* PopupAndProgressController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupAndProgressController.m; sourceTree = "<group>"; };
 		AF2A9A7C10BB895700B1D39E /* PopupAndProgressController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupAndProgressController.xib; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A0E514FF1156FC0A004A0CCE /* rugrat_db.sqlite */,
 				B79CB31810B0CCE200DEC76B /* questions.sqlite */,
 				B7DA424C10A907F7009F936E /* cavity_flow_movie.mp4 */,
 				8D1107310486CEB800E47090 /* RugRat-Info.plisRugRat */,
@@ -301,6 +304,7 @@
 				B79CB31910B0CCE200DEC76B /* questions.sqlite in Resources */,
 				AF2A9A7E10BB895700B1D39E /* PopupAndProgressController.xib in Resources */,
 				A03E36721131FEBB00315DB2 /* GraphViewController.xib in Resources */,
+				A0E515001156FC0A004A0CCE /* rugrat_db.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
