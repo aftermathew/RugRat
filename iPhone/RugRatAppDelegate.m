@@ -8,6 +8,7 @@
 
 #import "RugRatAppDelegate.h"
 #import "RRVideoViewController.h"
+#import "RRDatabaseInterface.h"
 
 static NSString *const lastTabUserDefaultString = @"LastTab";
 
@@ -49,6 +50,9 @@ static NSString *const lastTabUserDefaultString = @"LastTab";
     [self.tabBarController.selectedViewController viewDidAppear:YES];
   }
   
+	
+  //setup the db and read from it...
+	[RRDatabaseInterface instance];
 }
 
 - (void)dealloc {

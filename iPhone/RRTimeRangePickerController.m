@@ -7,7 +7,7 @@
 //
 
 #import "RRTimeRangePickerController.h"
-#import "TimeRange.h"
+#import "RRTimeRange.h"
 
 @implementation RRTimeRangePickerController
 @synthesize m_leftArrowButton;

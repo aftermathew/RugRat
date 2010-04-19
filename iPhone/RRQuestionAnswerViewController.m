@@ -7,7 +7,7 @@
 //
 
 #import "RRQuestionAnswerViewController.h"
-#import "Topic.h"
+#import "RRTopic.h"
 #include <sqlite3.h>
 
 @implementation RRQuestionAnswerViewController
@@ -53,7 +53,7 @@
       char * ctopicname = (char *)sqlite3_column_text(statement, 1);
       int itopicid = (int)sqlite3_column_int(statement, 0);
       NSString * topicname = [NSString stringWithFormat:@"%s", ctopicname];
-      [allTopics addObject:[[Topic alloc] initWithName:topicname withID:itopicid]];
+		[allTopics addObject:[[RRTopic alloc] initWithText:topicname withID:itopicid andDescription:nil]];
     }
     sqlite3_finalize(statement);
     self.topics = allTopics;
@@ -149,8 +149,9 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
-  Topic * cellTopic = [self.topics objectAtIndex:indexPath.row];
-  NSString * cellText = [cellTopic topicName]; 
+  RRTopic * cellTopic = [self.topics objectAtIndex:indexPath.row];
+  NSString * cellText = [cellTopic topicText
+						 ]; 
   NSLog(@"%@ of %i items, topic name is %@", cellText, [self.topics count], cellText);
   cell.textLabel.text = cellText;
     return cell;

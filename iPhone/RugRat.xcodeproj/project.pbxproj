@@ -16,13 +16,16 @@
 		A03E36701131FD8300315DB2 /* GraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A03E366F1131FD8300315DB2 /* GraphViewController.m */; };
 		A03E36721131FEBB00315DB2 /* GraphViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A03E36711131FEBB00315DB2 /* GraphViewController.xib */; };
 		A03E37441132156E00315DB2 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A03E372F1132143300315DB2 /* libCorePlot-CocoaTouch.a */; };
+		A05052FC117B9C9800BFB7F3 /* RRQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = A05052F9117B9C9800BFB7F3 /* RRQuestion.m */; };
+		A05052FD117B9C9800BFB7F3 /* RRTimeRange.m in Sources */ = {isa = PBXBuildFile; fileRef = A05052FB117B9C9800BFB7F3 /* RRTimeRange.m */; };
+		A0505300117B9CBF00BFB7F3 /* RRTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = A05052FF117B9CBF00BFB7F3 /* RRTopic.m */; };
+		A0A85CDE115FF1F0004CFD53 /* RRDatabaseInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A85CDD115FF1F0004CFD53 /* RRDatabaseInterface.m */; };
 		A0E1C1BB112A23D1008E5A2D /* RugRatAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E1C1BA112A23D1008E5A2D /* RugRatAppDelegate.m */; };
 		A0E515001156FC0A004A0CCE /* rugrat_db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = A0E514FF1156FC0A004A0CCE /* rugrat_db.sqlite */; };
 		A0E51517115703C5004A0CCE /* RRTimeRangePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E51515115703C5004A0CCE /* RRTimeRangePickerController.m */; };
 		A0E51518115703C5004A0CCE /* RRTimeRangePickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0E51516115703C5004A0CCE /* RRTimeRangePickerController.xib */; };
 		A0E51535115719CA004A0CCE /* leftArrowIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = A0E51533115719CA004A0CCE /* leftArrowIcon.png */; };
 		A0E51536115719CA004A0CCE /* rightArrowIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = A0E51534115719CA004A0CCE /* rightArrowIcon.png */; };
-		A0E5154A11573FB2004A0CCE /* TimeRange.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E5154911573FB2004A0CCE /* TimeRange.m */; };
 		AF2A9A7D10BB895700B1D39E /* PopupAndProgressController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2A9A7B10BB895700B1D39E /* PopupAndProgressController.m */; };
 		AF2A9A7E10BB895700B1D39E /* PopupAndProgressController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2A9A7C10BB895700B1D39E /* PopupAndProgressController.xib */; };
 		B796155B10A7B7440067B141 /* RRLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B796155910A7B7440067B141 /* RRLogViewController.m */; };
@@ -37,8 +40,6 @@
 		B79CB31510B0C34A00DEC76B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B79CB31410B0C34A00DEC76B /* libsqlite3.dylib */; };
 		B79CB31910B0CCE200DEC76B /* questions.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = B79CB31810B0CCE200DEC76B /* questions.sqlite */; };
 		B7CC344110BB9F01006C8D9C /* RRQuestionAnswerNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7CC344010BB9F01006C8D9C /* RRQuestionAnswerNavController.m */; };
-		B7D7D43B10B3B4E8004F9D29 /* Topic.m in Sources */ = {isa = PBXBuildFile; fileRef = B7D7D43A10B3B4E8004F9D29 /* Topic.m */; };
-		B7D7D44110B3B5B2004F9D29 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = B7D7D44010B3B5B2004F9D29 /* Question.m */; };
 		B7DA424D10A907F7009F936E /* cavity_flow_movie.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B7DA424C10A907F7009F936E /* cavity_flow_movie.mp4 */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,14 @@
 		A03E366E1131FD8200315DB2 /* GraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphViewController.h; sourceTree = "<group>"; };
 		A03E366F1131FD8300315DB2 /* GraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphViewController.m; sourceTree = "<group>"; };
 		A03E36711131FEBB00315DB2 /* GraphViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GraphViewController.xib; sourceTree = "<group>"; };
+		A05052F8117B9C9800BFB7F3 /* RRQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRQuestion.h; sourceTree = "<group>"; };
+		A05052F9117B9C9800BFB7F3 /* RRQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRQuestion.m; sourceTree = "<group>"; };
+		A05052FA117B9C9800BFB7F3 /* RRTimeRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRTimeRange.h; sourceTree = "<group>"; };
+		A05052FB117B9C9800BFB7F3 /* RRTimeRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRTimeRange.m; sourceTree = "<group>"; };
+		A05052FE117B9CBF00BFB7F3 /* RRTopic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRTopic.h; sourceTree = "<group>"; };
+		A05052FF117B9CBF00BFB7F3 /* RRTopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRTopic.m; sourceTree = "<group>"; };
+		A0A85CDC115FF1F0004CFD53 /* RRDatabaseInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRDatabaseInterface.h; sourceTree = "<group>"; };
+		A0A85CDD115FF1F0004CFD53 /* RRDatabaseInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRDatabaseInterface.m; sourceTree = "<group>"; };
 		A0E1C1B9112A23D1008E5A2D /* RugRatAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RugRatAppDelegate.h; sourceTree = "<group>"; };
 		A0E1C1BA112A23D1008E5A2D /* RugRatAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RugRatAppDelegate.m; sourceTree = "<group>"; };
 		A0E514FF1156FC0A004A0CCE /* rugrat_db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = rugrat_db.sqlite; path = Resources/rugrat_db.sqlite; sourceTree = "<group>"; };
@@ -81,8 +90,6 @@
 		A0E51516115703C5004A0CCE /* RRTimeRangePickerController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RRTimeRangePickerController.xib; sourceTree = "<group>"; };
 		A0E51533115719CA004A0CCE /* leftArrowIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = leftArrowIcon.png; path = Resources/images/leftArrowIcon.png; sourceTree = "<group>"; };
 		A0E51534115719CA004A0CCE /* rightArrowIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rightArrowIcon.png; path = Resources/images/rightArrowIcon.png; sourceTree = "<group>"; };
-		A0E5154811573FB2004A0CCE /* TimeRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeRange.h; sourceTree = "<group>"; };
-		A0E5154911573FB2004A0CCE /* TimeRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeRange.m; sourceTree = "<group>"; };
 		AF2A9A7A10BB895700B1D39E /* PopupAndProgressController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupAndProgressController.h; sourceTree = "<group>"; };
 		AF2A9A7B10BB895700B1D39E /* PopupAndProgressController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupAndProgressController.m; sourceTree = "<group>"; };
 		AF2A9A7C10BB895700B1D39E /* PopupAndProgressController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupAndProgressController.xib; sourceTree = "<group>"; };
@@ -103,10 +110,6 @@
 		B79CB31810B0CCE200DEC76B /* questions.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = questions.sqlite; path = Resources/questions.sqlite; sourceTree = "<group>"; };
 		B7CC343F10BB9F01006C8D9C /* RRQuestionAnswerNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRQuestionAnswerNavController.h; sourceTree = "<group>"; };
 		B7CC344010BB9F01006C8D9C /* RRQuestionAnswerNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRQuestionAnswerNavController.m; sourceTree = "<group>"; };
-		B7D7D43910B3B4E8004F9D29 /* Topic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Topic.h; sourceTree = "<group>"; };
-		B7D7D43A10B3B4E8004F9D29 /* Topic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Topic.m; sourceTree = "<group>"; };
-		B7D7D43F10B3B5B2004F9D29 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
-		B7D7D44010B3B5B2004F9D29 /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
 		B7DA424C10A907F7009F936E /* cavity_flow_movie.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = cavity_flow_movie.mp4; path = Resources/cavity_flow_movie.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -215,12 +218,14 @@
 		B796155410A7B6B80067B141 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B7D7D43910B3B4E8004F9D29 /* Topic.h */,
-				B7D7D43A10B3B4E8004F9D29 /* Topic.m */,
-				B7D7D43F10B3B5B2004F9D29 /* Question.h */,
-				B7D7D44010B3B5B2004F9D29 /* Question.m */,
-				A0E5154811573FB2004A0CCE /* TimeRange.h */,
-				A0E5154911573FB2004A0CCE /* TimeRange.m */,
+				A05052FE117B9CBF00BFB7F3 /* RRTopic.h */,
+				A05052FF117B9CBF00BFB7F3 /* RRTopic.m */,
+				A05052F8117B9C9800BFB7F3 /* RRQuestion.h */,
+				A05052F9117B9C9800BFB7F3 /* RRQuestion.m */,
+				A05052FA117B9C9800BFB7F3 /* RRTimeRange.h */,
+				A05052FB117B9C9800BFB7F3 /* RRTimeRange.m */,
+				A0A85CDC115FF1F0004CFD53 /* RRDatabaseInterface.h */,
+				A0A85CDD115FF1F0004CFD53 /* RRDatabaseInterface.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -350,14 +355,15 @@
 				B796156310A7B86D0067B141 /* RRQuestionAnswerViewController.m in Sources */,
 				B796157810A7B8E20067B141 /* RRVideoViewController.m in Sources */,
 				B796164810A8C2DD0067B141 /* YouTubeViewController.m in Sources */,
-				B7D7D43B10B3B4E8004F9D29 /* Topic.m in Sources */,
-				B7D7D44110B3B5B2004F9D29 /* Question.m in Sources */,
 				AF2A9A7D10BB895700B1D39E /* PopupAndProgressController.m in Sources */,
 				B7CC344110BB9F01006C8D9C /* RRQuestionAnswerNavController.m in Sources */,
 				A0E1C1BB112A23D1008E5A2D /* RugRatAppDelegate.m in Sources */,
 				A03E36701131FD8300315DB2 /* GraphViewController.m in Sources */,
 				A0E51517115703C5004A0CCE /* RRTimeRangePickerController.m in Sources */,
-				A0E5154A11573FB2004A0CCE /* TimeRange.m in Sources */,
+				A0A85CDE115FF1F0004CFD53 /* RRDatabaseInterface.m in Sources */,
+				A05052FC117B9C9800BFB7F3 /* RRQuestion.m in Sources */,
+				A05052FD117B9C9800BFB7F3 /* RRTimeRange.m in Sources */,
+				A0505300117B9CBF00BFB7F3 /* RRTopic.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
