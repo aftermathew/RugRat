@@ -17,10 +17,14 @@
 		Asset asset = new Asset(blobName, blobKey, blobDate, blobSize, blobType);
 		al.add(asset);
 	}
-	String order = request.getParameter("orderby");
-	if (null == order || order.isEmpty())
+	String order = request.getParameter("order");
+	String dir = request.getParameter("dir");
+	String msg = request.getParameter("msg");
+	if (order == null || order.isEmpty())
 		order = "date";
 	al.sort(order);
+	if (dir != null)
+		al.reverse();
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -29,14 +33,16 @@
 <title>Asset Listing</title>
 </head>
 <body>
+	<h3 class="message"><%= msg == null ? "" : msg %></h3> 
 	<h2>Listing current assets:</h2>
 	<table border="1px black">
 		<thead>
 			<tr>
-				<th><a href="/assets?order=name">Name</a></th>
-				<th><a href="/assets?order=date">Date (GMT)</a></th>
-				<th><a href="/assets?order=size">File Size (KB)</a></th>
-				<th><a href="/assets?order=type">Content Type</a></th>
+				<th><a href="/assets?order=name<%= order.compareTo("name") != 0 ? "" : dir == null ? "&dir=rev" : "" %>">Name</a></th>
+				<th><a href="/assets?order=date<%= order.compareTo("date") != 0 ? "" : dir == null ? "&dir=rev" : "" %>">Date (GMT)</a></th>
+				<th><a href="/assets?order=size<%= order.compareTo("size") != 0 ? "" : dir == null ? "&dir=rev" : "" %>">File Size (KB)</a></th>
+				<th><a href="/assets?order=type<%= order.compareTo("type") != 0 ? "" : dir == null ? "&dir=rev" : "" %>">Content Type</a></th>
+				<th>&nbsp;</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -51,6 +57,7 @@
 				<td><%= asset.getCreatedShortString() %></td>
 				<td><%= asset.getSize() / 1024 %></td>
 				<td><%= asset.getContentType() %></td>
+				<td><a href="/assets?verb=delete&key=<%= asset.getKey() %>" onclick="return confirm('Are you certain?');">delete</a></td>
 			</tr>
 		<%
 			}

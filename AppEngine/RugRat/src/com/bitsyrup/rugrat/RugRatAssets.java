@@ -3,6 +3,7 @@
 package com.bitsyrup.rugrat;
 
 import java.io.IOException;
+import java.util.Iterator;
 //import java.util.logging.Logger;
 
 import javax.servlet.RequestDispatcher;
@@ -12,12 +13,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.bitsyrup.rugrat.common.auth;
-import com.google.appengine.api.users.UserService;
-import com.google.appengine.api.users.UserServiceFactory;
+import com.google.appengine.api.blobstore.*;
+import com.google.appengine.api.users.*;
 
 @SuppressWarnings("serial")
 public class RugRatAssets extends HttpServlet {
 
+	//single instance - expensive!
+	private BlobstoreService blobstoreService = BlobstoreServiceFactory.getBlobstoreService();
 	//logger
     //private static final Logger log = Logger.getLogger(RugRatAssets.class.getName());
 	
@@ -47,12 +50,41 @@ public class RugRatAssets extends HttpServlet {
         { 
         	if (auth.isAuthorized())
         	{
-        		String blobKey = req.getParameter("blob-key");
-        		if (null != blobKey && !blobKey.isEmpty())
+        		String verb = req.getParameter("verb");
+        		if (null == verb)
         		{
-        			req.setAttribute("bk", blobKey);
+        			String blobKey = req.getParameter("blob-key");
+        			if (null != blobKey && !blobKey.isEmpty())
+        			{
+        				req.setAttribute("bk", blobKey);
+        			}
         		}
+        		else
+        		{
+        			//handle deletion of particular blob referenced by key string
+        			if (verb.compareTo("delete") == 0)
+        			{
+        				String key = req.getParameter("key");
+        				if (null != key)
+        				{
+        					BlobInfoFactory infoFact = new BlobInfoFactory();
+        					Iterator<BlobInfo> blobInfos = infoFact.queryBlobInfos();
+        					while(blobInfos.hasNext())
+        					{
+        						BlobInfo info = blobInfos.next();
+        						if (info.getBlobKey().getKeyString().compareTo(key) == 0)
+        						{
+        							blobstoreService.delete(info.getBlobKey());
+        							break;
+        						}
+        					}
+        				}
+        			}
+        		}
+        		//forward the parameters as attributes
         		req.setAttribute("order", req.getParameter("order"));
+        		if (req.getParameter("dir") != null)
+        			req.setAttribute("dir", req.getParameter("dir"));
         		handleJSPForward("/bloblist.jsp", req, resp);
         	}
         	else
@@ -63,4 +95,6 @@ public class RugRatAssets extends HttpServlet {
         	}
         }
 	}
+	
+	
 }
