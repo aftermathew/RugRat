@@ -19,6 +19,7 @@
 		A05052FC117B9C9800BFB7F3 /* RRQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = A05052F9117B9C9800BFB7F3 /* RRQuestion.m */; };
 		A05052FD117B9C9800BFB7F3 /* RRTimeRange.m in Sources */ = {isa = PBXBuildFile; fileRef = A05052FB117B9C9800BFB7F3 /* RRTimeRange.m */; };
 		A0505300117B9CBF00BFB7F3 /* RRTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = A05052FF117B9CBF00BFB7F3 /* RRTopic.m */; };
+		A0505436117D762D00BFB7F3 /* RRMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = A0505435117D762D00BFB7F3 /* RRMedia.m */; };
 		A0A85CDE115FF1F0004CFD53 /* RRDatabaseInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A85CDD115FF1F0004CFD53 /* RRDatabaseInterface.m */; };
 		A0E1C1BB112A23D1008E5A2D /* RugRatAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E1C1BA112A23D1008E5A2D /* RugRatAppDelegate.m */; };
 		A0E515001156FC0A004A0CCE /* rugrat_db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = A0E514FF1156FC0A004A0CCE /* rugrat_db.sqlite */; };
@@ -80,6 +81,8 @@
 		A05052FB117B9C9800BFB7F3 /* RRTimeRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRTimeRange.m; sourceTree = "<group>"; };
 		A05052FE117B9CBF00BFB7F3 /* RRTopic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRTopic.h; sourceTree = "<group>"; };
 		A05052FF117B9CBF00BFB7F3 /* RRTopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRTopic.m; sourceTree = "<group>"; };
+		A0505434117D762D00BFB7F3 /* RRMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRMedia.h; sourceTree = "<group>"; };
+		A0505435117D762D00BFB7F3 /* RRMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRMedia.m; sourceTree = "<group>"; };
 		A0A85CDC115FF1F0004CFD53 /* RRDatabaseInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRDatabaseInterface.h; sourceTree = "<group>"; };
 		A0A85CDD115FF1F0004CFD53 /* RRDatabaseInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRDatabaseInterface.m; sourceTree = "<group>"; };
 		A0E1C1B9112A23D1008E5A2D /* RugRatAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RugRatAppDelegate.h; sourceTree = "<group>"; };
@@ -226,6 +229,8 @@
 				A05052FB117B9C9800BFB7F3 /* RRTimeRange.m */,
 				A0A85CDC115FF1F0004CFD53 /* RRDatabaseInterface.h */,
 				A0A85CDD115FF1F0004CFD53 /* RRDatabaseInterface.m */,
+				A0505434117D762D00BFB7F3 /* RRMedia.h */,
+				A0505435117D762D00BFB7F3 /* RRMedia.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -364,6 +369,7 @@
 				A05052FC117B9C9800BFB7F3 /* RRQuestion.m in Sources */,
 				A05052FD117B9C9800BFB7F3 /* RRTimeRange.m in Sources */,
 				A0505300117B9CBF00BFB7F3 /* RRTopic.m in Sources */,
+				A0505436117D762D00BFB7F3 /* RRMedia.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
