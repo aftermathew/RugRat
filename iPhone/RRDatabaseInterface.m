@@ -132,7 +132,10 @@ static RRDatabaseInterface *gInstance = NULL;
 	// find all questions
 	// where the question start age is >= to the age range start age and <= to the age range end age OR
 	// where the question endWeeks is <= to the ageRange endWeeks and the >= the ageRange startAge
-	NSString *queryFormat = @"SELECT * FROM Questions WHERE ((StartAgeWeeks  >= %d AND StartAgeWeeks <= %d) OR (EndAgeWeeks >= %d AND EndAgeWeeks <= %d) OR (StartAgeWeeks < %d AND EndAgeWeeks > %d))";
+	NSString *queryFormat =
+		@"SELECT * FROM Questions WHERE ((StartAgeWeeks  BETWEEN %d AND %d) "
+		" OR (EndAgeWeeks BETWEEN %d AND  %d) "
+		" OR (StartAgeWeeks < %d AND EndAgeWeeks > %d))";
 	NSString *query = [NSString stringWithFormat:queryFormat,
 					   range.startWeek, range.endWeek,
 					   range.startWeek, range.endWeek,	
@@ -169,11 +172,65 @@ static RRDatabaseInterface *gInstance = NULL;
 
 - (NSMutableArray*) questionsForAgeRange:(RRTimeRange*)range andTopic:(RRTopic*)topic{
 	return [[[NSMutableArray alloc] init] autorelease];
+	
+	NSMutableArray *questions = [[[NSMutableArray alloc] init] autorelease];
+	
+	// find all questions
+	// where the question start age is >= to the age range start age and <= to the age range end age OR
+	// where the question endWeeks is <= to the ageRange endWeeks and the >= the ageRange startAge
+	NSString *queryFormat =
+	@"SELECT Questions.* FROM Questions "
+	" INNER JOIN QuestionTopics ON  Questions.Id=QuestionTopics.QuestionId "
+	" AND QuestionTopics.TopicId=%d AND "
+	"   ((StartAgeWeeks BETWEEN %d AND %d) OR "
+	"    (EndAgeWeeks BETWEEN %d AND %d)   OR "
+	"    (StartAgeWeeks < %d AND EndAgeWeeks > %d))";
+	
+	NSString *query = [NSString stringWithFormat:queryFormat,
+					   topic.topicID,
+					   range.startWeek, range.endWeek,
+					   range.startWeek, range.endWeek,	
+					   range.startWeek, range.endWeek];
+	
+	
+	sqlite3_stmt * statement;
+	int dbrc = sqlite3_prepare_v2 (db, [query UTF8String], -1, &statement, NULL);
+	
+	if(dbrc != SQLITE_OK){
+		NSLog(@"Ages query returned a failed result: %d", dbrc);
+		return nil;
+	}
+	// parse the query into an array
+	while (sqlite3_step(statement) == SQLITE_ROW)
+	{
+		RRQuestion * question = [[RRQuestion alloc] init];
+		question.questionID    = (int) sqlite3_column_int(statement, 0);
+		question.questionText  = [NSString stringWithFormat:@"%s", (char *)sqlite3_column_text(statement, 1)];
+		question.startAgeWeeks = (int) sqlite3_column_int(statement, 2);
+		question.endAgeWeeks   = (int) sqlite3_column_int(statement, 3);
+		question.version       = (int) sqlite3_column_int(statement, 4);
+		
+		
+		NSLog(@"Found Question for AgeRange: %@, %@", range.name, question.questionText);
+		[questions addObject:question];
+	}
+	
+	// cleanup the query
+	sqlite3_finalize(statement);
+	
+	return questions;
+	
 }
 
 
 - (NSMutableArray*) mediaForQuestion: (RRQuestion*) question{
     NSMutableArray *media = [[[NSMutableArray alloc] init] autorelease];
+
+	
+	
+	
+	
+	
 	return media;
 }
 
