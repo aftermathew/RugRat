@@ -13,13 +13,16 @@
 #import "RRTopic.h"
 #import "RRQuestion.h"
 
+#define DO_DB_TEST_ON_STARTUP 0
 @interface RRDatabaseInterface : NSObject {
     sqlite3 *db;
-	NSMutableArray *ageRangesArray;
+    NSMutableArray *ageRangesArray;
+    NSMutableArray *topicsArray;
 }
 
 + (RRDatabaseInterface*) instance;
 - (NSArray*) ageRanges;
+- (NSArray*) topics;
 
 // MATHEW
 // this not needed but useful for debugging and helpful to me in writing more complicated queries

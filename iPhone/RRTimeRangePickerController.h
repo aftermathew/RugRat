@@ -9,13 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface RRTimeRangePickerController : UIViewController {
-	UIButton* m_leftArrowButton;
-	UIButton* m_rightArrowButton;
-	UIButton* m_leftTimeButton;
-	UIButton* m_middleTimeButton;
-	UIButton* m_rightTimeButton;
+    UIButton* m_leftArrowButton;
+    UIButton* m_rightArrowButton;
+    UIButton* m_leftTimeButton;
+    UIButton* m_middleTimeButton;
+    UIButton* m_rightTimeButton;
 
-	NSMutableArray * m_timeRanges;	
+    NSMutableArray * m_timeRanges;
 }
 
 @property (retain, nonatomic) IBOutlet UIButton * m_leftArrowButton;
