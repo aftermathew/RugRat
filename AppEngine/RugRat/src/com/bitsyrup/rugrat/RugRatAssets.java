@@ -4,7 +4,8 @@ package com.bitsyrup.rugrat;
 
 import java.io.IOException;
 import java.util.Iterator;
-//import java.util.logging.Logger;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -16,13 +17,13 @@ import com.bitsyrup.rugrat.common.auth;
 import com.google.appengine.api.blobstore.*;
 import com.google.appengine.api.users.*;
 
+
 @SuppressWarnings("serial")
 public class RugRatAssets extends HttpServlet {
-
 	//single instance - expensive!
 	private BlobstoreService blobstoreService = BlobstoreServiceFactory.getBlobstoreService();
 	//logger
-    //private static final Logger log = Logger.getLogger(RugRatAssets.class.getName());
+    private static final Logger log = Logger.getLogger(RugRatAssets.class.getName());
 	
   //handles jsp forwarding
 	private void handleJSPForward(String url, HttpServletRequest req, HttpServletResponse resp) throws IOException {
@@ -33,6 +34,19 @@ public class RugRatAssets extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} 
+	}
+	
+	private void doDataResponse(String key, HttpServletRequest req, HttpServletResponse resp) throws IOException
+	{
+		if (null == key)
+		{
+			handleJSPForward("/bloblist.jsp", req, resp);
+		}
+		else
+		{
+			BlobKey blobKey = new BlobKey(key);
+	        blobstoreService.serve(blobKey, resp);
+		}
 	}
     
 	//entry GET
@@ -48,6 +62,8 @@ public class RugRatAssets extends HttpServlet {
         }
         else 
         { 
+        	String pathInfo = req.getPathInfo();   
+        	log.log(Level.SEVERE, "PATHINFO: " + pathInfo);
         	if (auth.isAuthorized())
         	{
         		String verb = req.getParameter("verb");
@@ -57,6 +73,14 @@ public class RugRatAssets extends HttpServlet {
         			if (null != blobKey && !blobKey.isEmpty())
         			{
         				req.setAttribute("bk", blobKey);
+        			}
+        			if (null != pathInfo)
+        			{
+        				pathInfo = pathInfo.substring(1);
+        				//this is /assets/<KEY> case
+        				//	respond with data corresponding with key
+        				doDataResponse(pathInfo, req, resp);
+        				return; //no further response...
         			}
         		}
         		else

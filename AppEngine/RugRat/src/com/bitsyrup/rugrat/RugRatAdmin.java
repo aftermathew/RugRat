@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
 import javax.jdo.PersistenceManager;
+import javax.jdo.Query;
 
 import com.bitsyrup.rugrat.common.auth;
 import com.bitsyrup.rugrat.common.PMF;
@@ -36,16 +37,30 @@ public class RugRatAdmin extends HttpServlet {
         {
         	String loginURL = userService.createLoginURL(thisURL);
         	req.setAttribute("liu", loginURL);
-        	handleJSPForward("/login.jsp", req, resp);
+        	handleJSPForward("/requestlogin.jsp", req, resp);
         }
         else
         {   
         	if (auth.isAuthorized())
         	{	
-	        	String uploadURL = "/admin";
-	        	req.setAttribute("ulu", uploadURL);
-	        	req.setAttribute("lou", userService.createLogoutURL(thisURL));
-	        	handleJSPForward("/users.jsp", req, resp);
+        		String verb = req.getParameter("verb");
+        		if (null != verb && verb.compareTo("delete") == 0)
+        		{
+        			String key = req.getParameter("key");
+        			if (null != key)
+        			{
+        				PersistenceManager pm = PMF.get().getPersistenceManager();
+        				Query query = pm.newQuery(Administrator.class);
+        				query.setFilter("email == emailKey");
+        				query.declareParameters("String emailKey");
+        				query.deletePersistentAll(key);
+        			}
+        		}
+            	String uploadURL = "/admin";
+            	req.setAttribute("ulu", uploadURL);
+            	req.setAttribute("lou", userService.createLogoutURL(thisURL));
+            	handleJSPForward("/users.jsp", req, resp);
+ 
         	}
         	else
         	{

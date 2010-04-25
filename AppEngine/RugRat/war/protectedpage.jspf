@@ -1,0 +1,9 @@
+<% 
+	if (request.getUserPrincipal() == null)
+    {
+%>
+	<!-- this will request sign-in from the user in order to access the page -->
+	<jsp:forward page="/admin"></jsp:forward>
+<%
+    }
+%>

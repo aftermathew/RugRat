@@ -7,10 +7,13 @@
 <title>Upload Assets</title>
 </head>
 <body>
+<%@ include file="protectedpage.jspf" %>
 	<form action="<%= request.getAttribute("ulu") %>" method="post" enctype="multipart/form-data">
 		<input type="file" name="asset" />
 		<input type="submit" value="Submit" />
 	</form>
 	<p>Or you can <a href="<%= request.getAttribute("lou") %>">sign out</a>.</p>
+	
+<%@ include file="navigation.jspf" %>
 </body>
 </html>

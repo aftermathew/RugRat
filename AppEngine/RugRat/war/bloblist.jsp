@@ -33,6 +33,7 @@
 <title>Asset Listing</title>
 </head>
 <body>
+<%@ include file="protectedpage.jspf" %>
 	<h3 class="message"><%= msg == null ? "" : msg %></h3> 
 	<h2>Listing current assets:</h2>
 	<table border="1px black">
@@ -53,7 +54,11 @@
 				Asset asset = iter.next();
 		%>
 			<tr>
-				<td><%= asset.getName() %></td>
+				<% 
+					String asset_link = "\"/assets/" + asset.getKey() + "\""; 
+					String asset_name = asset.getName();
+				%>
+				<td><a href=<%= asset_link %>><%= asset_name %></a></td>
 				<td><%= asset.getCreatedShortString() %></td>
 				<td><%= asset.getSize() / 1024 %></td>
 				<td><%= asset.getContentType() %></td>
@@ -65,5 +70,6 @@
 		%>
 		</tbody>
 	</table>
+<%@ include file="navigation.jspf" %>
 </body>
 </html>

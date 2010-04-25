@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Please Login</title>
 </head>
 <body>
 	<p>Please <a href="<%= request.getAttribute("liu") %>">sign in</a>.</p>

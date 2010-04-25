@@ -7,7 +7,7 @@
 	PersistenceManager pm = PMF.get().getPersistenceManager();
 	String query = "select from " + Administrator.class.getName();
 	List<Administrator> admins = (List<Administrator>)pm.newQuery(query).execute();
- %>
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -15,6 +15,7 @@
 <title>Admin</title>
 </head>
 <body>
+<%@ include file="protectedpage.jspf" %>
 	<h3><%= null == msg ? "" : msg %></h3>
 	<h2>Listing current admins:</h2>
 	<table border="1px black">
@@ -35,7 +36,7 @@
 			<tr>
 				<td><%= admin.getName() %></td>
 				<td><%= admin.getEmail() %></td>
-				<td>delete</td>
+				<td><a href="/admin?verb=delete&key=<%= admin.getEmail() %>" onclick="return confirm('Are you certain?');">delete</a></td>
 			</tr>
 			<% } } %>
 		</tbody>
@@ -47,5 +48,7 @@
 		<input type="submit" value="Submit" />
 	</form>
 	<p>Or you can <a href="<%= request.getAttribute("lou") %>">sign out</a>.</p>
+	
+	<%@ include file="navigation.jspf" %>
 </body>
 </html>
