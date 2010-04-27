@@ -189,35 +189,96 @@ public class auth {
 	
 	private static String base64AlphaStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
 	
-	//home-crafted b64 encoder, since Google does not support sun.misc.BASE64Encoder for some reason.
-	public static String base64Encode(byte[] bytes, int length)
+	//home-crafted b64 encoder, since Google does not support sun.misc.*
+	public static String base64Encode(byte[] bytes)
 	{
 		StringBuilder sb = new StringBuilder();
 		int val;
-		for (int i = 0; i < length; )
+		for (int i = 0; i < bytes.length; )
 		{
 			val = (bytes[i] & 0xFC) >> 2;
 		    sb.append(base64AlphaStr.charAt(val));
 		    val = (bytes[i++] & 0x03) << 4;
-		    if (i < length)
+		    if (i < bytes.length)
 			    val |= (bytes[i] & 0xF0) >> 4;
 		    sb.append(base64AlphaStr.charAt(val));
 		    val = 64; //'='
-		    if (i < length)
+		    if (i < bytes.length)
 		    {
 		    	val = (bytes[i++] & 0x0F) << 2;
-		    	if (i < length)
+		    	if (i < bytes.length)
 		    		val |= (bytes[i] & 0xC0) >> 6;
 		    }
 		    else
 		    	i++;
 		    sb.append(base64AlphaStr.charAt(val));
 		    val = 64; //'='
-		    if (i < length)
+		    if (i < bytes.length)
 		    	val = (bytes[i] & 0x3F);
 		    sb.append(base64AlphaStr.charAt(val));
 		    i++;
 		}
 		return sb.toString();
+	}
+	
+	public static byte[] base64Decode(String b64Str)
+	{
+		int b64Len = b64Str.length();
+		int bytesLen = ((b64Len + 3) / 4) * 3;
+		if (b64Len > 2 && b64Str.charAt(b64Len - 1) == '=')
+		{
+			if (b64Str.charAt(b64Len - 2) == '=') 
+			{
+				bytesLen -= 1;
+				if ((b64Str.charAt(b64Len - 3) & 0x0F) == 0x00)
+					bytesLen -= 1;
+			}
+			else if ((b64Str.charAt(b64Len - 2) & 0x03) == 0x00)
+				bytesLen -= 1;
+		}
+		byte[] bytes = new byte[bytesLen];
+		byte val;
+		for (int i = 0, curByte = 0; i < b64Len && curByte < bytesLen; )
+		{
+			//1st byte val
+			val = (byte)(base64AlphaStr.indexOf(b64Str.charAt(i++)) << 2);
+			val |= (byte)((base64AlphaStr.indexOf(b64Str.charAt(i)) & 0x30) >> 4);
+			bytes[curByte] = val;
+			curByte++;
+			if (curByte >= bytesLen) break;
+			//2nd byte val
+			val = (byte)((base64AlphaStr.indexOf(b64Str.charAt(i++)) & 0x0F) << 4);
+			int b64Val = (base64AlphaStr.indexOf(b64Str.charAt(i)));
+			val |= (byte)((b64Val < 64) ? ((b64Val & 0x3C) >> 2) : 0x00);
+			bytes[curByte] = val;
+			curByte++;
+			if (curByte >= bytesLen) break;
+			//3rd byte val
+			if (b64Val < 64)
+			{
+				val = (byte)((b64Val & 0x03) << 6);
+				i++;
+				b64Val = (base64AlphaStr.indexOf(b64Str.charAt(i)));
+				if (b64Val != 64)
+				{
+					val |= (byte)b64Val;
+				}
+				bytes[curByte] = val;
+				curByte++;
+			}
+			i++;
+		}
+		//HACK - need to fix one-off (error adds trailing 0 byte)
+		if (bytes[bytes.length - 1] == 0)
+		{
+			byte[] newBytes = new byte[bytes.length - 1];
+			for (int i = 0; i < bytes.length - 1; i++)
+				newBytes[i] = bytes[i];
+			return newBytes;
+		}
+		else
+		{
+			return bytes;
+		}
 	}
 }
