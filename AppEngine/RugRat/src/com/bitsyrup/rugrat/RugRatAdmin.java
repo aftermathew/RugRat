@@ -50,10 +50,17 @@ public class RugRatAdmin extends HttpServlet {
         			if (null != key)
         			{
         				PersistenceManager pm = PMF.get().getPersistenceManager();
-        				Query query = pm.newQuery(Administrator.class);
-        				query.setFilter("email == emailKey");
-        				query.declareParameters("String emailKey");
-        				query.deletePersistentAll(key);
+        				try
+        				{
+        					Query query = pm.newQuery(Administrator.class);
+        					query.setFilter("email == emailKey");
+        					query.declareParameters("String emailKey");
+        					query.deletePersistentAll(key);
+        				}
+        				finally
+        				{
+        					pm.close();
+        				}
         			}
         		}
             	String uploadURL = "/admin";

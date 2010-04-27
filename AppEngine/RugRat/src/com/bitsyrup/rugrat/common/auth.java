@@ -187,40 +187,36 @@ public class auth {
 		return verified;
 	}
 	
-	private static String base64AlphaStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+	private static String base64AlphaStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
 	
 	//home-crafted b64 encoder, since Google does not support sun.misc.BASE64Encoder for some reason.
 	public static String base64Encode(byte[] bytes, int length)
 	{
 		StringBuilder sb = new StringBuilder();
-		int bits = length * 8;
-		int b64chars = (bits + 5) / 6; //+5 to get ceiling
-		for (int symbol = 0; symbol < b64chars; symbol++)
+		int val;
+		for (int i = 0; i < length; )
 		{
-			int byteNumber = (symbol * 6) / 8;
-			int curBit = (symbol * 6) - (byteNumber * 8);
-			int symIndex = 0;
-			for (int i = 0; i < 6; i++)
-			{
-				int val = bytes[byteNumber] & (0x1 << (7 - curBit));
-				symIndex <<= 1;
-				symIndex |= (byteNumber < length && val > 0) ? 0x1 : 0x0;
-				curBit++;
-				if (curBit > 7) 
-				{
-					curBit = 0;
-					byteNumber++;
-				}
-			}
-			sb.append(base64AlphaStr.charAt(symIndex));
-		}
-		int sbLen = sb.length();
-		int charRem = 4 - (sbLen - ((sbLen / 4) * 4));
-		if (charRem == 4) charRem = 0;
-		while (charRem > 0)
-		{
-			sb.append('=');
-			charRem--;
+			val = (bytes[i] & 0xFC) >> 2;
+		    sb.append(base64AlphaStr.charAt(val));
+		    val = (bytes[i++] & 0x03) << 4;
+		    if (i < length)
+			    val |= (bytes[i] & 0xF0) >> 4;
+		    sb.append(base64AlphaStr.charAt(val));
+		    val = 64; //'='
+		    if (i < length)
+		    {
+		    	val = (bytes[i++] & 0x0F) << 2;
+		    	if (i < length)
+		    		val |= (bytes[i] & 0xC0) >> 6;
+		    }
+		    else
+		    	i++;
+		    sb.append(base64AlphaStr.charAt(val));
+		    val = 64; //'='
+		    if (i < length)
+		    	val = (bytes[i] & 0x3F);
+		    sb.append(base64AlphaStr.charAt(val));
+		    i++;
 		}
 		return sb.toString();
 	}
