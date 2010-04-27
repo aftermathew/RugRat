@@ -224,7 +224,7 @@ public class auth {
 	public static byte[] base64Decode(String b64Str)
 	{
 		int b64Len = b64Str.length();
-		int bytesLen = ((b64Len + 3) / 4) * 3;
+		int bytesLen = ((b64Len + 3) / 4) * 3; //ceiling
 		if (b64Len > 2 && b64Str.charAt(b64Len - 1) == '=')
 		{
 			if (b64Str.charAt(b64Len - 2) == '=') 
@@ -243,30 +243,25 @@ public class auth {
 			//1st byte val
 			val = (byte)(base64AlphaStr.indexOf(b64Str.charAt(i++)) << 2);
 			val |= (byte)((base64AlphaStr.indexOf(b64Str.charAt(i)) & 0x30) >> 4);
-			bytes[curByte] = val;
-			curByte++;
+			bytes[curByte++] = val;
 			if (curByte >= bytesLen) break;
 			//2nd byte val
 			val = (byte)((base64AlphaStr.indexOf(b64Str.charAt(i++)) & 0x0F) << 4);
 			int b64Val = (base64AlphaStr.indexOf(b64Str.charAt(i)));
 			val |= (byte)((b64Val < 64) ? ((b64Val & 0x3C) >> 2) : 0x00);
-			bytes[curByte] = val;
-			curByte++;
+			bytes[curByte++] = val;
 			if (curByte >= bytesLen) break;
 			//3rd byte val
 			if (b64Val < 64)
 			{
 				val = (byte)((b64Val & 0x03) << 6);
-				i++;
-				b64Val = (base64AlphaStr.indexOf(b64Str.charAt(i)));
+				b64Val = (base64AlphaStr.indexOf(b64Str.charAt(++i)));
 				if (b64Val != 64)
-				{
 					val |= (byte)b64Val;
-				}
-				bytes[curByte] = val;
-				curByte++;
+				bytes[curByte++] = val;
 			}
-			i++;
+			else
+				i++;
 		}
 		//HACK - need to fix one-off (error adds trailing 0 byte)
 		if (bytes[bytes.length - 1] == 0)
@@ -277,8 +272,6 @@ public class auth {
 			return newBytes;
 		}
 		else
-		{
 			return bytes;
-		}
 	}
 }
