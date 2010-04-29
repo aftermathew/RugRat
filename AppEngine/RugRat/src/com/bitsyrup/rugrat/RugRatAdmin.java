@@ -41,7 +41,7 @@ public class RugRatAdmin extends HttpServlet {
         }
         else
         {   
-        	if (auth.isAuthorized())
+        	if (auth.isAuthorizedAdmin())
         	{	
         		String verb = req.getParameter("verb");
         		if (null != verb && verb.compareTo("delete") == 0)

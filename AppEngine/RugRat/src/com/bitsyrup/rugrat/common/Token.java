@@ -14,6 +14,9 @@ public class Token {
 	private String token;
 	
 	@Persistent
+	private String tokenSecret;
+	
+	@Persistent
 	private long expiration;
 	
 	@Persistent
@@ -27,10 +30,13 @@ public class Token {
 		this.userID = userID;
 		this.consumerKey = consumerKey;
 		this.token = generateToken();
+		this.tokenSecret = generateTokenSecret();
 		refresh();
 	}
 
 	public String getToken(){return token;}
+	
+	public String getTokenSecret(){return tokenSecret;}
 
 	public long getExpiration(){return expiration;}
 	
@@ -49,8 +55,18 @@ public class Token {
 		Random rand = new Random();
 		byte[] randBytes = new byte[byteArrLen]; 
 		rand.nextBytes(randBytes);
-		//TODO - writing b64 encoder
-		return "";
+		String token = auth.base64Encode(randBytes);
+		return token;
+	}
+	
+	private String generateTokenSecret()
+	{
+		int byteArrLen = 32;
+		Random rand = new Random();
+		byte[] randBytes = new byte[byteArrLen]; 
+		rand.nextBytes(randBytes);
+		String tokenSecret = auth.base64Encode(randBytes);
+		return tokenSecret;
 	}
 	
 	public void refresh()

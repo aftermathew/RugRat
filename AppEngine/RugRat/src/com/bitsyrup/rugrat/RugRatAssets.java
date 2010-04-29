@@ -64,7 +64,7 @@ public class RugRatAssets extends HttpServlet {
         { 
         	String pathInfo = req.getPathInfo();   
         	log.log(Level.SEVERE, "PATHINFO: " + pathInfo);
-        	if (auth.isAuthorized())
+        	if (auth.isAuthorizedAdmin())
         	{
         		String verb = req.getParameter("verb");
         		if (null == verb)

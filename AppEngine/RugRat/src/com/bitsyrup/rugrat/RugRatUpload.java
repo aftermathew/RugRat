@@ -48,7 +48,7 @@ public class RugRatUpload extends HttpServlet {
         }
         else 
         {    
-        	if (auth.isAuthorized())
+        	if (auth.isAuthorizedAdmin())
         	{
         		String blobKeyParam = req.getParameter("blob-key");
         		if (blobKeyParam != null)
