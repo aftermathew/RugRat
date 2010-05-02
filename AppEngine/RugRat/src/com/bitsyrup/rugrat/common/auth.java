@@ -11,6 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import com.bitsyrup.rugrat.common.PMF;
 import com.bitsyrup.rugrat.common.Administrator;
 
+import java.net.MalformedURLException;
+
+import javax.crypto.Mac;
+import javax.crypto.spec.SecretKeySpec;
+
 import java.util.HashMap;
 import java.util.List;
 
@@ -203,16 +208,115 @@ public class auth {
 		}
 		return result;
 	}
-
-	private static OAUTH_RESULT verifyOAuthSignature(HashMap<String, String> oauthMap) 
+	
+	private static String getTokenSecret(String token)
 	{
 		//TODO
 		
-		OAUTH_RESULT result = OAUTH_RESULT.INVALID_SIGNATURE;
+		return "";
+	}
+
+	private static String generateOAuthSignature(
+			HashMap<String, String> oauthMap, 
+			String verb, 
+			String URLstr, 
+			HashMap<String, String> otherParamsMap,
+			String consumerSecret,
+			String tokenSecret) 
+	{
+		if (oauthMap == null || oauthMap.isEmpty() ||
+			verb == null || verb.isEmpty() ||
+			URLstr == null || URLstr.isEmpty() )
+			return "";
+		
 		//generate signature base string
-		//	need: VERB, URL, PARAMS
+		//  combine parameters
+		HashMap<String, String> allParams = new HashMap<String, String>();
+		for (String key : oauthMap.keySet())
+		{
+			//exclude signature
+			if (key.compareTo("oauth_signature") != 0)
+				allParams.put(key, oauthMap.get(key));
+		}
+		for (String key : otherParamsMap.keySet())
+		{
+			//these should already be properly URL encoded as input, as needed
+			allParams.put(key, otherParamsMap.get(key));
+		}
+		
+		//  normalize request parameters
+		String[] allParamsKeys = (String[]) allParams.keySet().toArray();
+		java.util.Arrays.sort(allParamsKeys);
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < allParamsKeys.length; i++)
+		{
+			if (i > 0) sb.append('&');
+			String key = allParamsKeys[i];
+			sb.append(key + '=' + allParams.get(key));
+		}
+		String normalizedRequestParameterString = sb.toString();
+		
+		//	need: VERB, URL
+		
+		//  clean URL to good format
+		//  must be absolute URL as input
+		String normalizedURLString;
+		try 
+		{
+			java.net.URL url = new java.net.URL(URLstr);
+			StringBuilder urlsb = new StringBuilder();
+			urlsb.append(url.getProtocol().toLowerCase());
+			urlsb.append("://");
+			urlsb.append(url.getHost().toLowerCase());
+			urlsb.append(url.getPath());
+			normalizedURLString = urlsb.toString();
+		} 
+		catch (MalformedURLException e) 
+		{
+			return "";
+		}
+		
+		// get clean Verb
+		String normalizedVerbString = verb.toUpperCase();
+		
+		sb = new StringBuilder();
+		sb.append(parameterURLEncode(normalizedVerbString));
+		sb.append('&');
+		sb.append(parameterURLEncode(normalizedURLString));
+		sb.append('&');
+		sb.append(parameterURLEncode(normalizedRequestParameterString));
+		String signatureBaseString = sb.toString();
 		
 		//calculate signature value
+		String signatureKey = parameterURLEncode(consumerSecret) + '&' + parameterURLEncode(tokenSecret);
+		try
+		{
+			SecretKeySpec signingKey = new SecretKeySpec(signatureKey.getBytes(), "HmacSHA1");
+			Mac mac = Mac.getInstance("HmacSHA1");
+			mac.init(signingKey);
+			byte[] rawHmac = mac.doFinal(signatureBaseString.getBytes());
+			String result = parameterURLEncode(base64Encode(rawHmac));
+			return result;
+		}
+		catch (Exception e)
+		{
+			return "";
+		}
+	}
+	
+	private static OAUTH_RESULT verifyOAuthSignature(
+			HashMap<String, String> oauthMap, 
+			String verb, 
+			String URLstr, 
+			HashMap<String, String> otherParamsMap,
+			String consumerSecret,
+			String tokenSecret) 
+	{
+		OAUTH_RESULT result = OAUTH_RESULT.INVALID_SIGNATURE;
+		String signatureString = generateOAuthSignature(
+				oauthMap, verb, URLstr, otherParamsMap, consumerSecret, tokenSecret);
+		if (signatureString.compareTo(oauthMap.get("oauth_signature")) == 0)
+			result = OAUTH_RESULT.SUCCESS;
 		return result;
 	}
 
@@ -229,11 +333,12 @@ public class auth {
 			String[] authSections = authHeader.split("[, ]+");
 			for (String authSection : authSections) 
 			{
-				if (authSection.contains("=")) // ignore preceding OAuth val
+				if (authSection.contains("=")) // ignore preceding OAuth val and Realm
 				{
 					String[] keyVal = authSection.split("=");
 					String key = keyVal[0];
-					String value = keyVal[0].substring(1, keyVal[0].lastIndexOf("\"")); // eliminate quotes
+					String value = (keyVal[1].length() == 0) ? "" : 
+						keyVal[1].substring(1, keyVal[0].lastIndexOf("\"")); // eliminate quotes
 					oauthMap.put(key, value);
 				}
 			}
@@ -265,8 +370,12 @@ public class auth {
 								result = verifyOAuthToken(oauthMap.get("oauth_token"));
 								if (result == OAUTH_RESULT.SUCCESS) 
 								{
+									//TODO
+									String oauthTokenSecret = getTokenSecret(oauthMap.get("oauth_token"));
+									
 									// finally, verify signature
-									result = verifyOAuthSignature(oauthMap);
+									//TODO: determine additional params
+									result = verifyOAuthSignature(oauthMap, "", "", null, oauthConsumerSecret, oauthTokenSecret);
 								}
 							}
 						}
@@ -397,18 +506,54 @@ public class auth {
 		}
 	}
 	
+
+	//acceptable chars in parameter encoding are A-Z, a-z, 0-9, - _ . and ~
+	//note: hex chars MUST be in uppercase.
+	//input must be UTF-8 prior to encoding
 	public static String parameterURLEncode(String initStr)
 	{
-		String retStr = null;
-		//TODO
-		return retStr;
+		String unreserved = "_-.~";
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < initStr.length(); i++)
+		{
+			char c = initStr.charAt(i);
+			if (Character.isLetterOrDigit(c) || unreserved.indexOf(c) >= 0)
+			{
+				sb.append(c);
+			}
+			else
+			{
+				byte b = (byte)c;
+				sb.append('%');
+				char c2 = (char)(((b & 0xF0) >> 4) + '0');
+				if (c2 > '9') c2 = (char)(c2 - '9' - 1 + 'A');
+				sb.append(c2);
+				c2 = (char)((b & 0x0F) + '0');
+				if (c2 > '9') c2 = (char)(c2 - '9' - 1 + 'A');
+				sb.append(c2);
+			}
+		}
+		return sb.toString();
 	}
 	
 	public static String parameterURLDecode(String initStr)
 	{
-		String retStr = null;
-		//TODO
-		return retStr;
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < initStr.length(); i++)
+		{
+			char c = initStr.charAt(i);
+			if (c == '%')
+			{
+				c = initStr.charAt(++i);
+				byte b = (c <= '9') ? (byte)(c - '0') : (byte)(c - 'A' + 10);
+				b <<= 4;
+				c = initStr.charAt(++i);
+				b |= (c <= '9') ? (byte)(c - '0') : (byte)(c - 'A' + 10);
+				c = (char)b;
+			}
+			sb.append(c);
+		}
+		return sb.toString();
 	}
 	
 	
