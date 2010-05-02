@@ -85,6 +85,7 @@
 		A0505435117D762D00BFB7F3 /* RRMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRMedia.m; sourceTree = "<group>"; };
 		A0A85CDC115FF1F0004CFD53 /* RRDatabaseInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRDatabaseInterface.h; sourceTree = "<group>"; };
 		A0A85CDD115FF1F0004CFD53 /* RRDatabaseInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRDatabaseInterface.m; sourceTree = "<group>"; };
+		A0C1D3241184DCD10012DA20 /* RRLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRLog.h; sourceTree = "<group>"; };
 		A0E1C1B9112A23D1008E5A2D /* RugRatAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RugRatAppDelegate.h; sourceTree = "<group>"; };
 		A0E1C1BA112A23D1008E5A2D /* RugRatAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RugRatAppDelegate.m; sourceTree = "<group>"; };
 		A0E514FF1156FC0A004A0CCE /* rugrat_db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = rugrat_db.sqlite; path = Resources/rugrat_db.sqlite; sourceTree = "<group>"; };
@@ -162,6 +163,7 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				A0C1D3241184DCD10012DA20 /* RRLog.h */,
 				32CA4F630368D1EE00C91783 /* RugRat_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);

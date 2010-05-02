@@ -9,6 +9,7 @@
 // Singleton class based on this stack overflow thread...
 
 #import "RRDatabaseInterface.h"
+#import "RRLog.h"
 
 static RRDatabaseInterface *gInstance = NULL;
 
@@ -55,6 +56,11 @@ static RRDatabaseInterface *gInstance = NULL;
 // }
 
 - (void) loadDataFromDb {
+    LOG_DEBUG(@"Testing The Log Level %d", __LINE__ );
+    LOG_INFO(@"Testing The Log Level %s", __FILE__ );
+    LOG_WARN(@"Testing The Log Level %@, %d, %@", @"hello", __LINE__, @"whaz up" );
+    //LOG_ERROR(@"Testing The Log Level %d", __LINE__ );
+
     [self ageRanges];
 
     // A little test to output what I have in my db..
