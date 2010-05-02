@@ -1,6 +1,7 @@
 package com.bitsyrup.rugrat.common;
 
 import java.util.Random;
+import com.bitsyrup.rugrat.common.utility;
 
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
@@ -55,7 +56,7 @@ public class Token {
 		Random rand = new Random();
 		byte[] randBytes = new byte[byteArrLen]; 
 		rand.nextBytes(randBytes);
-		String token = auth.base64Encode(randBytes);
+		String token = utility.base64Encode(randBytes);
 		return token;
 	}
 	
@@ -65,7 +66,7 @@ public class Token {
 		Random rand = new Random();
 		byte[] randBytes = new byte[byteArrLen]; 
 		rand.nextBytes(randBytes);
-		String tokenSecret = auth.base64Encode(randBytes);
+		String tokenSecret = utility.base64Encode(randBytes);
 		return tokenSecret;
 	}
 	
