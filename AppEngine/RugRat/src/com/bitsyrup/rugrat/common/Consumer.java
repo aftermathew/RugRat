@@ -42,7 +42,7 @@ public class Consumer {
 		Random rand = new Random();
 		byte[] randBytes = new byte[byteArrLen]; 
 		rand.nextBytes(randBytes);
-		String key = auth.base64Encode(randBytes);
+		String key = utility.base64Encode(randBytes);
 		return key;
 	}
 	
@@ -52,7 +52,7 @@ public class Consumer {
 		Random rand = new Random();
 		byte[] randBytes = new byte[byteArrLen]; 
 		rand.nextBytes(randBytes);
-		String secret = auth.base64Encode(randBytes);
+		String secret = utility.base64Encode(randBytes);
 		return secret;
 	}
 
