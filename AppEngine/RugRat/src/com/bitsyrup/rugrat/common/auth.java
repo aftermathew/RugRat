@@ -33,7 +33,7 @@ public class auth {
 			return false;
 		}
 		String email = user.getEmail();
-		for (int i = 0; i < devs.length; i++) 
+		for (int i = 0; i < devs.length; i++)  
 		{
 			if (devs[i].compareToIgnoreCase(email) == 0) 
 			{

@@ -1,11 +1,13 @@
 package com.bitsyrup.rugrat.common;
 
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.HashMap;
 import java.util.List;
 
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
+import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletRequest;
 
 import com.bitsyrup.rugrat.common.utility;
@@ -302,6 +304,53 @@ public class oauth {
 			result = OAUTH_RESULT.SUCCESS;
 		return result;
 	}
+	
+	public static HashMap<String, String> getAdditionalRequestParams(HttpServletRequest req)
+	{
+		HashMap<String, String> otherParamsMap = new HashMap<String, String>();
+		//get query params
+		String queryString = req.getQueryString();
+		if (null != queryString && !queryString.isEmpty())
+		{
+			String[] queryStringParts = queryString.split("&");
+			for (int i = 0; i < queryStringParts.length; i++)
+			{
+				String[] keyVal = queryStringParts[i].split("=");
+				otherParamsMap.put(keyVal[0], keyVal[1]);
+			}
+		}
+		//get body params
+		if (req.getMethod().equalsIgnoreCase("post") &&
+			req.getContentType().equalsIgnoreCase("application/x-www-form-urlencoded"))
+		{
+			try 
+			{
+				//NOTE: uncertain if this will work.  To test
+				ServletInputStream sis = req.getInputStream();
+				StringBuilder sb = new StringBuilder();
+				int b;
+				while ((b = sis.read()) >= 0)
+				{
+					sb.append((char)(b & 0xFF));
+				}
+				String bodyStr = sb.toString();
+				String decodedBodyStr = java.net.URLDecoder.decode(bodyStr, "UTF-8");
+				String[] bodyParamParts = decodedBodyStr.split("&");
+				for (int i = 0; i < bodyParamParts.length; i++)
+				{
+					String[] keyVal = bodyParamParts[i].split("=");
+					otherParamsMap.put(keyVal[0], keyVal[1]);
+				}
+			} 
+			catch (IOException e) 
+			{
+				//TODO: log this
+				;
+			}
+			
+		}
+		return otherParamsMap;
+	}
 
 	// verifies client request for data
 	// used by external services (web, mobile)
@@ -358,7 +407,10 @@ public class oauth {
 									
 									// finally, verify signature
 									//TODO: determine additional params
-									result = verifyOAuthSignature(oauthMap, "", "", null, oauthConsumerSecret, oauthTokenSecret);
+									String verb = req.getMethod();
+									String requestURL = req.getRequestURL().toString();
+									HashMap<String, String> otherParamsMap = getAdditionalRequestParams(req);
+									result = verifyOAuthSignature(oauthMap, verb, requestURL, otherParamsMap, oauthConsumerSecret, oauthTokenSecret);
 								}
 							}
 						}
