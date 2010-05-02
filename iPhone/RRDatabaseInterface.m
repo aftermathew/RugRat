@@ -21,12 +21,11 @@ static RRDatabaseInterface *gInstance = NULL;
 
 - (void)openQuestionsDB {
     NSString *path = [[NSBundle mainBundle] pathForResource:@"rugrat_db" ofType:@"sqlite"];
-    //NSLog(@"%@", path);
     int dbrc = sqlite3_open([path UTF8String], &db);
     if (dbrc == SQLITE_OK) {
-        NSLog(@"Database Successfully Opened :) ");
+        LOG_DEBUG(@"Database Successfully Opened :) ");
     } else {
-        NSLog(@"Error in opening database :( ");
+        LOG_ERROR(@"Error in opening database :( ");
         db = nil;
     }
 }
@@ -50,17 +49,12 @@ static RRDatabaseInterface *gInstance = NULL;
 //     }
 //     else
 //     {
-//       NSLog(@"Database closing failure. %i", dbrc);
+//       LOG_ERROR(@"Database closing failure. %i", dbrc);
 //     }
 //   }
 // }
 
 - (void) loadDataFromDb {
-    LOG_DEBUG(@"Testing The Log Level %d", __LINE__ );
-    LOG_INFO(@"Testing The Log Level %s", __FILE__ );
-    LOG_WARN(@"Testing The Log Level %@, %d, %@", @"hello", __LINE__, @"whaz up" );
-    //LOG_ERROR(@"Testing The Log Level %d", __LINE__ );
-
     [self ageRanges];
 
     // A little test to output what I have in my db..
@@ -99,7 +93,7 @@ static RRDatabaseInterface *gInstance = NULL;
 
 - (NSArray*) ageRanges{
     if(db == nil){
-        NSLog(@"Tried to get get age ranges from an nil DB!");
+        LOG_ERROR(@"Tried to get get age ranges from an nil DB!");
         return nil;
     }
 
@@ -113,7 +107,7 @@ static RRDatabaseInterface *gInstance = NULL;
         int dbrc = sqlite3_prepare_v2 (db, mySelect, -1, &statement, NULL);
 
         if(dbrc != SQLITE_OK){
-            NSLog(@"Ages query returned a failed result: %d", dbrc);
+            LOG_ERROR(@"Ages query returned a failed result: %d", dbrc);
             return nil;
         }
         // parse the query into an array
@@ -125,14 +119,14 @@ static RRDatabaseInterface *gInstance = NULL;
                 timeRange.endWeek     =	(int) sqlite3_column_int(statement, 2);
                 timeRange.name = [NSString stringWithFormat:@"%s", (char *)sqlite3_column_text(statement, 3)];
 
-                NSLog(@"Adding ageRange :: %@ : from: %d to %d weeks.", [timeRange name], [timeRange startWeek], [timeRange endWeek]);
+                LOG_INFO(@"Adding ageRange :: %@ : from: %d to %d weeks.", [timeRange name], [timeRange startWeek], [timeRange endWeek]);
                 [ageRangesArray addObject:timeRange];
             }
 
         // cleanup the query
         sqlite3_finalize(statement);
 
-        NSLog(@"db read, %i age ranges.", [ageRangesArray count]);
+        LOG_INFO(@"db read, %i age ranges.", [ageRangesArray count]);
     }
 
     return ageRangesArray;
@@ -141,7 +135,7 @@ static RRDatabaseInterface *gInstance = NULL;
 
 - (NSArray*) topics{
     if(db == nil){
-        NSLog(@"Tried to topics from an nil DB!");
+        LOG_ERROR(@"Tried to topics from an nil DB!");
         return nil;
     }
 
@@ -155,7 +149,7 @@ static RRDatabaseInterface *gInstance = NULL;
         int dbrc = sqlite3_prepare_v2 (db, mySelect, -1, &statement, NULL);
 
         if(dbrc != SQLITE_OK){
-            NSLog(@"Ages query returned a failed result: %d", dbrc);
+            LOG_ERROR(@"Ages query returned a failed result: %d", dbrc);
             return nil;
         }
         // parse the query into an array
@@ -165,14 +159,14 @@ static RRDatabaseInterface *gInstance = NULL;
             topic.topicText  = [NSString stringWithFormat:@"%s", (char *)sqlite3_column_text(statement, 1)];
             topic.description = [NSString stringWithFormat:@"%s", (char *)sqlite3_column_text(statement, 2)];
 
-            NSLog(@"Adding Topic :: %@ : %@",topic.topicText, topic.description);
+            LOG_INFO(@"Adding Topic :: %@ : %@",topic.topicText, topic.description);
             [topicsArray addObject:topic];
         }
 
         // cleanup the query
         sqlite3_finalize(statement);
 
-        NSLog(@"db read, %i topics.", [topicsArray count]);
+        LOG_INFO(@"db read, %i topics.", [topicsArray count]);
     }
 
     return topicsArray;
@@ -206,7 +200,7 @@ static RRDatabaseInterface *gInstance = NULL;
     int dbrc = sqlite3_prepare_v2 (db, [query UTF8String], -1, &statement, NULL);
 
     if(dbrc != SQLITE_OK){
-        NSLog(@"topicsForAgeRange query returned a failed result: %d", dbrc);
+        LOG_ERROR(@"topicsForAgeRange query returned a failed result: %d", dbrc);
         return nil;
     }
     // parse the query into an array
@@ -218,7 +212,7 @@ static RRDatabaseInterface *gInstance = NULL;
             topic.description = [NSString stringWithFormat:@"%s", (char *)sqlite3_column_text(statement, 2)];
 
 
-            NSLog(@"Found topicForAgeRange: %@ :: %@ : %@", range.name, topic.topicText, topic.description);
+            LOG_INFO(@"Found topicForAgeRange: %@ :: %@ : %@", range.name, topic.topicText, topic.description);
             [topics addObject:topic];
 	}
 
@@ -249,7 +243,7 @@ static RRDatabaseInterface *gInstance = NULL;
     int dbrc = sqlite3_prepare_v2 (db, [query UTF8String], -1, &statement, NULL);
 
     if(dbrc != SQLITE_OK){
-        NSLog(@"questionsForAgeRange query returned a failed result: %d", dbrc);
+        LOG_ERROR(@"questionsForAgeRange query returned a failed result: %d", dbrc);
         return nil;
     }
     // parse the query into an array
@@ -263,7 +257,7 @@ static RRDatabaseInterface *gInstance = NULL;
             question.version       = (int) sqlite3_column_int(statement, 4);
 
 
-            NSLog(@"Found questionForAgeRange: %@ ::  %@", range.name, question.questionText);
+            LOG_INFO(@"Found questionForAgeRange: %@ ::  %@", range.name, question.questionText);
             [questions addObject:question];
 	}
 
@@ -299,7 +293,7 @@ static RRDatabaseInterface *gInstance = NULL;
     int dbrc = sqlite3_prepare_v2 (db, [query UTF8String], -1, &statement, NULL);
 
     if(dbrc != SQLITE_OK){
-        NSLog(@"QuestionsForAgeRangeAndTopic query returned a failed result: %d", dbrc);
+        LOG_ERROR(@"QuestionsForAgeRangeAndTopic query returned a failed result: %d", dbrc);
         return nil;
     }
     // parse the query into an array
@@ -313,7 +307,7 @@ static RRDatabaseInterface *gInstance = NULL;
             question.version       = (int) sqlite3_column_int(statement, 4);
 
 
-            NSLog(@"Found questionForAgeRange: %@ andTopic: %@ :: %@", range.name, topic.topicText, question.questionText);
+            LOG_INFO(@"Found questionForAgeRange: %@ andTopic: %@ :: %@", range.name, topic.topicText, question.questionText);
             [questions addObject:question];
 	}
 

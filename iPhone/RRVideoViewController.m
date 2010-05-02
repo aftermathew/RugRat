@@ -7,6 +7,7 @@
 //
 
 #import "RRVideoViewController.h"
+#import "RRLog.h"
 
 @implementation RRVideoViewController
 @synthesize logText;
@@ -76,21 +77,21 @@ return (interfaceOrientation == UIInterfaceOrientationPortrait);
   
   m_moviePlayer = [[[MPMoviePlayerController alloc] initWithContentURL:movieUrl] retain];
   [m_moviePlayer play];
-  NSLog(@"playin the movie");
+  LOG_DEBUG(@"playin the movie");
 }
 
 - (void) logNotification:(NSNotification *)notification {
-  NSLog(@"gettin notifys");
-  NSLog(@"%@", [notification description]);
-  logText.text = [NSString stringWithFormat: @"%@%@: %@\n", logText.text, [NSDate date], [notification description]];
+    LOG_DEBUG(@"gettin notifys");
+    LOG_INFO(@"%@", [notification description]);
+    logText.text = [NSString stringWithFormat: @"%@%@: %@\n", logText.text, [NSDate date], [notification description]];
 }
 
 + (NSURL*) localMovie{
   NSString *videoPath = [[NSBundle mainBundle] pathForResource:@"cavity_flow_movie" ofType:@"mp4"];
   if (videoPath == nil) 
   {
-    NSLog(@"issue with video path");
-    return nil;
+      LOG_WARN(@"issue with video path");
+      return nil;
   }
   return [NSURL fileURLWithPath:videoPath];
 }
