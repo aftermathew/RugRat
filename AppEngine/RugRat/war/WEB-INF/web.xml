@@ -4,6 +4,15 @@ xmlns="http://java.sun.com/xml/ns/javaee"
 xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+	<security-constraint>
+        <web-resource-collection>
+        	<web-resource-name>authorization</web-resource-name>
+        	<url-pattern>/auth/*</url-pattern>
+        </web-resource-collection>
+        <user-data-constraint>
+            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
 	<servlet>
 		<servlet-name>Upload</servlet-name>
 		<servlet-class>com.bitsyrup.rugrat.RugRatUpload</servlet-class>
@@ -27,6 +36,14 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<servlet-mapping>
 		<servlet-name>Assets</servlet-name>
 		<url-pattern>/assets</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Token</servlet-name>
+		<servlet-class>com.bitsyrup.rugrat.RugRatToken</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Token</servlet-name>
+		<url-pattern>/auth/token</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>Assets</servlet-name>
