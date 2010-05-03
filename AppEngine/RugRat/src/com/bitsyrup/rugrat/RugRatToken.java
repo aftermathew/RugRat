@@ -14,6 +14,29 @@ import javax.servlet.http.*;
 
 //NOTE: this is all under HTTPS, see web.xml
 
+/*********************
+ * XML description
+ * 
+ * for auth request (POST):
+ * <tokenRequest>
+ *     <digest>[Base 64 encoded name:password]</digest>
+ * </tokenRequest>
+ * 
+ * for auth response (POST):
+ * <tokenResponse>
+ *     <name>[user name]</name>
+ *     <token>[oauth token]</token>
+ *     <tokenSecret>[oauth token secret]</tokenSecret>
+ * <tokenResponse>
+ * 
+ * for error response (POST):
+ * <error>
+ *     <message>[error message]</message>
+ *     <code>[error code (optional)]</errorCode>
+ * </error>
+ * 
+ */
+
 @SuppressWarnings("serial")
 public class RugRatToken extends HttpServlet {
 
@@ -35,6 +58,7 @@ public class RugRatToken extends HttpServlet {
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
 	throws IOException 
 	{
+		//TODO: change to xml body and oauth authorization, sans token.  xml body contains digest
 		String[] headerParts = req.getHeader("Authorization").trim().split(" ");
 		if (headerParts[0].equalsIgnoreCase("basic"))
 		{
