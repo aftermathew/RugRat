@@ -1,9 +1,16 @@
 package com.bitsyrup.rugrat.common;
 
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 
 public class utility {
+	
+	public static String HASHSALT = "^demimath99rugrat$";
+	
 	public static byte[] hashHmacSHA1(String base, String key)
 	{
 		byte[] baseBytes = base.getBytes();
@@ -26,6 +33,38 @@ public class utility {
 			return null;
 		}
 	}
+	
+	public static byte[] hashSHA1(String base)
+	{
+		try 
+		{
+			byte[] retVal = hashSHA1(base.getBytes("iso-8859-1"));
+			return retVal;
+		} 
+		catch (UnsupportedEncodingException e) 
+		{
+			// TODO: log error
+			return null;
+		}
+	}
+	
+	public static byte[] hashSHA1(byte[] base)
+	{
+		try 
+		{
+			MessageDigest md = MessageDigest.getInstance("SHA-1");
+			md.update(base, 0, base.length);
+			byte[] retVal = md.digest();
+			return retVal;
+		} 
+		catch (NoSuchAlgorithmException e) 
+		{
+			// TODO: log error
+			return null;
+		}
+		
+	}
+	
 	
 	private static String base64AlphaStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
 
