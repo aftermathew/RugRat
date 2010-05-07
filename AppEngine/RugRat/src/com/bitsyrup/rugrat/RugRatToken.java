@@ -1,15 +1,15 @@
 package com.bitsyrup.rugrat;
 
-import com.bitsyrup.rugrat.common.PMF;
-import com.bitsyrup.rugrat.common.User;
-import com.bitsyrup.rugrat.common.utility;
+//import com.bitsyrup.rugrat.common.PMF;
+//import com.bitsyrup.rugrat.common.User;
+//import com.bitsyrup.rugrat.common.utility;
 
 import java.io.IOException;
-import java.util.List;
+//import java.util.List;
 
 //import javax.servlet.RequestDispatcher;
 //import javax.servlet.ServletException;
-import javax.jdo.PersistenceManager;
+//import javax.jdo.PersistenceManager;
 import javax.servlet.http.*;
 
 //NOTE: this is all under HTTPS, see web.xml
@@ -54,10 +54,12 @@ public class RugRatToken extends HttpServlet {
 	*/
 	
 	//token request
-	@SuppressWarnings("unchecked")
+	//@SuppressWarnings("unchecked")
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
 	throws IOException 
 	{
+		
+		/*
 		//TODO: change to xml body and oauth authorization, sans token.  xml body contains digest
 		String[] headerParts = req.getHeader("Authorization").trim().split(" ");
 		if (headerParts[0].equalsIgnoreCase("basic"))
@@ -88,6 +90,7 @@ public class RugRatToken extends HttpServlet {
 			//TODO: send xml error message
 			resp.sendError(401, "Please use basic authentication");
 		}
+		*/
 	}
 }
 

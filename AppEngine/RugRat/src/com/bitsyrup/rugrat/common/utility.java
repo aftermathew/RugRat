@@ -223,4 +223,47 @@ public class utility {
 		}
 		return sb.toString();
 	}
+	
+	//handles unicode.
+	public static String xmlEncode(String initStr)
+	{
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < initStr.length(); i++)
+		{
+			char c = initStr.charAt(i);
+			int val = Character.getNumericValue(c);
+			//ILLEGAL VALUES
+			if ( (val >= 0x0 && val <= 0x8) || 		//NULL -> backspace
+					(val >= 0xb && val <= 0xc) ||   //vertical tab -> page feed
+					(val >= 0xe && val <= 0xf) ||   //shift out -> shift in
+					(val == 0x7F) ||				//delete
+					(val >= 0x80 && val <= 0x9f))	//?  noted at wikipedia as illegal
+			{
+				continue;
+			}
+			else if ( (val == 0x26) || 				// &
+					(val == 0x3C) ||				// <
+					(val == 0x3E) ||				// >
+					(val == 0x22) ||				// "
+					(val == 0x27) )					// '
+			{
+				sb.append("&x" + Integer.toHexString(val) + ";");
+			}
+			else if (val < 0x7F) 					//valid chars
+			{
+				sb.append(c);
+			}
+			else									//unicode
+			{
+				sb.append("&x" + Integer.toHexString(val) + ";");
+			}
+		}
+		return sb.toString();
+	}
+	
+	public static String xmlDecode(String initStr)
+	{
+		//TODO
+		return null;
+	}
 }
