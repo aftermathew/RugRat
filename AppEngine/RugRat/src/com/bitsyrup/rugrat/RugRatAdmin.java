@@ -101,9 +101,13 @@ public class RugRatAdmin extends HttpServlet {
         		{
         			pm.makePersistent(administrator);
         		}
+        		catch (Exception e)
+        		{
+        			//TODO: log error
+        		}
         		finally
         		{
-        			pm.close();
+        			;
         		}
         		req.setAttribute("msg", "Added user " + email);
         	}

@@ -9,6 +9,7 @@ public class ErrorResponse implements I_XMLSerializable {
 	
 	public ErrorResponse(){}
 	public ErrorResponse(String xml){this.fromXML(xml);}
+	public ErrorResponse(String code, String message){this.code = code; this.message = message;}
 	
 	@Override
 	public void fromXML(String xml) {

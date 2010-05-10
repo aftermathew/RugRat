@@ -53,4 +53,13 @@ public class auth {
 		}
 		return false;
 	}
+	
+	@SuppressWarnings("unchecked")
+	public static boolean isAuthorizedUser(String username, String passhash)
+	{
+		PersistenceManager pm = PMF.get().getPersistenceManager();
+		String query = "select from " + User.class.getName() + " where user == " + username + " and passwordHash == " + passhash;
+		List<User> users = (List<User>)pm.newQuery(query).execute();
+		return (users.size() > 0);
+	}
 }

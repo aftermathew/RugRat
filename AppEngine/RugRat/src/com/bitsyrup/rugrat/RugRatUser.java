@@ -1,0 +1,82 @@
+package com.bitsyrup.rugrat;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import javax.servlet.http.*;
+
+import com.bitsyrup.rugrat.common.User;
+import com.bitsyrup.rugrat.common.oauth;
+import com.bitsyrup.rugrat.xmlserializable.ErrorResponse;
+import com.bitsyrup.rugrat.xmlserializable.UserRequest;
+
+//NOTE: this is all under HTTPS, see web.xml
+
+/*********************
+ * XML description
+ * 
+ * for user add (POST):
+ * <userAddRequest>
+ *     <user>
+ *     		<name></name>
+ *     		<email></email>
+ *     		<password></password>
+ *     </user>
+ * </userAddRequest>
+ * 
+ */
+
+@SuppressWarnings("serial")
+public class RugRatUser extends HttpServlet {
+
+	//logger
+    private static final Logger log = Logger.getLogger(RugRatAssets.class.getName());
+    
+	/*//handles jsp forwarding
+	private void handleJSPForward(String url, HttpServletRequest req, HttpServletResponse resp) throws IOException {
+		RequestDispatcher rd = req.getRequestDispatcher(url);
+    	try {
+			rd.forward(req, resp);
+		} catch (ServletException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+	}*/
+	
+	
+	//add new user
+	//@SuppressWarnings("unchecked")
+	public void doPost(HttpServletRequest req, HttpServletResponse resp)
+	throws IOException {
+		oauth.OAUTH_RESULT result = oauth.verifyOAuth(req, false);
+		
+		if (result == oauth.OAUTH_RESULT.SUCCESS)
+		{
+			BufferedReader br = req.getReader();
+			StringBuilder sb = new StringBuilder();
+			String line = br.readLine();
+			while (line != null)
+			{
+				sb.append(line + "\n");
+				line = br.readLine();
+			}
+			UserRequest ureq = new UserRequest(sb.toString());
+			User user = new User(ureq.getName(), ureq.getEmail(), ureq.getPasswordHash());
+			user.persist();
+			resp.setStatus(201);
+		}
+		else
+		{
+			log.log(Level.WARNING, "Received OAuth token request failure: " + result.toString());
+			PrintWriter writer = resp.getWriter();
+			ErrorResponse error = new ErrorResponse(
+					String.valueOf(result.ordinal()), 
+					"OAuth request failure: " + result.toString());
+			resp.setStatus(401);
+			writer.write(error.toXML());
+		}
+	}
+}

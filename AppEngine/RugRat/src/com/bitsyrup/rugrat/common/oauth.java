@@ -352,9 +352,35 @@ public class oauth {
 		return otherParamsMap;
 	}
 
+	public static String getOAuthValue(HttpServletRequest req, String oauthKey)
+	{
+		String authHeader = req.getHeader("Authorization");
+		if (null != authHeader) 
+		{
+			// get key-val substrings in Authorization header
+			String[] authSections = authHeader.split("[, ]+");
+			for (String authSection : authSections) 
+			{
+				if (authSection.contains("=")) // ignore preceding OAuth val and Realm
+				{
+					String[] keyVal = authSection.split("=");
+					String key = keyVal[0];
+					if (key.equals(oauthKey))
+						return keyVal[1];
+				}
+			}
+			return null;
+		}
+		else
+		{
+			return null;
+		}
+	}
+	
+	
 	// verifies client request for data
 	// used by external services (web, mobile)
-	public static OAUTH_RESULT verifyOAuth(HttpServletRequest req) 
+	public static OAUTH_RESULT verifyOAuth(HttpServletRequest req, boolean useToken) 
 	{
 		OAUTH_RESULT result = OAUTH_RESULT.UNKNOWN_ERROR;
 		String authHeader = req.getHeader("Authorization");
@@ -383,7 +409,7 @@ public class oauth {
 						&& oauthMap.containsKey("oauth_consumer_key")
 						&& oauthMap.containsKey("oauth_nonce")
 						&& oauthMap.containsKey("oauth_timestamp")
-						&& oauthMap.containsKey("oauth_token")
+						&& (oauthMap.containsKey("oauth_token") || useToken == false)
 						&& oauthMap.containsKey("oauth_signature")) 
 				{
 					// verify timestamp within reasonable range
@@ -399,11 +425,14 @@ public class oauth {
 							String oauthConsumerSecret = getOAuthConsumerSecret(oauthMap.get("oauth_consumer_key"));
 							if (null != oauthConsumerSecret) 
 							{
-								result = verifyOAuthToken(oauthMap.get("oauth_token"));
+								if (useToken)
+									result = verifyOAuthToken(oauthMap.get("oauth_token"));
+								
 								if (result == OAUTH_RESULT.SUCCESS) 
 								{
-									//TODO
-									String oauthTokenSecret = getTokenSecret(oauthMap.get("oauth_token"));
+									String oauthTokenSecret = "";
+									if (useToken)
+										oauthTokenSecret = getTokenSecret(oauthMap.get("oauth_token"));
 									
 									// finally, verify signature
 									//TODO: determine additional params

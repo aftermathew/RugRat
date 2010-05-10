@@ -9,6 +9,12 @@ public class TokenResponse implements I_XMLSerializable
 	
 	public TokenResponse(){}
 	public TokenResponse(String xml){this.fromXML(xml);}
+	public TokenResponse(String username, String token, String tokenSecret)
+	{
+		this.name = username;
+		this.token = token;
+		this.tokenSecret = tokenSecret;
+	}
 	
 	@Override
 	public void fromXML(String xml) {

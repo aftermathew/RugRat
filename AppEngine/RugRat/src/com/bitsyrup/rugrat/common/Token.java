@@ -1,8 +1,10 @@
 package com.bitsyrup.rugrat.common;
 
+import java.util.List;
 import java.util.Random;
 import com.bitsyrup.rugrat.common.utility;
 
+import javax.jdo.PersistenceManager;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
@@ -73,6 +75,27 @@ public class Token {
 	public void refresh()
 	{
 		this.expiration = (System.currentTimeMillis() / 1000L) + (long)(60 * 60);
+	}
+	
+	
+	//This is used to set the token in the persistent datastore
+	@SuppressWarnings("unchecked")
+	public void persist()
+	{
+		PersistenceManager pm = PMF.get().getPersistenceManager();
+		String query = "select from " + Token.class.getName() + "where token == " + this.token;
+		List<Token> tokens = (List<Token>)pm.newQuery(query).execute();
+		if (tokens == null || tokens.size() == 0)
+		{
+			try
+			{
+				pm.makePersistent(this);
+			}
+			catch (Exception e)
+			{
+				//TODO: log error 
+			}
+		}
 	}
 }
 

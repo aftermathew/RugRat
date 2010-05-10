@@ -1,5 +1,10 @@
 package com.bitsyrup.rugrat.xmlserializable;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import com.bitsyrup.rugrat.common.utility;
+
 public class TokenRequest implements I_XMLSerializable {
 
 	private String digest;
@@ -9,7 +14,10 @@ public class TokenRequest implements I_XMLSerializable {
 	
 	@Override
 	public void fromXML(String xml) {
-		// TODO parse xml to get digest value
+		Pattern pat = Pattern.compile("<digest>([^<]*)</digest>");
+    	Matcher match = pat.matcher(xml);
+    	String contentBase64 = match.group(1);
+    	this.digest = new String(utility.base64Decode(contentBase64));
 	}
 	
 	@Override

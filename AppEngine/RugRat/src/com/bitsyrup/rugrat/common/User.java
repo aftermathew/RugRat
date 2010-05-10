@@ -1,7 +1,10 @@
 package com.bitsyrup.rugrat.common;
 
+import java.util.List;
+
 import com.google.appengine.api.datastore.Key;
 
+import javax.jdo.PersistenceManager;
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
@@ -36,4 +39,24 @@ public class User {
 	public Key getKey(){return key;}
 	
 	public String getPasswordHash(){return passwordHash;}
+	
+	//This is used to set the token in the persistent datastore
+	@SuppressWarnings("unchecked")
+	public void persist()
+	{
+		PersistenceManager pm = PMF.get().getPersistenceManager();
+		String query = "select from " + User.class.getName() + "where key == " + this.key;
+		List<User> users = (List<User>)pm.newQuery(query).execute();
+		if (users == null || users.size() == 0)
+		{
+			try
+			{
+				pm.makePersistent(this);
+			}
+			catch (Exception e)
+			{
+				//TODO: log error 
+			}
+		}
+	}
 }

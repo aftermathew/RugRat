@@ -1,16 +1,22 @@
 package com.bitsyrup.rugrat;
 
-//import com.bitsyrup.rugrat.common.PMF;
-//import com.bitsyrup.rugrat.common.User;
-//import com.bitsyrup.rugrat.common.utility;
-
+import java.io.BufferedReader;
 import java.io.IOException;
-//import java.util.List;
-
-//import javax.servlet.RequestDispatcher;
-//import javax.servlet.ServletException;
-//import javax.jdo.PersistenceManager;
+import java.io.PrintWriter;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.jdo.PersistenceManager;
 import javax.servlet.http.*;
+
+import com.bitsyrup.rugrat.common.PMF;
+import com.bitsyrup.rugrat.common.Token;
+import com.bitsyrup.rugrat.common.auth;
+import com.bitsyrup.rugrat.common.oauth;
+import com.bitsyrup.rugrat.common.utility;
+import com.bitsyrup.rugrat.xmlserializable.ErrorResponse;
+import com.bitsyrup.rugrat.xmlserializable.TokenRequest;
+import com.bitsyrup.rugrat.xmlserializable.TokenResponse;
 
 //NOTE: this is all under HTTPS, see web.xml
 
@@ -40,57 +46,78 @@ import javax.servlet.http.*;
 @SuppressWarnings("serial")
 public class RugRatToken extends HttpServlet {
 
-	//handles jsp forwarding
-	/*
-	private void handleJSPForward(String url, HttpServletRequest req, HttpServletResponse resp) throws IOException {
-		RequestDispatcher rd = req.getRequestDispatcher(url);
-    	try {
-			rd.forward(req, resp);
-		} catch (ServletException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} 
-	}
-	*/
+	//logger
+    private static final Logger log = Logger.getLogger(RugRatAssets.class.getName());
 	
-	//token request
-	//@SuppressWarnings("unchecked")
+    //token request
+	@SuppressWarnings("unchecked")
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
 	throws IOException 
 	{
+		oauth.OAUTH_RESULT result = oauth.verifyOAuth(req, false);
 		
-		/*
-		//TODO: change to xml body and oauth authorization, sans token.  xml body contains digest
-		String[] headerParts = req.getHeader("Authorization").trim().split(" ");
-		if (headerParts[0].equalsIgnoreCase("basic"))
+		if (result == oauth.OAUTH_RESULT.SUCCESS)
 		{
-			//get the name and password hash from the data
-			String digestStr = new String(utility.base64Decode(headerParts[1]));
-			String[] digestParts = digestStr.split(":");
-			String name = digestParts[0];
-			//the incoming password is unsalted and raw - salt and hash
-			String passwordHashStr = new String(utility.hashSHA1(digestParts[1] + utility.HASHSALT));
-			
-			//confirm valid user
-			PersistenceManager pm = PMF.get().getPersistenceManager();
-			String query = "select passwordHash from " + User.class.getName() + " where name == " + name;
-			List<String> pwhashes = (List<String>)pm.newQuery(query).execute();
-			
-			if (pwhashes.size() <= 0 || false == pwhashes.get(1).equals(passwordHashStr)) 
-				resp.sendError(401, "Not Authorized"); //TODO: send xml error message
-			
-			//else good - send token
-			//TODO - determine xml format for sending token + token secret
-			
-			//TEST: 
-			resp.getWriter().write("Token for you!");
+			//success.  create new token, token secret for user
+			//	return xml TokenResponse
+			String consumerKey = oauth.getOAuthValue(req, "oauth_consumer_key");
+			//get username and password from request body - verify user
+			BufferedReader br = req.getReader();
+			StringBuilder sb = new StringBuilder();
+			String line = br.readLine();
+			while (line != null)
+			{
+				sb.append(line + "\n");
+				line = br.readLine();
+			}
+			TokenRequest treq = new TokenRequest(sb.toString());
+			String[] idpass = treq.getDigest().split(":");
+			//hash password, verify user against database
+			String username = idpass[0];
+			String passhash = new String(utility.hashSHA1(idpass[1] + utility.HASHSALT));
+			if (auth.isAuthorizedUser(username, passhash))
+			{
+				PersistenceManager pm = PMF.get().getPersistenceManager();
+				String query = "select from " + Token.class.getName() + 
+					"where userID == " + username + " and consumerKey == " + consumerKey;
+				List<Token> tokens = (List<Token>) pm.newQuery(query).execute();
+				Token token = null;
+				if (tokens.size() > 0)
+				{
+					//return existing token
+					token = tokens.get(0);
+				}
+				else
+				{
+					//create new token
+					token = new Token(username, consumerKey);
+					token.persist();
+				}
+				TokenResponse tresp = new TokenResponse(token.getUserID(), token.getToken(), token.getTokenSecret());
+				String xml = tresp.toXML();
+				resp.setStatus(200);
+				resp.getWriter().write(xml);
+			}
+			else
+			{
+				PrintWriter writer = resp.getWriter();
+				ErrorResponse error = new ErrorResponse(
+						String.valueOf(401),
+						"Invalid credentials");
+				resp.setStatus(401);
+				writer.write(error.toXML());
+			}
 		}
 		else
 		{
-			//TODO: send xml error message
-			resp.sendError(401, "Please use basic authentication");
+			log.log(Level.WARNING, "Received OAuth token request failure: " + result.toString());
+			PrintWriter writer = resp.getWriter();
+			ErrorResponse error = new ErrorResponse(
+					String.valueOf(result.ordinal()), 
+					"OAuth request failure: " + result.toString());
+			resp.setStatus(401);
+			writer.write(error.toXML());
 		}
-		*/
 	}
 }
 
