@@ -21,9 +21,9 @@ import com.bitsyrup.rugrat.xmlserializable.UserRequest;
  * for user add (POST):
  * <userAddRequest>
  *     <user>
- *     		<name></name>
- *     		<email></email>
- *     		<password></password>
+ *     		<name>[user's name (or identifier)]</name>
+ *     		<email>[user's email]</email>
+ *     		<password>[user's password (over HTTPS)]</password>
  *     </user>
  * </userAddRequest>
  * 
@@ -34,18 +34,6 @@ public class RugRatUser extends HttpServlet {
 
 	//logger
     private static final Logger log = Logger.getLogger(RugRatAssets.class.getName());
-    
-	/*//handles jsp forwarding
-	private void handleJSPForward(String url, HttpServletRequest req, HttpServletResponse resp) throws IOException {
-		RequestDispatcher rd = req.getRequestDispatcher(url);
-    	try {
-			rd.forward(req, resp);
-		} catch (ServletException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} 
-	}*/
-	
 	
 	//add new user
 	//@SuppressWarnings("unchecked")

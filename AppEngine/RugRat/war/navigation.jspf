@@ -1,6 +1,7 @@
 <table>
 	<tr>
 		<td><a href="/admin">Admin</a></td>
+		<td><a href="/consumer">Consumers</a></td>
 		<td><a href="/upload">Upload</a></td>
 		<td><a href="/assets">Assets</a></td>
 	</tr>
