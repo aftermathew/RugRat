@@ -11,7 +11,7 @@
 
 @interface RRVideoViewController : UIViewController <UITextFieldDelegate> {
   UITextView * logText;
-  MPMoviePlayerController *m_moviePlayer;
+  MPMoviePlayerViewController* moviePlayerView;
   NSURL *movieUrl;
 }
 
