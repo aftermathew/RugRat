@@ -7,25 +7,29 @@
 //
 
 #import <UIKit/UIKit.h>
+@interface RRTimeRangePicker  : UIView
+{
+    IBOutlet UIButton* m_leftArrowButton;
+    IBOutlet UIButton* m_rightArrowButton;
+    IBOutlet UIButton* m_leftTimeButton;
+    IBOutlet UIButton* m_middleTimeButton;
+    IBOutlet UIButton* m_rightTimeButton;
+}
+
+- (IBAction) handleButtonClick:(id)sender;
+
+
+@end
+
+
 
 @interface RRTimeRangePickerController : UIViewController {
-    UIButton* m_leftArrowButton;
-    UIButton* m_rightArrowButton;
-    UIButton* m_leftTimeButton;
-    UIButton* m_middleTimeButton;
-    UIButton* m_rightTimeButton;
 
     NSMutableArray * m_timeRanges;
 }
 
-@property (retain, nonatomic) IBOutlet UIButton * m_leftArrowButton;
-@property (retain, nonatomic) IBOutlet UIButton * m_rightArrowButton;
-@property (retain, nonatomic) IBOutlet UIButton * m_leftTimeButton;
-@property (retain, nonatomic) IBOutlet UIButton * m_middleTimeButton;
-@property (retain, nonatomic) IBOutlet UIButton * m_rightTimeButton;
 
 @property (nonatomic, retain) NSMutableArray * m_timeRanges;
 
-- (IBAction) handleButtonClick:(id)sender;
 
 @end

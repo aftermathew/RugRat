@@ -8,13 +8,38 @@
 
 #import "RRTimeRangePickerController.h"
 #import "RRTimeRange.h"
+#import "RRLog.h"
+
+@implementation RRTimeRangePicker
+
+- (void) handleButtonClick:(id)sender{
+	if (sender == m_leftArrowButton) {
+        LOG_DEBUG(@"Left Arrow Button Clicked");
+	}
+	else if (sender == m_leftTimeButton){
+        LOG_DEBUG(@"Left Time Button Clicked");
+	}
+	
+	else if (sender == m_middleTimeButton){
+        LOG_DEBUG(@"Middle Time Button Clicked");
+	}
+	
+	else if (sender == m_rightTimeButton){
+        LOG_DEBUG(@"Right Time Button Clicked");
+	}
+	
+	else if (sender == m_rightArrowButton){
+        LOG_DEBUG(@"Right Time Button Clicked");
+	}
+	
+}
+
+
+@end
+
 
 @implementation RRTimeRangePickerController
-@synthesize m_leftArrowButton;
-@synthesize m_leftTimeButton;
-@synthesize m_middleTimeButton;
-@synthesize m_rightTimeButton;
-@synthesize m_rightArrowButton;
+
 @synthesize m_timeRanges;
 
 /*
@@ -51,11 +76,7 @@
 
 - (void)viewDidUnload {
 	// Release any retained subviews of the main view.
-	m_leftArrowButton = nil;
-	m_leftTimeButton = nil;
-	m_middleTimeButton = nil;
-	m_rightTimeButton = nil;
-	m_rightArrowButton = nil;
+
 }
 
 
@@ -64,13 +85,5 @@
 }
 
 
-- (void) handleButtonClick:(id)sender{
-	if (sender == m_leftArrowButton) {
-	}
-	else if (sender == m_leftTimeButton){
-		
-	}
-	
-}
 
 @end
