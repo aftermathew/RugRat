@@ -1,11 +1,14 @@
 package com.bitsyrup.rugrat.xmlserializable;
 
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import com.bitsyrup.rugrat.common.utility;
 
+
 public class UserRequest implements I_XMLSerializable {
 
+    
 	private String name;
 	private String email;
 	private String passwordHash;
@@ -15,12 +18,21 @@ public class UserRequest implements I_XMLSerializable {
 	
 	@Override
 	public void fromXML(String xml) {
-		Pattern pat = Pattern.compile("<name>([^<]*)</name>");
-		Pattern pat2 = Pattern.compile("<email>([^<]*)</email>");
-		Pattern pat3 = Pattern.compile("<password>([^<]*)</password>");
-		this.setName(pat.matcher(xml).group(0));
-		this.setEmail(pat2.matcher(xml).group(0));
-		this.setPasswordHash(new String(utility.hashSHA1(pat3.matcher(xml).group(0) + utility.HASHSALT)));
+		Pattern pat1 = Pattern.compile("<name>([^<]+)</name>");
+		Matcher match1 = pat1.matcher(xml);
+		String name = match1.find() ? match1.group(1) : "";
+		this.setName(name);
+		Pattern pat2 = Pattern.compile("<email>([^<]+)</email>");
+		Matcher match2 = pat2.matcher(xml);
+		String email = match2.find() ? match2.group(1) : "";
+		this.setEmail(email);
+		Pattern pat3 = Pattern.compile("<password>([^<]+)</password>");
+		Matcher match3 = pat3.matcher(xml);
+		String pw = match3.find() ? match3.group(1) : "";
+		if (pw.isEmpty())
+			this.setPasswordHash("");
+		else
+			this.setPasswordHash(new String(utility.base64Encode(utility.hashSHA1(pw + utility.HASHSALT))));
 	}
 	
 	@Override

@@ -231,7 +231,7 @@ public class utility {
 		for (int i = 0; i < initStr.length(); i++)
 		{
 			char c = initStr.charAt(i);
-			int val = Character.getNumericValue(c);
+			int val = c;
 			//ILLEGAL VALUES
 			if ( (val >= 0x0 && val <= 0x8) || 		//NULL -> backspace
 					(val >= 0xb && val <= 0xc) ||   //vertical tab -> page feed

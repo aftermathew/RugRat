@@ -10,6 +10,7 @@ import javax.servlet.http.*;
 
 import com.bitsyrup.rugrat.common.User;
 import com.bitsyrup.rugrat.common.oauth;
+import com.bitsyrup.rugrat.common.oauth.OAUTH_RESULT;
 import com.bitsyrup.rugrat.xmlserializable.ErrorResponse;
 import com.bitsyrup.rugrat.xmlserializable.UserRequest;
 
@@ -52,9 +53,33 @@ public class RugRatUser extends HttpServlet {
 				line = br.readLine();
 			}
 			UserRequest ureq = new UserRequest(sb.toString());
-			User user = new User(ureq.getName(), ureq.getEmail(), ureq.getPasswordHash());
-			user.persist();
-			resp.setStatus(201);
+			if (ureq.getPasswordHash().isEmpty() || ureq.getEmail().isEmpty())
+			{
+				PrintWriter writer = resp.getWriter();
+				ErrorResponse error = new ErrorResponse(
+						String.valueOf(OAUTH_RESULT.INVALID_REQUEST_DATA.ordinal()), 
+						"OAuth request error: bad format in body XML");
+				resp.setStatus(403);
+				writer.write(error.toXML());
+			}
+			else
+			{
+				User user = new User(ureq.getName(), ureq.getEmail(), ureq.getPasswordHash());
+				try
+				{
+					user.persist();
+					resp.setStatus(201);
+				}
+				catch (Exception e)
+				{
+					PrintWriter writer = resp.getWriter();
+					ErrorResponse error = new ErrorResponse(
+							String.valueOf(OAUTH_RESULT.INVALID_REQUEST_DATA.ordinal()), 
+							"OAuth request error: " + e.getMessage());
+					resp.setStatus(403);
+					writer.write(error.toXML());
+				}
+			}
 		}
 		else
 		{
