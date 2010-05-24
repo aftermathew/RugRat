@@ -6,8 +6,9 @@
 #import "CPXYAxis.h"
 #import "CPAxisSet.h"
 #import "CPPlot.h"
-#import "CPPlotArea.h"
+#import "CPPlotAreaFrame.h"
 #import "CPPlotRange.h"
+#import "CPPlotArea.h"
 #import "CPGraph.h"
 
 /// @cond
@@ -16,30 +17,46 @@
 -(CGFloat)viewCoordinateForViewLength:(CGFloat)viewLength linearPlotRange:(CPPlotRange *)range plotCoordinateValue:(NSDecimal)plotCoord;
 -(CGFloat)viewCoordinateForViewLength:(CGFloat)viewLength linearPlotRange:(CPPlotRange *)range doublePrecisionPlotCoordinateValue:(double)plotCoord;
 
+-(CPPlotRange *)constrainRange:(CPPlotRange *)existingRange toGlobalRange:(CPPlotRange *)globalRange;
+
 @end
 /// @endcond
+
+#pragma mark -
 
 /** @brief A plot space using a two-dimensional cartesian coordinate system.
  **/
 @implementation CPXYPlotSpace
 
 /** @property xRange
- *	@brief The range of the x-axis.
+ *	@brief The range of the x coordinate.
  **/
 @synthesize xRange;
 
 /** @property yRange
- *	@brief The range of the y-axis.
+ *	@brief The range of the y coordinate.
  **/
 @synthesize yRange;
 
+/** @property globalXRange
+ *	@brief The global range of the x coordinate to which the plot range is constrained.
+ *  If nil, there is no constraint on x.
+ **/
+@synthesize globalXRange;
+
+/** @property globalYRange
+ *	@brief The global range of the y coordinate to which the plot range is constrained.
+ *  If nil, there is no constraint on y.
+ **/
+@synthesize globalYRange;
+
 /** @property xScaleType
- *	@brief The scale type of the x-axis.
+ *	@brief The scale type of the x coordinate.
  **/
 @synthesize xScaleType;
 
 /** @property yScaleType
- *	@brief The scale type of the y-axis.
+ *	@brief The scale type of the y coordinate.
  **/
 @synthesize yScaleType;
 
@@ -51,6 +68,8 @@
 	if ( self = [super init] ) {
 		xRange = nil;
 		yRange = nil;
+        globalXRange = nil;
+        globalYRange = nil;
 		xScaleType = CPScaleTypeLinear;
 		yScaleType = CPScaleTypeLinear;
 	}
@@ -61,11 +80,23 @@
 {
 	[xRange release];
 	[yRange release];
+    [globalXRange release];
+    [globalYRange release];
 	[super dealloc];
 }
 
 #pragma mark -
 #pragma mark Ranges
+
+-(void)setPlotRange:(CPPlotRange *)newRange forCoordinate:(CPCoordinate)coordinate
+{
+	if ( coordinate == CPCoordinateX ) {
+        self.xRange = newRange;
+    }
+    else {
+        self.yRange = newRange;
+    }
+}
 
 -(CPPlotRange *)plotRangeForCoordinate:(CPCoordinate)coordinate
 {
@@ -74,9 +105,10 @@
 
 -(void)setXRange:(CPPlotRange *)range 
 {
-	if ( range != xRange ) {
+	if ( ![range isEqualToRange:xRange] ) {
+        CPPlotRange *constrainedRange = [self constrainRange:range toGlobalRange:self.globalXRange];
 		[xRange release];
-		xRange = [range copy];
+		xRange = [constrainedRange copy];
 		[[NSNotificationCenter defaultCenter] postNotificationName:CPPlotSpaceCoordinateMappingDidChangeNotification object:self];
     	if ( [self.delegate respondsToSelector:@selector(plotSpace:didChangePlotRangeForCoordinate:)] ) {
             [self.delegate plotSpace:self didChangePlotRangeForCoordinate:CPCoordinateX];
@@ -86,14 +118,43 @@
 
 -(void)setYRange:(CPPlotRange *)range 
 {
-	if ( range != yRange ) {
+	if ( ![range isEqualToRange:yRange] ) {
+        CPPlotRange *constrainedRange = [self constrainRange:range toGlobalRange:self.globalYRange];
 		[yRange release];
-		yRange = [range copy];
+		yRange = [constrainedRange copy];
 		[[NSNotificationCenter defaultCenter] postNotificationName:CPPlotSpaceCoordinateMappingDidChangeNotification object:self];
         if ( [self.delegate respondsToSelector:@selector(plotSpace:didChangePlotRangeForCoordinate:)] ) {
             [self.delegate plotSpace:self didChangePlotRangeForCoordinate:CPCoordinateY];
         }
 	}
+}
+
+-(CPPlotRange *)constrainRange:(CPPlotRange *)existingRange toGlobalRange:(CPPlotRange *)globalRange 
+{
+    if ( !globalRange ) return existingRange;
+    if ( !existingRange ) return nil;
+    CPPlotRange *newRange = [[existingRange copy] autorelease];
+    [newRange shiftEndToFitInRange:globalRange];
+    [newRange shiftLocationToFitInRange:globalRange];
+    return newRange;
+}
+
+-(void)setGlobalXRange:(CPPlotRange *)newRange 
+{
+    if ( newRange != globalXRange ) {
+    	[globalXRange release];
+        globalXRange = [newRange copy];
+		self.xRange = [self constrainRange:self.xRange toGlobalRange:globalXRange];
+    }
+}
+
+-(void)setGlobalYRange:(CPPlotRange *)newRange 
+{
+    if ( newRange != globalYRange ) {
+    	[globalYRange release];
+        globalYRange = [newRange copy];
+        self.yRange = [self constrainRange:self.yRange toGlobalRange:globalYRange];
+    }
 }
 
 -(void)scaleToFitPlots:(NSArray *)plots {
@@ -138,12 +199,12 @@
 
 -(CGPoint)plotAreaViewPointForPlotPoint:(NSDecimal *)plotPoint
 {
-	CGFloat viewX, viewY;
-	CGSize layerSize = self.graph.plotArea.bounds.size;
+	CGFloat viewX = 0.0, viewY = 0.0;
+	CGSize layerSize = self.graph.plotAreaFrame.plotArea.bounds.size;
 	
 	switch ( self.xScaleType ) {
 		case CPScaleTypeLinear:
-			viewX = [self viewCoordinateForViewLength:layerSize.width linearPlotRange:xRange plotCoordinateValue:plotPoint[CPCoordinateX]];
+			viewX = [self viewCoordinateForViewLength:layerSize.width linearPlotRange:self.xRange plotCoordinateValue:plotPoint[CPCoordinateX]];
 			break;
 		default:
 			[NSException raise:CPException format:@"Scale type not supported in CPXYPlotSpace"];
@@ -151,7 +212,7 @@
 	
 	switch ( self.yScaleType ) {
 		case CPScaleTypeLinear:
-			viewY = [self viewCoordinateForViewLength:layerSize.height linearPlotRange:yRange plotCoordinateValue:plotPoint[CPCoordinateY]];
+			viewY = [self viewCoordinateForViewLength:layerSize.height linearPlotRange:self.yRange plotCoordinateValue:plotPoint[CPCoordinateY]];
 			break;
 		default:
 			[NSException raise:CPException format:@"Scale type not supported in CPXYPlotSpace"];
@@ -162,12 +223,12 @@
 
 -(CGPoint)plotAreaViewPointForDoublePrecisionPlotPoint:(double *)plotPoint
 {
-	CGFloat viewX, viewY;
-	CGSize layerSize = self.graph.plotArea.bounds.size;
+	CGFloat viewX = 0.0, viewY = 0.0;
+	CGSize layerSize = self.graph.plotAreaFrame.plotArea.bounds.size;
 
 	switch ( self.xScaleType ) {
 		case CPScaleTypeLinear:
-			viewX = [self viewCoordinateForViewLength:layerSize.width linearPlotRange:xRange doublePrecisionPlotCoordinateValue:plotPoint[CPCoordinateX]];
+			viewX = [self viewCoordinateForViewLength:layerSize.width linearPlotRange:self.xRange doublePrecisionPlotCoordinateValue:plotPoint[CPCoordinateX]];
 			break;
 		default:
 			[NSException raise:CPException format:@"Scale type not supported in CPXYPlotSpace"];
@@ -175,7 +236,7 @@
 	
 	switch ( self.yScaleType ) {
 		case CPScaleTypeLinear:
-			viewY = [self viewCoordinateForViewLength:layerSize.height linearPlotRange:yRange doublePrecisionPlotCoordinateValue:plotPoint[CPCoordinateY]];
+			viewY = [self viewCoordinateForViewLength:layerSize.height linearPlotRange:self.yRange doublePrecisionPlotCoordinateValue:plotPoint[CPCoordinateY]];
 			break;
 		default:
 			[NSException raise:CPException format:@"Scale type not supported in CPXYPlotSpace"];
@@ -188,7 +249,7 @@
 {
 	NSDecimal pointx = CPDecimalFromDouble(point.x);
 	NSDecimal pointy = CPDecimalFromDouble(point.y);
-	CGSize boundsSize = self.graph.plotArea.bounds.size;
+	CGSize boundsSize = self.graph.plotAreaFrame.plotArea.bounds.size;
 	NSDecimal boundsw = CPDecimalFromDouble(boundsSize.width);
 	NSDecimal boundsh = CPDecimalFromDouble(boundsSize.height);
 	
@@ -222,13 +283,17 @@
 #pragma mark -
 #pragma mark Interaction
 
--(BOOL)pointingDeviceDownAtPoint:(CGPoint)interactionPoint
+-(BOOL)pointingDeviceDownEvent:(id)event atPoint:(CGPoint)interactionPoint
 {
-	if ( !self.allowsUserInteraction || !self.graph.plotArea ) {
+	BOOL handledByDelegate = [super pointingDeviceDownEvent:event atPoint:interactionPoint];
+    if ( handledByDelegate ) return YES;
+
+	if ( !self.allowsUserInteraction || !self.graph.plotAreaFrame ) {
         return NO;
     }
-    CGPoint pointInPlotArea = [self.graph.plotArea convertPoint:interactionPoint toLayer:self.graph.plotArea];
-    if ( [self.graph.plotArea containsPoint:pointInPlotArea] ) {
+    
+    CGPoint pointInPlotArea = [self.graph convertPoint:interactionPoint toLayer:self.graph.plotAreaFrame];
+    if ( [self.graph.plotAreaFrame containsPoint:pointInPlotArea] ) {
         // Handle event
         lastDragPoint = pointInPlotArea;
         isDragging = YES;
@@ -238,11 +303,15 @@
 	return NO;
 }
 
--(BOOL)pointingDeviceUpAtPoint:(CGPoint)interactionPoint
+-(BOOL)pointingDeviceUpEvent:(id)event atPoint:(CGPoint)interactionPoint
 {
-	if ( !self.allowsUserInteraction || !self.graph.plotArea ) {
+	BOOL handledByDelegate = [super pointingDeviceUpEvent:event atPoint:interactionPoint];
+	if ( handledByDelegate ) return YES;
+
+	if ( !self.allowsUserInteraction || !self.graph.plotAreaFrame ) {
         return NO;
     }
+    
     if ( isDragging ) {
         isDragging = NO;
         return YES;
@@ -251,12 +320,16 @@
 	return NO;
 }
 
--(BOOL)pointingDeviceDraggedAtPoint:(CGPoint)interactionPoint
+-(BOOL)pointingDeviceDraggedEvent:(id)event atPoint:(CGPoint)interactionPoint
 {
-	if ( !self.allowsUserInteraction || !self.graph.plotArea ) {
+	BOOL handledByDelegate = [super pointingDeviceDraggedEvent:event atPoint:interactionPoint];
+	if ( handledByDelegate ) return YES;
+    
+	if ( !self.allowsUserInteraction || !self.graph.plotAreaFrame ) {
         return NO;
     }
-    CGPoint pointInPlotArea = [self.graph.plotArea convertPoint:interactionPoint toLayer:self.graph.plotArea];
+    
+    CGPoint pointInPlotArea = [self.graph convertPoint:interactionPoint toLayer:self.graph.plotAreaFrame];
     if ( isDragging ) {
     	CGPoint displacement = CGPointMake(pointInPlotArea.x-lastDragPoint.x, pointInPlotArea.y-lastDragPoint.y);
         CGPoint pointToUse = pointInPlotArea;

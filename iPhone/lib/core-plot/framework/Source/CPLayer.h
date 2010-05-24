@@ -12,9 +12,12 @@
 	CGFloat paddingTop;
 	CGFloat paddingRight;
 	CGFloat paddingBottom;
+	BOOL masksToBorder;
 	id <CPLayoutManager> layoutManager;
 	BOOL renderingRecursively;
     __weak CPGraph *graph;
+	CGPathRef outerBorderPath;
+	CGPathRef innerBorderPath;
 }
 
 /// @name Graph
@@ -32,6 +35,9 @@
 
 /// @name Masking
 /// @{
+@property (nonatomic, readwrite, assign) BOOL masksToBorder;
+@property (nonatomic, readwrite, assign) CGPathRef outerBorderPath;
+@property (nonatomic, readwrite, assign) CGPathRef innerBorderPath;
 @property (nonatomic, readonly, assign) CGPathRef maskingPath;
 @property (nonatomic, readonly, assign) CGPathRef sublayerMaskingPath;
 ///	@}
@@ -50,6 +56,7 @@
 /// @{
 -(void)renderAsVectorInContext:(CGContextRef)context;
 -(void)recursivelyRenderInContext:(CGContextRef)context;
+-(void)layoutAndRenderInContext:(CGContextRef)context;
 -(NSData *)dataForPDFRepresentationOfLayer;
 ///	@}
 

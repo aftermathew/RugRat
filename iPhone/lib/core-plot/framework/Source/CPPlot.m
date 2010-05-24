@@ -1,5 +1,7 @@
-
+#import "CPGraph.h"
 #import "CPPlot.h"
+#import "CPPlotArea.h"
+#import "CPPlotAreaFrame.h"
 #import "CPPlotSpace.h"
 #import "CPPlotRange.h"
 #import "NSNumberExtensions.h"
@@ -13,6 +15,8 @@
 
 @end
 ///	@endcond
+
+#pragma mark -
 
 /**	@brief An abstract plot class.
  *
@@ -34,6 +38,11 @@
  *	@brief The plot space for the plot.
  **/
 @synthesize plotSpace;
+
+/**	@property plotArea
+ *	@brief The plot area for the plot.
+ **/
+@dynamic plotArea;
 
 /**	@property dataNeedsReloading
  *	@brief If YES, the plot data will be reloaded from the data source before the layer content is drawn.
@@ -81,6 +90,11 @@
 {
 	return CPDefaultZPositionPlot;
 }
+
+-(void)layoutSublayers {
+	// do nothing
+}
+
 
 #pragma mark -
 #pragma mark Fields
@@ -189,7 +203,7 @@
 {
 	if ( numbers == nil ) return;
     if ( cachedData == nil ) cachedData = [[NSMutableDictionary alloc] initWithCapacity:5];
-    [cachedData setObject:[[numbers copy] autorelease] forKey:[NSNumber numberWithUnsignedInt:fieldEnum]];
+    [cachedData setObject:[[numbers copy] autorelease] forKey:[NSNumber numberWithUnsignedInteger:fieldEnum]];
 }
 
 /**	@brief Retrieves an array of numbers from the cache.
@@ -198,7 +212,7 @@
  **/
 -(NSArray *)cachedNumbersForField:(NSUInteger)fieldEnum 
 {
-    return [self.cachedData objectForKey:[NSNumber numberWithUnsignedInt:fieldEnum]];
+    return [self.cachedData objectForKey:[NSNumber numberWithUnsignedInteger:fieldEnum]];
 }
 
 #pragma mark -
@@ -261,7 +275,9 @@
     [self setNeedsLayout];
 }
 
--(void)layoutSublayers {
+-(CPPlotArea *)plotArea
+{
+	return self.graph.plotAreaFrame.plotArea;
 }
 
 @end

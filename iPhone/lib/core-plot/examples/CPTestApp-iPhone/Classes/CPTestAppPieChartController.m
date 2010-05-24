@@ -4,6 +4,18 @@
 
 @synthesize dataForChart;
 
+-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+	return YES;
+}
+
+-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+	CPPlot *piePlot = [pieChart plotWithIdentifier:@"Pie Chart 1"];
+	CGRect plotBounds = pieChart.plotAreaFrame.bounds;
+	((CPPieChart *)piePlot).pieRadius = MIN(plotBounds.size.width, plotBounds.size.height) / 2.0 - 10.0;
+}
+
 #pragma mark -
 #pragma mark Initialization and teardown
 
@@ -23,7 +35,6 @@
     [pieChart applyTheme:theme];
 	CPLayerHostingView *hostingView = (CPLayerHostingView *)self.view;
     hostingView.hostedLayer = pieChart;
-    pieChart.plotArea.masksToBorder = NO;
 	
     pieChart.paddingLeft = 20.0;
 	pieChart.paddingTop = 20.0;

@@ -1,7 +1,9 @@
 #import "CPLayer.h"
 #import "CPLayoutManager.h"
+#import "CPPathExtensions.h"
 #import "CPPlatformSpecificFunctions.h"
 #import "CPExceptions.h"
+#import "CPLineStyle.h"
 #import "CPUtilities.h"
 #import "CorePlotProbes.h"
 #import <objc/runtime.h>
@@ -24,10 +26,9 @@
  *	@todo More documentation needed 
  **/
 
-@implementation CPLayer
+#pragma mark -
 
-/// @defgroup CPLayer CPLayer
-/// @{
+@implementation CPLayer
 
 /**	@property graph
  *	@brief The graph for the layer.
@@ -53,6 +54,21 @@
  *  @brief Amount to inset the bottom of each sublayer.
  **/
 @synthesize paddingBottom;
+
+/** @property masksToBorder 
+ *  @brief If YES, a sublayer mask is applied to clip sublayer content to the inside of the border.
+ **/
+@synthesize masksToBorder;
+
+/** @property outerBorderPath
+ *  @brief A drawing path that encompasses the outer boundary of the layer border.
+ **/
+@synthesize outerBorderPath;
+
+/** @property innerBorderPath
+ *  @brief A drawing path that encompasses the inner boundary of the layer border.
+ **/
+@synthesize innerBorderPath;
 
 /** @property maskingPath
  *  @brief A drawing path that encompasses the layer content including any borders. Set to NULL when no masking is desired.
@@ -103,17 +119,17 @@
 		paddingTop = 0.0;
 		paddingRight = 0.0;
 		paddingBottom = 0.0;
+		masksToBorder = NO;
 		layoutManager = nil;
 		renderingRecursively = NO;
+		outerBorderPath = NULL;
+		innerBorderPath = NULL;
 
 		self.frame = newFrame;
 		self.needsDisplayOnBoundsChange = NO;
 		self.opaque = NO;
 		self.masksToBounds = NO;
 		self.zPosition = [self.class defaultZPosition];
-        NSDictionary *actionsDict = [[NSDictionary alloc] initWithObjectsAndKeys:[NSNull null], @"position", [NSNull null], @"bounds", [NSNull null], @"sublayers", [NSNull null], @"contents", nil];
-        self.actions = actionsDict;
-        [actionsDict release];
     }
 	return self;
 }
@@ -127,13 +143,24 @@
 {
 	graph = nil;
 	[layoutManager release];
+	CGPathRelease(outerBorderPath);
+	CGPathRelease(innerBorderPath);
+
 	[super dealloc];
 }
+
+-(void)finalize
+{
+	CGPathRelease(outerBorderPath);
+	CGPathRelease(innerBorderPath);
+	[super finalize];
+}
+
 
 #pragma mark -
 #pragma mark Animation
 
-+(id <CAAction>)defaultActionForKey:(NSString *)aKey
+-(id <CAAction>)actionForKey:(NSString *)aKey
 {
     return nil;
 }
@@ -225,21 +252,30 @@
 	}
 }
 
+/**	@brief Updates the layer layout if needed and then draws layer content and the content of all sublayers into the provided graphics context.
+ *	@param context The graphics context to draw into.
+ */
+-(void)layoutAndRenderInContext:(CGContextRef)context
+{
+	[self layoutIfNeeded];
+	[self recursivelyRenderInContext:context];
+}
+
 /**	@brief Draws layer content and the content of all sublayers into a PDF document.
  *	@return PDF representation of the layer content.
  **/
--(NSData *)dataForPDFRepresentationOfLayer;
+-(NSData *)dataForPDFRepresentationOfLayer
 {
 	NSMutableData *pdfData = [[NSMutableData alloc] init];
 	CGDataConsumerRef dataConsumer = CGDataConsumerCreateWithCFData((CFMutableDataRef)pdfData);
 	
 	const CGRect mediaBox = CGRectMake(0.0, 0.0, self.bounds.size.width, self.bounds.size.height);
 	CGContextRef pdfContext = CGPDFContextCreate(dataConsumer, &mediaBox, NULL);
-	
+		
 	CPPushCGContext(pdfContext);
 	
 	CGContextBeginPage(pdfContext, &mediaBox);
-	[self recursivelyRenderInContext:pdfContext];
+	[self layoutAndRenderInContext:pdfContext];
 	CGContextEndPage(pdfContext);
 	CGPDFContextClose(pdfContext);
 	
@@ -255,36 +291,40 @@
 #pragma mark Responder Chain and User interaction
 
 /**	@brief Abstraction of Mac and iPhone event handling. Handles mouse or finger down event.
+ *  @param event Native event object of device.
  *	@param interactionPoint The coordinates of the event in the host view.
  *  @return Whether the event was handled or not.
  **/
--(BOOL)pointingDeviceDownAtPoint:(CGPoint)interactionPoint
+-(BOOL)pointingDeviceDownEvent:(id)event atPoint:(CGPoint)interactionPoint
 {
 	return NO;
 }
 
 /**	@brief Abstraction of Mac and iPhone event handling. Handles mouse or finger up event.
+ *  @param event Native event object of device.
  *	@param interactionPoint The coordinates of the event in the host view.
  *  @return Whether the event was handled or not.
  **/
--(BOOL)pointingDeviceUpAtPoint:(CGPoint)interactionPoint
+-(BOOL)pointingDeviceUpEvent:(id)event atPoint:(CGPoint)interactionPoint
 {
 	return NO;
 }
 
 /**	@brief Abstraction of Mac and iPhone event handling. Handles mouse or finger dragged event.
+ *  @param event Native event object of device.
  *	@param interactionPoint The coordinates of the event in the host view.
  *  @return Whether the event was handled or not.
  **/
--(BOOL)pointingDeviceDraggedAtPoint:(CGPoint)interactionPoint
+-(BOOL)pointingDeviceDraggedEvent:(id)event atPoint:(CGPoint)interactionPoint
 {
 	return NO;
 }
 
 /**	@brief Abstraction of Mac and iPhone event handling. Mouse or finger event cancelled.
+ *  @param event Native event object of device.
  *  @return Whether the event was handled or not.
  **/
--(BOOL)pointingDeviceCancelled
+-(BOOL)pointingDeviceCancelledEvent:(id)event
 {
 	return NO;
 }
@@ -336,7 +376,6 @@
 {
 	// This is where we do our custom replacement for the Mac-only layout manager and autoresizing mask
 	// Subclasses should override to lay out their own sublayers
-	// TODO: create a generic layout manager akin to CAConstraintLayoutManager ("struts and springs" is not flexible enough)
 	// Sublayers fill the super layer's bounds minus any padding by default
 	CGRect selfBounds = self.bounds;
 	CGSize subLayerSize = selfBounds.size;
@@ -359,14 +398,38 @@
 #pragma mark -
 #pragma mark Masking
 
+// default path is the rounded rect layer bounds
 -(CGPathRef)maskingPath 
 {
-	return NULL;
+	if ( self.masksToBounds ) {
+		CGPathRef path = self.outerBorderPath;
+		if ( path ) return path;
+		
+		CGRect selfBounds = self.bounds;
+		
+		if ( self.cornerRadius > 0.0 ) {
+			CGFloat radius = MIN(MIN(self.cornerRadius, selfBounds.size.width / 2.0), selfBounds.size.height / 2.0);
+			path = CreateRoundedRectPath(selfBounds, radius);
+			self.outerBorderPath = path;
+			CGPathRelease(path);
+		}
+		else {
+			CGMutablePathRef mutablePath = CGPathCreateMutable();
+			CGPathAddRect(mutablePath, NULL, selfBounds);
+			self.outerBorderPath = mutablePath;
+			CGPathRelease(mutablePath);
+		}
+		
+		return self.outerBorderPath;
+	}
+	else {
+		return NULL;
+	}
 }
 
 -(CGPathRef)sublayerMaskingPath 
 {
-	return NULL;
+	return self.innerBorderPath;
 }
 
 /**	@brief Recursively sets the clipping path of the given graphics context to the sublayer masking paths of its superlayers.
@@ -380,16 +443,20 @@
  **/
 -(void)applySublayerMaskToContext:(CGContextRef)context forSublayer:(CPLayer *)sublayer withOffset:(CGPoint)offset
 {
-	CGPoint sublayerFrameOrigin = sublayer.frame.origin;
 	CGPoint sublayerBoundsOrigin = sublayer.bounds.origin;
 	CGPoint layerOffset = offset;
 	if ( !self.renderingRecursively ) {
-		layerOffset.x += sublayerFrameOrigin.x - sublayerBoundsOrigin.x;
-		layerOffset.y += sublayerFrameOrigin.y - sublayerBoundsOrigin.y;
+		CGPoint convertedOffset = [self convertPoint:sublayerBoundsOrigin fromLayer:sublayer];
+		layerOffset.x += convertedOffset.x;
+		layerOffset.y += convertedOffset.y;
 	}
 	
-	if ( [self.superlayer isKindOfClass:[CPLayer class]] ) {
-		[(CPLayer *)self.superlayer applySublayerMaskToContext:context forSublayer:self withOffset:layerOffset];
+	CGAffineTransform sublayerTransform = CATransform3DGetAffineTransform(sublayer.transform);
+	CGContextConcatCTM(context, CGAffineTransformInvert(sublayerTransform));
+	
+	CALayer *superlayer = self.superlayer;
+	if ( [superlayer isKindOfClass:[CPLayer class]] ) {
+		[(CPLayer *)superlayer applySublayerMaskToContext:context forSublayer:self withOffset:layerOffset];
 	}
 	
 	CGPathRef maskPath = self.sublayerMaskingPath;
@@ -408,6 +475,8 @@
 		//		CGContextConcatCTM(context, transform);
 		CGContextTranslateCTM(context, layerOffset.x, layerOffset.y);
 	}
+	
+	CGContextConcatCTM(context, sublayerTransform);
 }
 
 /**	@brief Sets the clipping path of the given graphics context to mask the content.
@@ -420,7 +489,7 @@
 -(void)applyMaskToContext:(CGContextRef)context
 {
 	if ( [self.superlayer isKindOfClass:[CPLayer class]] ) {
-		[(CPLayer *)self.superlayer applySublayerMaskToContext:context forSublayer:self withOffset:CGPointMake(0.0, 0.0)];
+		[(CPLayer *)self.superlayer applySublayerMaskToContext:context forSublayer:self withOffset:CGPointZero];
 	}
 	
 	CGPathRef maskPath = self.maskingPath;
@@ -488,14 +557,46 @@ static NSString * const BindingsNotSupportedString = @"Bindings are not supporte
 	}
 }
 
+-(void)setOuterBorderPath:(CGPathRef)newPath
+{
+	if ( newPath != outerBorderPath ) {
+		CGPathRelease(outerBorderPath);
+		outerBorderPath = CGPathRetain(newPath);
+	}
+}
+
+-(void)setInnerBorderPath:(CGPathRef)newPath
+{
+	if ( newPath != innerBorderPath ) {
+		CGPathRelease(innerBorderPath);
+		innerBorderPath = CGPathRetain(newPath);
+	}
+}
+
+-(void)setBounds:(CGRect)newBounds
+{
+	[super setBounds:newBounds];
+	self.outerBorderPath = NULL;
+	self.innerBorderPath = NULL;
+}
+
+-(void)setCornerRadius:(CGFloat)newRadius
+{
+	if ( newRadius != self.cornerRadius ) {
+		super.cornerRadius = newRadius;
+		[self setNeedsDisplay];
+		
+		self.outerBorderPath = NULL;
+		self.innerBorderPath = NULL;
+	}
+}
+
 #pragma mark -
 #pragma mark Description
 
 -(NSString *)description
 {
-	return [NSString stringWithFormat:@"<%@ with bounds: %@>", [super description], CPStringFromRect(self.bounds)];
+	return [NSString stringWithFormat:@"<%@ bounds: %@>", [super description], CPStringFromRect(self.bounds)];
 };
-
-///	@}
 
 @end

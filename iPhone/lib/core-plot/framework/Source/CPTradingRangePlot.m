@@ -1,7 +1,7 @@
-
 #import <stdlib.h>
 #import "CPTradingRangePlot.h"
 #import "CPLineStyle.h"
+#import "CPPlotArea.h"
 #import "CPPlotSpace.h"
 #import "CPExceptions.h"
 #import "CPUtilities.h"
@@ -54,6 +54,8 @@ static NSString * const CPCloseValuesBindingContext = @"CPCloseValuesBindingCont
 
 @end
 /// @endcond
+
+#pragma mark -
 
 /** @brief A trading range financial plot.
  **/
@@ -210,16 +212,26 @@ static NSString * const CPCloseValuesBindingContext = @"CPCloseValuesBindingCont
 
 -(void)dealloc
 {
-	if ( observedObjectForXValues ) [self unbind:CPTradingRangePlotBindingXValues];
-	observedObjectForXValues = nil;
-	if ( observedObjectForOpenValues ) [self unbind:CPTradingRangePlotBindingOpenValues];
-	observedObjectForOpenValues = nil;
-	if ( observedObjectForHighValues ) [self unbind:CPTradingRangePlotBindingHighValues];
-	observedObjectForHighValues = nil;
-	if ( observedObjectForLowValues ) [self unbind:CPTradingRangePlotBindingLowValues];
-	observedObjectForLowValues = nil;
-	if ( observedObjectForCloseValues ) [self unbind:CPTradingRangePlotBindingCloseValues];
-	observedObjectForCloseValues = nil;
+	if ( observedObjectForXValues ) {
+		[observedObjectForXValues removeObserver:self forKeyPath:self.keyPathForXValues];
+		observedObjectForXValues = nil;	
+	}
+	if ( observedObjectForOpenValues ) {
+		[observedObjectForOpenValues removeObserver:self forKeyPath:self.keyPathForOpenValues];
+		observedObjectForOpenValues = nil;	
+	}
+	if ( observedObjectForHighValues ) {
+		[observedObjectForHighValues removeObserver:self forKeyPath:self.keyPathForHighValues];
+		observedObjectForHighValues = nil;	
+	}
+	if ( observedObjectForLowValues ) {
+		[observedObjectForLowValues removeObserver:self forKeyPath:self.keyPathForLowValues];
+		observedObjectForLowValues = nil;	
+	}
+	if ( observedObjectForCloseValues ) {
+		[observedObjectForCloseValues removeObserver:self forKeyPath:self.keyPathForCloseValues];
+		observedObjectForCloseValues = nil;	
+	}
 	
 	[keyPathForXValues release];
 	[keyPathForCloseValues release];
@@ -236,6 +248,9 @@ static NSString * const CPCloseValuesBindingContext = @"CPCloseValuesBindingCont
     
 	[super dealloc];
 }
+
+#pragma mark -
+#pragma mark Bindings
 
 -(void)bind:(NSString *)binding toObject:(id)observable withKeyPath:(NSString *)keyPath options:(NSDictionary *)options
 {
@@ -488,19 +503,19 @@ static NSString * const CPCloseValuesBindingContext = @"CPCloseValuesBindingCont
 			
 			// open point
 			plotPoint[dependentCoord] = [openCoordValue doubleValue];
-			openPoint = [self.plotSpace plotAreaViewPointForDoublePrecisionPlotPoint:plotPoint];
+			openPoint = [self convertPoint:[self.plotSpace plotAreaViewPointForDoublePrecisionPlotPoint:plotPoint] fromLayer:self.plotArea];
 			
 			// high point
 			plotPoint[dependentCoord] = [highCoordValue doubleValue];
-			highPoint = [self.plotSpace plotAreaViewPointForDoublePrecisionPlotPoint:plotPoint];
+			highPoint = [self convertPoint:[self.plotSpace plotAreaViewPointForDoublePrecisionPlotPoint:plotPoint] fromLayer:self.plotArea];
 			
 			// low point
 			plotPoint[dependentCoord] = [lowCoordValue doubleValue];
-			lowPoint = [self.plotSpace plotAreaViewPointForDoublePrecisionPlotPoint:plotPoint];
+			lowPoint = [self convertPoint:[self.plotSpace plotAreaViewPointForDoublePrecisionPlotPoint:plotPoint] fromLayer:self.plotArea];
 			
 			// close point
 			plotPoint[dependentCoord] = [closeCoordValue doubleValue];
-			closePoint = [self.plotSpace plotAreaViewPointForDoublePrecisionPlotPoint:plotPoint];
+			closePoint = [self convertPoint:[self.plotSpace plotAreaViewPointForDoublePrecisionPlotPoint:plotPoint] fromLayer:self.plotArea];
 		}
 		else {
 			NSDecimal plotPoint[2];
@@ -508,19 +523,19 @@ static NSString * const CPCloseValuesBindingContext = @"CPCloseValuesBindingCont
 			
 			// open point
 			plotPoint[dependentCoord] = [[opens objectAtIndex:ii] decimalValue];
-			openPoint = [self.plotSpace plotAreaViewPointForPlotPoint:plotPoint];
+			openPoint = [self convertPoint:[self.plotSpace plotAreaViewPointForPlotPoint:plotPoint] fromLayer:self.plotArea];
 	
 			// high point
 			plotPoint[dependentCoord] = [[highs objectAtIndex:ii] decimalValue];
-			highPoint = [self.plotSpace plotAreaViewPointForPlotPoint:plotPoint];
+			highPoint = [self convertPoint:[self.plotSpace plotAreaViewPointForPlotPoint:plotPoint] fromLayer:self.plotArea];
 	
 			// low point
 			plotPoint[dependentCoord] = [[lows objectAtIndex:ii] decimalValue];
-			lowPoint = [self.plotSpace plotAreaViewPointForPlotPoint:plotPoint];
+			lowPoint = [self convertPoint:[self.plotSpace plotAreaViewPointForPlotPoint:plotPoint] fromLayer:self.plotArea];
 			
 			// close point
 			plotPoint[dependentCoord] = [[closes objectAtIndex:ii] decimalValue];
-			closePoint = [self.plotSpace plotAreaViewPointForPlotPoint:plotPoint];
+			closePoint = [self convertPoint:[self.plotSpace plotAreaViewPointForPlotPoint:plotPoint] fromLayer:self.plotArea];
 		}
         
         // Draw

@@ -73,4 +73,7 @@ typedef enum _CPScatterPlotField {
 @property (nonatomic, readwrite, copy) CPFill *areaFill;
 @property (nonatomic, readwrite) NSDecimal areaBaseValue;
 
+-(NSUInteger)indexOfVisiblePointClosestToPlotAreaPoint:(CGPoint)viewPoint;
+-(CGPoint)plotAreaPointOfVisiblePointAtIndex:(NSUInteger)index;
+
 @end

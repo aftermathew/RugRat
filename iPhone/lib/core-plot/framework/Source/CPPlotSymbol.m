@@ -77,6 +77,13 @@
 	[super dealloc];
 }
 
+-(void)finalize
+{
+	CGPathRelease(symbolPath);
+	CGPathRelease(customSymbolPath);
+	[super finalize];
+}
+
 #pragma mark -
 #pragma mark Accessors
 
@@ -335,6 +342,9 @@
 	symbolPath = CGPathCreateMutable();
 	
 	switch (self.symbolType) {
+		case CPPlotSymbolTypeNone:
+			// empty path
+			break;
 		case CPPlotSymbolTypeRectangle:
 			CGPathAddRect(symbolPath, NULL, bounds);
 			break;

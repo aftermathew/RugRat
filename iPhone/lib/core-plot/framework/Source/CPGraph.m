@@ -1,8 +1,8 @@
-
 #import "CPGraph.h"
 #import "CPExceptions.h"
 #import "CPPlot.h"
 #import "CPPlotArea.h"
+#import "CPPlotAreaFrame.h"
 #import "CPPlotSpace.h"
 #import "CPFill.h"
 #import "CPAxisSet.h"
@@ -20,23 +20,22 @@
 @end
 ///	@endcond
 
+#pragma mark -
+
 /**	@brief An abstract graph class.
  *	@todo More documentation needed 
  **/
 @implementation CPGraph
-
-/// @defgroup CPGraph CPGraph
-/// @{
 
 /**	@property axisSet
  *	@brief The axis set.
  **/
 @dynamic axisSet;
 
-/**	@property plotArea
- *	@brief The plot area.
+/**	@property plotAreaFrame
+ *	@brief The plot area frame.
  **/
-@synthesize plotArea;
+@synthesize plotAreaFrame;
 
 /**	@property plots
  *	@brief An array of all plots associated with the graph.
@@ -53,6 +52,12 @@
  **/
 @dynamic defaultPlotSpace;
 
+/** @property topDownLayerOrder
+ *	@brief An array of graph layers to be drawn in an order other than the default.
+ *	@see CPPlotArea#topDownLayerOrder
+ **/
+@dynamic topDownLayerOrder;
+
 #pragma mark -
 #pragma mark Init/Dealloc
 
@@ -68,8 +73,8 @@
         self.paddingBottom = 20.0;
         
         // Plot area
-        CPPlotArea *newArea = [(CPPlotArea *)[CPPlotArea alloc] initWithFrame:self.bounds];
-        self.plotArea = newArea;
+        CPPlotAreaFrame *newArea = [(CPPlotAreaFrame *)[CPPlotAreaFrame alloc] initWithFrame:self.bounds];
+        self.plotAreaFrame = newArea;
         [newArea release];
 
         // Plot spaces
@@ -90,9 +95,9 @@
 
 -(void)dealloc
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
 
-	[plotArea release];
+	[plotAreaFrame release];
 	[plots release];
 	[plotSpaces release];
 	
@@ -159,7 +164,7 @@
 		[self.plots addObject:plot];
 		plot.plotSpace = space;
         plot.graph = self;
-		[self.plotArea.plotGroup addPlot:plot];
+		[self.plotAreaFrame.plotGroup addPlot:plot];
 	}
 }
 
@@ -172,7 +177,7 @@
 		[self.plots removeObject:plot];
         plot.plotSpace = nil;
         plot.graph = nil;
-		[self.plotArea.plotGroup removePlot:plot];
+		[self.plotAreaFrame.plotGroup removePlot:plot];
     }
     else {
         [NSException raise:CPException format:@"Tried to remove CPPlot which did not exist."];
@@ -199,7 +204,7 @@
 		[self.plots insertObject:plot atIndex:index];
 		plot.plotSpace = space;
         plot.graph = self;
-		[self.plotArea.plotGroup addPlot:plot];
+		[self.plotAreaFrame.plotGroup addPlot:plot];
 	}
 }
 
@@ -212,7 +217,7 @@
 	if (plotToRemove) {
 		plotToRemove.plotSpace = nil;
         plotToRemove.graph = nil;
-		[self.plotArea.plotGroup removePlot:plotToRemove];
+		[self.plotAreaFrame.plotGroup removePlot:plotToRemove];
 		[self.plots removeObjectIdenticalTo:plotToRemove];
 	}
 }
@@ -256,16 +261,16 @@
 #pragma mark -
 #pragma mark Set Plot Area
 
--(void)setPlotArea:(CPPlotArea *)newArea 
+-(void)setPlotAreaFrame:(CPPlotAreaFrame *)newArea 
 {
-    if ( plotArea != newArea ) {
-    	plotArea.graph = nil;
-    	[plotArea removeFromSuperlayer];
-        [plotArea release];
-        plotArea = [newArea retain];
+    if ( plotAreaFrame != newArea ) {
+    	plotAreaFrame.graph = nil;
+    	[plotAreaFrame removeFromSuperlayer];
+        [plotAreaFrame release];
+        plotAreaFrame = [newArea retain];
         [self addSublayer:newArea];
-        plotArea.graph = self;
-		for ( CPPlotSpace *space in plotSpaces ) {
+        plotAreaFrame.graph = self;
+		for ( CPPlotSpace *space in self.plotSpaces ) {
             space.graph = self;
         }
     }
@@ -293,8 +298,8 @@
         [[NSNotificationCenter defaultCenter] removeObserver:self name:CPPlotSpaceCoordinateMappingDidChangeNotification object:plotSpace];
 
         // Remove space
+		plotSpace.graph = nil;
 		[self.plotSpaces removeObject:plotSpace];
-        plotSpace.graph = nil;
         
         // Update axes that referenced space
         for ( CPAxis *axis in self.axisSet.axes ) {
@@ -321,12 +326,12 @@
 
 -(CPAxisSet *)axisSet
 {
-	return self.plotArea.axisSet;
+	return self.plotAreaFrame.axisSet;
 }
 
 -(void)setAxisSet:(CPAxisSet *)newSet
 {
-	self.plotArea.axisSet = newSet;
+	self.plotAreaFrame.axisSet = newSet;
 }
 
 #pragma mark -
@@ -383,117 +388,122 @@
     }
 }
 
+-(NSArray *)topDownLayerOrder
+{
+	return self.plotAreaFrame.plotArea.topDownLayerOrder;
+}
+
+-(void)setTopDownLayerOrder:(NSArray *)newArray
+{
+	self.plotAreaFrame.plotArea.topDownLayerOrder = newArray;
+}
+
 #pragma mark -
 #pragma mark Event Handling
 
--(BOOL)pointingDeviceDownAtPoint:(CGPoint)interactionPoint
+-(BOOL)pointingDeviceDownEvent:(id)event atPoint:(CGPoint)interactionPoint
 {
     // Plots
     for ( CPPlot *plot in self.plots ) {
-        if ( [plot pointingDeviceDownAtPoint:interactionPoint] ) return YES;
+        if ( [plot pointingDeviceDownEvent:event atPoint:interactionPoint] ) return YES;
     } 
     
     // Axes Set
-    if ( [self.axisSet pointingDeviceDownAtPoint:interactionPoint] ) return YES;
+    if ( [self.axisSet pointingDeviceDownEvent:event atPoint:interactionPoint] ) return YES;
     
     // Plot area
-    if ( [self.plotArea pointingDeviceDownAtPoint:interactionPoint] ) return YES;
+    if ( [self.plotAreaFrame pointingDeviceDownEvent:event atPoint:interactionPoint] ) return YES;
     
     // Plot spaces
     // Plot spaces do not block events, because several spaces may need to receive
     // the same event sequence (eg dragging coordinate translation)
     BOOL handledEvent = NO;
     for ( CPPlotSpace *space in self.plotSpaces ) {
-        BOOL handled = [space pointingDeviceDownAtPoint:interactionPoint];
+        BOOL handled = [space pointingDeviceDownEvent:event atPoint:interactionPoint];
         handledEvent |= handled;
     } 
     
     return handledEvent;
 }
 
--(BOOL)pointingDeviceUpAtPoint:(CGPoint)interactionPoint
+-(BOOL)pointingDeviceUpEvent:(id)event atPoint:(CGPoint)interactionPoint
 {
     // Plots
     for ( CPPlot *plot in self.plots ) {
-        if ( [plot pointingDeviceUpAtPoint:interactionPoint] ) return YES;
+        if ( [plot pointingDeviceUpEvent:event atPoint:interactionPoint] ) return YES;
     } 
     
     // Axes Set
-    if ( [self.axisSet pointingDeviceUpAtPoint:interactionPoint] ) return YES;
+    if ( [self.axisSet pointingDeviceUpEvent:event atPoint:interactionPoint] ) return YES;
     
     // Plot area
-    if ( [self.plotArea pointingDeviceUpAtPoint:interactionPoint] ) return YES;
+    if ( [self.plotAreaFrame pointingDeviceUpEvent:event atPoint:interactionPoint] ) return YES;
     
     // Plot spaces
     // Plot spaces do not block events, because several spaces may need to receive
     // the same event sequence (eg dragging coordinate translation)
     BOOL handledEvent = NO;
     for ( CPPlotSpace *space in self.plotSpaces ) {
-        BOOL handled = [space pointingDeviceUpAtPoint:interactionPoint];
+        BOOL handled = [space pointingDeviceUpEvent:event atPoint:interactionPoint];
         handledEvent |= handled;
     } 
     
     return handledEvent;
 }
 
--(BOOL)pointingDeviceDraggedAtPoint:(CGPoint)interactionPoint
+-(BOOL)pointingDeviceDraggedEvent:(id)event atPoint:(CGPoint)interactionPoint
 {
     // Plots
     for ( CPPlot *plot in self.plots ) {
-        if ( [plot pointingDeviceDraggedAtPoint:interactionPoint] ) return YES;
+        if ( [plot pointingDeviceDraggedEvent:event atPoint:interactionPoint] ) return YES;
     } 
     
     // Axes Set
-    if ( [self.axisSet pointingDeviceDraggedAtPoint:interactionPoint] ) return YES;
+    if ( [self.axisSet pointingDeviceDraggedEvent:event atPoint:interactionPoint] ) return YES;
     
     // Plot area
-    if ( [self.plotArea pointingDeviceDraggedAtPoint:interactionPoint] ) return YES;
+    if ( [self.plotAreaFrame pointingDeviceDraggedEvent:event atPoint:interactionPoint] ) return YES;
     
     // Plot spaces
     // Plot spaces do not block events, because several spaces may need to receive
     // the same event sequence (eg dragging coordinate translation)
     BOOL handledEvent = NO;
     for ( CPPlotSpace *space in self.plotSpaces ) {
-        BOOL handled = [space pointingDeviceDraggedAtPoint:interactionPoint];
+        BOOL handled = [space pointingDeviceDraggedEvent:event atPoint:interactionPoint];
         handledEvent |= handled;
     } 
     
     return handledEvent;
 }
 
--(BOOL)pointingDeviceCancelled
+-(BOOL)pointingDeviceCancelledEvent:(id)event
 {
     // Plots
     for ( CPPlot *plot in self.plots ) {
-        if ( [plot pointingDeviceCancelled] ) return YES;
+        if ( [plot pointingDeviceCancelledEvent:event] ) return YES;
     } 
     
     // Axes Set
-    if ( [self.axisSet pointingDeviceCancelled] ) return YES;
+    if ( [self.axisSet pointingDeviceCancelledEvent:event] ) return YES;
     
     // Plot area
-    if ( [self.plotArea pointingDeviceCancelled] ) return YES;
+    if ( [self.plotAreaFrame pointingDeviceCancelledEvent:event] ) return YES;
     
     // Plot spaces
     BOOL handledEvent = NO;
     for ( CPPlotSpace *space in self.plotSpaces ) {
-        BOOL handled = [space pointingDeviceCancelled];
+        BOOL handled = [space pointingDeviceCancelledEvent:event];
         handledEvent |= handled;
     } 
     
     return handledEvent;
 }
-///	@}
 
 @end
 
 #pragma mark -
 
-///	@brief CPGraph abstract methods—must be overridden by subclasses
 @implementation CPGraph(AbstractFactoryMethods)
-
-/// @addtogroup CPGraph
-/// @{
 
 /**	@brief Creates a new plot space for the graph.
  *	@return A new plot space.
@@ -510,6 +520,5 @@
 {
 	return nil;
 }
-///	@}
 
 @end
