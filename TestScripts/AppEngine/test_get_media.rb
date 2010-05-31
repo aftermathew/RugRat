@@ -4,7 +4,7 @@ require "net/https"
 require "uri"
 
 require "oauth.rb"
-require "test_get_token.rb"
+require "test_post_token.rb"
 require 'pp'
 
 @username = 'demi2'
@@ -29,17 +29,25 @@ oa.consumer_key = @oauth_consumer_key
 oa.consumer_secret = @oauth_consumer_secret
 oa.token = @token
 oa.token_secret = @tokensecret
-#NOTE: no token, token secret in this call
 
 uri = URI.parse("#{service_scheme}://#{@service_base_url}#{service_path}")
 puts "\n"
 puts uri
-auth_header = oauth_generate_auth_header(oa, uri.to_s, "POST", nil)
+auth_header = oauth_generate_auth_header(oa, uri.to_s, service_method, nil)
 
 puts "\n" + auth_header
 
-http = Net::HTTP.new(uri.host, uri.port)
-response, resp_body = http.get(uri.path, {'Authorization' => auth_header})
+response, resp_body = Net::HTTP.start(uri.host, uri.port) {|http|
+      http.get(uri.path, {'Authorization' => auth_header, 'Content-Length' => '0'})
+    }
+
+#http = Net::HTTP.new(uri.host, uri.port)
+#response, resp_body = http.get(uri.path, {'Authorization' => auth_header, 'Content-Length' => '0'})
+#puts response.header['Content-Length']
+
 
 puts "\n" + response.code
-puts "\n" + resp_body
+puts "\n" + response.message
+print "\nsize: " 
+print (resp_body.size / 1000)
+puts "KB"

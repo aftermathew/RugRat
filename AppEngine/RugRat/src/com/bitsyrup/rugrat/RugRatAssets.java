@@ -4,6 +4,8 @@ package com.bitsyrup.rugrat;
 
 import java.io.IOException;
 import java.util.Iterator;
+//import java.util.logging.Level;
+//import java.util.logging.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -32,6 +34,10 @@ public class RugRatAssets extends HttpServlet {
 		} 
 	}
 	
+
+	//logger
+    //private static final Logger log = Logger.getLogger(RugRatAssets.class.getName());
+	
 	private void doDataResponse(String key, HttpServletRequest req, HttpServletResponse resp) throws IOException
 	{
 		if (null == key)
@@ -40,23 +46,20 @@ public class RugRatAssets extends HttpServlet {
 		}
 		else
 		{
-			
 			BlobInfoFactory infoFact = new BlobInfoFactory();
 			Iterator<BlobInfo> blobInfos = infoFact.queryBlobInfos();
 			while(blobInfos.hasNext())
 			{
 				BlobInfo info = blobInfos.next();
-				if (info.getBlobKey().getKeyString().compareTo(key) == 0)
+				if (info.getBlobKey().getKeyString().compareTo(key) == 0 ||
+						info.getFilename().compareTo(key) == 0)
 				{
-					BlobKey blobKey = new BlobKey(key);
+					BlobKey blobKey = new BlobKey(info.getBlobKey().getKeyString());
 					blobstoreService.serve(blobKey, resp);
-				}
-				if (info.getFilename().compareTo(key) == 0)
-				{
-					resp.getWriter().write(info.getFilename());
-					//blobstoreService.serve(info.getBlobKey(), resp);
+					return;
 				}
 			}
+			resp.setStatus(404);
 		}
 	}
     

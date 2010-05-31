@@ -72,7 +72,6 @@ public class RugRatToken extends HttpServlet {
 			}
 			TokenRequest treq = new TokenRequest(sb.toString());
 			String[] idpass = treq.getDigest().split(":");
-			log.log(Level.SEVERE, "digest = " + treq.getDigest());
 			//hash password, verify user against database
 			String username = idpass[0];
 			String passhash = new String(utility.base64Encode(utility.hashSHA1(idpass[1] + utility.HASHSALT)));
