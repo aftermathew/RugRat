@@ -3,10 +3,11 @@ package com.bitsyrup.rugrat.xmlserializable;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+
 import com.bitsyrup.rugrat.common.utility;
 
 public class TokenRequest implements I_XMLSerializable {
-
+    
 	private String digest;
 	
 	public TokenRequest(){}
@@ -16,7 +17,7 @@ public class TokenRequest implements I_XMLSerializable {
 	public void fromXML(String xml) {
 		Pattern pat = Pattern.compile("<digest>([^<]*)</digest>");
     	Matcher match = pat.matcher(xml);
-    	String contentBase64 = match.group(1);
+		String contentBase64 = match.find() ? match.group(1) : "";
     	this.digest = new String(utility.base64Decode(contentBase64));
 	}
 	

@@ -3,9 +3,7 @@ package com.bitsyrup.rugrat.common;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.HashMap;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.List; 
 
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
@@ -380,8 +378,6 @@ public class oauth {
 		}
 	}
 	
-
-    private static final Logger log = Logger.getLogger("demi");
 	
 	// verifies client request for data
 	// used by external services (web, mobile)
@@ -399,7 +395,6 @@ public class oauth {
 				if (authSection.contains("=")) // ignore preceding OAuth val and Realm
 				{
 					String[] keyVal = authSection.split("=");
-					log.log(Level.INFO, "key: " + keyVal[0] + " val: " + keyVal[1]);
 					String key = keyVal[0];
 					String value = (keyVal[1].length() == 0) ? "" :
 						keyVal[1].replace("\"", "");
@@ -429,7 +424,6 @@ public class oauth {
 						if (result == OAUTH_RESULT.SUCCESS) 
 						{
 							// verify existence of consumer key
-							log.log(Level.SEVERE, "consumer key: " + oauthMap.get("oauth_consumer_key"));
 							String oauthConsumerSecret = getOAuthConsumerSecret(oauthMap.get("oauth_consumer_key"));
 							if (null != oauthConsumerSecret) 
 							{

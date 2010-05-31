@@ -88,7 +88,8 @@ public class Token {
 	public void persist()
 	{
 		PersistenceManager pm = PMF.get().getPersistenceManager();
-		String query = "select from " + Token.class.getName() + "where token == " + this.token;
+		String query = "select from " + com.bitsyrup.rugrat.common.Token.class.getName() + 
+			" where token == '" + this.token + "'";
 		List<Token> tokens = (List<Token>)pm.newQuery(query).execute();
 		if (tokens == null || tokens.size() == 0)
 		{

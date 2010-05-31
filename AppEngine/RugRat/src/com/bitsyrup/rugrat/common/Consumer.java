@@ -9,7 +9,6 @@ import javax.jdo.annotations.PrimaryKey;
 
 import com.google.appengine.api.datastore.Key;
 
-
 //this is the mapping of a nonce to a token - can exist for 6 hours,
 //	in case the application refreshes a token without query
 //NOTE: this only applies to the last nonce.  A stronger algorithm would recall
@@ -19,7 +18,7 @@ public class Consumer {
 	@PrimaryKey
 	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
 	private Key idKey;
-	
+	 
 	@Persistent
 	private String consumerKey;
 	

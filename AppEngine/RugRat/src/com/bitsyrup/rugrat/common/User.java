@@ -15,7 +15,7 @@ public class User {
 	@PrimaryKey
 	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
 	private Key key;
-	
+	 
 	@Persistent
 	private String name;
 	
