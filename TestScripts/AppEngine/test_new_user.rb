@@ -23,7 +23,6 @@ oa.consumer_key = @oauth_consumer_key
 oa.consumer_secret = @oauth_consumer_secret
 #NOTE: no token, token secret in this call
 
-
 uri = URI.parse("#{service_scheme}://#{@service_base_url}#{service_path}")
 puts uri
 auth_header = oauth_generate_auth_header(oa, uri.to_s, "POST", nil)
