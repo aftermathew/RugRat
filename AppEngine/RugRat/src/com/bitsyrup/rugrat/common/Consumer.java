@@ -2,10 +2,12 @@ package com.bitsyrup.rugrat.common;
 
 import java.util.Random;
 
+import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
 
+import com.google.appengine.api.datastore.Key;
 
 //this is the mapping of a nonce to a token - can exist for 6 hours,
 //	in case the application refreshes a token without query
@@ -14,6 +16,9 @@ import javax.jdo.annotations.PrimaryKey;
 @PersistenceCapable
 public class Consumer {
 	@PrimaryKey
+	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
+	private Key idKey;
+	 
 	@Persistent
 	private String consumerKey;
 	
@@ -54,6 +59,14 @@ public class Consumer {
 		rand.nextBytes(randBytes);
 		String secret = utility.base64Encode(randBytes);
 		return secret;
+	}
+
+	public void setIdKey(Key idKey) {
+		this.idKey = idKey;
+	}
+
+	public Key getIdKey() {
+		return idKey;
 	}
 
 }

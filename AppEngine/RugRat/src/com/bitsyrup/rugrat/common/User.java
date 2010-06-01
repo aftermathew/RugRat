@@ -15,7 +15,7 @@ public class User {
 	@PrimaryKey
 	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
 	private Key key;
-	
+	 
 	@Persistent
 	private String name;
 	
@@ -42,10 +42,11 @@ public class User {
 	
 	//This is used to set the token in the persistent datastore
 	@SuppressWarnings("unchecked")
-	public void persist()
+	public void persist() throws Exception
 	{
 		PersistenceManager pm = PMF.get().getPersistenceManager();
-		String query = "select from " + User.class.getName() + "where key == " + this.key;
+		//use email as unique member
+		String query = "select from " + User.class.getName() + " where email == \"" + this.email + "\"";
 		List<User> users = (List<User>)pm.newQuery(query).execute();
 		if (users == null || users.size() == 0)
 		{
@@ -57,6 +58,10 @@ public class User {
 			{
 				//TODO: log error 
 			}
+		}
+		else
+		{
+			throw new Exception("member exists already");
 		}
 	}
 }

@@ -1,8 +1,11 @@
 package com.bitsyrup.rugrat.common;
 
+import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
+
+import com.google.appengine.api.datastore.Key;
 
 
 //this is the mapping of a nonce to a token - can exist for 6 hours,
@@ -12,6 +15,9 @@ import javax.jdo.annotations.PrimaryKey;
 @PersistenceCapable
 public class TokenNonce {
 	@PrimaryKey
+	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
+	private Key idKey;
+	
 	@Persistent
 	private String token;
 	
@@ -38,5 +44,13 @@ public class TokenNonce {
 	{
 		this.nonce = nonce;
 		this.timestamp = timestamp;
+	}
+
+	public void setIdKey(Key idKey) {
+		this.idKey = idKey;
+	}
+
+	public Key getIdKey() {
+		return idKey;
 	}
 }

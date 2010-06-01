@@ -74,12 +74,12 @@ public class RugRatToken extends HttpServlet {
 			String[] idpass = treq.getDigest().split(":");
 			//hash password, verify user against database
 			String username = idpass[0];
-			String passhash = new String(utility.hashSHA1(idpass[1] + utility.HASHSALT));
+			String passhash = new String(utility.base64Encode(utility.hashSHA1(idpass[1] + utility.HASHSALT)));
 			if (auth.isAuthorizedUser(username, passhash))
 			{
 				PersistenceManager pm = PMF.get().getPersistenceManager();
-				String query = "select from " + Token.class.getName() + 
-					"where userID == " + username + " and consumerKey == " + consumerKey;
+				String query = "select from " + com.bitsyrup.rugrat.common.Token.class.getName() + 
+					" where userID == '" + username + "' && consumerKey == '" + consumerKey + "'";
 				List<Token> tokens = (List<Token>) pm.newQuery(query).execute();
 				Token token = null;
 				if (tokens.size() > 0)

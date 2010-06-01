@@ -3,8 +3,10 @@ package com.bitsyrup.rugrat.common;
 import java.util.List;
 import java.util.Random;
 import com.bitsyrup.rugrat.common.utility;
+import com.google.appengine.api.datastore.Key;
 
 import javax.jdo.PersistenceManager;
+import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
@@ -13,6 +15,9 @@ import javax.jdo.annotations.PrimaryKey;
 @PersistenceCapable
 public class Token {
 	@PrimaryKey
+	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
+	private Key idKey;
+	
 	@Persistent
 	private String token;
 	
@@ -83,7 +88,8 @@ public class Token {
 	public void persist()
 	{
 		PersistenceManager pm = PMF.get().getPersistenceManager();
-		String query = "select from " + Token.class.getName() + "where token == " + this.token;
+		String query = "select from " + com.bitsyrup.rugrat.common.Token.class.getName() + 
+			" where token == '" + this.token + "'";
 		List<Token> tokens = (List<Token>)pm.newQuery(query).execute();
 		if (tokens == null || tokens.size() == 0)
 		{
@@ -96,6 +102,14 @@ public class Token {
 				//TODO: log error 
 			}
 		}
+	}
+
+	public void setIdKey(Key idKey) {
+		this.idKey = idKey;
+	}
+
+	public Key getIdKey() {
+		return idKey;
 	}
 }
 

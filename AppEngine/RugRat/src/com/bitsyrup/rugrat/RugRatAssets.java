@@ -4,8 +4,8 @@ package com.bitsyrup.rugrat;
 
 import java.io.IOException;
 import java.util.Iterator;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+//import java.util.logging.Level;
+//import java.util.logging.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -22,8 +22,6 @@ import com.google.appengine.api.users.*;
 public class RugRatAssets extends HttpServlet {
 	//single instance - expensive!
 	private BlobstoreService blobstoreService = BlobstoreServiceFactory.getBlobstoreService();
-	//logger
-    private static final Logger log = Logger.getLogger(RugRatAssets.class.getName());
 	
   //handles jsp forwarding
 	private void handleJSPForward(String url, HttpServletRequest req, HttpServletResponse resp) throws IOException {
@@ -36,6 +34,10 @@ public class RugRatAssets extends HttpServlet {
 		} 
 	}
 	
+
+	//logger
+    //private static final Logger log = Logger.getLogger(RugRatAssets.class.getName());
+	
 	private void doDataResponse(String key, HttpServletRequest req, HttpServletResponse resp) throws IOException
 	{
 		if (null == key)
@@ -44,14 +46,40 @@ public class RugRatAssets extends HttpServlet {
 		}
 		else
 		{
-			BlobKey blobKey = new BlobKey(key);
-	        blobstoreService.serve(blobKey, resp);
+			BlobInfoFactory infoFact = new BlobInfoFactory();
+			Iterator<BlobInfo> blobInfos = infoFact.queryBlobInfos();
+			while(blobInfos.hasNext())
+			{
+				BlobInfo info = blobInfos.next();
+				if (info.getBlobKey().getKeyString().compareTo(key) == 0 ||
+						info.getFilename().compareTo(key) == 0)
+				{
+					BlobKey blobKey = new BlobKey(info.getBlobKey().getKeyString());
+					blobstoreService.serve(blobKey, resp);
+					return;
+				}
+			}
+			resp.setStatus(404);
 		}
 	}
     
 	//entry GET
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
+    	String pathInfo = req.getPathInfo();   
+    	String authHeader = req.getHeader("Authorization");
+		if (null != authHeader && !authHeader.isEmpty())
+		{
+			//this is the API case...
+			if (null != pathInfo)
+			{
+				pathInfo = pathInfo.substring(1);
+				//this is /assets/<KEY> case
+				//	respond with data corresponding with key
+				doDataResponse(pathInfo, req, resp);
+			}
+			return; //no further response...
+		}
         UserService userService = UserServiceFactory.getUserService();
         String thisURL = req.getRequestURI();
         if (req.getUserPrincipal() == null)
@@ -62,8 +90,6 @@ public class RugRatAssets extends HttpServlet {
         }
         else 
         { 
-        	String pathInfo = req.getPathInfo();   
-        	log.log(Level.SEVERE, "PATHINFO: " + pathInfo);
         	if (auth.isAuthorizedAdmin())
         	{
         		String verb = req.getParameter("verb");

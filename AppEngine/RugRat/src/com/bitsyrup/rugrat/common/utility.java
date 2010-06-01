@@ -132,13 +132,16 @@ public class utility {
 		for (int i = 0, curByte = 0; i < b64Len && curByte < bytesLen; ) 
 		{
 			// 1st byte val
-			val = (byte) (base64AlphaStr.indexOf(b64Str.charAt(i++)) << 2);
+			val = (byte) (base64AlphaStr.indexOf(b64Str.charAt(i)) << 2);
+			i++;
 			val |= (byte) ((base64AlphaStr.indexOf(b64Str.charAt(i)) & 0x30) >> 4);
 			bytes[curByte++] = val;
 			if (curByte >= bytesLen) break;
 			// 2nd byte val
-			val = (byte) ((base64AlphaStr.indexOf(b64Str.charAt(i++)) & 0x0F) << 4);
+			val = (byte) ((base64AlphaStr.indexOf(b64Str.charAt(i)) & 0x0F) << 4);
+			i++;
 			int b64Val = (base64AlphaStr.indexOf(b64Str.charAt(i)));
+			i++;
 			val |= (byte) ((b64Val < 64) ? ((b64Val & 0x3C) >> 2) : 0x00);
 			bytes[curByte++] = val;
 			if (curByte >= bytesLen) break;
@@ -146,17 +149,14 @@ public class utility {
 			if (b64Val < 64) 
 			{
 				val = (byte) ((b64Val & 0x03) << 6);
-				b64Val = (base64AlphaStr.indexOf(b64Str.charAt(++i)));
+				b64Val = (base64AlphaStr.indexOf(b64Str.charAt(i)));
 				if (b64Val != 64) 
 				{
 					val |= (byte) b64Val;
 				}
 				bytes[curByte++] = val;
 			} 
-			else 
-			{
-				i++;
-			}
+			i++;
 		}
 		// HACK - need to fix one-off (error adds trailing 0 byte)
 		if (bytes[bytes.length - 1] == 0) 
@@ -231,7 +231,7 @@ public class utility {
 		for (int i = 0; i < initStr.length(); i++)
 		{
 			char c = initStr.charAt(i);
-			int val = Character.getNumericValue(c);
+			int val = c;
 			//ILLEGAL VALUES
 			if ( (val >= 0x0 && val <= 0x8) || 		//NULL -> backspace
 					(val >= 0xb && val <= 0xc) ||   //vertical tab -> page feed

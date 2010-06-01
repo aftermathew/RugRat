@@ -3,7 +3,7 @@ package com.bitsyrup.rugrat.common;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.HashMap;
-import java.util.List;
+import java.util.List; 
 
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
@@ -29,6 +29,7 @@ public class oauth {
 		INVALID_CONSUMER_KEY, 
 		INVALID_CONSUMER_SECRET, 
 		INVALID_SIGNATURE,
+		INVALID_REQUEST_DATA
 	};
 
 	// verifies oauth timestamp - seconds UTC
@@ -80,7 +81,7 @@ public class oauth {
 				query.declareParameters("long tsVal");
 				query.deletePersistentAll((System.currentTimeMillis() / 1000L) - (long) (60 * 60 * 6)); // all older than now minus 6 hours
 				// does a nonce exist for this token?
-				String query2 = "select from " + TokenNonce.class.getName() + " where token == " + token;
+				String query2 = "select from " + TokenNonce.class.getName() + " where token == \"" + token + "\"";
 				List<TokenNonce> tokenNonces = (List<TokenNonce>) pm.newQuery(query2).execute();
 				if (tokenNonces.size() > 0) 
 				{
@@ -117,9 +118,9 @@ public class oauth {
 		PersistenceManager pm = PMF.get().getPersistenceManager();
 		try 
 		{
-			String query = "select from " + Consumer.class.getName() + " where consumerKey == " + consumerKey;
+			String query = "select from " + Consumer.class.getName() + " where consumerKey == \"" + consumerKey + "\"";
 			List<Consumer> consumers = (List<Consumer>) pm.newQuery(query).execute();
-			if (consumers.size() >= 0) 
+			if (consumers.size() > 0) 
 			{
 				oauthSecret = consumers.get(0).getSecret();
 			}
@@ -138,7 +139,7 @@ public class oauth {
 		PersistenceManager pm = PMF.get().getPersistenceManager();
 		try 
 		{
-			String query = "select from " + Token.class.getName() + " where token == " + token;
+			String query = "select from " + Token.class.getName() + " where token == \"" + token + "\"";
 			List<Token> tokens = (List<Token>) pm.newQuery(query).execute();
 			if (tokens.size() >= 0) 
 			{
@@ -165,7 +166,7 @@ public class oauth {
 	private static String getTokenSecret(String token)
 	{
 		PersistenceManager pm = PMF.get().getPersistenceManager();
-		String query = "select from " + Token.class.getName() + " where token == " + token;
+		String query = "select from " + Token.class.getName() + " where token == \"" + token + "\"";
 		List<Token> tokens = (List<Token>) pm.newQuery(query).execute();
 		if (tokens.size() > 0)
 		{
@@ -187,8 +188,8 @@ public class oauth {
 		for (int i = 0; i < allParamsKeys.length; i++)
 		{
 			if (i > 0) sb.append('&');
-			String key = allParamsKeys[i];
-			sb.append(key + '=' + allParams.get(key));
+			String key = utility.parameterURLEncode(allParamsKeys[i]);
+			sb.append(key + '=' + utility.parameterURLEncode(allParams.get(key)));
 		}
 		String normalizedRequestParameterString = sb.toString();
 		return normalizedRequestParameterString;
@@ -300,7 +301,7 @@ public class oauth {
 		OAUTH_RESULT result = OAUTH_RESULT.INVALID_SIGNATURE;
 		String signatureString = generateOAuthSignature(
 				oauthMap, verb, URLstr, otherParamsMap, consumerSecret, tokenSecret);
-		if (signatureString.compareTo(oauthMap.get("oauth_signature")) == 0)
+		if (signatureString.compareTo(utility.parameterURLEncode(oauthMap.get("oauth_signature"))) == 0)
 			result = OAUTH_RESULT.SUCCESS;
 		return result;
 	}
@@ -395,9 +396,9 @@ public class oauth {
 				{
 					String[] keyVal = authSection.split("=");
 					String key = keyVal[0];
-					String value = (keyVal[1].length() == 0) ? "" : 
-						keyVal[1].substring(1, keyVal[0].lastIndexOf("\"")); // eliminate quotes
-					oauthMap.put(key, value);
+					String value = (keyVal[1].length() == 0) ? "" :
+						keyVal[1].replace("\"", "");
+					oauthMap.put(utility.parameterURLDecode(key), utility.parameterURLDecode(value));
 				}
 			}
 			if (oauthMap.size() > 0) 
@@ -405,7 +406,7 @@ public class oauth {
 				if (oauthMap.containsKey("oauth_version")
 						&& oauthMap.get("oauth_version").compareTo("1.0") == 0
 						&& oauthMap.containsKey("oauth_signature_method")
-						&& oauthMap.get("oauth_signature_method").compareTo("HMAC_SHA1") == 0
+						&& oauthMap.get("oauth_signature_method").compareTo("HMAC-SHA1") == 0
 						&& oauthMap.containsKey("oauth_consumer_key")
 						&& oauthMap.containsKey("oauth_nonce")
 						&& oauthMap.containsKey("oauth_timestamp")
@@ -416,9 +417,10 @@ public class oauth {
 					result = verifyOAuthTimestamp(oauthMap.get("oauth_timestamp"));
 					if (result == OAUTH_RESULT.SUCCESS) 
 					{
-						result = verifyOAuthNonce(oauthMap.get("oauth_nonce"),
-								oauthMap.get("oauth_token"), 
-								oauthMap.get("oauth_timestamp"));
+						if (useToken)
+							result = verifyOAuthNonce(oauthMap.get("oauth_nonce"),
+									oauthMap.get("oauth_token"), 
+									oauthMap.get("oauth_timestamp"));
 						if (result == OAUTH_RESULT.SUCCESS) 
 						{
 							// verify existence of consumer key
