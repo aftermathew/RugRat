@@ -22,12 +22,10 @@
 		A0505300117B9CBF00BFB7F3 /* RRTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = A05052FF117B9CBF00BFB7F3 /* RRTopic.m */; };
 		A0505436117D762D00BFB7F3 /* RRMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = A0505435117D762D00BFB7F3 /* RRMedia.m */; };
 		A0A85CDE115FF1F0004CFD53 /* RRDatabaseInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A85CDD115FF1F0004CFD53 /* RRDatabaseInterface.m */; };
-		A0C466B0118E3892001745CE /* RRQAPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C466AE118E3892001745CE /* RRQAPageController.m */; };
-		A0C466B1118E3892001745CE /* RRQAPageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0C466AF118E3892001745CE /* RRQAPageController.xib */; };
+		A0C466B0118E3892001745CE /* RRQAPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C466AE118E3892001745CE /* RRQAPageViewController.m */; };
+		A0C466B1118E3892001745CE /* RRQAPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0C466AF118E3892001745CE /* RRQAPageViewController.xib */; };
 		A0E1C1BB112A23D1008E5A2D /* RugRatAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E1C1BA112A23D1008E5A2D /* RugRatAppDelegate.m */; };
 		A0E515001156FC0A004A0CCE /* rugrat_db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = A0E514FF1156FC0A004A0CCE /* rugrat_db.sqlite */; };
-		A0E51517115703C5004A0CCE /* RRTimeRangePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E51515115703C5004A0CCE /* RRTimeRangePickerController.m */; };
-		A0E51518115703C5004A0CCE /* RRTimeRangePickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0E51516115703C5004A0CCE /* RRTimeRangePickerController.xib */; };
 		A0E51535115719CA004A0CCE /* leftArrowIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = A0E51533115719CA004A0CCE /* leftArrowIcon.png */; };
 		A0E51536115719CA004A0CCE /* rightArrowIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = A0E51534115719CA004A0CCE /* rightArrowIcon.png */; };
 		AF2A9A7D10BB895700B1D39E /* PopupAndProgressController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2A9A7B10BB895700B1D39E /* PopupAndProgressController.m */; };
@@ -89,15 +87,12 @@
 		A0A85CDC115FF1F0004CFD53 /* RRDatabaseInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRDatabaseInterface.h; sourceTree = "<group>"; };
 		A0A85CDD115FF1F0004CFD53 /* RRDatabaseInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRDatabaseInterface.m; sourceTree = "<group>"; };
 		A0C1D3241184DCD10012DA20 /* RRLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRLog.h; sourceTree = "<group>"; };
-		A0C466AD118E3892001745CE /* RRQAPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRQAPageController.h; sourceTree = "<group>"; };
-		A0C466AE118E3892001745CE /* RRQAPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRQAPageController.m; sourceTree = "<group>"; };
-		A0C466AF118E3892001745CE /* RRQAPageController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RRQAPageController.xib; sourceTree = "<group>"; };
+		A0C466AD118E3892001745CE /* RRQAPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRQAPageViewController.h; sourceTree = "<group>"; };
+		A0C466AE118E3892001745CE /* RRQAPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRQAPageViewController.m; sourceTree = "<group>"; };
+		A0C466AF118E3892001745CE /* RRQAPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RRQAPageViewController.xib; sourceTree = "<group>"; };
 		A0E1C1B9112A23D1008E5A2D /* RugRatAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RugRatAppDelegate.h; sourceTree = "<group>"; };
 		A0E1C1BA112A23D1008E5A2D /* RugRatAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RugRatAppDelegate.m; sourceTree = "<group>"; };
 		A0E514FF1156FC0A004A0CCE /* rugrat_db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = rugrat_db.sqlite; path = Resources/rugrat_db.sqlite; sourceTree = "<group>"; };
-		A0E51514115703C5004A0CCE /* RRTimeRangePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRTimeRangePickerController.h; sourceTree = "<group>"; };
-		A0E51515115703C5004A0CCE /* RRTimeRangePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRTimeRangePickerController.m; sourceTree = "<group>"; };
-		A0E51516115703C5004A0CCE /* RRTimeRangePickerController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RRTimeRangePickerController.xib; sourceTree = "<group>"; };
 		A0E51533115719CA004A0CCE /* leftArrowIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = leftArrowIcon.png; path = Resources/images/leftArrowIcon.png; sourceTree = "<group>"; };
 		A0E51534115719CA004A0CCE /* rightArrowIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rightArrowIcon.png; path = Resources/images/rightArrowIcon.png; sourceTree = "<group>"; };
 		AF2A9A7A10BB895700B1D39E /* PopupAndProgressController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupAndProgressController.h; sourceTree = "<group>"; };
@@ -245,8 +240,9 @@
 		B796155610A7B6C40067B141 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A03E36711131FEBB00315DB2 /* GraphViewController.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				A0C466AF118E3892001745CE /* RRQAPageViewController.xib */,
+				A03E36711131FEBB00315DB2 /* GraphViewController.xib */,
 				AF2A9A7C10BB895700B1D39E /* PopupAndProgressController.xib */,
 				B796155A10A7B7440067B141 /* RRLogViewController.xib */,
 				B796156210A7B86D0067B141 /* RRQuestionAnswerViewController.xib */,
@@ -273,12 +269,8 @@
 				B796164610A8C2DD0067B141 /* YouTubeViewController.m */,
 				A03E366E1131FD8200315DB2 /* GraphViewController.h */,
 				A03E366F1131FD8300315DB2 /* GraphViewController.m */,
-				A0E51514115703C5004A0CCE /* RRTimeRangePickerController.h */,
-				A0E51515115703C5004A0CCE /* RRTimeRangePickerController.m */,
-				A0E51516115703C5004A0CCE /* RRTimeRangePickerController.xib */,
-				A0C466AD118E3892001745CE /* RRQAPageController.h */,
-				A0C466AE118E3892001745CE /* RRQAPageController.m */,
-				A0C466AF118E3892001745CE /* RRQAPageController.xib */,
+				A0C466AD118E3892001745CE /* RRQAPageViewController.h */,
+				A0C466AE118E3892001745CE /* RRQAPageViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -352,10 +344,9 @@
 				AF2A9A7E10BB895700B1D39E /* PopupAndProgressController.xib in Resources */,
 				A03E36721131FEBB00315DB2 /* GraphViewController.xib in Resources */,
 				A0E515001156FC0A004A0CCE /* rugrat_db.sqlite in Resources */,
-				A0E51518115703C5004A0CCE /* RRTimeRangePickerController.xib in Resources */,
 				A0E51535115719CA004A0CCE /* leftArrowIcon.png in Resources */,
 				A0E51536115719CA004A0CCE /* rightArrowIcon.png in Resources */,
-				A0C466B1118E3892001745CE /* RRQAPageController.xib in Resources */,
+				A0C466B1118E3892001745CE /* RRQAPageViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,13 +366,12 @@
 				B7CC344110BB9F01006C8D9C /* RRQuestionAnswerNavController.m in Sources */,
 				A0E1C1BB112A23D1008E5A2D /* RugRatAppDelegate.m in Sources */,
 				A03E36701131FD8300315DB2 /* GraphViewController.m in Sources */,
-				A0E51517115703C5004A0CCE /* RRTimeRangePickerController.m in Sources */,
 				A0A85CDE115FF1F0004CFD53 /* RRDatabaseInterface.m in Sources */,
 				A05052FC117B9C9800BFB7F3 /* RRQuestion.m in Sources */,
 				A05052FD117B9C9800BFB7F3 /* RRTimeRange.m in Sources */,
 				A0505300117B9CBF00BFB7F3 /* RRTopic.m in Sources */,
 				A0505436117D762D00BFB7F3 /* RRMedia.m in Sources */,
-				A0C466B0118E3892001745CE /* RRQAPageController.m in Sources */,
+				A0C466B0118E3892001745CE /* RRQAPageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
