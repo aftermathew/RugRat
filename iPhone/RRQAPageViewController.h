@@ -9,7 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "RRDatabaseInterface.h"
 
-@interface RRQAPageViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource> {
+@interface RRQAPageViewController :
+    UIViewController <UIPickerViewDelegate,
+                      UIPickerViewDataSource,
+                      UITableViewDataSource,
+                      UITableViewDelegate> {
+                          
     IBOutlet UIButton *leftArrowButton;
     IBOutlet UIButton *rightArrowButton;
     IBOutlet UISegmentedControl *segmentedControl;

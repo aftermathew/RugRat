@@ -121,6 +121,7 @@ static RRDatabaseInterface *gInstance = NULL;
 
                 LOG_INFO(@"Adding ageRange :: %@ : from: %d to %d weeks.", [timeRange name], [timeRange startWeek], [timeRange endWeek]);
                 [ageRangesArray addObject:timeRange];
+                [timeRange release];
             }
 
         // cleanup the query
@@ -161,6 +162,7 @@ static RRDatabaseInterface *gInstance = NULL;
 
             LOG_INFO(@"Adding Topic :: %@ : %@",topic.topicText, topic.description);
             [topicsArray addObject:topic];
+            [topic release];
         }
 
         // cleanup the query
@@ -214,6 +216,7 @@ static RRDatabaseInterface *gInstance = NULL;
 
             LOG_INFO(@"Found topicForAgeRange: %@ :: %@ : %@", range.name, topic.topicText, topic.description);
             [topics addObject:topic];
+            [topic release];
 	}
 
     // cleanup the query
@@ -259,6 +262,7 @@ static RRDatabaseInterface *gInstance = NULL;
 
             LOG_INFO(@"Found questionForAgeRange: %@ ::  %@", range.name, question.questionText);
             [questions addObject:question];
+            [question release];
 	}
 
     // cleanup the query
@@ -309,6 +313,7 @@ static RRDatabaseInterface *gInstance = NULL;
 
             LOG_INFO(@"Found questionForAgeRange: %@ andTopic: %@ :: %@", range.name, topic.topicText, question.questionText);
             [questions addObject:question];
+        [question release];
 	}
 
     // cleanup the query

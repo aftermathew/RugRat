@@ -12,9 +12,13 @@
 @implementation RRQAPageViewController
 Boolean ignoreSegmentedChange = NO;
 
-
+#pragma mark Local Utility Functions
 -(NSInteger) selectedAgeRangeIndex{
     return leftMostAgeRangeIndex + segmentedControl.selectedSegmentIndex;
+}
+
+-(RRTimeRange*) selectedAgeRange{
+    return (RRTimeRange*) [ageRanges objectAtIndex:[self selectedAgeRangeIndex]];
 }
 
 #pragma mark AgeRangeUI Methods
@@ -71,6 +75,7 @@ Boolean ignoreSegmentedChange = NO;
         [ageRangePicker selectRow:segmentedControl.selectedSegmentIndex + leftMostAgeRangeIndex
                       inComponent:0
                          animated:YES];
+        [questionTable reloadData];
     }
 }
 
@@ -183,4 +188,32 @@ Boolean ignoreSegmentedChange = NO;
 
 
 
+#pragma mark UITableViewDataSource methods
+- (NSMutableArray*) questionsArrayForSelectedAgeRange{
+    RRTimeRange *selectedTimeRange = [self selectedAgeRange];
+    return [[RRDatabaseInterface instance] questionsForAgeRange:selectedTimeRange];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    // this class is only supplying the data to one table
+    // and that table has only one section, so ignore
+    // both arguments and just return the count of the data.
+     return [self questionsArrayForSelectedAgeRange].count;
+}
+
+// Customize the appearance of table view cells.
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+ 	static NSString *CellIdentifier = @"Cell"; 
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+	if (cell == nil) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                       reuseIdentifier:CellIdentifier] autorelease];
+	}
+    
+	RRQuestion *question= [[self questionsArrayForSelectedAgeRange] objectAtIndex:indexPath.row];
+	cell.textLabel.text = question.questionText;
+	cell.detailTextLabel.text = @"";
+    return cell;
+}
 @end
