@@ -10,9 +10,7 @@
 #import "RRDatabaseInterface.h"
 
 @interface RRQAPageViewController :
-    UIViewController <UIPickerViewDelegate,
-                      UIPickerViewDataSource,
-                      UITableViewDataSource,
+    UIViewController <UITableViewDataSource,
                       UITableViewDelegate> {
                           
     IBOutlet UIButton *leftArrowButton;
@@ -20,7 +18,6 @@
     IBOutlet UISegmentedControl *segmentedControl;
     
     IBOutlet UITableView *questionTable;
-    IBOutlet UIPickerView *ageRangePicker;
 
     
     NSArray * ageRanges;

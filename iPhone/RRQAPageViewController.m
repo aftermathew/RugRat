@@ -45,7 +45,7 @@ Boolean ignoreSegmentedChange = NO;
     
     // left button was pushed
     if(leftMostAgeRangeIndex > newIndex){
-        [segmentedControl removeSegmentAtIndex:segmentedControl.numberOfSegments - 1 animated: YES];
+        [segmentedControl removeSegmentAtIndex:segmentedControl.numberOfSegments - 1 animated: NO];
         [segmentedControl insertSegmentWithTitle:((RRTimeRange*) [ageRanges objectAtIndex:newIndex]).name atIndex:0 animated:YES];            
         
         if(selected < segmentedControl.numberOfSegments - 1)
@@ -53,7 +53,7 @@ Boolean ignoreSegmentedChange = NO;
     }
     // right button was pushed
     else{
-        [segmentedControl removeSegmentAtIndex:0 animated: YES];
+        [segmentedControl removeSegmentAtIndex:0 animated: NO];
         [segmentedControl insertSegmentWithTitle:((RRTimeRange*) [ageRanges objectAtIndex:newIndex + segmentedControl.numberOfSegments]).name 
                                          atIndex:segmentedControl.numberOfSegments animated:YES];  
     
@@ -71,10 +71,6 @@ Boolean ignoreSegmentedChange = NO;
 
 -(IBAction) segmentedControlPressed:(id)sender{
     if(!ignoreSegmentedChange){
-        LOG_INFO(@"TEST");
-        [ageRangePicker selectRow:segmentedControl.selectedSegmentIndex + leftMostAgeRangeIndex
-                      inComponent:0
-                         animated:YES];
         [questionTable reloadData];
     }
 }
@@ -162,43 +158,17 @@ Boolean ignoreSegmentedChange = NO;
     [super dealloc];
 }
 
-
-#pragma mark UIPickerViewDataSource methods 
--(NSInteger) pickerView: (UIPickerView*) pickerView numberOfRowsInComponent: (NSInteger) component { 
-    return [ageRanges count];
-} 
-
-- (NSInteger) numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    return 1;
-}
-
-
-#pragma mark UIPickerViewDelegate methods
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component { 
-    RRTimeRange *timerange = (RRTimeRange *) [ageRanges objectAtIndex:row];
-    return timerange.name;
-}
-
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row
-	   inComponent:(NSInteger)component {
-    LOG_INFO(@"Component at row %d picked, it was named %@",
-             row,
-             ((RRTimeRange*) [ageRanges objectAtIndex:row]).name);
-}
-
-
-
 #pragma mark UITableViewDataSource methods
-- (NSMutableArray*) questionsArrayForSelectedAgeRange{
+- (NSMutableArray*) topicsArrayForSelectedAgeRange{
     RRTimeRange *selectedTimeRange = [self selectedAgeRange];
-    return [[RRDatabaseInterface instance] questionsForAgeRange:selectedTimeRange];
+    return [[RRDatabaseInterface instance] topicsForAgeRange:selectedTimeRange];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     // this class is only supplying the data to one table
     // and that table has only one section, so ignore
     // both arguments and just return the count of the data.
-     return [self questionsArrayForSelectedAgeRange].count;
+     return [self topicsArrayForSelectedAgeRange].count;
 }
 
 // Customize the appearance of table view cells.
@@ -207,13 +177,13 @@ Boolean ignoreSegmentedChange = NO;
  	static NSString *CellIdentifier = @"Cell"; 
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle// UITableViewCellStyleDefault
                                        reuseIdentifier:CellIdentifier] autorelease];
 	}
     
-	RRQuestion *question= [[self questionsArrayForSelectedAgeRange] objectAtIndex:indexPath.row];
-	cell.textLabel.text = question.questionText;
-	cell.detailTextLabel.text = @"";
+	RRTopic *topic= [[self topicsArrayForSelectedAgeRange] objectAtIndex:indexPath.row];
+	cell.textLabel.text = topic.topicText;
+	cell.detailTextLabel.text = topic.description;
     return cell;
 }
 @end
