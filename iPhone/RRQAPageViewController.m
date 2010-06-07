@@ -105,6 +105,9 @@ Boolean ignoreSegmentedChange = NO;
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"Topics";
+    
+    
     //NSString *path = [[NSBundle mainBundle] pathForResource:@"leftArrowIcon" ofType:@".png"];
     UIImage *leftImage  = [UIImage imageNamed:@"leftArrowIcon.png"];
     UIImage *rightImage = [UIImage imageNamed:@"rightArrowIcon.png"];
@@ -115,7 +118,6 @@ Boolean ignoreSegmentedChange = NO;
     
     ageRanges = [[[RRDatabaseInterface instance] ageRanges] retain];
     leftMostAgeRangeIndex = 0;
-//    [self updateSelectedAgeRangeIndex: 0];
     
     segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
     [segmentedControl removeAllSegments];
