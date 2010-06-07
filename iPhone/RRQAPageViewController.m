@@ -7,9 +7,13 @@
 //
 
 #import "RRQAPageViewController.h"
+#import "RRQuestionViewController.h"
 #import "RRLog.h"
 
 @implementation RRQAPageViewController
+
+@synthesize questionViewController;
+
 Boolean ignoreSegmentedChange = NO;
 
 #pragma mark Local Utility Functions
@@ -188,4 +192,13 @@ Boolean ignoreSegmentedChange = NO;
 	cell.detailTextLabel.text = topic.description;
     return cell;
 }
+
+#pragma mark UITableViewDelegate methods    
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
+    [self.navigationController pushViewController:self.questionViewController
+                                         animated:YES];
+}
+
 @end

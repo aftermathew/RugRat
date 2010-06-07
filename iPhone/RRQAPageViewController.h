@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "RRDatabaseInterface.h"
 
+@class RRQuestionViewController;
+
 @interface RRQAPageViewController :
     UIViewController <UITableViewDataSource,
                       UITableViewDelegate> {
@@ -19,10 +21,12 @@
     
     IBOutlet UITableView *questionTable;
 
-    
+    RRQuestionViewController *questionViewController;
     NSArray * ageRanges;
     NSInteger leftMostAgeRangeIndex;
 }
+
+@property (nonatomic, retain) IBOutlet RRQuestionViewController *questionViewController;
 
 -(NSInteger) selectedAgeRangeIndex;
 -(IBAction) segmentedControlPressed:(id)sender;
