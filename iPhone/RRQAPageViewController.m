@@ -8,12 +8,15 @@
 
 #import "RRQAPageViewController.h"
 #import "RRQuestionViewController.h"
+
 #import "RRLog.h"
 
 @implementation RRQAPageViewController
-
 @synthesize questionViewController;
+@synthesize selectedTopic;
 
+NSArray * ageRanges;
+NSInteger leftMostAgeRangeIndex;
 Boolean ignoreSegmentedChange = NO;
 
 #pragma mark Local Utility Functions
@@ -110,7 +113,7 @@ Boolean ignoreSegmentedChange = NO;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Topics";
-    
+    questionViewController.parent = self;
     
     //NSString *path = [[NSBundle mainBundle] pathForResource:@"leftArrowIcon" ofType:@".png"];
     UIImage *leftImage  = [UIImage imageNamed:@"leftArrowIcon.png"];
@@ -196,6 +199,8 @@ Boolean ignoreSegmentedChange = NO;
 #pragma mark UITableViewDelegate methods    
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    self.selectedTopic = [[self topicsArrayForSelectedAgeRange] objectAtIndex:indexPath.row];
+    [questionViewController setTopic:selectedTopic];
     
     [self.navigationController pushViewController:self.questionViewController
                                          animated:YES];
