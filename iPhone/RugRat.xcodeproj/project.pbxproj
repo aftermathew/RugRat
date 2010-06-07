@@ -32,15 +32,12 @@
 		AF2A9A7E10BB895700B1D39E /* PopupAndProgressController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2A9A7C10BB895700B1D39E /* PopupAndProgressController.xib */; };
 		B796155B10A7B7440067B141 /* RRLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B796155910A7B7440067B141 /* RRLogViewController.m */; };
 		B796155C10A7B7440067B141 /* RRLogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B796155A10A7B7440067B141 /* RRLogViewController.xib */; };
-		B796156310A7B86D0067B141 /* RRQuestionAnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B796156110A7B86D0067B141 /* RRQuestionAnswerViewController.m */; };
-		B796156410A7B86D0067B141 /* RRQuestionAnswerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B796156210A7B86D0067B141 /* RRQuestionAnswerViewController.xib */; };
 		B796157810A7B8E20067B141 /* RRVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B796157610A7B8E20067B141 /* RRVideoViewController.m */; };
 		B796157910A7B8E20067B141 /* RRVideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B796157710A7B8E20067B141 /* RRVideoViewController.xib */; };
 		B796164810A8C2DD0067B141 /* YouTubeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B796164610A8C2DD0067B141 /* YouTubeViewController.m */; };
 		B796164910A8C2DD0067B141 /* YouTubeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B796164710A8C2DD0067B141 /* YouTubeViewController.xib */; };
 		B79CB31510B0C34A00DEC76B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B79CB31410B0C34A00DEC76B /* libsqlite3.dylib */; };
 		B79CB31910B0CCE200DEC76B /* questions.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = B79CB31810B0CCE200DEC76B /* questions.sqlite */; };
-		B7CC344110BB9F01006C8D9C /* RRQuestionAnswerNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7CC344010BB9F01006C8D9C /* RRQuestionAnswerNavController.m */; };
 		B7DA424D10A907F7009F936E /* cavity_flow_movie.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B7DA424C10A907F7009F936E /* cavity_flow_movie.mp4 */; };
 /* End PBXBuildFile section */
 
@@ -101,9 +98,6 @@
 		B796155810A7B7440067B141 /* RRLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRLogViewController.h; sourceTree = "<group>"; };
 		B796155910A7B7440067B141 /* RRLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRLogViewController.m; sourceTree = "<group>"; };
 		B796155A10A7B7440067B141 /* RRLogViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RRLogViewController.xib; sourceTree = "<group>"; };
-		B796156010A7B86D0067B141 /* RRQuestionAnswerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRQuestionAnswerViewController.h; sourceTree = "<group>"; };
-		B796156110A7B86D0067B141 /* RRQuestionAnswerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRQuestionAnswerViewController.m; sourceTree = "<group>"; };
-		B796156210A7B86D0067B141 /* RRQuestionAnswerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RRQuestionAnswerViewController.xib; sourceTree = "<group>"; };
 		B796157510A7B8E20067B141 /* RRVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRVideoViewController.h; sourceTree = "<group>"; };
 		B796157610A7B8E20067B141 /* RRVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRVideoViewController.m; sourceTree = "<group>"; };
 		B796157710A7B8E20067B141 /* RRVideoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RRVideoViewController.xib; sourceTree = "<group>"; };
@@ -112,8 +106,6 @@
 		B796164710A8C2DD0067B141 /* YouTubeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YouTubeViewController.xib; sourceTree = "<group>"; };
 		B79CB31410B0C34A00DEC76B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = /usr/lib/libsqlite3.dylib; sourceTree = "<absolute>"; };
 		B79CB31810B0CCE200DEC76B /* questions.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = questions.sqlite; path = Resources/questions.sqlite; sourceTree = "<group>"; };
-		B7CC343F10BB9F01006C8D9C /* RRQuestionAnswerNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRQuestionAnswerNavController.h; sourceTree = "<group>"; };
-		B7CC344010BB9F01006C8D9C /* RRQuestionAnswerNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRQuestionAnswerNavController.m; sourceTree = "<group>"; };
 		B7DA424C10A907F7009F936E /* cavity_flow_movie.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = cavity_flow_movie.mp4; path = Resources/cavity_flow_movie.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -245,7 +237,6 @@
 				A03E36711131FEBB00315DB2 /* GraphViewController.xib */,
 				AF2A9A7C10BB895700B1D39E /* PopupAndProgressController.xib */,
 				B796155A10A7B7440067B141 /* RRLogViewController.xib */,
-				B796156210A7B86D0067B141 /* RRQuestionAnswerViewController.xib */,
 				B796157710A7B8E20067B141 /* RRVideoViewController.xib */,
 				B796164710A8C2DD0067B141 /* YouTubeViewController.xib */,
 			);
@@ -255,12 +246,8 @@
 		B796155710A7B6D60067B141 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B7CC343F10BB9F01006C8D9C /* RRQuestionAnswerNavController.h */,
-				B7CC344010BB9F01006C8D9C /* RRQuestionAnswerNavController.m */,
 				B796155810A7B7440067B141 /* RRLogViewController.h */,
 				B796155910A7B7440067B141 /* RRLogViewController.m */,
-				B796156010A7B86D0067B141 /* RRQuestionAnswerViewController.h */,
-				B796156110A7B86D0067B141 /* RRQuestionAnswerViewController.m */,
 				B796157510A7B8E20067B141 /* RRVideoViewController.h */,
 				B796157610A7B8E20067B141 /* RRVideoViewController.m */,
 				AF2A9A7A10BB895700B1D39E /* PopupAndProgressController.h */,
@@ -336,7 +323,6 @@
 			files = (
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				B796155C10A7B7440067B141 /* RRLogViewController.xib in Resources */,
-				B796156410A7B86D0067B141 /* RRQuestionAnswerViewController.xib in Resources */,
 				B796157910A7B8E20067B141 /* RRVideoViewController.xib in Resources */,
 				B796164910A8C2DD0067B141 /* YouTubeViewController.xib in Resources */,
 				B7DA424D10A907F7009F936E /* cavity_flow_movie.mp4 in Resources */,
@@ -359,11 +345,9 @@
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				B796155B10A7B7440067B141 /* RRLogViewController.m in Sources */,
-				B796156310A7B86D0067B141 /* RRQuestionAnswerViewController.m in Sources */,
 				B796157810A7B8E20067B141 /* RRVideoViewController.m in Sources */,
 				B796164810A8C2DD0067B141 /* YouTubeViewController.m in Sources */,
 				AF2A9A7D10BB895700B1D39E /* PopupAndProgressController.m in Sources */,
-				B7CC344110BB9F01006C8D9C /* RRQuestionAnswerNavController.m in Sources */,
 				A0E1C1BB112A23D1008E5A2D /* RugRatAppDelegate.m in Sources */,
 				A03E36701131FD8300315DB2 /* GraphViewController.m in Sources */,
 				A0A85CDE115FF1F0004CFD53 /* RRDatabaseInterface.m in Sources */,
