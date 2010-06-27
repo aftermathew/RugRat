@@ -11,12 +11,12 @@
 @class RRQAPageViewController;
 
 @interface RRQuestionViewController : UIViewController <UITableViewDataSource,
-                                                        UITableViewDelegate> 
+                                                        UITableViewDelegate>
 {
     IBOutlet UIButton *showOnlyVideosButton;
     IBOutlet UITableView *questionTable;
-    RRQAPageViewController* parent;  
-    RRTopic* selectedTopic;                                                            
+    RRQAPageViewController* parent;
+    RRTopic* selectedTopic;
 }
 
 @property (nonatomic, retain) RRQAPageViewController *parent;
