@@ -11,7 +11,7 @@
 
 
 
-@class RRQuestionViewController;
+@class RRSubTopicViewController;
 
 @interface RRTopicPageViewController :
     UIViewController <UITableViewDataSource,
@@ -21,13 +21,13 @@
     IBOutlet UIButton *rightArrowButton;
     IBOutlet UISegmentedControl *segmentedControl;
 
-    IBOutlet UITableView *questionTable;
+    IBOutlet UITableView *subTopicTable;
 
-    RRQuestionViewController *questionViewController;
+    RRSubTopicViewController *subTopicViewController;
     RRTopic *selectedTopic;
 }
 
-@property (nonatomic, retain) IBOutlet RRQuestionViewController *questionViewController;
+@property (nonatomic, retain) RRSubTopicViewController *subTopicViewController;
 @property (nonatomic, retain) RRTopic *selectedTopic;
 
 -(NSInteger) selectedAgeRangeIndex;
@@ -35,4 +35,9 @@
 
 -(IBAction) segmentedControlPressed:(id)sender;
 -(IBAction) buttonPressed:(id)sender;
+
+// This function should be overwritten appropriately by child class.
+// default implemenation returns an empty list.
+-(NSArray*) topicsArrayForSelectedAgeRange;
+
 @end

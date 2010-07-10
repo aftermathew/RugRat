@@ -7,7 +7,7 @@
 //
 
 #import "RRQAPageViewController.h"
-
+#import "RRLog.h"
 
 @implementation RRQAPageViewController
 
@@ -61,5 +61,8 @@
     [super dealloc];
 }
 
-
+- (NSArray*) topicsArrayForSelectedAgeRange{
+    RRTimeRange *selectedTimeRange = [self selectedAgeRange];
+    return [[RRDatabaseInterface instance] questionTopicsForAgeRange:selectedTimeRange];
+}
 @end

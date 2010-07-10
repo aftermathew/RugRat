@@ -56,10 +56,14 @@
     // e.g. self.myOutlet = nil;
 }
 
-
 - (void)dealloc {
     [super dealloc];
 }
 
+
+- (NSArray*) topicsArrayForSelectedAgeRange{
+    RRTimeRange *selectedTimeRange = [self selectedAgeRange];
+    return [[RRDatabaseInterface instance] videoTopicsForAgeRange:selectedTimeRange];
+}
 
 @end

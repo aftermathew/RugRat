@@ -7,12 +7,13 @@
 //
 
 #import "RRTopicPageViewController.h"
+#import "RRSubTopicViewController.h"
 #import "RRQuestionViewController.h"
 
 #import "RRLog.h"
 
 @implementation RRTopicPageViewController
-@synthesize questionViewController;
+@synthesize subTopicViewController;
 @synthesize selectedTopic;
 
 NSArray * ageRanges;
@@ -78,7 +79,7 @@ Boolean ignoreSegmentedChange = NO;
 
 -(IBAction) segmentedControlPressed:(id)sender{
     if(!ignoreSegmentedChange){
-        [questionTable reloadData];
+        [subTopicTable reloadData];
     }
 }
 
@@ -112,12 +113,17 @@ Boolean ignoreSegmentedChange = NO;
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.title = @"Topics";
-    questionViewController.parent = self;
+    if (subTopicViewController == nil) {
+        subTopicViewController = [[[RRQuestionViewController alloc] init] retain];
+    }
+
+    subTopicViewController.parent = self;
 
     UIImage *leftImage  = [UIImage imageNamed:@"leftArrowIcon.png"];
     UIImage *rightImage = [UIImage imageNamed:@"rightArrowIcon.png"];
-
+    
     leftArrowButton.enabled = NO;
     [leftArrowButton setBackgroundImage:leftImage forState:UIControlStateNormal];
     [rightArrowButton setBackgroundImage:rightImage forState:UIControlStateNormal];
@@ -135,7 +141,6 @@ Boolean ignoreSegmentedChange = NO;
     }
 
     segmentedControl.selectedSegmentIndex = 0;
-
 }
 
 
@@ -167,9 +172,8 @@ Boolean ignoreSegmentedChange = NO;
 }
 
 #pragma mark UITableViewDataSource methods
-- (NSMutableArray*) topicsArrayForSelectedAgeRange{
-    RRTimeRange *selectedTimeRange = [self selectedAgeRange];
-    return [[RRDatabaseInterface instance] topicsForAgeRange:selectedTimeRange];
+- (NSArray*) topicsArrayForSelectedAgeRange{
+    return NSMutableArray.array;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -199,9 +203,9 @@ Boolean ignoreSegmentedChange = NO;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
     self.selectedTopic = [[self topicsArrayForSelectedAgeRange] objectAtIndex:indexPath.row];
-    [questionViewController setTopic:selectedTopic];
+    [subTopicViewController setTopic:selectedTopic];
 
-    [self.navigationController pushViewController:self.questionViewController
+    [self.navigationController pushViewController:self.subTopicViewController
                                          animated:YES];
 }
 

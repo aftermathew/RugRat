@@ -15,6 +15,7 @@
 		A015FBB011BC8FCD00012B50 /* RRQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A015FBAE11BC8FCD00012B50 /* RRQuestionViewController.m */; };
 		A015FBB111BC8FCD00012B50 /* RRQuestionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A015FBAF11BC8FCD00012B50 /* RRQuestionViewController.xib */; };
 		A03A788F11A9CE6800F03087 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A03A788E11A9CE6800F03087 /* MediaPlayer.framework */; };
+		A03D272611E90BAF00A18539 /* RRSubTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A03D272411E90BAF00A18539 /* RRSubTopicViewController.m */; };
 		A03E36601131F28400315DB2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A03E365F1131F28400315DB2 /* QuartzCore.framework */; };
 		A03E36701131FD8300315DB2 /* GraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A03E366F1131FD8300315DB2 /* GraphViewController.m */; };
 		A03E36721131FEBB00315DB2 /* GraphViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A03E36711131FEBB00315DB2 /* GraphViewController.xib */; };
@@ -75,6 +76,8 @@
 		A015FBAE11BC8FCD00012B50 /* RRQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRQuestionViewController.m; sourceTree = "<group>"; };
 		A015FBAF11BC8FCD00012B50 /* RRQuestionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RRQuestionViewController.xib; sourceTree = "<group>"; };
 		A03A788E11A9CE6800F03087 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		A03D272411E90BAF00A18539 /* RRSubTopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSubTopicViewController.m; sourceTree = "<group>"; };
+		A03D272511E90BAF00A18539 /* RRSubTopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSubTopicViewController.h; sourceTree = "<group>"; };
 		A03E364E1131EEF500315DB2 /* CorePlot-CocoaTouch.xcodeproj */ = {isa = PBXFileReference; explicitFileType = "wrapper.pb-project"; name = "CorePlot-CocoaTouch.xcodeproj"; path = "lib/core-plot/framework/CorePlot-CocoaTouch.xcodeproj"; sourceTree = "<group>"; };
 		A03E365F1131F28400315DB2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A03E366E1131FD8200315DB2 /* GraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphViewController.h; sourceTree = "<group>"; };
@@ -206,6 +209,30 @@
 			name = Delegates;
 			sourceTree = "<group>";
 		};
+		A03D272711E90BDD00A18539 /* TopicPageViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A07384DC11D7E55B004048C4 /* RRTopicPageViewController.h */,
+				A07384DD11D7E55B004048C4 /* RRTopicPageViewController.m */,
+				A073850A11D7EB0E004048C4 /* RRVideoPageViewController.h */,
+				A073850B11D7EB0E004048C4 /* RRVideoPageViewController.m */,
+				A07384F311D7E70D004048C4 /* RRQAPageViewController.h */,
+				A07384F411D7E70D004048C4 /* RRQAPageViewController.m */,
+			);
+			name = TopicPageViewControllers;
+			sourceTree = "<group>";
+		};
+		A03D272811E90BF300A18539 /* SubTopicPageViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A03D272411E90BAF00A18539 /* RRSubTopicViewController.m */,
+				A03D272511E90BAF00A18539 /* RRSubTopicViewController.h */,
+				A015FBAD11BC8FCD00012B50 /* RRQuestionViewController.h */,
+				A015FBAE11BC8FCD00012B50 /* RRQuestionViewController.m */,
+			);
+			name = SubTopicPageViewControllers;
+			sourceTree = "<group>";
+		};
 		A03E372A1132143300315DB2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,20 +285,14 @@
 		B796155710A7B6D60067B141 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B796155810A7B7440067B141 /* RRLogViewController.h */,
+				B796155910A7B7440067B141 /* RRLogViewController.m */,
 				A03E366E1131FD8200315DB2 /* GraphViewController.h */,
 				A03E366F1131FD8300315DB2 /* GraphViewController.m */,
 				AF2A9A7A10BB895700B1D39E /* PopupAndProgressController.h */,
 				AF2A9A7B10BB895700B1D39E /* PopupAndProgressController.m */,
-				B796155810A7B7440067B141 /* RRLogViewController.h */,
-				B796155910A7B7440067B141 /* RRLogViewController.m */,
-				A07384F311D7E70D004048C4 /* RRQAPageViewController.h */,
-				A07384F411D7E70D004048C4 /* RRQAPageViewController.m */,
-				A015FBAD11BC8FCD00012B50 /* RRQuestionViewController.h */,
-				A015FBAE11BC8FCD00012B50 /* RRQuestionViewController.m */,
-				A07384DC11D7E55B004048C4 /* RRTopicPageViewController.h */,
-				A07384DD11D7E55B004048C4 /* RRTopicPageViewController.m */,
-				A073850A11D7EB0E004048C4 /* RRVideoPageViewController.h */,
-				A073850B11D7EB0E004048C4 /* RRVideoPageViewController.m */,
+				A03D272711E90BDD00A18539 /* TopicPageViewControllers */,
+				A03D272811E90BF300A18539 /* SubTopicPageViewControllers */,
 				B796157510A7B8E20067B141 /* RRVideoViewController.h */,
 				B796157610A7B8E20067B141 /* RRVideoViewController.m */,
 				B796164510A8C2DD0067B141 /* YouTubeViewController.h */,
@@ -378,6 +399,7 @@
 				A07384DF11D7E55B004048C4 /* RRTopicPageViewController.m in Sources */,
 				A07384F511D7E70D004048C4 /* RRQAPageViewController.m in Sources */,
 				A073850C11D7EB0E004048C4 /* RRVideoPageViewController.m in Sources */,
+				A03D272611E90BAF00A18539 /* RRSubTopicViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
