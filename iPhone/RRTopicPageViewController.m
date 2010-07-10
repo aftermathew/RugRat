@@ -115,7 +115,6 @@ Boolean ignoreSegmentedChange = NO;
     self.title = @"Topics";
     questionViewController.parent = self;
 
-    //NSString *path = [[NSBundle mainBundle] pathForResource:@"leftArrowIcon" ofType:@".png"];
     UIImage *leftImage  = [UIImage imageNamed:@"leftArrowIcon.png"];
     UIImage *rightImage = [UIImage imageNamed:@"rightArrowIcon.png"];
 

@@ -8,18 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "RRDatabaseInterface.h"
-@class RRQAPageViewController;
+@class RRTopicPageViewController;
 
 @interface RRQuestionViewController : UIViewController <UITableViewDataSource,
                                                         UITableViewDelegate>
 {
     IBOutlet UIButton *showOnlyVideosButton;
     IBOutlet UITableView *questionTable;
-    RRQAPageViewController* parent;
+    RRTopicPageViewController* parent;
     RRTopic* selectedTopic;
 }
 
-@property (nonatomic, retain) RRQAPageViewController *parent;
+@property (nonatomic, retain) RRTopicPageViewController *parent;
 -(void) setTopic:(RRTopic*) topic;
 -(IBAction) videosTogglePressed:(id)sender;
 @end

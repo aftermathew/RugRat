@@ -26,6 +26,7 @@
 		A07384DF11D7E55B004048C4 /* RRTopicPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A07384DD11D7E55B004048C4 /* RRTopicPageViewController.m */; };
 		A07384E011D7E55B004048C4 /* RRTopicPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A07384DE11D7E55B004048C4 /* RRTopicPageViewController.xib */; };
 		A07384F511D7E70D004048C4 /* RRQAPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A07384F411D7E70D004048C4 /* RRQAPageViewController.m */; };
+		A073850C11D7EB0E004048C4 /* RRVideoPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A073850B11D7EB0E004048C4 /* RRVideoPageViewController.m */; };
 		A0A85CDE115FF1F0004CFD53 /* RRDatabaseInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A85CDD115FF1F0004CFD53 /* RRDatabaseInterface.m */; };
 		A0E1C1BB112A23D1008E5A2D /* RugRatAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E1C1BA112A23D1008E5A2D /* RugRatAppDelegate.m */; };
 		A0E515001156FC0A004A0CCE /* rugrat_db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = A0E514FF1156FC0A004A0CCE /* rugrat_db.sqlite */; };
@@ -92,6 +93,8 @@
 		A07384DE11D7E55B004048C4 /* RRTopicPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RRTopicPageViewController.xib; sourceTree = "<group>"; };
 		A07384F311D7E70D004048C4 /* RRQAPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRQAPageViewController.h; sourceTree = "<group>"; };
 		A07384F411D7E70D004048C4 /* RRQAPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRQAPageViewController.m; sourceTree = "<group>"; };
+		A073850A11D7EB0E004048C4 /* RRVideoPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRVideoPageViewController.h; sourceTree = "<group>"; };
+		A073850B11D7EB0E004048C4 /* RRVideoPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRVideoPageViewController.m; sourceTree = "<group>"; };
 		A0A85CDC115FF1F0004CFD53 /* RRDatabaseInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRDatabaseInterface.h; sourceTree = "<group>"; };
 		A0A85CDD115FF1F0004CFD53 /* RRDatabaseInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRDatabaseInterface.m; sourceTree = "<group>"; };
 		A0C1D3241184DCD10012DA20 /* RRLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRLog.h; sourceTree = "<group>"; };
@@ -267,6 +270,8 @@
 				A015FBAE11BC8FCD00012B50 /* RRQuestionViewController.m */,
 				A07384DC11D7E55B004048C4 /* RRTopicPageViewController.h */,
 				A07384DD11D7E55B004048C4 /* RRTopicPageViewController.m */,
+				A073850A11D7EB0E004048C4 /* RRVideoPageViewController.h */,
+				A073850B11D7EB0E004048C4 /* RRVideoPageViewController.m */,
 				B796157510A7B8E20067B141 /* RRVideoViewController.h */,
 				B796157610A7B8E20067B141 /* RRVideoViewController.m */,
 				B796164510A8C2DD0067B141 /* YouTubeViewController.h */,
@@ -372,6 +377,7 @@
 				A015FBB011BC8FCD00012B50 /* RRQuestionViewController.m in Sources */,
 				A07384DF11D7E55B004048C4 /* RRTopicPageViewController.m in Sources */,
 				A07384F511D7E70D004048C4 /* RRQAPageViewController.m in Sources */,
+				A073850C11D7EB0E004048C4 /* RRVideoPageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
