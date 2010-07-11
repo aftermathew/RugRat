@@ -49,7 +49,6 @@ static NSString *const lastTabUserDefaultString = @"LastTab";
     // do setup on view controllers
     // iterate through view controllers looking for movie player controllers
     // setup their urls
-    [tabBarController setDelegate:self];
     NSArray *viewControllers = [tabBarController viewControllers];
     NSEnumerator *enumerator = [viewControllers objectEnumerator];
     id aView;
