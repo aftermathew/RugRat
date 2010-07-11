@@ -28,8 +28,10 @@
 // this not needed but useful for debugging and helpful to me in writing more complicated queries
 - (NSMutableArray*) questionsForAgeRange:(RRTimeRange*)range;
 
-- (NSMutableArray*) topicsForAgeRange: (RRTimeRange*) range;
+- (NSMutableArray*) questionTopicsForAgeRange: (RRTimeRange*) range;
 - (NSMutableArray*) questionsForAgeRange: (RRTimeRange*)range andTopic: (RRTopic*) topic;
 - (NSMutableArray*) mediaForQuestion: (RRQuestion*) question;
+
+- (NSMutableArray*) videoTopicsForAgeRange: (RRTimeRange*) range;
 
 @end

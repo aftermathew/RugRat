@@ -1,5 +1,5 @@
 //
-//  RRQAPageViewController.h
+//  RRVideoPageViewController.h
 //  RugRat
 //
 //  Created by Mathew Chasan on 6/27/10.
@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "RRTopicPageViewController.h"
 
-@interface RRQAPageViewController : RRTopicPageViewController {
+@interface RRVideoPageViewController : RRTopicPageViewController {
+
 }
+
 @end

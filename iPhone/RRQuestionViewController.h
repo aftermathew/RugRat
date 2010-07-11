@@ -7,19 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RRDatabaseInterface.h"
-@class RRQAPageViewController;
+#import "RRSubTopicViewController.h"
+@class WebViewController;
 
-@interface RRQuestionViewController : UIViewController <UITableViewDataSource,
-                                                        UITableViewDelegate> 
+@interface RRQuestionViewController : RRSubTopicViewController
 {
     IBOutlet UIButton *showOnlyVideosButton;
-    IBOutlet UITableView *questionTable;
-    RRQAPageViewController* parent;  
-    RRTopic* selectedTopic;                                                            
+    UIViewController *webViewController;
+    UIWebView *webView;
 }
-
-@property (nonatomic, retain) RRQAPageViewController *parent;
--(void) setTopic:(RRTopic*) topic;
 -(IBAction) videosTogglePressed:(id)sender;
+@property(nonatomic,retain)UIViewController* webViewController;
+@property(nonatomic,retain)UIWebView* webView;
 @end

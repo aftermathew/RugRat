@@ -174,9 +174,31 @@ static RRDatabaseInterface *gInstance = NULL;
     return topicsArray;
 }
 
+- (NSMutableArray*) videoTopicsForAgeRange: (RRTimeRange*) range{
+    // Mathew
+    // TODO  HACK
+    // This is a HACK so that we can STUB out the UI  
+    // until we get the final DB figured out i need something
+    // to get my data from
+    NSMutableArray* topics = [self questionTopicsForAgeRange:range];
+
+    NSMutableArray* ret = [[[NSMutableArray alloc] init] autorelease];
+    
+    NSEnumerator *e = [topics objectEnumerator];
+    id object;
+    bool add = NO;
+    while ((object = [e nextObject])) {
+        if((add = !add)){
+            [ret addObject:object];
+        }
+    }
+    //[topics release];
+    
+    return ret;
+}
 
 
-- (NSMutableArray*) topicsForAgeRange: (RRTimeRange*) range{
+- (NSMutableArray*) questionTopicsForAgeRange: (RRTimeRange*) range{
     NSMutableArray *topics = [[[NSMutableArray alloc] init] autorelease];
 
     // find all topics

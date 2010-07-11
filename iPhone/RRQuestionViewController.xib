@@ -118,7 +118,7 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">questionTable</string>
+						<string key="label">subTopicTable</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="263071915"/>
 					</object>
@@ -252,7 +252,7 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>questionTable</string>
+							<string>subTopicTable</string>
 							<string>showOnlyVideosButton</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -265,13 +265,13 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>questionTable</string>
+							<string>subTopicTable</string>
 							<string>showOnlyVideosButton</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBToOneOutletInfo">
-								<string key="name">questionTable</string>
+								<string key="name">subTopicTable</string>
 								<string key="candidateClassName">UITableView</string>
 							</object>
 							<object class="IBToOneOutletInfo">

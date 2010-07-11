@@ -3,7 +3,7 @@
 //  RugRat
 //
 //  Created by Mathew Chasan on 6/6/10.
-//  Copyright 2010 __MyCompanyName__. All rights reserved.
+//  Copyright 2010 BitSyrup. All rights reserved.
 //
 
 #import "RRQuestionViewController.h"
@@ -12,8 +12,8 @@
 #import "RRLog.h"
 
 @implementation RRQuestionViewController
-
-@synthesize parent;
+@synthesize webViewController;
+@synthesize webView;
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -28,16 +28,6 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-    selectedTopic = nil;
-}
-
--(void) setTopic:(RRTopic*) topic{
-    if(selectedTopic)
-        [selectedTopic release];
-    
-    selectedTopic = [topic retain];
-    self.title = topic.topicText;
-    [questionTable reloadData];
 }
 
 -(IBAction) videosTogglePressed:(id)sender{
@@ -55,7 +45,6 @@
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-    
     // Release any cached data, images, etc that aren't in use.
 }
 
@@ -65,40 +54,53 @@
     // e.g. self.myOutlet = nil;
 }
 
-
 - (void)dealloc {
-    [super dealloc];
+   [super dealloc];
+    webViewController = nil;
+    webView = nil;
+        
 }
 
 
 #pragma mark NSTableViewDataSource methods
-- (NSMutableArray*) questionsArray{
+- (NSArray*) subTopicsArray{
  return [[RRDatabaseInterface instance] questionsForAgeRange:[parent selectedAgeRange]
-                                                    andTopic:selectedTopic];
+                                        andTopic:selectedTopic];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    // this class is only supplying the data to one table
-    // and that table has only one section, so ignore
-    // both arguments and just return the count of the data.
-     return [self questionsArray].count;
+- (NSString*) subTopicName:(id) subTopic{
+    RRQuestion *question = (RRQuestion*) subTopic;
+    return question.questionText;
 }
 
-// Customize the appearance of table view cells.
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
- 	static NSString *CellIdentifier = @"Cell"; 
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-	if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle// UITableViewCellStyleDefault
-                                       reuseIdentifier:CellIdentifier] autorelease];
+- (NSString*) subTopicDescription:(id) subTopic{
+    //    RRQuestion *question = (RRQuestion*) subTopic;
+    return @"";
+}
+
+- (void) setWebViewUrlToIndex:(NSInteger) index{
+
+}
+
+- (void)subTopicSelected:(NSInteger)topicIndex{
+    [self setWebViewUrlToIndex:topicIndex];
+
+    if(webViewController == nil){
+        webViewController = [[UIViewController alloc] init];
+        webView = [[UIWebView alloc] initWithFrame: CGRectMake(0,0,320,480)];
+        [webViewController.view addSubview: webView];
+        [webView release];
 	}
-    
-	RRQuestion  *question= [[self questionsArray] objectAtIndex:indexPath.row];
-	cell.textLabel.text = question.questionText;
-	cell.detailTextLabel.text = @"";
-    return cell;
+        
+    NSString *search = [[self subTopicName:[[self subTopicsArray] objectAtIndex:topicIndex]]
+                            stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+    search = [@"search?q=" stringByAppendingString:search];
+    NSURL * url = [[NSURL alloc] initWithString:[@"http://www.google.com/" stringByAppendingString:search]];
+	NSURLRequest * request = [[NSURLRequest alloc] initWithURL:url];
+    [webView loadRequest:request];    
+    [url release];
+    [request release];
+
+    [self.navigationController pushViewController:webViewController animated:YES];
 }
-
-
 @end

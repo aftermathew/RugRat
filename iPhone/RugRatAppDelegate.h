@@ -9,15 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface RugRatAppDelegate : NSObject <UIApplicationDelegate> {
-  UIWindow *window;
-  UITabBarController *tabBarController;
-  NSUserDefaults *userDefaults;
+    UIWindow *window;
+    UITabBarController *tabBarController;
+    NSUserDefaults *userDefaults;
+    UIImageView *splashView;
+
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
 @property (nonatomic, retain) NSUserDefaults *userDefaults;
-
-
 @end
-

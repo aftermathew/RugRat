@@ -1,17 +1,15 @@
-//
-//  RRQAPageViewController.m
+    //
+//  RRVideoPageViewController.m
 //  RugRat
 //
 //  Created by Mathew Chasan on 6/27/10.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "RRQAPageViewController.h"
-#import "RRLog.h"
+#import "RRVideoPageViewController.h"
 #import "RRQuestionViewController.h"
 
-@implementation RRQAPageViewController
-
+@implementation RRVideoPageViewController
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -32,11 +30,10 @@
 }
 
 
-
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Q & A";
+    self.title = @"Videos";
 }
 
 
@@ -61,13 +58,14 @@
     // e.g. self.myOutlet = nil;
 }
 
-
 - (void)dealloc {
     [super dealloc];
 }
 
+
 - (NSArray*) topicsArrayForSelectedAgeRange{
     RRTimeRange *selectedTimeRange = [self selectedAgeRange];
-    return [[RRDatabaseInterface instance] questionTopicsForAgeRange:selectedTimeRange];
+    return [[RRDatabaseInterface instance] videoTopicsForAgeRange:selectedTimeRange];
 }
+
 @end
