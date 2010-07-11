@@ -26,6 +26,7 @@
 	<true/>
 	<key>NSMainNibFile</key>
 	<string>MainWindow</string>
+    <!-- MATHEW: This makes the icon NOT automatically glossed -->
 	<key>UIPrerenderedIcon</key>
 	<true/>
 </dict>
