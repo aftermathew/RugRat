@@ -68,6 +68,7 @@
 
 - (void)dealloc {
     [super dealloc];
+    parent = nil;
 }
 
 
@@ -105,6 +106,16 @@
 	cell.textLabel.text = [self subTopicName:subTopic];
 	cell.detailTextLabel.text = [self subTopicDescription:subTopic];
     return cell;
+}
+
+
+#pragma mark UITableViewDelegate methods
+- (void)subTopicSelected:(NSInteger)topicIndex{
+    LOG_ERROR(@"Subclass should have redefined subTopicSelected method");
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+        [self subTopicSelected:indexPath.row];
 }
 
 

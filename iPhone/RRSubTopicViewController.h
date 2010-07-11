@@ -27,4 +27,6 @@
 // Should be filled out by child classes
 // default implementation returns an empty array here.
 -(NSArray*) subTopicsArray;
+// default implementation does nothing
+- (void)subTopicSelected:(NSInteger)topicIndex;
 @end
