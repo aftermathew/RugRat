@@ -116,6 +116,7 @@ Boolean ignoreSegmentedChange = NO;
     
     self.title = @"Topics";
     if (subTopicViewController == nil) {
+        LOG_ERROR(@"subtTopicViewController undefined in topicViewController Instance");
         subTopicViewController = [[[RRQuestionViewController alloc] init] retain];
     }
 
