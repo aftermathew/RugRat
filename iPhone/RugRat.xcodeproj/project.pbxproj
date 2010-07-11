@@ -24,6 +24,7 @@
 		A05052FD117B9C9800BFB7F3 /* RRTimeRange.m in Sources */ = {isa = PBXBuildFile; fileRef = A05052FB117B9C9800BFB7F3 /* RRTimeRange.m */; };
 		A0505300117B9CBF00BFB7F3 /* RRTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = A05052FF117B9CBF00BFB7F3 /* RRTopic.m */; };
 		A0505436117D762D00BFB7F3 /* RRMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = A0505435117D762D00BFB7F3 /* RRMedia.m */; };
+		A058FB3511E94EAF005FAD76 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A058FB3411E94EAF005FAD76 /* Icon.png */; };
 		A07384DF11D7E55B004048C4 /* RRTopicPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A07384DD11D7E55B004048C4 /* RRTopicPageViewController.m */; };
 		A07384E011D7E55B004048C4 /* RRTopicPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A07384DE11D7E55B004048C4 /* RRTopicPageViewController.xib */; };
 		A07384F511D7E70D004048C4 /* RRQAPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A07384F411D7E70D004048C4 /* RRQAPageViewController.m */; };
@@ -72,7 +73,7 @@
 		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* RugRat_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RugRat_Prefix.pch; sourceTree = "<group>"; };
-		8D1107310486CEB800E47090 /* RugRat-Info.plisRugRat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "RugRat-Info.plisRugRat"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* RugRat-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "RugRat-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		A015FBAD11BC8FCD00012B50 /* RRQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRQuestionViewController.h; sourceTree = "<group>"; };
 		A015FBAE11BC8FCD00012B50 /* RRQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRQuestionViewController.m; sourceTree = "<group>"; };
 		A015FBAF11BC8FCD00012B50 /* RRQuestionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RRQuestionViewController.xib; sourceTree = "<group>"; };
@@ -92,6 +93,7 @@
 		A05052FF117B9CBF00BFB7F3 /* RRTopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRTopic.m; sourceTree = "<group>"; };
 		A0505434117D762D00BFB7F3 /* RRMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRMedia.h; sourceTree = "<group>"; };
 		A0505435117D762D00BFB7F3 /* RRMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRMedia.m; sourceTree = "<group>"; };
+		A058FB3411E94EAF005FAD76 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Resources/Icon.png; sourceTree = "<group>"; };
 		A07384DC11D7E55B004048C4 /* RRTopicPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRTopicPageViewController.h; sourceTree = "<group>"; };
 		A07384DD11D7E55B004048C4 /* RRTopicPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRTopicPageViewController.m; sourceTree = "<group>"; };
 		A07384DE11D7E55B004048C4 /* RRTopicPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RRTopicPageViewController.xib; sourceTree = "<group>"; };
@@ -180,12 +182,13 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A058FB3411E94EAF005FAD76 /* Icon.png */,
 				A0F11F2111E944A3007125E3 /* Default.png */,
 				A0E51532115719B5004A0CCE /* images */,
 				A0E514FF1156FC0A004A0CCE /* rugrat_db.sqlite */,
 				B79CB31810B0CCE200DEC76B /* questions.sqlite */,
 				B7DA424C10A907F7009F936E /* cavity_flow_movie.mp4 */,
-				8D1107310486CEB800E47090 /* RugRat-Info.plisRugRat */,
+				8D1107310486CEB800E47090 /* RugRat-Info.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				A015FBB111BC8FCD00012B50 /* RRQuestionViewController.xib in Resources */,
 				A07384E011D7E55B004048C4 /* RRTopicPageViewController.xib in Resources */,
 				A0F11F2211E944A3007125E3 /* Default.png in Resources */,
+				A058FB3511E94EAF005FAD76 /* Icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,7 +431,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = RugRat_Prefix.pch;
-				INFOPLIST_FILE = "RugRat-Info.plisRugRat";
+				INFOPLIST_FILE = "RugRat-Info.plist";
 				PRODUCT_NAME = RugRat;
 			};
 			name = Debug;
@@ -439,7 +443,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = RugRat_Prefix.pch;
-				INFOPLIST_FILE = "RugRat-Info.plisRugRat";
+				INFOPLIST_FILE = "RugRat-Info.plist";
 				PRODUCT_NAME = RugRat;
 			};
 			name = Release;
