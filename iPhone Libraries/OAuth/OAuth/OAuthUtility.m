@@ -8,6 +8,8 @@
 
 #import "OAuthUtility.h"
 #import "NSData+Base64.h"
+#import <CommonCrypto/CommonHMAC.h>
+#import <CommonCrypto/CommonDigest.h>
 
 @implementation OAuthUtility
 
@@ -85,8 +87,7 @@ const char * base64Chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
 + (NSString *)base64Encode:(NSData *)data
 {
   char * result = NewBase64Encode([data bytes], [data length], 0, 0);
-  NSString * retStr = [[NSString alloc] initWithCString:result];
-  return retStr;
+  return [[NSString alloc] initWithCString:result];
 }
 
 + (NSData *)base64Decode:(NSString *)encodableString
@@ -96,32 +97,49 @@ const char * base64Chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
 
 + (NSData *)hashHMACSHA1:(NSData *)subjectData withKey:(NSData *)key
 {
-  return nil;
+  uint8_t digest[CC_SHA1_DIGEST_LENGTH] = {0};
+  CCHmacContext hmacContext;
+  CCHmacInit(&hmacContext, kCCHmacAlgSHA1, [key bytes], [key length]);
+  CCHmacUpdate(&hmacContext, [subjectData bytes], [subjectData length]);
+  CCHmacFinal(&hmacContext, digest);
+  return [NSData dataWithBytes:digest length:CC_SHA1_DIGEST_LENGTH];
 }
 
 + (NSString *)hashHMACSHA1AsBase64:(NSData *)subjectData withKey:(NSData *)key
 {
-  return nil;
+  return [self base64Encode:[self hashHMACSHA1:subjectData withKey:key]];
 }
 
 + (NSString *)hashSHA1AsBase64:(NSData *)subjectData
 {
-  return nil;
+  uint8_t hash[CC_SHA1_DIGEST_LENGTH] = {0};
+  CC_SHA1_CTX sha1Context;
+  CC_SHA1_Init(&sha1Context);
+  CC_SHA1_Update(&sha1Context, [subjectData bytes], [subjectData length]);
+  CC_SHA1_Final(hash, &sha1Context);
+  return [self base64Encode:[NSData dataWithBytes:hash length:CC_SHA1_DIGEST_LENGTH]];
 }
 
-+ (NSString *)makeOAuthSafeURLString:(NSString *)url
++ (NSString *)makeOAuthSafeURLString:(NSString *)str
 {
-  return nil;
+  NSURL * url = [[NSURL alloc] initWithString:str];
+  int portint = [[url port] intValue];
+  NSString * port = (portint == 80 || portint == 443) ? @"" : [NSString stringWithFormat:@":%d", portint];
+  return [NSString stringWithFormat:@"%@://%@%@%@", 
+          [[url scheme] lowercaseString],
+          [[url host] lowercaseString],
+          port,
+          [url path]];
 }
 
 + (NSString *)makeOAuthTimestampString
 {
-  return nil;
+  return [NSString stringWithFormat:@"%lu", (long)[[NSDate date] timeIntervalSince1970]];
 }
 
 + (NSString *)makeOAuthNonceString
 {
-  return nil;
+  return [self hashSHA1AsBase64:[[NSString stringWithFormat:@"%lf", [[NSDate date] timeIntervalSince1970]] dataUsingEncoding:NSASCIIStringEncoding]];
 }
 
 + (NSString *)makeOAuthHeaderFromURL:(NSString *)url 
@@ -132,6 +150,7 @@ const char * base64Chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
                   withConsumerSecret:(NSString *)consumerSecret 
                       withParameters:(NSDictionary *)params
 {
+  //TODO
   return nil;
 }
 
