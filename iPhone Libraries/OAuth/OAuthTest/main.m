@@ -41,7 +41,7 @@ int main(int argc, char *argv[]) {
   NSLog(@"nonce = %@", [OAuthUtility makeOAuthNonceString]);
   NSString * conkey = @"xbzQDXehM0/JH1fjewisazXjmPw=";
   NSString * consec = @"UkgHVlhMYUC3TCVv/FcfrvzZUnqPyfu9lbAfUyE6qWg=";
-  NSString * baseurl = @"http://rugrat-test.appspot.com/user";
+  NSString * baseurl = @"https://rugrat-test.appspot.com/user";
   NSString * method = @"POST";
   NSString * authheader = [OAuthUtility makeOAuthHeaderFromURL:baseurl withMethod:method withToken:nil withTokenSecret:nil withConsumerKey:conkey withConsumerSecret:consec withParameters:nil];
   NSLog(@"auth header = %@", authheader);

@@ -25,6 +25,7 @@
   NSURL * url;                    //URL (incl scheme, port, resource, query etc.)
   NSMutableURLRequest * request;  //request obj
   NSHTTPURLResponse * response;   //response obj
+  NSError * httperror;
   NSMutableDictionary * headers;         //headers to append to request
   NSData * reqData;               //request body param data UTF8
   NSString * consumerKey;

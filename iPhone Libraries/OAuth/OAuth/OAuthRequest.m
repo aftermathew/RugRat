@@ -120,26 +120,33 @@
 // Request action methods
 - (NSData *)doPostRequest
 {
-  //TODO
-  return nil;
+  //TODO: refine, add asynch post
+  [request setHTTPMethod:@"POST"];
+  [request setTimeoutInterval:(60 * 3)];
+  return [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&httperror];
 }
 
 - (NSData *)doGetRequest
 {
-  //TODO
-  return nil;
+  [request setHTTPMethod:@"GET"];
+  [request setTimeoutInterval:(60 * 3)];
+  return [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&httperror];
 }
 
 - (NSData *)doPutRequest
 {
-  //TODO
-  return nil;
+  //TODO: refine, add verb=put query
+  [request setHTTPMethod:@"PUT"];
+  [request setTimeoutInterval:(60 * 3)];
+  return [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&httperror];
 }
 
 - (NSData *)doDeleteRequest
 {
-  //TODO
-  return nil;
+  //TODO: refine, add verb=delete query
+  [request setHTTPMethod:@"DELETE"];
+  [request setTimeoutInterval:(60 * 3)];
+  return [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&httperror];
 }
 
 
