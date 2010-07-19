@@ -124,7 +124,7 @@ const char * base64Chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
 {
   NSURL * url = [[NSURL alloc] initWithString:str];
   int portint = [[url port] intValue];
-  NSString * port = (portint == 80 || portint == 443) ? @"" : [NSString stringWithFormat:@":%d", portint];
+  NSString * port = (portint == 80 || portint == 443 || portint == 0) ? @"" : [NSString stringWithFormat:@":%d", portint];
   return [NSString stringWithFormat:@"%@://%@%@%@", 
           [[url scheme] lowercaseString],
           [[url host] lowercaseString],
@@ -142,6 +142,49 @@ const char * base64Chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
   return [self hashSHA1AsBase64:[[NSString stringWithFormat:@"%lf", [[NSDate date] timeIntervalSince1970]] dataUsingEncoding:NSASCIIStringEncoding]];
 }
 
++ (NSString *)makeOAuthSignature:(NSString *)url 
+                      withMethod:(NSString *)method 
+                  withParameters:(NSDictionary *)params
+             withOAuthParameters:(NSDictionary *)oauthparams
+{
+  NSMutableDictionary * allparams = [[NSMutableDictionary alloc] init];
+  //add params to allparams, parameter encoded
+  NSEnumerator * paramsenum = [params keyEnumerator];
+  NSString * key;
+  while (nil != (key = [paramsenum nextObject])) 
+  {
+    [allparams setValue:[self parameterEncode:[params valueForKey:key]] forKey:[self parameterEncode:key]];
+  }
+  //add oauthparams to allparams
+  NSEnumerator * paramsenum2 = [oauthparams keyEnumerator];
+  while (nil != (key = [paramsenum2 nextObject]))
+  {
+    NSString * pkey = [self parameterEncode:key];
+    if (NSNotFound == [pkey rangeOfString:@"secret"].location)
+      [allparams setValue:[self parameterEncode:[oauthparams valueForKey:key]] forKey:pkey];
+  }
+  //sort allparams keys
+  NSArray * sortedparamskeys = [[allparams allKeys] sortedArrayUsingSelector:@selector(localizedCompare:)];
+  //build normalized base string
+  NSMutableString * normalizedbasestr = [[NSMutableString alloc] init];
+  for (int i = 0; i< [sortedparamskeys count]; i++)
+  {
+    NSString * curkey = [sortedparamskeys objectAtIndex:i];
+    [normalizedbasestr appendFormat:@"%@=%@%s", curkey, [allparams valueForKey:curkey], (i == ([sortedparamskeys count] - 1)) ? "" : "&"];
+  }
+  //get signature base string
+  NSString * signaturebasestr = [NSString stringWithFormat:@"%@&%@&%@",
+                                  [self parameterEncode:[method uppercaseString]],
+                                  [self parameterEncode:[self makeOAuthSafeURLString:url]],
+                                  [self parameterEncode:normalizedbasestr]];
+  //get signature key
+  NSString * pcs = [self parameterEncode:[oauthparams valueForKey:@"oauth_consumer_secret"]];
+  NSString * pts = [self parameterEncode:[oauthparams valueForKey:@"oauth_token_secret"]];
+  NSString * signaturekey = [NSString stringWithFormat:@"%@&%@", pcs ? pcs : @"", pts ? pts : @""];
+  return [self hashHMACSHA1AsBase64:[signaturebasestr dataUsingEncoding:NSUTF8StringEncoding] 
+                            withKey:[signaturekey dataUsingEncoding:NSUTF8StringEncoding]];
+}
+
 + (NSString *)makeOAuthHeaderFromURL:(NSString *)url 
                           withMethod:(NSString *)method 
                            withToken:(NSString *)tok 
@@ -150,8 +193,28 @@ const char * base64Chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
                   withConsumerSecret:(NSString *)consumerSecret 
                       withParameters:(NSDictionary *)params
 {
-  //TODO
-  return nil;
+  NSMutableDictionary * oauthparams = [[NSMutableDictionary alloc] initWithCapacity:10];
+  [oauthparams setValue:@"1.0" forKey:@"oauth_version"];
+  [oauthparams setValue:@"HMAC-SHA1" forKey:@"oauth_signature_method"];
+  [oauthparams setValue:[self makeOAuthNonceString] forKey:@"oauth_nonce"];
+  [oauthparams setValue:[self makeOAuthTimestampString] forKey:@"oauth_timestamp"];
+  if (nil != tok) [oauthparams setValue:tok forKey:@"oauth_token"];
+  if (nil != consumerKey) [oauthparams setValue:consumerKey forKey:@"oauth_consumer_key"];
+  if (nil != tokenSecret) [oauthparams setValue:tokenSecret forKey:@"oauth_token_secret"];
+  if (nil != consumerSecret) [oauthparams setValue:consumerSecret forKey:@"oauth_consumer_secret"];
+  [oauthparams setValue:[self makeOAuthSignature:url withMethod:method withParameters:params withOAuthParameters:oauthparams] forKey:@"oauth_signature"];
+  NSMutableString * header = [[NSMutableString alloc] init];
+  [header appendString:@"OAuth "];
+  if (nil != [oauthparams objectForKey:@"oauth_consumer_key"]) 
+    [header appendFormat:@"oauth_consumer_key=\"%@\", ", [oauthparams objectForKey:@"oauth_consumer_key"]];
+  if (nil != [oauthparams objectForKey:@"oauth_token"])
+    [header appendFormat:@"oauth_token=\"%@\", ", [oauthparams objectForKey:@"oauth_token"]];
+  [header appendFormat:@"oauth_signature_method=\"%@\", ", [oauthparams objectForKey:@"oauth_signature_method"]];
+  [header appendFormat:@"oauth_signature=\"%@\", ", [oauthparams objectForKey:@"oauth_signature"]];
+  [header appendFormat:@"oauth_timestamp=\"%@\", ", [oauthparams objectForKey:@"oauth_timestamp"]];
+  [header appendFormat:@"oauth_nonce=\"%@\", ", [oauthparams objectForKey:@"oauth_nonce"]];
+  [header appendFormat:@"oauth_version=\"%@\"", [oauthparams objectForKey:@"oauth_version"]];
+  return header;
 }
 
 
