@@ -7,7 +7,7 @@
 //
 
 #import "RRVideoPageViewController.h"
-#import "RRQuestionViewController.h"
+#import "RRVideoListViewController.h"
 
 @implementation RRVideoPageViewController
 
@@ -25,7 +25,7 @@
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView {
     if(subTopicViewController == nil)
-        subTopicViewController = [[[RRQuestionViewController alloc] init] retain];
+        subTopicViewController = [[[RRVideoListViewController alloc] init] retain];
     [super loadView];
 }
 

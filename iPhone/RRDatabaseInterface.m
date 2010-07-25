@@ -197,6 +197,22 @@ static RRDatabaseInterface *gInstance = NULL;
     return ret;
 }
 
+- (NSMutableArray*) videosForAgeRange:(RRTimeRange*)range andTopic:(RRTopic*)topic{
+    NSMutableArray *videos = [[[NSMutableArray alloc] init] autorelease];
+    
+    // ***FIXME
+    for (int i = 0; i < 10; i++) {
+        RRMedia* mediaItem = [[[RRMedia alloc] init] autorelease];
+        mediaItem.mediaPath = @"http://artastic.us/cavity_flow_movie.mp4";
+        mediaItem.description = [NSString stringWithFormat:@"Movie %d", i];
+        mediaItem.type = @"video";
+        mediaItem.extension = @"mp4";
+        [videos addObject:mediaItem];
+    }
+    
+    return videos;
+}
+
 
 - (NSMutableArray*) questionTopicsForAgeRange: (RRTimeRange*) range{
     NSMutableArray *topics = [[[NSMutableArray alloc] init] autorelease];

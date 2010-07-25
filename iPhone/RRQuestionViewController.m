@@ -50,8 +50,8 @@
 
 - (void)viewDidUnload {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+    webViewController = nil;
+    webView = nil;
 }
 
 - (void)dealloc {
@@ -78,25 +78,24 @@
     return @"";
 }
 
-- (void) setWebViewUrlToIndex:(NSInteger) index{
-
-}
 
 - (void)subTopicSelected:(NSInteger)topicIndex{
-    [self setWebViewUrlToIndex:topicIndex];
-
     if(webViewController == nil){
         webViewController = [[UIViewController alloc] init];
         webView = [[UIWebView alloc] initWithFrame: CGRectMake(0,0,320,480)];
         [webViewController.view addSubview: webView];
         [webView release];
 	}
-        
+       
+    // TODO
+    // This needs to grab the appropriate local URL from the device and show that page
+    // for now this doing a google search based on the page content
     NSString *search = [[self subTopicName:[[self subTopicsArray] objectAtIndex:topicIndex]]
                             stringByReplacingOccurrencesOfString:@" " withString:@"+"];
     search = [@"search?q=" stringByAppendingString:search];
     NSURL * url = [[NSURL alloc] initWithString:[@"http://www.google.com/" stringByAppendingString:search]];
-	NSURLRequest * request = [[NSURLRequest alloc] initWithURL:url];
+	
+    NSURLRequest * request = [[NSURLRequest alloc] initWithURL:url];
     [webView loadRequest:request];    
     [url release];
     [request release];
