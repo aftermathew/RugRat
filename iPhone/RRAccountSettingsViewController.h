@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 
 
-@interface RRAccountSettingsViewController : UIViewController {
+@interface RRAccountSettingsViewController : UIViewController <UITextFieldDelegate> {
+    IBOutlet UIScrollView *scrollView;
     IBOutlet UITextField *emailField;
     IBOutlet UITextField *usernameField;
     
@@ -18,9 +19,9 @@
     IBOutlet UITextField *confirmNewPasswordField;
     IBOutlet UIButton *changePasswordButton;
     
+    
     IBOutlet UISegmentedControl *imperialOrMetric;
  
-
 }
 
 

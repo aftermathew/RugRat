@@ -19,6 +19,7 @@
         childView = nil;
         childView = [[RRAccountSettingsViewController alloc] init];
         LOG_DEBUG(@"nav: %@", self.navigationController);
+
         [self.navigationController pushViewController:self.childView
                                              animated:YES];
     }
