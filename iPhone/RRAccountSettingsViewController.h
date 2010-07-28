@@ -18,11 +18,13 @@
     IBOutlet UITextField *newPasswordField;
     IBOutlet UITextField *confirmNewPasswordField;
     IBOutlet UIButton *changePasswordButton;
+    IBOutlet UIButton *exitTextFieldButton;
     
     
     IBOutlet UISegmentedControl *imperialOrMetric;
+    
  
 }
 
-
+- (IBAction) doneButtonOnKeyboardPressed:(id)sender;
 @end

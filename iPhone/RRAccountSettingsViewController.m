@@ -7,6 +7,7 @@
 //
 
 #import "RRAccountSettingsViewController.h"
+#import "RRLog.h"
 
 
 @implementation RRAccountSettingsViewController
@@ -23,6 +24,18 @@
 }
 */
 
+
+// this is called when "done" or "return" is pressed on a keyboard.
+// it also is called when the hidden button that fills the background of the screen is called
+// and it lowers the key keyboard.
+- (IBAction) doneButtonOnKeyboardPressed:(id)sender { 
+    LOG_DEBUG(@"DoneButon");
+    [emailField resignFirstResponder];
+    [usernameField resignFirstResponder];
+    [oldPasswordField resignFirstResponder];
+    [newPasswordField resignFirstResponder];
+    [confirmNewPasswordField resignFirstResponder];
+}
 
 
 
