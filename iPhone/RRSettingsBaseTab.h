@@ -13,6 +13,9 @@
     IBOutlet UIButton *accountButton;
     IBOutlet UIButton *newBabyButton;
     UIViewController *childView;
+    
+    NSMutableArray *babyButtons;
+    NSMutableArray *babySettingsViewControllers;
 }
 
 @property (nonatomic, retain) UIViewController *childView;

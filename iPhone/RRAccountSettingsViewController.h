@@ -23,7 +23,6 @@
     
     IBOutlet UISegmentedControl *imperialOrMetric;
     
- 
 }
 
 - (IBAction) doneButtonOnKeyboardPressed:(id)sender;

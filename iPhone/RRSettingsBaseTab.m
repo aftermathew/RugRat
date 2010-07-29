@@ -25,7 +25,19 @@
     }
     
     if (sender == newBabyButton) {
-        LOG_DEBUG(@"OMG... NEWBABY!");
+
+        // you can't call copy on a button but this works pretty well.
+        NSData *archivedData = [NSKeyedArchiver archivedDataWithRootObject: newBabyButton];
+        UIButton *newButton = [NSKeyedUnarchiver unarchiveObjectWithData: archivedData];
+
+        [newButton setTitle:@"Just Born" forState:UIControlStateNormal];
+        [newButton setTitle:@"Just Born" forState:UIControlStateSelected];
+
+        CGRect newFrame = [newButton frame];
+        newFrame.origin.y += 50;
+        newButton.frame = newFrame;
+        [self.view addSubview:newButton];
+        
     }
     
 }
@@ -44,6 +56,7 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"Settings";
     childView = nil;
 }
 
