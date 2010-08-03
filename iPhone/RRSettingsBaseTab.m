@@ -12,6 +12,29 @@
 
 @implementation RRSettingsBaseTab
 @synthesize childView;
+@synthesize babyButtons;
+
+
+
+-(void) drawBabyButtons{
+    const int buttonHeightDiff = 60;
+
+    [newBabyButton removeFromSuperview];
+    
+    NSEnumerator *enumerator = [babyButtons objectEnumerator];
+    UIButton *curButton;
+    CGRect newFrame = [accountButton frame];
+    while (curButton = (UIButton*)[enumerator nextObject]) {
+        newFrame.origin.y += buttonHeightDiff;
+        curButton.frame = newFrame;
+        [self.view addSubview:curButton];
+    }    
+    
+    newFrame.origin.y += buttonHeightDiff;
+    newBabyButton.frame = newFrame;
+    [self.view addSubview:newBabyButton];
+}
+
 
 -(IBAction) buttonPressed:(id)sender{
     if (sender == accountButton) {
@@ -32,21 +55,19 @@
 
         [newButton setTitle:@"Just Born" forState:UIControlStateNormal];
         [newButton setTitle:@"Just Born" forState:UIControlStateSelected];
-
-        CGRect newFrame = [newButton frame];
-        newFrame.origin.y += 50;
-        newButton.frame = newFrame;
-        [self.view addSubview:newButton];
         
+        [babyButtons addObject:newButton];
+        self.drawBabyButtons;
     }
     
 }
+
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
-        // Custom initialization
+        self.drawBabyButtons;
     }
     return self;
 }
@@ -58,7 +79,12 @@
     [super viewDidLoad];
     self.title = @"Settings";
     childView = nil;
-}
+    if(!babyButtons)
+        babyButtons = [[NSMutableArray alloc] init];
+    
+    LOG_DEBUG(@"%@");
+
+}   
 
 
 /*
@@ -72,8 +98,7 @@
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-    childView = nil;
-    
+    childView = nil;    
     // Release any cached data, images, etc that aren't in use.
 }
 
@@ -87,6 +112,7 @@
 
 - (void)dealloc {
     [super dealloc];
+    babyButtons = nil;
 }
 
 

@@ -19,6 +19,7 @@
 }
 
 @property (nonatomic, retain) UIViewController *childView;
+@property (nonatomic, retain) NSMutableArray *babyButtons;
 -(IBAction) buttonPressed:(id)sender;
 
 @end
