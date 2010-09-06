@@ -47,6 +47,7 @@ int main(int argc, char *argv[]) {
   NSString * authheader = [OAuthUtility makeOAuthHeaderFromURL:baseurl withMethod:method withToken:nil withTokenSecret:nil withConsumerKey:conkey withConsumerSecret:consec withParameters:nil];
   NSLog(@"auth header = %@", authheader);
   
+  //Working code to add a new user
   /*
   OAuthRequest * req = [[OAuthRequest alloc] initWithString:@"https://rugrat-test.appspot.com/user"];
   [req setConsumerCredentials:@"xbzQDXehM0/JH1fjewisazXjmPw=" secret:@"UkgHVlhMYUC3TCVv/FcfrvzZUnqPyfu9lbAfUyE6qWg="];
@@ -58,6 +59,22 @@ int main(int argc, char *argv[]) {
   [body appendString:@"fakepass</password></user></userAddRequest>"];
   [req setBody:[body dataUsingEncoding:NSUTF8StringEncoding] asContentType:@"text/xml"];
   NSData * result = [req doPostRequest];
+  NSLog(@"response status = %i\n", [req statusCode]);
+  */
+  
+  //code to get a token
+  OAuthRequest * req = [[OAuthRequest alloc] initWithString:@"https://rugrat-test.appspot.com/auth/token"];
+  [req setConsumerCredentials:@"xbzQDXehM0/JH1fjewisazXjmPw=" secret:@"UkgHVlhMYUC3TCVv/FcfrvzZUnqPyfu9lbAfUyE6qWg="];
+  NSMutableString * body = [[NSMutableString alloc] init];
+  NSString * predigest = [NSString stringWithFormat:@"%s:%s", "testuser2", "fakepass"];
+  [body appendString:@"<tokenRequest>"];
+  [body appendString:@"<digest>"];
+  [body appendString:[OAuthUtility base64Encode:[predigest dataUsingEncoding:NSUTF8StringEncoding]]];
+  [body appendString:@"</digest>"];
+  [body appendString:@"</tokenRequest>"];
+  NSLog(@"body xml: %@", body);
+  [req setBody:[body dataUsingEncoding:NSUTF8StringEncoding] asContentType:@"text/xml"];
+  NSData * result = [req doPostRequest];
   NSLog(@"request url: %@\n", [req url]);
   NSDictionary * headers = [req getheaders];
   for (NSString * theKey in headers) {
@@ -65,10 +82,8 @@ int main(int argc, char *argv[]) {
     NSLog(@"header %@ = %@\n", theKey, theVal);
   }
   NSLog(@"response status = %i\n", [req statusCode]);
-  */
-  
-     
-  
+  NSString * response_body = [[NSString alloc] initWithData:result encoding:NSUTF8StringEncoding];
+  NSLog(@"Token Response: %@\n", response_body); 
   
   int retVal = UIApplicationMain(argc, argv, nil, nil);
   [pool release];

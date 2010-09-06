@@ -161,7 +161,7 @@ const char * base64Chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
   {
     NSString * pkey = [OAuthUtility parameterEncode:key];
     NSString * pval = [OAuthUtility parameterEncode:[oauthparams valueForKey:key]];
-    NSLog(@"adding key/val to dictionary: %@ / %@\n", pkey, pval);
+    //NSLog(@"adding key/val to dictionary: %@ / %@\n", pkey, pval);
     if (NSNotFound == [pkey rangeOfString:@"secret"].location)
       [allparams setValue:pval forKey:pkey];
   }
@@ -175,7 +175,7 @@ const char * base64Chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
     if ([allparams valueForKey:curkey])
     {
       [normalizedbasestr appendFormat:@"%@=%@%s", curkey, [allparams valueForKey:curkey], (i == ([sortedparamskeys count] - 1)) ? "" : "&"];
-      NSLog(@"current normalized base str: %@\n", normalizedbasestr );
+      //NSLog(@"current normalized base str: %@\n", normalizedbasestr );
     }
   }
   //get signature base string
@@ -183,7 +183,7 @@ const char * base64Chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
                                   [OAuthUtility parameterEncode:[method uppercaseString]],
                                   [OAuthUtility parameterEncode:[OAuthUtility makeOAuthSafeURLString:url]],
                                   [OAuthUtility parameterEncode:normalizedbasestr]];
-  NSLog(@"signature base string = %@\n", signaturebasestr);
+  //NSLog(@"signature base string = %@\n", signaturebasestr);
   [normalizedbasestr release];
   //get signature key
   NSString * consumer_secret = [oauthparams valueForKey:@"oauth_consumer_secret"];
@@ -191,11 +191,11 @@ const char * base64Chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
   NSString * token_secret = [oauthparams valueForKey:@"oauth_token_secret"];
   NSString * pts = (token_secret != nil) ? [OAuthUtility parameterEncode:token_secret] : nil;
   NSString * signaturekey = [NSString stringWithFormat:@"%@&%@", (pcs != nil) ? pcs : @"", (pts != nil) ? pts : @""];
-  NSLog(@"signature key = %@\n", signaturekey);
+  //NSLog(@"signature key = %@\n", signaturekey);
   NSData * basedata = [signaturebasestr dataUsingEncoding:NSUTF8StringEncoding];
   NSData * basekey = [signaturekey dataUsingEncoding:NSUTF8StringEncoding];
   NSString * retval = [OAuthUtility hashHMACSHA1AsBase64:basedata withKey:basekey];
-  NSLog(@"return value = %@\n", retval);
+  //NSLog(@"return value = %@\n", retval);
   return [NSString stringWithString:retval];
 }
 
@@ -217,8 +217,8 @@ const char * base64Chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
   if (nil != tokenSecret) [oauthparams setValue:tokenSecret forKey:@"oauth_token_secret"];
   if (nil != consumerSecret) [oauthparams setValue:consumerSecret forKey:@"oauth_consumer_secret"];
   NSString * signature = [OAuthUtility makeOAuthSignature:url withMethod:method withParameters:params withOAuthParameters:oauthparams];
-  NSLog(@"sig = %@\n", signature);
-  NSLog(@"retain count = %i\n", [signature retainCount]);
+  //NSLog(@"sig = %@\n", signature);
+  //NSLog(@"retain count = %i\n", [signature retainCount]);
   [oauthparams setValue:signature forKey:@"oauth_signature"];
   NSMutableString * header = [[[NSMutableString alloc] init] autorelease];
   [header appendString:@"OAuth "];
