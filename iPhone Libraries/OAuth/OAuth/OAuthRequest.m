@@ -7,6 +7,7 @@
 //
 
 #import "OAuthRequest.h"
+#import "OAuthUtility.h"
 
 @implementation OAuthRequest
 
@@ -23,7 +24,6 @@
   {
     NSLog(@"Initialization failure, OAuthRequest.");
   }
-  
   return self;
 }
 
@@ -62,19 +62,20 @@
 }
 
 //URL-related get methods
-- (NSString *)url { return [NSString stringWithFormat:@"%@://%@%s%d/%@%s%@",
+- (NSString *)url { return [NSString stringWithFormat:@"%@://%@%@%@%@%@%@",
                             [self scheme], 
                             [self host], 
-                            [self port] ? ":" : "", 
-                            [self port], 
-                            [self path], 
-                            [self query] ? "?" : "", 
-                            [self query]]; }
+                            ([[self port] intValue] != 0) ? @":" : @"", 
+                            ([[self port] intValue] != 0) ? [NSString stringWithFormat:@"%i", [[self port] intValue]] : @"", 
+                            [self path] ? [self path] : @"", 
+                            [self query] ? @"?" : @"", 
+                            [self query] ? [self query] : @""]; }
 - (NSString *)scheme { return [url scheme]; }
 - (NSString *)host { return [url host]; }
 - (NSNumber *)port { return [url port]; }
 - (NSString *)path { return [url path]; }
 - (NSString *)query { return [url query]; }
+- (NSDictionary *)getheaders { return headers; }
 
 //Response-related get methods
 - (NSInteger)statusCode { return [response statusCode]; }
@@ -86,14 +87,34 @@
 - (void)setHeader:(NSString *)key to:(NSString *)value
 {
   if (!headers) 
-    headers = [[[NSDictionary alloc] init] retain];
+    headers = [[NSMutableDictionary alloc] init];
+  [key retain];
+  [value retain];
   [headers setValue:value forKey:key];
+}
+
+- (void)addHeadersToRequest
+{
+  if (headers)
+  {
+    NSArray * headerkeys = [headers allKeys];
+    for (int i = 0; i < [headerkeys count]; i++)
+    {
+      NSString * headerkey = [headerkeys objectAtIndex:i];
+      [request setValue:[headers valueForKey:headerkey] forHTTPHeaderField:headerkey];
+    }
+  }
+}
+
+- (void)setTimeout:(NSTimeInterval)tout
+{
+  [request setTimeoutInterval:tout ];
 }
 
 - (void)setBody:(NSData *)data asContentType:(NSString *)mimetype
 {
-  [reqData release];
   [data retain];
+  [reqData release];
   reqData = data;
   [self setHeader:@"Content-Type" to:mimetype];
 }
@@ -101,10 +122,10 @@
 // Credential-related set methods
 - (void)setConsumerCredentials:(NSString *)key secret:(NSString *)secret
 {
-  [consumerKey release];
-  [consumerSecret release];
   [key retain];
+  [consumerKey release];
   [secret retain];
+  [consumerSecret release];
   consumerKey = key;
   consumerSecret = secret;
 }
@@ -112,41 +133,72 @@
 - (void)setToken:(NSString *)tok secret:(NSString *)secret
 {
   [tok retain];
+  [token release];
   [secret retain];
+  [tokenSecret release];
   token = tok;
   tokenSecret = secret;
+}
+
+- (NSDictionary *)paramsFromQuery:(NSString *)query
+{
+  NSMutableDictionary * params = [[[NSMutableDictionary alloc] init] autorelease];
+  return params;
+}
+
+- (NSData *)doGenericRequest:(NSString *)method 
+{
+  if (request) [request release];
+  request = [[NSMutableURLRequest alloc] initWithURL:url];
+  [request setTimeoutInterval:(60 * 3)];
+  [request setHTTPMethod:method];
+  NSDictionary * params = [self paramsFromQuery:[self query]];
+  if (reqData)
+  {
+    //TODO: add as param if xml-encoded form content
+    [request setHTTPBody:reqData];
+  }
+  NSString * authheader = [OAuthUtility 
+                           makeOAuthHeaderFromURL:[self url]
+                           withMethod:method 
+                           withToken:token 
+                           withTokenSecret:tokenSecret 
+                           withConsumerKey:consumerKey 
+                           withConsumerSecret:consumerSecret 
+                           withParameters:params];
+  [self setHeader:@"Authorization" to:authheader];
+  [self addHeadersToRequest];
+  NSData * result = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&httperror];
+  if (httperror)
+  {
+    NSLog(@"REQUEST ERROR: %@\n", [httperror localizedDescription]);
+  }
+  return result;
 }
 
 // Request action methods
 - (NSData *)doPostRequest
 {
   //TODO: refine, add asynch post
-  [request setHTTPMethod:@"POST"];
-  [request setTimeoutInterval:(60 * 3)];
-  return [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&httperror];
+  return [self doGenericRequest:@"POST"];
 }
 
 - (NSData *)doGetRequest
 {
-  [request setHTTPMethod:@"GET"];
-  [request setTimeoutInterval:(60 * 3)];
-  return [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&httperror];
+  //TODO: refine, add asynch get
+  return [self doGenericRequest:@"GET"];
 }
 
 - (NSData *)doPutRequest
 {
   //TODO: refine, add verb=put query
-  [request setHTTPMethod:@"PUT"];
-  [request setTimeoutInterval:(60 * 3)];
-  return [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&httperror];
+  return [self doGenericRequest:@"PUT"];
 }
 
 - (NSData *)doDeleteRequest
 {
   //TODO: refine, add verb=delete query
-  [request setHTTPMethod:@"DELETE"];
-  [request setTimeoutInterval:(60 * 3)];
-  return [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&httperror];
+  return [self doGenericRequest:@"DELETE"];
 }
 
 

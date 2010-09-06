@@ -6,8 +6,8 @@ require "uri"
 require "oauth.rb"
 require 'pp'
 
-@username = 'demi2'
-@useremail = 'demi2@demi.com'
+@username = 'demi3'
+@useremail = 'demi3@demi.com'
 @userpassword = 'mydumbpassword'
 
 @service_base_url = "rugrat-test.appspot.com"

@@ -46,6 +46,7 @@
 - (NSNumber *)port;
 - (NSString *)path;
 - (NSString *)query;
+- (NSDictionary *)getheaders;
 // NSHTTPURLResponse - related
 - (NSInteger)statusCode;
 - (NSString *)statusCodeAsString;
@@ -59,6 +60,7 @@
 // OAuth credentials
 - (void)setConsumerCredentials:(NSString *)key secret:(NSString *)secret;
 - (void)setToken:(NSString *)tok secret:(NSString *)secret; 
+- (void)setTimeout:(NSTimeInterval)tout;
 
 //request methods
 - (NSData *)doPostRequest;

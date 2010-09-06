@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "OAuthUtility.h"
+#import "OAuthRequest.h"
 
 int main(int argc, char *argv[]) {
     
@@ -46,6 +47,27 @@ int main(int argc, char *argv[]) {
   NSString * authheader = [OAuthUtility makeOAuthHeaderFromURL:baseurl withMethod:method withToken:nil withTokenSecret:nil withConsumerKey:conkey withConsumerSecret:consec withParameters:nil];
   NSLog(@"auth header = %@", authheader);
   
+  /*
+  OAuthRequest * req = [[OAuthRequest alloc] initWithString:@"https://rugrat-test.appspot.com/user"];
+  [req setConsumerCredentials:@"xbzQDXehM0/JH1fjewisazXjmPw=" secret:@"UkgHVlhMYUC3TCVv/FcfrvzZUnqPyfu9lbAfUyE6qWg="];
+  NSMutableString * body = [[NSMutableString alloc] init];
+  [body appendString:@"<userAddRequest>"];
+  [body appendString:@"<user><name>"];
+  [body appendString:@"testuser2</name><email>"];
+  [body appendString:@"testuser2@testy.com</email><password>"];
+  [body appendString:@"fakepass</password></user></userAddRequest>"];
+  [req setBody:[body dataUsingEncoding:NSUTF8StringEncoding] asContentType:@"text/xml"];
+  NSData * result = [req doPostRequest];
+  NSLog(@"request url: %@\n", [req url]);
+  NSDictionary * headers = [req getheaders];
+  for (NSString * theKey in headers) {
+    NSString * theVal = [headers objectForKey:theKey];
+    NSLog(@"header %@ = %@\n", theKey, theVal);
+  }
+  NSLog(@"response status = %i\n", [req statusCode]);
+  */
+  
+     
   
   
   int retVal = UIApplicationMain(argc, argv, nil, nil);
