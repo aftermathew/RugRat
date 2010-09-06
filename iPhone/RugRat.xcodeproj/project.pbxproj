@@ -24,7 +24,13 @@
 		A05052FD117B9C9800BFB7F3 /* RRTimeRange.m in Sources */ = {isa = PBXBuildFile; fileRef = A05052FB117B9C9800BFB7F3 /* RRTimeRange.m */; };
 		A0505300117B9CBF00BFB7F3 /* RRTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = A05052FF117B9CBF00BFB7F3 /* RRTopic.m */; };
 		A0505436117D762D00BFB7F3 /* RRMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = A0505435117D762D00BFB7F3 /* RRMedia.m */; };
+		A050E8C311E9A488002359D0 /* RRVideoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A050E8C111E9A488002359D0 /* RRVideoListViewController.m */; };
+		A050E8C411E9A488002359D0 /* RRVideoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A050E8C211E9A488002359D0 /* RRVideoListViewController.xib */; };
 		A058FB3511E94EAF005FAD76 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A058FB3411E94EAF005FAD76 /* Icon.png */; };
+		A07288FD11FE9C1E0050A674 /* RRSettingsBaseTab.m in Sources */ = {isa = PBXBuildFile; fileRef = A07288FB11FE9C1E0050A674 /* RRSettingsBaseTab.m */; };
+		A07288FE11FE9C1E0050A674 /* RRSettingsBaseTab.xib in Resources */ = {isa = PBXBuildFile; fileRef = A07288FC11FE9C1E0050A674 /* RRSettingsBaseTab.xib */; };
+		A072895111FEA0E00050A674 /* RRAccountSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A072894F11FEA0E00050A674 /* RRAccountSettingsViewController.m */; };
+		A072895211FEA0E00050A674 /* RRAccountSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A072895011FEA0E00050A674 /* RRAccountSettingsViewController.xib */; };
 		A07384DF11D7E55B004048C4 /* RRTopicPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A07384DD11D7E55B004048C4 /* RRTopicPageViewController.m */; };
 		A07384E011D7E55B004048C4 /* RRTopicPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A07384DE11D7E55B004048C4 /* RRTopicPageViewController.xib */; };
 		A07384F511D7E70D004048C4 /* RRQAPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A07384F411D7E70D004048C4 /* RRQAPageViewController.m */; };
@@ -93,7 +99,16 @@
 		A05052FF117B9CBF00BFB7F3 /* RRTopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRTopic.m; sourceTree = "<group>"; };
 		A0505434117D762D00BFB7F3 /* RRMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRMedia.h; sourceTree = "<group>"; };
 		A0505435117D762D00BFB7F3 /* RRMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRMedia.m; sourceTree = "<group>"; };
+		A050E8C011E9A488002359D0 /* RRVideoListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRVideoListViewController.h; sourceTree = "<group>"; };
+		A050E8C111E9A488002359D0 /* RRVideoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRVideoListViewController.m; sourceTree = "<group>"; };
+		A050E8C211E9A488002359D0 /* RRVideoListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RRVideoListViewController.xib; sourceTree = "<group>"; };
 		A058FB3411E94EAF005FAD76 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Resources/Icon.png; sourceTree = "<group>"; };
+		A07288FA11FE9C1E0050A674 /* RRSettingsBaseTab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSettingsBaseTab.h; sourceTree = "<group>"; };
+		A07288FB11FE9C1E0050A674 /* RRSettingsBaseTab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSettingsBaseTab.m; sourceTree = "<group>"; };
+		A07288FC11FE9C1E0050A674 /* RRSettingsBaseTab.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RRSettingsBaseTab.xib; sourceTree = "<group>"; };
+		A072894E11FEA0E00050A674 /* RRAccountSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRAccountSettingsViewController.h; sourceTree = "<group>"; };
+		A072894F11FEA0E00050A674 /* RRAccountSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRAccountSettingsViewController.m; sourceTree = "<group>"; };
+		A072895011FEA0E00050A674 /* RRAccountSettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RRAccountSettingsViewController.xib; sourceTree = "<group>"; };
 		A07384DC11D7E55B004048C4 /* RRTopicPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRTopicPageViewController.h; sourceTree = "<group>"; };
 		A07384DD11D7E55B004048C4 /* RRTopicPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRTopicPageViewController.m; sourceTree = "<group>"; };
 		A07384DE11D7E55B004048C4 /* RRTopicPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RRTopicPageViewController.xib; sourceTree = "<group>"; };
@@ -162,6 +177,7 @@
 				B796155710A7B6D60067B141 /* Controllers */,
 				A00A029D112A22FC000F68CC /* Delegates */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				A072894311FEA01C0050A674 /* Sample Code */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
@@ -220,6 +236,7 @@
 			children = (
 				A07384DC11D7E55B004048C4 /* RRTopicPageViewController.h */,
 				A07384DD11D7E55B004048C4 /* RRTopicPageViewController.m */,
+				A07384DE11D7E55B004048C4 /* RRTopicPageViewController.xib */,
 				A073850A11D7EB0E004048C4 /* RRVideoPageViewController.h */,
 				A073850B11D7EB0E004048C4 /* RRVideoPageViewController.m */,
 				A07384F311D7E70D004048C4 /* RRQAPageViewController.h */,
@@ -235,6 +252,10 @@
 				A03D272511E90BAF00A18539 /* RRSubTopicViewController.h */,
 				A015FBAD11BC8FCD00012B50 /* RRQuestionViewController.h */,
 				A015FBAE11BC8FCD00012B50 /* RRQuestionViewController.m */,
+				A015FBAF11BC8FCD00012B50 /* RRQuestionViewController.xib */,
+				A050E8C011E9A488002359D0 /* RRVideoListViewController.h */,
+				A050E8C111E9A488002359D0 /* RRVideoListViewController.m */,
+				A050E8C211E9A488002359D0 /* RRVideoListViewController.xib */,
 			);
 			name = SubTopicPageViewControllers;
 			sourceTree = "<group>";
@@ -245,6 +266,41 @@
 				A03E372F1132143300315DB2 /* libCorePlot-CocoaTouch.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A07288F911FE9BF50050A674 /* Settings View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A07288FA11FE9C1E0050A674 /* RRSettingsBaseTab.h */,
+				A07288FB11FE9C1E0050A674 /* RRSettingsBaseTab.m */,
+				A07288FC11FE9C1E0050A674 /* RRSettingsBaseTab.xib */,
+				A072894E11FEA0E00050A674 /* RRAccountSettingsViewController.h */,
+				A072894F11FEA0E00050A674 /* RRAccountSettingsViewController.m */,
+				A072895011FEA0E00050A674 /* RRAccountSettingsViewController.xib */,
+			);
+			name = "Settings View Controllers";
+			sourceTree = "<group>";
+		};
+		A072894311FEA01C0050A674 /* Sample Code */ = {
+			isa = PBXGroup;
+			children = (
+				B796157510A7B8E20067B141 /* RRVideoViewController.h */,
+				B796157610A7B8E20067B141 /* RRVideoViewController.m */,
+				B796164510A8C2DD0067B141 /* YouTubeViewController.h */,
+				B796164610A8C2DD0067B141 /* YouTubeViewController.m */,
+				B796155810A7B7440067B141 /* RRLogViewController.h */,
+				B796155910A7B7440067B141 /* RRLogViewController.m */,
+				A03E366E1131FD8200315DB2 /* GraphViewController.h */,
+				A03E366F1131FD8300315DB2 /* GraphViewController.m */,
+				AF2A9A7A10BB895700B1D39E /* PopupAndProgressController.h */,
+				AF2A9A7B10BB895700B1D39E /* PopupAndProgressController.m */,
+				B796155A10A7B7440067B141 /* RRLogViewController.xib */,
+				B796164710A8C2DD0067B141 /* YouTubeViewController.xib */,
+				B796157710A7B8E20067B141 /* RRVideoViewController.xib */,
+				AF2A9A7C10BB895700B1D39E /* PopupAndProgressController.xib */,
+				A03E36711131FEBB00315DB2 /* GraphViewController.xib */,
+			);
+			name = "Sample Code";
 			sourceTree = "<group>";
 		};
 		A0E51532115719B5004A0CCE /* images */ = {
@@ -276,14 +332,7 @@
 		B796155610A7B6C40067B141 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A03E36711131FEBB00315DB2 /* GraphViewController.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
-				AF2A9A7C10BB895700B1D39E /* PopupAndProgressController.xib */,
-				B796155A10A7B7440067B141 /* RRLogViewController.xib */,
-				A015FBAF11BC8FCD00012B50 /* RRQuestionViewController.xib */,
-				A07384DE11D7E55B004048C4 /* RRTopicPageViewController.xib */,
-				B796157710A7B8E20067B141 /* RRVideoViewController.xib */,
-				B796164710A8C2DD0067B141 /* YouTubeViewController.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -291,18 +340,9 @@
 		B796155710A7B6D60067B141 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B796155810A7B7440067B141 /* RRLogViewController.h */,
-				B796155910A7B7440067B141 /* RRLogViewController.m */,
-				A03E366E1131FD8200315DB2 /* GraphViewController.h */,
-				A03E366F1131FD8300315DB2 /* GraphViewController.m */,
-				AF2A9A7A10BB895700B1D39E /* PopupAndProgressController.h */,
-				AF2A9A7B10BB895700B1D39E /* PopupAndProgressController.m */,
+				A07288F911FE9BF50050A674 /* Settings View Controllers */,
 				A03D272711E90BDD00A18539 /* TopicPageViewControllers */,
 				A03D272811E90BF300A18539 /* SubTopicPageViewControllers */,
-				B796157510A7B8E20067B141 /* RRVideoViewController.h */,
-				B796157610A7B8E20067B141 /* RRVideoViewController.m */,
-				B796164510A8C2DD0067B141 /* YouTubeViewController.h */,
-				B796164610A8C2DD0067B141 /* YouTubeViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -381,6 +421,9 @@
 				A07384E011D7E55B004048C4 /* RRTopicPageViewController.xib in Resources */,
 				A0F11F2211E944A3007125E3 /* Default.png in Resources */,
 				A058FB3511E94EAF005FAD76 /* Icon.png in Resources */,
+				A050E8C411E9A488002359D0 /* RRVideoListViewController.xib in Resources */,
+				A07288FE11FE9C1E0050A674 /* RRSettingsBaseTab.xib in Resources */,
+				A072895211FEA0E00050A674 /* RRAccountSettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +451,9 @@
 				A07384F511D7E70D004048C4 /* RRQAPageViewController.m in Sources */,
 				A073850C11D7EB0E004048C4 /* RRVideoPageViewController.m in Sources */,
 				A03D272611E90BAF00A18539 /* RRSubTopicViewController.m in Sources */,
+				A050E8C311E9A488002359D0 /* RRVideoListViewController.m in Sources */,
+				A07288FD11FE9C1E0050A674 /* RRSettingsBaseTab.m in Sources */,
+				A072895111FEA0E00050A674 /* RRAccountSettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

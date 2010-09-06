@@ -12,6 +12,7 @@
 #import "RRTimeRange.h"
 #import "RRTopic.h"
 #import "RRQuestion.h"
+#import "RRMedia.h"
 
 #define DO_DB_TEST_ON_STARTUP 0
 @interface RRDatabaseInterface : NSObject {
@@ -33,5 +34,6 @@
 - (NSMutableArray*) mediaForQuestion: (RRQuestion*) question;
 
 - (NSMutableArray*) videoTopicsForAgeRange: (RRTimeRange*) range;
+- (NSMutableArray*) videosForAgeRange: (RRTimeRange*) range andTopic: (RRTopic*) topic;
 
 @end

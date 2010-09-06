@@ -1,39 +1,49 @@
-    //
-//  RRVideoPageViewController.m
+//
+//  RRAccountSettingsViewController.m
 //  RugRat
 //
-//  Created by Mathew Chasan on 6/27/10.
+//  Created by Mathew Chasan on 7/26/10.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "RRVideoPageViewController.h"
-#import "RRVideoListViewController.h"
+#import "RRAccountSettingsViewController.h"
+#import "RRLog.h"
 
-@implementation RRVideoPageViewController
+
+@implementation RRAccountSettingsViewController
+
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
- - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
- if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
- // Custom initialization
- }
- return self;
- }
- */
-
-
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView {
-    if(subTopicViewController == nil)
-        subTopicViewController = [[[RRVideoListViewController alloc] init] retain];
-    [super loadView];
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
+        
+         
+    }
+    return self;
 }
+*/
+
+
+// this is called when "done" or "return" is pressed on a keyboard.
+// it also is called when the hidden button that fills the background of the screen is called
+// and it lowers the key keyboard.
+- (IBAction) doneButtonOnKeyboardPressed:(id)sender { 
+    LOG_DEBUG(@"DoneButon");
+    [emailField resignFirstResponder];
+    [usernameField resignFirstResponder];
+    [oldPasswordField resignFirstResponder];
+    [newPasswordField resignFirstResponder];
+    [confirmNewPasswordField resignFirstResponder];
+}
+
 
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Videos";
+    if(scrollView)
+        scrollView.contentSize = CGSizeMake(320, 500);
 }
 
 
@@ -58,14 +68,10 @@
     // e.g. self.myOutlet = nil;
 }
 
+
 - (void)dealloc {
     [super dealloc];
 }
 
-
-- (NSArray*) topicsArrayForSelectedAgeRange{
-    RRTimeRange *selectedTimeRange = [self selectedAgeRange];
-    return [[RRDatabaseInterface instance] videoTopicsForAgeRange:selectedTimeRange];
-}
 
 @end
