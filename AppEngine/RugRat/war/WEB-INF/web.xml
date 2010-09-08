@@ -67,6 +67,14 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<url-pattern>/auth/token</url-pattern>
 	</servlet-mapping>
 	<servlet>
+		<servlet-name>Ticket</servlet-name>
+		<servlet-class>com.bitsyrup.rugrat.RugRatMediaTicket</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Ticket</servlet-name>
+		<url-pattern>/auth/ticket</url-pattern>
+	</servlet-mapping>
+	<servlet>
 		<servlet-name>User</servlet-name>
 		<servlet-class>com.bitsyrup.rugrat.RugRatUser</servlet-class>
 	</servlet>

@@ -86,6 +86,7 @@ public class RugRatToken extends HttpServlet {
 				{
 					//return existing token
 					token = tokens.get(0);
+					//TODO: handle expiration?
 				}
 				else
 				{
