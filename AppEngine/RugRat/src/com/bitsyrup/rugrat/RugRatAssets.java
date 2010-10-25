@@ -14,6 +14,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.bitsyrup.rugrat.common.auth;
+import com.bitsyrup.rugrat.common.oauth;
+import com.bitsyrup.rugrat.common.Ticket;
+import com.bitsyrup.rugrat.common.oauth.OAUTH_RESULT;
 import com.google.appengine.api.blobstore.*;
 import com.google.appengine.api.users.*;
 
@@ -68,17 +71,34 @@ public class RugRatAssets extends HttpServlet {
 			throws IOException {
     	String pathInfo = req.getPathInfo();   
     	String authHeader = req.getHeader("Authorization");
+    	String ticketVal = req.getParameter("ticket");
 		if (null != authHeader && !authHeader.isEmpty())
 		{
 			//this is the API case...
-			if (null != pathInfo)
+			if (OAUTH_RESULT.SUCCESS == oauth.verifyOAuth(req, true))
 			{
-				pathInfo = pathInfo.substring(1);
-				//this is /assets/<KEY> case
-				//	respond with data corresponding with key
-				doDataResponse(pathInfo, req, resp);
+				if (null != pathInfo)
+				{
+					pathInfo = pathInfo.substring(1);
+					//this is /assets/<KEY> case
+					//	respond with data corresponding with key
+					doDataResponse(pathInfo, req, resp);
+				}
 			}
 			return; //no further response...
+		}
+		else if (null != ticketVal && !ticketVal.isEmpty())
+		{
+			//handle possibility that there is no oauth,
+			//	but the user has instead acquired a media ticket...
+			if (Ticket.isValidTicket(ticketVal))
+			{
+				if (null != pathInfo)
+				{
+					pathInfo = pathInfo.substring(1);
+					doDataResponse(pathInfo, req, resp);
+				}
+			}
 		}
         UserService userService = UserServiceFactory.getUserService();
         String thisURL = req.getRequestURI();

@@ -82,6 +82,16 @@ public class Ticket {
 			}
 		}
 	}
+	
+	@SuppressWarnings("unchecked")
+	public static boolean isValidTicket(String ticketVal)
+	{
+		PersistenceManager pm = PMF.get().getPersistenceManager();
+		String query = "select from " + com.bitsyrup.rugrat.common.Ticket.class.getName() + 
+			" where Ticket == '" + ticketVal + "' and expiration < " + (System.currentTimeMillis() / 1000L);
+		List<Ticket> tickets = (List<Ticket>)pm.newQuery(query).execute();
+		return !(tickets == null || tickets.size() == 0);
+	}
 
 	public void setIdKey(Key idKey) {
 		this.idKey = idKey;

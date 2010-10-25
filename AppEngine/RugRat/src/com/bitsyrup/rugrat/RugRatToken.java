@@ -48,7 +48,20 @@ public class RugRatToken extends HttpServlet {
 
 	//logger
     private static final Logger log = Logger.getLogger(RugRatAssets.class.getName());
-	
+    private static final int calls_per_clean = 1000; 
+    private static int db_clean_calls = 0;
+    
+    private void cleanDB()
+    {
+    	if (db_clean_calls++ < calls_per_clean)
+    		return;
+    	db_clean_calls = 0;
+    	PersistenceManager pm = PMF.get().getPersistenceManager();
+    	String query = "delete from " + com.bitsyrup.rugrat.common.Token.class.getName() + 
+    		" where expiration < " + (System.currentTimeMillis() / 1000L);
+    	pm.newQuery(query).execute();
+    }
+    
     //token request
 	@SuppressWarnings("unchecked")
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
@@ -86,7 +99,6 @@ public class RugRatToken extends HttpServlet {
 				{
 					//return existing token
 					token = tokens.get(0);
-					//TODO: handle expiration?
 				}
 				else
 				{
@@ -94,6 +106,7 @@ public class RugRatToken extends HttpServlet {
 					token = new Token(username, consumerKey);
 					token.persist();
 				}
+				cleanDB();
 				TokenResponse tresp = new TokenResponse(token.getUserID(), token.getToken(), token.getTokenSecret());
 				String xml = tresp.toXML();
 				resp.setStatus(200);
