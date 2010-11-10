@@ -9,6 +9,7 @@
 #import "RRSettingsBaseTab.h"
 #import "RRLog.h"
 #import "RRAccountSettingsViewController.h"
+#import "RRBabySettingsViewController.h"
 
 @implementation RRSettingsBaseTab
 @synthesize childView;
@@ -47,18 +48,29 @@
                                              animated:YES];
     }
     
-    if (sender == newBabyButton) {
-
+    else if (sender == newBabyButton) {
+        
         // you can't call copy on a button but this works pretty well.
         NSData *archivedData = [NSKeyedArchiver archivedDataWithRootObject: newBabyButton];
         UIButton *newButton = [NSKeyedUnarchiver unarchiveObjectWithData: archivedData];
 
         [newButton setTitle:@"Just Born" forState:UIControlStateNormal];
         [newButton setTitle:@"Just Born" forState:UIControlStateSelected];
+        [newButton addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
+        
         
         [babyButtons addObject:newButton];
         self.drawBabyButtons;
     }
+    
+    else {
+        LOG_DEBUG(@"BABY BUTTON");
+        childView = nil;
+        childView = [[RRBabySettingsViewController alloc] init];
+        [self.navigationController pushViewController:childView animated:YES];
+    }
+
+    
     
 }
 

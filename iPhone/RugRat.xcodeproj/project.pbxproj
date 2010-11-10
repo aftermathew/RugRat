@@ -36,6 +36,8 @@
 		A07384F511D7E70D004048C4 /* RRQAPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A07384F411D7E70D004048C4 /* RRQAPageViewController.m */; };
 		A073850C11D7EB0E004048C4 /* RRVideoPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A073850B11D7EB0E004048C4 /* RRVideoPageViewController.m */; };
 		A0A85CDE115FF1F0004CFD53 /* RRDatabaseInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A85CDD115FF1F0004CFD53 /* RRDatabaseInterface.m */; };
+		A0C8F53E1208D8F400530B6F /* RRBabySettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C8F53C1208D8F400530B6F /* RRBabySettingsViewController.m */; };
+		A0C8F53F1208D8F400530B6F /* RRBabySettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0C8F53D1208D8F400530B6F /* RRBabySettingsViewController.xib */; };
 		A0E1C1BB112A23D1008E5A2D /* RugRatAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E1C1BA112A23D1008E5A2D /* RugRatAppDelegate.m */; };
 		A0E515001156FC0A004A0CCE /* rugrat_db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = A0E514FF1156FC0A004A0CCE /* rugrat_db.sqlite */; };
 		A0E51535115719CA004A0CCE /* leftArrowIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = A0E51533115719CA004A0CCE /* leftArrowIcon.png */; };
@@ -119,6 +121,9 @@
 		A0A85CDC115FF1F0004CFD53 /* RRDatabaseInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRDatabaseInterface.h; sourceTree = "<group>"; };
 		A0A85CDD115FF1F0004CFD53 /* RRDatabaseInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRDatabaseInterface.m; sourceTree = "<group>"; };
 		A0C1D3241184DCD10012DA20 /* RRLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRLog.h; sourceTree = "<group>"; };
+		A0C8F53B1208D8F400530B6F /* RRBabySettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRBabySettingsViewController.h; sourceTree = "<group>"; };
+		A0C8F53C1208D8F400530B6F /* RRBabySettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRBabySettingsViewController.m; sourceTree = "<group>"; };
+		A0C8F53D1208D8F400530B6F /* RRBabySettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RRBabySettingsViewController.xib; sourceTree = "<group>"; };
 		A0E1C1B9112A23D1008E5A2D /* RugRatAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RugRatAppDelegate.h; sourceTree = "<group>"; };
 		A0E1C1BA112A23D1008E5A2D /* RugRatAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RugRatAppDelegate.m; sourceTree = "<group>"; };
 		A0E514FF1156FC0A004A0CCE /* rugrat_db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = rugrat_db.sqlite; path = Resources/rugrat_db.sqlite; sourceTree = "<group>"; };
@@ -277,6 +282,9 @@
 				A072894E11FEA0E00050A674 /* RRAccountSettingsViewController.h */,
 				A072894F11FEA0E00050A674 /* RRAccountSettingsViewController.m */,
 				A072895011FEA0E00050A674 /* RRAccountSettingsViewController.xib */,
+				A0C8F53B1208D8F400530B6F /* RRBabySettingsViewController.h */,
+				A0C8F53C1208D8F400530B6F /* RRBabySettingsViewController.m */,
+				A0C8F53D1208D8F400530B6F /* RRBabySettingsViewController.xib */,
 			);
 			name = "Settings View Controllers";
 			sourceTree = "<group>";
@@ -424,6 +432,7 @@
 				A050E8C411E9A488002359D0 /* RRVideoListViewController.xib in Resources */,
 				A07288FE11FE9C1E0050A674 /* RRSettingsBaseTab.xib in Resources */,
 				A072895211FEA0E00050A674 /* RRAccountSettingsViewController.xib in Resources */,
+				A0C8F53F1208D8F400530B6F /* RRBabySettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +463,7 @@
 				A050E8C311E9A488002359D0 /* RRVideoListViewController.m in Sources */,
 				A07288FD11FE9C1E0050A674 /* RRSettingsBaseTab.m in Sources */,
 				A072895111FEA0E00050A674 /* RRAccountSettingsViewController.m in Sources */,
+				A0C8F53E1208D8F400530B6F /* RRBabySettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

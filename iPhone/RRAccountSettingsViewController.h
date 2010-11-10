@@ -10,7 +10,7 @@
 
 
 @interface RRAccountSettingsViewController : UIViewController <UITextFieldDelegate> {
-    IBOutlet UIScrollView *scrollView;
+    IBOutlet UIScrollView *scrollView;  
     IBOutlet UITextField *emailField;
     IBOutlet UITextField *usernameField;
     
