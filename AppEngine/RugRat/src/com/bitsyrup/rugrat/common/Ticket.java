@@ -2,6 +2,7 @@ package com.bitsyrup.rugrat.common;
 
 import java.util.List;
 import java.util.Random;
+
 import com.bitsyrup.rugrat.common.utility;
 import com.google.appengine.api.datastore.Key;
 
@@ -88,9 +89,10 @@ public class Ticket {
 	{
 		PersistenceManager pm = PMF.get().getPersistenceManager();
 		String query = "select from " + com.bitsyrup.rugrat.common.Ticket.class.getName() + 
-			" where Ticket == '" + ticketVal + "' and expiration < " + (System.currentTimeMillis() / 1000L);
+			" where ticket == '" + ticketVal + "'";
 		List<Ticket> tickets = (List<Ticket>)pm.newQuery(query).execute();
-		return !(tickets == null || tickets.size() == 0);
+		return (tickets != null && tickets.size() > 0 && 
+				tickets.get(0).expiration > (int)(System.currentTimeMillis() / 1000L));
 	}
 
 	public void setIdKey(Key idKey) {

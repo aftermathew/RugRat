@@ -89,6 +89,7 @@ public class RugRatAssets extends HttpServlet {
 		}
 		else if (null != ticketVal && !ticketVal.isEmpty())
 		{
+			
 			//handle possibility that there is no oauth,
 			//	but the user has instead acquired a media ticket...
 			if (Ticket.isValidTicket(ticketVal))
@@ -97,6 +98,7 @@ public class RugRatAssets extends HttpServlet {
 				{
 					pathInfo = pathInfo.substring(1);
 					doDataResponse(pathInfo, req, resp);
+					return;
 				}
 			}
 		}
