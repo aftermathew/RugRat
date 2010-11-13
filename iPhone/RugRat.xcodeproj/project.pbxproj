@@ -38,6 +38,7 @@
 		A0A85CDE115FF1F0004CFD53 /* RRDatabaseInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A85CDD115FF1F0004CFD53 /* RRDatabaseInterface.m */; };
 		A0C8F53E1208D8F400530B6F /* RRBabySettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C8F53C1208D8F400530B6F /* RRBabySettingsViewController.m */; };
 		A0C8F53F1208D8F400530B6F /* RRBabySettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0C8F53D1208D8F400530B6F /* RRBabySettingsViewController.xib */; };
+		A0E06376128E6ABF00D56075 /* RRBaby.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E06375128E6ABF00D56075 /* RRBaby.m */; };
 		A0E1C1BB112A23D1008E5A2D /* RugRatAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E1C1BA112A23D1008E5A2D /* RugRatAppDelegate.m */; };
 		A0E515001156FC0A004A0CCE /* rugrat_db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = A0E514FF1156FC0A004A0CCE /* rugrat_db.sqlite */; };
 		A0E51535115719CA004A0CCE /* leftArrowIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = A0E51533115719CA004A0CCE /* leftArrowIcon.png */; };
@@ -124,6 +125,8 @@
 		A0C8F53B1208D8F400530B6F /* RRBabySettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRBabySettingsViewController.h; sourceTree = "<group>"; };
 		A0C8F53C1208D8F400530B6F /* RRBabySettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRBabySettingsViewController.m; sourceTree = "<group>"; };
 		A0C8F53D1208D8F400530B6F /* RRBabySettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RRBabySettingsViewController.xib; sourceTree = "<group>"; };
+		A0E06374128E6ABF00D56075 /* RRBaby.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRBaby.h; sourceTree = "<group>"; };
+		A0E06375128E6ABF00D56075 /* RRBaby.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRBaby.m; sourceTree = "<group>"; };
 		A0E1C1B9112A23D1008E5A2D /* RugRatAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RugRatAppDelegate.h; sourceTree = "<group>"; };
 		A0E1C1BA112A23D1008E5A2D /* RugRatAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RugRatAppDelegate.m; sourceTree = "<group>"; };
 		A0E514FF1156FC0A004A0CCE /* rugrat_db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = rugrat_db.sqlite; path = Resources/rugrat_db.sqlite; sourceTree = "<group>"; };
@@ -323,16 +326,18 @@
 		B796155410A7B6B80067B141 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A05052FE117B9CBF00BFB7F3 /* RRTopic.h */,
-				A05052FF117B9CBF00BFB7F3 /* RRTopic.m */,
-				A05052F8117B9C9800BFB7F3 /* RRQuestion.h */,
-				A05052F9117B9C9800BFB7F3 /* RRQuestion.m */,
-				A05052FA117B9C9800BFB7F3 /* RRTimeRange.h */,
-				A05052FB117B9C9800BFB7F3 /* RRTimeRange.m */,
+				A0E06374128E6ABF00D56075 /* RRBaby.h */,
+				A0E06375128E6ABF00D56075 /* RRBaby.m */,
 				A0A85CDC115FF1F0004CFD53 /* RRDatabaseInterface.h */,
 				A0A85CDD115FF1F0004CFD53 /* RRDatabaseInterface.m */,
 				A0505434117D762D00BFB7F3 /* RRMedia.h */,
 				A0505435117D762D00BFB7F3 /* RRMedia.m */,
+				A05052F8117B9C9800BFB7F3 /* RRQuestion.h */,
+				A05052F9117B9C9800BFB7F3 /* RRQuestion.m */,
+				A05052FA117B9C9800BFB7F3 /* RRTimeRange.h */,
+				A05052FB117B9C9800BFB7F3 /* RRTimeRange.m */,
+				A05052FE117B9CBF00BFB7F3 /* RRTopic.h */,
+				A05052FF117B9CBF00BFB7F3 /* RRTopic.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -383,7 +388,14 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "RugRat" */;
 			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
 			projectReferences = (
@@ -464,6 +476,7 @@
 				A07288FD11FE9C1E0050A674 /* RRSettingsBaseTab.m in Sources */,
 				A072895111FEA0E00050A674 /* RRAccountSettingsViewController.m in Sources */,
 				A0C8F53E1208D8F400530B6F /* RRBabySettingsViewController.m in Sources */,
+				A0E06376128E6ABF00D56075 /* RRBaby.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
