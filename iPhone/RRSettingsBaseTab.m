@@ -10,6 +10,42 @@
 #import "RRLog.h"
 #import "RRAccountSettingsViewController.h"
 #import "RRBabySettingsViewController.h"
+#import "RRBaby.h"
+
+@interface BabyButton : NSObject {
+    RRBaby   *baby;
+    UIButton *button;
+}
+@property (nonatomic, retain) RRBaby* baby;
+@property (nonatomic, retain) UIButton* button;
+
++ (BabyButton*) babyButtonFromButton: (UIButton*)new_button;
+- (BabyButton*) initFromButton:(UIButton*)new_button;
+
+@end;
+
+@implementation BabyButton
+@synthesize baby;
+@synthesize button;
+
+- (BabyButton*) initFromButton:(UIButton*)new_button{
+    if(self = [super init]) {
+        self.baby = [RRBaby newBaby];
+
+        // you can't call copy on a button but this works pretty well.
+        NSData *archivedData = [NSKeyedArchiver archivedDataWithRootObject: new_button];
+        self.button = [NSKeyedUnarchiver unarchiveObjectWithData: archivedData];
+    }
+
+    return self;
+}
+
++ (BabyButton*) babyButtonFromButton:(UIButton*) new_button {
+    return [[[BabyButton alloc] initFromButton: new_button] autorelease];
+}
+
+@end
+
 
 @implementation RRSettingsBaseTab
 @synthesize childView;
@@ -17,20 +53,29 @@
 
 
 
+
 -(void) drawBabyButtons{
     const int buttonHeightDiff = 60;
 
     [newBabyButton removeFromSuperview];
-    
+
     NSEnumerator *enumerator = [babyButtons objectEnumerator];
-    UIButton *curButton;
     CGRect newFrame = [accountButton frame];
-    while (curButton = (UIButton*)[enumerator nextObject]) {
+    BabyButton * curItem;
+
+    while (curItem = (BabyButton*)[enumerator nextObject]) {
+        UIButton *curButton = curItem.button;
+        RRBaby *baby = curItem.baby;
+
         newFrame.origin.y += buttonHeightDiff;
         curButton.frame = newFrame;
+
+        [curButton setTitle:baby.name forState:UIControlStateNormal];
+        [curButton setTitle:baby.name forState:UIControlStateSelected];
+
         [self.view addSubview:curButton];
-    }    
-    
+    }
+
     newFrame.origin.y += buttonHeightDiff;
     newBabyButton.frame = newFrame;
     [self.view addSubview:newBabyButton];
@@ -47,31 +92,39 @@
         [self.navigationController pushViewController:self.childView
                                              animated:YES];
     }
-    
-    else if (sender == newBabyButton) {
-        
-        // you can't call copy on a button but this works pretty well.
-        NSData *archivedData = [NSKeyedArchiver archivedDataWithRootObject: newBabyButton];
-        UIButton *newButton = [NSKeyedUnarchiver unarchiveObjectWithData: archivedData];
 
-        [newButton setTitle:@"Just Born" forState:UIControlStateNormal];
-        [newButton setTitle:@"Just Born" forState:UIControlStateSelected];
+    else if (sender == newBabyButton) {
+        BabyButton * newBabyButtonObject  = [BabyButton babyButtonFromButton:newBabyButton];
+        [babyButtons addObject:newBabyButtonObject];
+
+        UIButton * newButton = newBabyButtonObject.button;
         [newButton addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
-        
-        
-        [babyButtons addObject:newButton];
+
         self.drawBabyButtons;
     }
-    
+
     else {
         LOG_DEBUG(@"BABY BUTTON");
+        // find the sender in buttons array..
+        NSEnumerator *enumerator = [babyButtons objectEnumerator];
+        BabyButton *curButton;
+        while (curButton = (BabyButton*)[enumerator nextObject]) {
+            if(sender == curButton.button)
+                break;
+        }
+
+
+        RRBabySettingsViewController *child = [[RRBabySettingsViewController alloc] init];
+        child.baby = curButton.baby;
+        child.parentView = self;
+
         childView = nil;
-        childView = [[RRBabySettingsViewController alloc] init];
+        childView = child;
         [self.navigationController pushViewController:childView animated:YES];
     }
 
-    
-    
+
+
 }
 
 
@@ -93,10 +146,10 @@
     childView = nil;
     if(!babyButtons)
         babyButtons = [[NSMutableArray alloc] init];
-    
+
     LOG_DEBUG(@"%@");
 
-}   
+}
 
 
 /*
@@ -110,7 +163,7 @@
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-    childView = nil;    
+    childView = nil;
     // Release any cached data, images, etc that aren't in use.
 }
 

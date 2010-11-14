@@ -25,9 +25,9 @@ static NSMutableArray* babies = nil;
 
 -(id) init{
     if (self = [super init]) {
-        name = [[NSString alloc] init];
+        self.name = @"OMG Baby!";
         sex = kSexGirl;
-        birthday = [NSDate date];
+        self.birthday = [NSDate date];
         birthWeight = 3.5; //kg
         birthHeight = 50;  //cm
     }
@@ -41,7 +41,7 @@ static NSMutableArray* babies = nil;
 }
 
 + (int) numBabies {
-    return [babies count];   
+    return [babies count];
 }
 
 + (NSArray*) getBabies {
