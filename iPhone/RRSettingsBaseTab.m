@@ -70,15 +70,40 @@
         newFrame.origin.y += buttonHeightDiff;
         curButton.frame = newFrame;
 
-        [curButton setTitle:baby.name forState:UIControlStateNormal];
-        [curButton setTitle:baby.name forState:UIControlStateSelected];
+        NSString* name = baby.name;
+        if(name == nil || name == @"")
+            name = @"OMG Baby!";
+
+        [curButton setTitle:name forState:UIControlStateNormal];
+        [curButton setTitle:name forState:UIControlStateSelected];
+
+
+        UIImage* baseImage;
+        if(baby.sex == kSexBoy)
+            baseImage = [UIImage imageNamed:@"blueButton.png"];
+        else
+            baseImage = [UIImage imageNamed:@"pinkButton.png"];
+
+        UIImage *buttonImage = [baseImage stretchableImageWithLeftCapWidth:12 topCapHeight:0];
+        [curButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
 
         [self.view addSubview:curButton];
     }
 
-    newFrame.origin.y += buttonHeightDiff;
+    newFrame.origin.y += buttonHeightDiff * 1.5;
     newBabyButton.frame = newFrame;
     [self.view addSubview:newBabyButton];
+}
+
+-(void) loadBabySettingsViewControllerForBaby: (RRBaby*) baby {
+        RRBabySettingsViewController *child = [[RRBabySettingsViewController alloc] init];
+        child.baby = baby;
+        child.parentView = self;
+
+        self.childView = nil;
+        self.childView = child;
+        [self.navigationController pushViewController:childView animated:YES];
+
 }
 
 
@@ -101,6 +126,8 @@
         [newButton addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
 
         self.drawBabyButtons;
+        newBabyButtonObject.baby.name = @"";
+        [self loadBabySettingsViewControllerForBaby: newBabyButtonObject.baby];
     }
 
     else {
@@ -113,14 +140,7 @@
                 break;
         }
 
-
-        RRBabySettingsViewController *child = [[RRBabySettingsViewController alloc] init];
-        child.baby = curButton.baby;
-        child.parentView = self;
-
-        childView = nil;
-        childView = child;
-        [self.navigationController pushViewController:childView animated:YES];
+        [self loadBabySettingsViewControllerForBaby:curButton.baby];
     }
 
 
@@ -183,3 +203,4 @@
 
 
 @end
+    

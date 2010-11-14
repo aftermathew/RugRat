@@ -23,6 +23,9 @@
         baby.sex = kSexGirl;
     else
         baby.sex = kSexBoy;
+
+    if(parentView)
+        [parentView drawBabyButtons];
 }
 
 - (void) setBabyBirthdateFromUIDatePicker:(UIDatePicker*)picker {

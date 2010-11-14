@@ -36,6 +36,8 @@
 		A07384F511D7E70D004048C4 /* RRQAPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A07384F411D7E70D004048C4 /* RRQAPageViewController.m */; };
 		A073850C11D7EB0E004048C4 /* RRVideoPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A073850B11D7EB0E004048C4 /* RRVideoPageViewController.m */; };
 		A0A85CDE115FF1F0004CFD53 /* RRDatabaseInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A85CDD115FF1F0004CFD53 /* RRDatabaseInterface.m */; };
+		A0B6A07E128F754700F5D615 /* blueButton.png in Resources */ = {isa = PBXBuildFile; fileRef = A0B6A07D128F754700F5D615 /* blueButton.png */; };
+		A0B6A09A128F78C700F5D615 /* pinkButton.png in Resources */ = {isa = PBXBuildFile; fileRef = A0B6A099128F78C700F5D615 /* pinkButton.png */; };
 		A0C8F53E1208D8F400530B6F /* RRBabySettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C8F53C1208D8F400530B6F /* RRBabySettingsViewController.m */; };
 		A0C8F53F1208D8F400530B6F /* RRBabySettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0C8F53D1208D8F400530B6F /* RRBabySettingsViewController.xib */; };
 		A0E06376128E6ABF00D56075 /* RRBaby.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E06375128E6ABF00D56075 /* RRBaby.m */; };
@@ -121,6 +123,8 @@
 		A073850B11D7EB0E004048C4 /* RRVideoPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRVideoPageViewController.m; sourceTree = "<group>"; };
 		A0A85CDC115FF1F0004CFD53 /* RRDatabaseInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRDatabaseInterface.h; sourceTree = "<group>"; };
 		A0A85CDD115FF1F0004CFD53 /* RRDatabaseInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRDatabaseInterface.m; sourceTree = "<group>"; };
+		A0B6A07D128F754700F5D615 /* blueButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blueButton.png; path = Resources/images/blueButton.png; sourceTree = "<group>"; };
+		A0B6A099128F78C700F5D615 /* pinkButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pinkButton.png; path = Resources/images/pinkButton.png; sourceTree = "<group>"; };
 		A0C1D3241184DCD10012DA20 /* RRLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRLog.h; sourceTree = "<group>"; };
 		A0C8F53B1208D8F400530B6F /* RRBabySettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRBabySettingsViewController.h; sourceTree = "<group>"; };
 		A0C8F53C1208D8F400530B6F /* RRBabySettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRBabySettingsViewController.m; sourceTree = "<group>"; };
@@ -206,6 +210,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A0B6A099128F78C700F5D615 /* pinkButton.png */,
+				A0B6A07D128F754700F5D615 /* blueButton.png */,
 				A058FB3411E94EAF005FAD76 /* Icon.png */,
 				A0F11F2111E944A3007125E3 /* Default.png */,
 				A0E51532115719B5004A0CCE /* images */,
@@ -445,6 +451,8 @@
 				A07288FE11FE9C1E0050A674 /* RRSettingsBaseTab.xib in Resources */,
 				A072895211FEA0E00050A674 /* RRAccountSettingsViewController.xib in Resources */,
 				A0C8F53F1208D8F400530B6F /* RRBabySettingsViewController.xib in Resources */,
+				A0B6A07E128F754700F5D615 /* blueButton.png in Resources */,
+				A0B6A09A128F78C700F5D615 /* pinkButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

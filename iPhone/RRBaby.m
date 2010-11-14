@@ -25,7 +25,7 @@ static NSMutableArray* babies = nil;
 
 -(id) init{
     if (self = [super init]) {
-        self.name = @"OMG Baby!";
+        self.name = @"";
         sex = kSexGirl;
         self.birthday = [NSDate date];
         birthWeight = 3.5; //kg
