@@ -46,6 +46,9 @@
 		A0E51535115719CA004A0CCE /* leftArrowIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = A0E51533115719CA004A0CCE /* leftArrowIcon.png */; };
 		A0E51536115719CA004A0CCE /* rightArrowIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = A0E51534115719CA004A0CCE /* rightArrowIcon.png */; };
 		A0F11F2211E944A3007125E3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A0F11F2111E944A3007125E3 /* Default.png */; };
+		A0F7E55312A345180082C0F9 /* APAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F7E54D12A345180082C0F9 /* APAttribute.m */; };
+		A0F7E55412A345190082C0F9 /* APDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F7E54F12A345180082C0F9 /* APDocument.m */; };
+		A0F7E55512A345190082C0F9 /* APElement.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F7E55112A345180082C0F9 /* APElement.m */; };
 		AF2A9A7D10BB895700B1D39E /* PopupAndProgressController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2A9A7B10BB895700B1D39E /* PopupAndProgressController.m */; };
 		AF2A9A7E10BB895700B1D39E /* PopupAndProgressController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2A9A7C10BB895700B1D39E /* PopupAndProgressController.xib */; };
 		B796155B10A7B7440067B141 /* RRLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B796155910A7B7440067B141 /* RRLogViewController.m */; };
@@ -137,6 +140,13 @@
 		A0E51533115719CA004A0CCE /* leftArrowIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = leftArrowIcon.png; path = Resources/images/leftArrowIcon.png; sourceTree = "<group>"; };
 		A0E51534115719CA004A0CCE /* rightArrowIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rightArrowIcon.png; path = Resources/images/rightArrowIcon.png; sourceTree = "<group>"; };
 		A0F11F2111E944A3007125E3 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/Default.png; sourceTree = "<group>"; };
+		A0F7E54C12A345180082C0F9 /* APAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APAttribute.h; path = apxml/APAttribute.h; sourceTree = "<group>"; };
+		A0F7E54D12A345180082C0F9 /* APAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APAttribute.m; path = apxml/APAttribute.m; sourceTree = "<group>"; };
+		A0F7E54E12A345180082C0F9 /* APDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APDocument.h; path = apxml/APDocument.h; sourceTree = "<group>"; };
+		A0F7E54F12A345180082C0F9 /* APDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APDocument.m; path = apxml/APDocument.m; sourceTree = "<group>"; };
+		A0F7E55012A345180082C0F9 /* APElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APElement.h; path = apxml/APElement.h; sourceTree = "<group>"; };
+		A0F7E55112A345180082C0F9 /* APElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APElement.m; path = apxml/APElement.m; sourceTree = "<group>"; };
+		A0F7E55212A345180082C0F9 /* APXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APXML.h; path = apxml/APXML.h; sourceTree = "<group>"; };
 		AF2A9A7A10BB895700B1D39E /* PopupAndProgressController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupAndProgressController.h; sourceTree = "<group>"; };
 		AF2A9A7B10BB895700B1D39E /* PopupAndProgressController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupAndProgressController.m; sourceTree = "<group>"; };
 		AF2A9A7C10BB895700B1D39E /* PopupAndProgressController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupAndProgressController.xib; sourceTree = "<group>"; };
@@ -193,6 +203,7 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				A0F7E54A12A344EE0082C0F9 /* apXML */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -327,6 +338,20 @@
 				A0E51534115719CA004A0CCE /* rightArrowIcon.png */,
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		A0F7E54A12A344EE0082C0F9 /* apXML */ = {
+			isa = PBXGroup;
+			children = (
+				A0F7E54C12A345180082C0F9 /* APAttribute.h */,
+				A0F7E54D12A345180082C0F9 /* APAttribute.m */,
+				A0F7E54E12A345180082C0F9 /* APDocument.h */,
+				A0F7E54F12A345180082C0F9 /* APDocument.m */,
+				A0F7E55012A345180082C0F9 /* APElement.h */,
+				A0F7E55112A345180082C0F9 /* APElement.m */,
+				A0F7E55212A345180082C0F9 /* APXML.h */,
+			);
+			name = apXML;
 			sourceTree = "<group>";
 		};
 		B796155410A7B6B80067B141 /* Models */ = {
@@ -485,6 +510,9 @@
 				A072895111FEA0E00050A674 /* RRAccountSettingsViewController.m in Sources */,
 				A0C8F53E1208D8F400530B6F /* RRBabySettingsViewController.m in Sources */,
 				A0E06376128E6ABF00D56075 /* RRBaby.m in Sources */,
+				A0F7E55312A345180082C0F9 /* APAttribute.m in Sources */,
+				A0F7E55412A345190082C0F9 /* APDocument.m in Sources */,
+				A0F7E55512A345190082C0F9 /* APElement.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
